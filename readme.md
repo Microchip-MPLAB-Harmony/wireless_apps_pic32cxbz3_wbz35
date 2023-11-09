@@ -73,6 +73,22 @@ The following applications are provided to demonstrate the typical use case of o
 | [Zigbee ](apps/zigbee/dim_light_touch/readme.md) | PIC32CX-BZ |
 ____
 
+#License
+Silex Public Key Cryptography API, included in this repository(for PIC32CXBZ3, WBZ35X) comes with the following BSD 3-Clause
+
+
+Copyright (c) 2018-2020 Silex Insight sa
+Copyright (c) 2018-2020 Beerten Engineering scs
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35/blob/master/mplab_harmony_license.md)
 [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35/releases/latest)
 [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35/releases/latest)
