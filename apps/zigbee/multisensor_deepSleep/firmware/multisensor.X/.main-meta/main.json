@@ -1,0 +1,62 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.hex.project",
+    "content": {
+        "metaDataVersion": "1.0.0",
+ 
+        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35.multisensor_deepSleep",
+        "version": "4.6.5",
+ 
+        "displayName": "multisensor_deepSleep",
+        "shortDescription": "Zigbee multisensor App",
+ 
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "WBZ351",
+                "versionRange": "*"
+            }
+        },
+ 
+        "board": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.boardRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.board",
+                "name": "WBZ351_CURIOSITY_BOARD",
+                "versions": "*"
+            }
+        },
+ 
+        "author": "Microchip",
+ 
+        "keywords": [
+			"MCC",
+			"Harmony",
+			"PIC32CX5109BZ31048",
+			"WBZ351",
+			"PIC32CXBZ3 Family",
+			"Zigbee",
+			"Sensor",
+			"Low Power",
+			"Deep Sleep"
+        ],
+ 
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./../../readme.md",
+                    "mimeType": "text/markdown"
+                }
+            },
+            "hexFileNamePath": "./../../hex/multisensor.X.production.signed.hex"
+        }
+    }
+}

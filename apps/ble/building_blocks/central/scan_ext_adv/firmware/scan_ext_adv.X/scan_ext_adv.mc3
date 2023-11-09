@@ -1,0 +1,2543 @@
+<config configName="default" projectName="scan_ext_adv" configVersion="1.1" device="WBZ351" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+   <usedPackages class="java.util.ArrayList"/>
+   <usedClasses class="java.util.TreeMap">
+      <entry>
+         <string>BLE_STACK_LIB</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>FreeRTOS</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>HarmonyCore</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>cmsis</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>core</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>dfp</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>evsys</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>nvm</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>pdsSystem</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>pic32cx_bz3_devsupport</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>sercom0</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+   </usedClasses>
+   <usedLibraries class="java.util.ArrayList">
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
+   </usedLibraries>
+   <tokenMap class="java.util.TreeMap">
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot;/&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="BOOL_GAP_EXT_SCAN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;BOOL_GAP_EXT_SCAN&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_ADVERTISING"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_ADVERTISING&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_ADV_DATA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_ADV_DATA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;0x02, 0x01, 0x04, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_ADV_DATA_LEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_ADV_DATA_LEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;15&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_DEV_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_DEV_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Microchip&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_DEV_NAME_CHECK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_DEV_NAME_CHECK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_ADV_DATA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_ADV_DATA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;0x02, 0x01, 0x04, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_ADV_DATA_2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_ADV_DATA_2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;0x02, 0x01, 0x04, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_ADV_DATA_LEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_ADV_DATA_LEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;15&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_ADV_DATA_LEN_2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_ADV_DATA_LEN_2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;15&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_SCAN_PHY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_SCAN_PHY&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_SCAN_RSP_DATA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_SCAN_RSP_DATA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_SCAN_RSP_DATA_2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_SCAN_RSP_DATA_2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_SCAN_RSP_DATA_LEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_SCAN_RSP_DATA_LEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;12&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_SCAN_RSP_DATA_LEN_2"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_SCAN_RSP_DATA_LEN_2&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;12&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_PERIPHERAL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_PERIPHERAL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_SCAN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_SCAN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_SCAN_RSP_DATA"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_SCAN_RSP_DATA&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_SCAN_RSP_DATA_LEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_SCAN_RSP_DATA_LEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;12&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot;/&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_EXPECTED_IDLE_TIME_BEFORE_SLEEP"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_EXPECTED_IDLE_TIME_BEFORE_SLEEP&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;5&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_IDLE_HOOK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_IDLE_HOOK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_MEMORY_MANAGEMENT_CHOICE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_MEMORY_MANAGEMENT_CHOICE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;Heap_4&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_MINIMAL_STACK_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_MINIMAL_STACK_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;256&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_TICKLESS_IDLE_CHOICE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_TICKLESS_IDLE_CHOICE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;Tickless_Idle&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_TICK_HOOK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_TICK_HOOK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_TOTAL_HEAP_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_TOTAL_HEAP_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;59392&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_USE_QUEUE_SETS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_USE_QUEUE_SETS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot;/&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="ENABLE_APP_FILE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;ENABLE_APP_FILE&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="ENABLE_DRV_COMMON"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;ENABLE_DRV_COMMON&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="ENABLE_OSAL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;ENABLE_OSAL&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="ENABLE_SYS_CACHE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;ENABLE_SYS_CACHE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="ENABLE_SYS_COMMON"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;ENABLE_SYS_COMMON&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="ENABLE_SYS_INT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;ENABLE_SYS_INT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="HarmonyCore" name="SELECT_RTOS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
+  &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;SELECT_RTOS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; value=&quot;FreeRTOS&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/HarmonyCore&gt;
+&lt;/HarmonyCore&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cmsis" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
+  &lt;UserData dnOrder=&quot;0&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;409&quot; canvasWidth=&quot;721&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; x=&quot;170&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;350&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;HarmonyCore&quot; x=&quot;350&quot; y=&quot;140&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;400&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;evsys&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;nvm&quot; x=&quot;30&quot; y=&quot;160&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;pdsSystem&quot; x=&quot;30&quot; y=&quot;240&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;pic32cx_bz3_devsupport&quot; x=&quot;519&quot; y=&quot;64&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;sercom0&quot; x=&quot;211&quot; y=&quot;178&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+  &lt;/UserData&gt;
+&lt;/UserData&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BLE_CLOCK_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BLE_CLOCK_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CFGPCLKGEN1_REG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CFGPCLKGEN1_REG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;36864&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CONFIG_SCOM0_HSEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SCOM0_HSEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DIRECT&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_3_CHEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_3_CHEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_3_FREQ"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_3_FREQ&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;64000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GCLK_ID_3_GENSEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;GCLK_ID_3_GENSEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-1_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-1_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-1_0_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-1_0_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;xPortSysTickHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-1_0_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-1_0_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-1_0_PRIORITY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-1_0_PRIORITY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; value=&quot;7&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-1_0_PRIORITY_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-1_0_PRIORITY_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-2_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-2_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-2_0_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-2_0_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;xPortPendSVHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-2_0_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-2_0_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-5_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-5_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-5_0_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-5_0_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;vPortSVCHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-5_0_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-5_0_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-5_0_PRIORITY_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-5_0_PRIORITY_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_12_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_12_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_12_0_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_12_0_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;SERCOM0_USART_InterruptHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_12_0_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_12_0_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_3_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_3_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_3_0_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_3_0_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;NVM_InterruptHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_3_0_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_3_0_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVM_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVM_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;nvm&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVM_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVM_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVM_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVM_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;nvm&quot; value=&quot;NVM_InterruptHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVM_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVM_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;nvm&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PMD3_REG_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PMD3_REG_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;32766&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PendSV_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PendSV_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PendSV_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PendSV_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PendSV_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PendSV_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;xPortPendSVHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PendSV_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PendSV_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SERCOM0_CORE_CLOCK_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_CORE_CLOCK_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SERCOM0_CORE_CLOCK_FREQUENCY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_CORE_CLOCK_FREQUENCY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;64000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SERCOM0_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SERCOM0_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SERCOM0_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;SERCOM0_USART_InterruptHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SERCOM0_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SERCOM0_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SVCall_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SVCall_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SVCall_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SVCall_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SVCall_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SVCall_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;vPortSVCHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SVCall_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SVCall_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SysTick_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SysTick_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SysTick_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SysTick_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SysTick_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SysTick_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;xPortSysTickHandler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SysTick_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SysTick_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dfp" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="nvm" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;nvm&gt;
+  &lt;nvm dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;NVM_MEMORY&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;pdsSystem&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;NVM_Dependency&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+    &lt;/Attachments&gt;
+  &lt;/nvm&gt;
+&lt;/nvm&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="nvm" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pdsSystem" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pdsSystem&gt;
+  &lt;pdsSystem dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;NVM_Dependency&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;nvm&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;NVM_MEMORY&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+    &lt;/Attachments&gt;
+  &lt;/pdsSystem&gt;
+&lt;/pdsSystem&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pdsSystem" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot;/&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="AUTO_LOAD_PDS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;AUTO_LOAD_PDS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="BLESTACK_LOADED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;BLESTACK_LOADED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="CUSTOM_ANT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;CUSTOM_ANT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="ENABLE_DEEP_SLEEP"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;ENABLE_DEEP_SLEEP&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="FREERTOS_CONFIG_PATH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;FREERTOS_CONFIG_PATH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;config/default/FreeRTOSConfig.h/&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="PDS_LOADED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;PDS_LOADED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="SLEEP_SUPPORTED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;SLEEP_SUPPORTED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="WSS_ENABLE_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;WSS_ENABLE_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;WSS_ENABLE_BLE&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;SERCOM0_I2C&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+          &lt;/Boolean&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;SERCOM0_SPI&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+          &lt;/Boolean&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+    &lt;/Attachments&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="I2CM_BAUD"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;I2CM_BAUD&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;255&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="I2CS_SDASETUP_TIME_NS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;I2CS_SDASETUP_TIME_NS&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;3843&lt;/Value&gt;
+      &lt;/Integer&gt;
+    &lt;/Attributes&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="I2CS_SDASETUP_TIME_REG_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;I2CS_SDASETUP_TIME_REG_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="I2CS_SDASETUP_TIME_SUPPORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;I2CS_SDASETUP_TIME_SUPPORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="RECEIVE_DATA_REGISTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;RECEIVE_DATA_REGISTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;&amp;amp;(SERCOM0_REGS-&amp;gt;USART_INT.SERCOM_DATA)&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="SERCOM_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;SERCOM_MODE&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="SERCOM_USART_COMMON_HEADER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;SERCOM_USART_COMMON_HEADER&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="SERCOM_USART_HEADER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;SERCOM_USART_HEADER&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+      &lt;String dnOrder=&quot;1&quot; id=&quot;source&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;../peripheral/sercom_u2201/templates/plib_sercom_usart_ring_buffer.h.ftl&lt;/Value&gt;
+      &lt;/String&gt;
+    &lt;/Attributes&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="SERCOM_USART_SOURCE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;SERCOM_USART_SOURCE&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+      &lt;String dnOrder=&quot;1&quot; id=&quot;source&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;../peripheral/sercom_u2201/templates/plib_sercom_usart_ring_buffer.c.ftl&lt;/Value&gt;
+      &lt;/String&gt;
+    &lt;/Attributes&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="SPI_BAUD_REG_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;SPI_BAUD_REG_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;31&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="TRANSMIT_DATA_REGISTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;TRANSMIT_DATA_REGISTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;&amp;amp;(SERCOM0_REGS-&amp;gt;USART_INT.SERCOM_DATA)&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_BAUD_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_BAUD_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;63648&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_INTERRUPT_MODE_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_INTERRUPT_MODE_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_LIN_MASTER_SUPPORTED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_LIN_MASTER_SUPPORTED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_OPERATING_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_OPERATING_MODE&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;2&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_RING_BUFFER_MODE_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_RING_BUFFER_MODE_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_RXPO"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_RXPO&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_SAMPLE_COUNT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_SAMPLE_COUNT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;16&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sercom0" name="USART_SAMPLE_RATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sercom0&gt;
+  &lt;sercom0 dnOrder=&quot;0&quot; id=&quot;USART_SAMPLE_RATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sercom0&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sercom0&gt;
+&lt;/sercom0&gt;
+</value>
+      </entry>
+   </tokenMap>
+   <generatedFileHashHistoryMap class="java.util.HashMap">
+      <entry>
+         <file>..\src\config\default\system\cache\sys_cache.h</file>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\cmac_api.h</file>
+         <hash>f016053014853913bf155309f86de9e2f1d85e839bf1fcf12e2e62f3ccf9c832</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_idle_task.c</file>
+         <hash>877bf08187a664e2fe7a76d9eb4da2014ba5b24d44f8201f5e96acb9be315fa7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
+         <hash>3d4e265d0aa42f888385ccf073666e6ebb5ec9f834760b9da27c474e177f708d</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\task.h</file>
+         <hash>2bdfb8e3c1a76a5ccacb1b7815ca9acb63d1ba1f1bd29e5a75757d5e186c5056</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\pio\wbz351.h</file>
+         <hash>7c2eba259d0b9042c3fc27e9119d69591492011857103545f7efe68b09bf159a</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\timers.c</file>
+         <hash>0d16405e621a2c4b003b5f0324b9713cd4865364133df6f742f482a6b2dbc773</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\bt_sys_pta.h</file>
+         <hash>04af6ed027bf968e606200b5d242dc1ae9e9bd13fb1dbe39d7e61dda97d367a1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\gatt.h</file>
+         <hash>e18e4a99b729300fef13d4b11310462116f1a2781fdf0e2f06f5016fc703dc01</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\stream_buffer.h</file>
+         <hash>0607fcca1927ba782a29a3814481d69db3569e6e53a68ebf2c01f5598a3af2b8</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_idle_task.h</file>
+         <hash>5cdead69e104877155d76065f49139db75c049e22168f79bbfe3a3ebb1c6115e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\toolchain_specifics.h</file>
+         <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\list.h</file>
+         <hash>f9b239f168976f7b167e054fa72616826f55ae4d74d76b87c9e70b2df079363f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc4.h</file>
+         <hash>83f88531041ce965b3e307c3e075540aea7c3aeabe77371de5a8a9bc9a0e7a25</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\sha1_api.h</file>
+         <hash>e93c4fc3632e50b26f5a6e5fb8d4f4a846c4510539ec7f6578d45b3a7be4ad89</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\croutine.h</file>
+         <hash>8df4c5eec7eb30262f09b7c47fc2eb0534a27721293b0d260a3398846494f9ac</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\rot.h</file>
+         <hash>8633ec017bbc2713f35f1ddceb17e1a0ebb875ee154c0637869fd84053bdf9dd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\pche.h</file>
+         <hash>e9c05f752da1f827116d59377b933157d8730716b44c9686de9ecbfcbf4fd687</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\sys_tasks.h</file>
+         <hash>8e1a48dc226e9af26c57fc69ba76d2de0279f4bbc96e071a57fd0911a782545d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\trnginternal.h</file>
+         <hash>5e339a7d391826705bcf8b743be5ac48942ce2481cca3f6933e02b6d21e654cd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\device_support\include\rf_system.h</file>
+         <hash>ca016319c06aa5332dcaf47afe8aea15c05c9240d5a95c82b543fb6b4268c784</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\device_support\include\sleep_system.h</file>
+         <hash>cb2a6abf7b4c04cfc436f6ccdfe706c8e76529ac964664653a91307a24184802</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\cfg.h</file>
+         <hash>0aed3800459bb0975fe24d891b86cf2d682ac87768ef3cd8de18daa3d5d327b2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\pmu.h</file>
+         <hash>7f88692ca27f1ec1e1489f1271c9ed79ffabd5cba995e40e125a256a2cd16b7a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\rsa.h</file>
+         <hash>b102f482c9e5fe116f4a7825de3af2a411480f67444a33510bf9ec84f0c3393e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\qspi.h</file>
+         <hash>187397bc4e4a7553a62bc06d3eb0738c22ca971d332d9725c14a8f0d58a66008</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a</file>
+         <hash>ee66ce3fa44d069acf5e380cf68c4f0c1fb61a2b283adf15e8c92e81e027c17c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\ble_smp.h</file>
+         <hash>9004baed6b0818120a4088e0779e5cc58664de206261e037da667f9324d01280</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\freqm.h</file>
+         <hash>a90b57d5a20aa20bc16cdd468553ad34c995f5b6e86ad91a71b5d668bfdf19ad</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\framework_defs.h</file>
+         <hash>a83a009955539e660bf7dcdbf69d9a47649f0fe9907cbb308e8ad7f19726baa8</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\rtc.h</file>
+         <hash>c3aabf88d9d504e1353ea9ba63d470a5101246385e3eeebab3919ee9636ea206</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_conn.c</file>
+         <hash>539784fbb036d762c48132ed14bc887d783b5084891ee86e53b1566db26eda3f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\dmac.h</file>
+         <hash>fd3f5fea08f23aaec41bd35bad17a169ba9651b0654d3170da1ac95b3e4680b8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_conn.h</file>
+         <hash>85b0b872d48f017e5d46029a35bf1dffc45b8561b042b544385b727e5b462f1e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\trng_api.h</file>
+         <hash>4f865b23754685a046ce6d3a6b421a4918931ad1ecdc9d416b27412d341bae3a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\ccl.h</file>
+         <hash>cc8cc83b0c9fe1e0ea461a20e2ce5e069b905a6beba1a175fe639ec1a14b539e</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\mpu_prototypes.h</file>
+         <hash>3fafd21399ef619a55b2f8112750d750685c8ae1cb458363d21ee37a105ac6e7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\nvm.h</file>
+         <hash>d32d3a2b6c5544a46e6f37b469f34fdd19bd76101b7b13b40694d43e46c0c82a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\att_uuid.h</file>
+         <hash>48125a57563ff253955307dd50821543a10a21fe8215024caf067b246b1b9b25</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm.c</file>
+         <hash>ed89223d199d87c6dda71c797e20241ad473574bd686340e686214758594c02e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\rot.h</file>
+         <hash>2f765e25c6ce612128a6b69ab53ad45a4cafc8fa60ffb2781a473d8378518ce0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\rcon.h</file>
+         <hash>5a95d054d0d18644738757820f8d9669eeed86ec461ae6ad9e4e524dd54d39e5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc5.h</file>
+         <hash>43ee3d5a50be116bb4f6ee9718897483fe02c1846be853098bba2b33c468d4db</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm.h</file>
+         <hash>cb6a676fcb09f072a5687e605e3ec2ee9dc484c3b30139d77e6b3397a344864c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
+         <hash>de1b5eb9ed566527b66dc06f4ecb6a43ab6800f7dac47e87c9cb42984dca41bb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\cmcc.h</file>
+         <hash>f9675576bd63e8859ff5777c9821ccd7da77116767a4804a4259eba97c884b52</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\rtc.h</file>
+         <hash>e6a3c60264ef302a95d96034f1f800536c5d36d21a86427dffb3b00c0776bad9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
+         <hash>d074534d7106cec83474b3b0a897bd2553e1a8895ecbd54f4f4fb25928066eee</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\FreeRTOS.h</file>
+         <hash>b7a81501c3f4ff9537df5c9a5e0231f37638cdc8324965ae10064128fded840f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\mac_api.h</file>
+         <hash>b47d535729dd254018d42afdcb44b8c63a7bded004b0185f57054b1abf220b5a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\dac_ctrl.h</file>
+         <hash>76edb1df10352c38f8b7d1a2e9edf847a8d1ad4c7c24e34fdbb88f94dd6da477</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\ble_stack_bz3_lib.a</file>
+         <hash>418e29a29bef6d684f8cf9de9264513c9fa5f769d9f7bb3f26d2b1e640053837</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\ble_gap.h</file>
+         <hash>1b341e95c8952f5ad41e62be6ef0fea3e92bdbaa885447924c33e7242b36916f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\hmac_api.h</file>
+         <hash>f56b08187d9a43c3a92fb05a529fa517dacb1a0b039ed2b33723df65bad124c3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\eccweierstrass_api.h</file>
+         <hash>0bee9b1772bc16458fc652ea1cc44becb245e462405dee3b6c4ffac07349bc37</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
+         <hash>11b39b96ddc1125124762b3423a77b90dd40ea5b4582a3513830245046b24311</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\system.h</file>
+         <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\FreeRTOSConfig.h</file>
+         <hash>02d6266abe42b87f171a485557a70630027bad2ef76be3e250dd86bb85661c64</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\adapter_api.h</file>
+         <hash>2b0c3d827891e0c3ad3f4e9a3e94c185fc85765341a850376596e6316c849c87</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\adchs.h</file>
+         <hash>fcbe7bd4d1b93ec1a03852c0a119865a141c3eeb2a8d76c4e68d3f3694b9cef0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\silex.h</file>
+         <hash>546aaf7eee421fdedba6d7a5d4b07bd5a9e3172eb34f656864eccb88f7fb76ac</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble.h</file>
+         <hash>5fedff3eac6e3fce6870b0bef958fc88b2ad54f9a5cd058df3850487ce4e51f3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\system_common.h</file>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\portable\MemMang\heap_4.c</file>
+         <hash>c697b88e48e9906a19cabef187e5797a5a45009144f9e473262752c86a5d2c50</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\pac.h</file>
+         <hash>9d0feedf541a28dd011bed6d7bfa26bf3d0319156b4f0a0438fc9b4f90eb1d26</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\debug\sys_debug.h</file>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\device.h</file>
+         <hash>abb7224edd4a39b3a20dc87feea10a6c4af48f0f68ab5bf9aceb355cf1ff2896</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\adchs.h</file>
+         <hash>853cc6db27334a0e174410d17ed5db154ac8c56f408bfe9b3e737c4c6eb8e7b9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\pmu.h</file>
+         <hash>31678841f03902d72851fae2c301d401be2cd6577c21f14b3f362ae02a4e8e31</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\zigbee.h</file>
+         <hash>6bbedf06fa4d574cff04f364d4da74e36f2782f4a618bcf3eadb99da08de3245</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\cache\sys_cache.c</file>
+         <hash>da28c09b0da0fdd6fb7064631c15c9197c78df33fcd17d742baef909830a320e</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\deprecated_definitions.h</file>
+         <hash>382f8a7a0e00240fb69911dff8d8515248beb9dadfe77c22c4e5544f49cc76eb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\ac.h</file>
+         <hash>cd1fdd3b0016fd73e59bbdd9a705b14ac63e490e5812e2ab6ea5f1b5414656e5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_sm.c</file>
+         <hash>24cafcaea339a83d4e542477d9dc8d8a523afaa35dcf4db33d6a7a82fb472361</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\dmac.h</file>
+         <hash>df8b00089b186407f416d01db63c75c8d7f35317601e813152d600f877164151</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\ecjpake.h</file>
+         <hash>75fbaf5a62fbfd2eecf6556474f66442b7b4bb1d503a243746310824e98578d7</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_log_handler.h</file>
+         <hash>b19050cb5ad75a78197bd84efa37e80f8febb57be3fb21429afd3befb123c45a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\pds\include\pds.h</file>
+         <hash>78ef8465abe334342d2d36b0bba88a23b343f809a7e09a96e2c44e686c7c6b74</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc6.h</file>
+         <hash>5faa0250aa21d61c1dc324766849e66164b29bc2ed4ce71711a22c16c73c72eb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\silex.h</file>
+         <hash>4f6a3453f5e0fdcfade21798697f7e8e896f8ad10326371fcc722042c80c676a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\system_module.h</file>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\zigbee.h</file>
+         <hash>7ae856c35a5ebcb5e74fd54d5ac6627bc32ed0181faf5cfddf79abb1c164b839</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\montgomery_api.h</file>
+         <hash>0a24139a26be0d61a9a3f200e46d5490acc8a890dcc219fdfc7dfeb65b8c3979</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\nvic\plib_nvic.h</file>
+         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\timers.h</file>
+         <hash>cfd11f78d92b398e8347f2b55dc1e79dffce83f63f7e570c6fc821334681ad12</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_user_edits.c</file>
+         <hash>7b00ea43d01526fdc21629f2e84f280f9bbaa4609b5289449612201fb7433382</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_log_handler.c</file>
+         <hash>7c2f953e791197cc2615dd73b868782a460fd2bcbf6e7bb907b1f34d97407f0d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\nvic\plib_nvic.c</file>
+         <hash>06957ba63c6f2766689f626385d27c15769010c0e63ac32f652b61a75b2cf8d8</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\ccl.h</file>
+         <hash>233fa2afe362119f5ffbe4b24d565cbd3e549a36fa7595134e4b9bf2c0d8a847</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\fuses.h</file>
+         <hash>628798c042db528a2bddee5244084b8fc148a44ef3cabc88e6ca100d86a14de6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tcc2.h</file>
+         <hash>a43d39389010a50b2ab696f9abb80693527e2de6cb1599338eddc84116e2bbfb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\dac_ctrl.h</file>
+         <hash>b2ff9b46e0fe031960531b8d8c4aa0084389597a2b6094f39de3a54f71e544af</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\bt_sys.h</file>
+         <hash>9eb829e5f6e7b9f9655441dedacfb4fb801e3b90ba07e6fe6a7a36748cac19bd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\device_cache.h</file>
+         <hash>e2914501b361bbc93a56d6915b1bf4fac00277e61f31fdee87a587bc15dea5b6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\mba_error_defs.h</file>
+         <hash>76eda3fe074762587b53951fcc7a40fda67aa9ff4d3e1cf17d4f230a40ef2f8d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\dsu.h</file>
+         <hash>f14b87810718e904b7fef9106000f00f2cca0e61a60cdd62c0ae698c09593cfb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_util\mw_assert.h</file>
+         <hash>f842c886f8942ca7113781e3b9ae218df90209a00209de8841d32120e1d31f0f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\pps.h</file>
+         <hash>4146980e11fa92806aaf877c177223d6229bb3fe9c44dfac03206eb2d4067ebc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\ble.h</file>
+         <hash>a79f31e6d7aada9e9f6be29edbc8b2dc45f13a8b762b61b3ea17e0381a922949</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\pche.h</file>
+         <hash>94ecce4a6886155f7fd2f2a12d099934076fbe22592751d84b4aac389b1cd2d0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\btzbsys.h</file>
+         <hash>c0176d1ba55b521d18592767b5d66608054733936ac3127321731ace3ca2349c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\core_api.h</file>
+         <hash>808c69dd9ddf82c4f0f3508552bc61cee9f44740f8a6aa21e9252f13916bc9e6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
+         <hash>8621969ea669a1b230ff2125a760ef66d575c48cb45e9e457f768909abcbda46</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\stack_macros.h</file>
+         <hash>7d1d30b6c9ae34bebb26b14402f78a59a35ae826f460a1ad28534c9590b32151</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_dds.c</file>
+         <hash>fa385d562b868b0ffe5007b5adf4eb13e52b1b5a039eb48cfb64352f145b38a0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_dds.h</file>
+         <hash>ecf3f8cdf6b886c4c3a2edeb3fcf80f17ca23e7d9943e03d574af0e9a44622bb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\wbz351.h</file>
+         <hash>250f4c71ccddddcca8eba725abfddf3134c23d204a2599c24f29c0a646697623</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc7.h</file>
+         <hash>5411f763efed04c4134be1f3a669d2ffbd4e5814019a7f3f79426435ad79b952</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
+         <hash>fb767a337273170e1cc84cccf1ce1398f87d847421144cf245f8e9a5bf652a48</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\configuration.h</file>
+         <hash>321175fed312776d5e0da9d63da1fca0673933ab0298c1d9a4aeb32cf5873639</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
+         <hash>39b2476052565e9b20debaa1266d19d5072cff729d06d053e629dc57699ec485</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_util\byte_stream.h</file>
+         <hash>bdc7c768812034f148987589e90e3e4299fea82b1208051689bd8b9747805b30</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\queue.c</file>
+         <hash>06a153c1ce111213af32dfc8797bd2e5c7819e264dfa338b4049f058dc1edb11</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\pps.h</file>
+         <hash>4ff7f72d55033db3059f1589bde59074fc3a2b84c9165c2255d444ac8461b696</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\pac.h</file>
+         <hash>7b92ca975eb7a9a9f66030be2ae250befac30c6dbc54db1b272306d27e85caad</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\cru.h</file>
+         <hash>a2c0c5f71bcd897dc2ed5e8bb5921cf327b1a5ab22237add65d81da8ab9cf265</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\eic.h</file>
+         <hash>a4b3a95a4935a90e63c3b04cd7b353ac45ba23db5e7c0aac9454c4282e28384c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\ble.h</file>
+         <hash>5e9043359b6bad87f023a754da03f3ac1bf7a935a936c2773c5595096edfe60c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\ed448_api.h</file>
+         <hash>d15484875c3c6f45e1e79bcf2d6b6f0e9144ac012be9a53c3af98d746c46fe19</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\exceptions.c</file>
+         <hash>89852728a9a1cc4c9746839cc3caf5308b8698c0c30bf6bfbad0db9e552a387e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\keyref_api.h</file>
+         <hash>793ea61a8a8249bc986103b02bdecc311ba5773b9f3a54dc6aea44498db4e00b</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_handler.h</file>
+         <hash>89a8f5e630215a7aa97acf414ea9b80fc6209547cbe6ea42333a3112f2911497</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\portable\GCC\SAM\ARM_CM4F\port.c</file>
+         <hash>89f24a509ec85bf502724334c2607eeb7a432e1f26afbc9b7291254b8f7971dc</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_handler.c</file>
+         <hash>92cb83e8ee2becbbc9a5f2fca63f1d8b8029e959524c00a557bd7ab406f00c7e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\definitions.h</file>
+         <hash>b8d9a2b6f198903d049b36d84a646863381d030873b433b6da6b1d386dff00d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\cmcc\plib_cmcc.c</file>
+         <hash>3b03e762c5515130718e7694736be6c25984ff8078c84d21a3fb9eba54f68e5d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\dgi_spi.h</file>
+         <hash>0ed28d8e0602a5d2d95a5453f9bff776de81241040a8fdec59e653f7040a30fc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\wdt.h</file>
+         <hash>27dbf928694757bffc38c80848c92ebf3da4e00f4316178859be3acf12f685d0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\int\src\sys_int.c</file>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_sm.h</file>
+         <hash>2dec7c517fdd319e6c36a6a3556b846dec3df124905609c0f0288e5da0044dc9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\cmcc\plib_cmcc.h</file>
+         <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
+         <hash>6cdb5b324f2fd1bb5b2f47298ba6e6777e735d7cad3bb8d942cd36e2c6e65328</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\gpioa.h</file>
+         <hash>087f28f15d242964ff91d74c9634f2951d8e389fede643f2fa3340e3fd3c62f2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\gpio.h</file>
+         <hash>f99bc3580af7d39bc5966d8cd0d8a86cd3ae211353cb92f6802edbb35f0baa3c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\arb.h</file>
+         <hash>02c921054a612dc78e240478855d0b489ce12328bcaa2b62f4f8622d29d3f916</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\dmt.h</file>
+         <hash>21b471f0e77e2761573bfe9437c82648445120912144a02496b4490ccb59dd47</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\dsu.h</file>
+         <hash>b785b10effdba5a988929713a54aa0275c0a2ee151b62ee5af2daa88c7bc64b8</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tcc0.h</file>
+         <hash>76fd0e5dc7797e3dabb4f994c232e960b51a21e4c448f8a495e1830ce2c619f9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\hash_api.h</file>
+         <hash>50e401c9352534e2b75725b88efde77fbbdeeb962c103b4329f139dae3bdc108</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc0.h</file>
+         <hash>4070509914ecf0afa6cec7855fb6e3720f36fdbfa69de426bd51fe7fa6be1219</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\statuscodes.h</file>
+         <hash>1740de22b4a7a79a0d66b74f2da57f62edf3c7ca49c1ede3a0a1e9d8479cba1b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_internal.h</file>
+         <hash>9df1e5eab3d0ca0a21ccfba32bbe518fe2c5e023970f38f61fb76fbb6fdf3466</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\cmddefs_api.h</file>
+         <hash>ec3f2ecf8b79adeeb3dd781bbb859995be56520a41834bf67548bc98ef057ad4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\user.h</file>
+         <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\pds\pds.a</file>
+         <hash>640c39c5cc212ca50940eaf19111b07e5cd75c818952730855a72936265b0f46</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\croutine.c</file>
+         <hash>e31cd1c9c280c919a92edc28885e9bebce589d4cfab71cefab832a73683200fb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\cvd.h</file>
+         <hash>653fd6f168395f96f27b615e050f061ac1f1c9abb869a2c1a72b9aac24e36f1c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\cru.h</file>
+         <hash>812731b46dea17e5cbe9be4ac4148b3646a75954e9699efe5644b6d188f91a99</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\ec_curves_api.h</file>
+         <hash>4b600487de389b9c80e48eff9a36994ba89703b73efc70871cbedde42d745119</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_utility.h</file>
+         <hash>59085b44f2e9409b339c7ed128e41f81024ead2123fa5c49d3b261cb65b294fd</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\portable.h</file>
+         <hash>39795c8dded505f24f53646ecd8192251851c74f366d2a5b0aae3fbfa68c191b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\sm3_api.h</file>
+         <hash>4bafd6d94866ac0d7c08bd53380e75177e6ebc80f3dd8f5ad55aa3a2e4e0a59e</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\list.c</file>
+         <hash>e735517f308fad5dd77d03b6858c16bdbc937bb9d0754735849fc7799ebe2b59</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\int\sys_int.h</file>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\sercom\usart\plib_sercom0_usart.h</file>
+         <hash>0df2c338e8de7443bc597e108b579c4f29d23090bba433ebddf71d0eac3d218a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\interrupts.h</file>
+         <hash>ac7dab0680feb2ac41ea8adf75169caa070472c252b8313d870d438fa41fc75e</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_utility.c</file>
+         <hash>a1f5f83e8ebe31093225e45570d7199506a0af30a1cf7b5bb6edda98e49f5dfe</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\blkcipher_api.h</file>
+         <hash>c16ae493b640d424c616bc78471bc850473b39c6c3804487617fb2b951618754</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\device_vectors.h</file>
+         <hash>8323e45e290ab359ea2828704c32f36d3326e4bd508e5e27f471a6e48429592f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\stack_mgr.h</file>
+         <hash>2bbf069be0f676b6b72fd02efff2e5c6bc72916bd2b42402c8f1b3eea72f9dcd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\sercom\usart\plib_sercom0_usart.c</file>
+         <hash>dc9e68e30d9cc47fd71343288f44af92091a427f257a09cb9ea50dc3219d3eef</hash>
+      </entry>
+      <entry>
+         <file>..\src\app.h</file>
+         <hash>061ef6b4bd78ad1452d03e5309b2109c2de301b22dd080a3506399efb41cd608</hash>
+      </entry>
+      <entry>
+         <file>..\src\app.c</file>
+         <hash>087f29ff0e7b77cfb1764bc4f4787b7ec1a0214dcd7a8544c6b762dc7d8b93f6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\hci.h</file>
+         <hash>9851a6f2884c7bbdbd093a83fff98bb7210e4983fd1a0f92b8be7c28b692bd4b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\interrupts.c</file>
+         <hash>244ae2488226ce757d2ed7c01c462ab6f751ebacb9eae5e226f3a3d9e3ccc0ae</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\aead_api.h</file>
+         <hash>1e3a8e013975f632531f801507f1bc4e3e8d953c99fc325e42e333e9cb724cb4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\gap_defs.h</file>
+         <hash>ac58c96ead85a551740f85adc84976e7362ad45a57e8147c50377ab94f794017</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\device_support\include\pmu_system.h</file>
+         <hash>217ec99578a10fddea49d5c74717a76a4d9c50ba904f6edd09b05c5303242bdd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\wdt.h</file>
+         <hash>e50e42bf216889921d429d73bc6246dc78e7a90b482daeedc39c78af1a479693</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\ble_l2cap.h</file>
+         <hash>4048e811884554fccad3932e79b2c7d07fa3b10fd616305f564116a5c1f6451c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\sercom2.h</file>
+         <hash>8253c942a89d6bd1fdc213acd583237a1ded9572bae9992ad89632012c45d897</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\gpiob.h</file>
+         <hash>a7c274b0299e4ad5d9eead5477033ce86c7d8e14c4d2e242b6a465911b0b3496</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\evsys.h</file>
+         <hash>737a6094f56a4e44384857b4dbe79bd189e06d0e6f8d529b88e1cf2ac3382b38</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\tcc.h</file>
+         <hash>d6e70487a585592d1683d3e6a2e0470a5615c1ca6b0743388e23497719dbbf25</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_log\ble_log.c</file>
+         <hash>9efc2a03e4217cd50149f1a54a916963d456159cc7099115df39e9799720807b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\dmt.h</file>
+         <hash>57594777e311db1f45b7383c16626deef26c23c7095338d533af5acaa538acff</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\eic.h</file>
+         <hash>e2d9ffe602aac94fc7756cb1154f9a07c856d2c3eca60eb77edf8d0d1c5df02a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tcc1.h</file>
+         <hash>49af7dd3a5e96c5f82349edb1c6d5431b7c45a13de89c593f68e5f677ae5f419</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\hmatrix2top.h</file>
+         <hash>d07653603afd72598843134d94c0bf8125bef7dcd12044df622e9c557c5480d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\dscon.h</file>
+         <hash>875e788e0ffae8595d616462251367b936b62dd9ba414c4c4265256bc5ad873e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\WBZ351.ld</file>
+         <hash>58633d80de2731d16183b27cd28b47bbb30100f63aaa6586d2c400a089c2ae4b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\driver.h</file>
+         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\iomem.h</file>
+         <hash>3475e8267614c3fe48f0f920feeebdd9e5f213f562de9f22a20c7d99058f28e3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\driver_common.h</file>
+         <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\tasks.c</file>
+         <hash>30fe73b690e6c3903dd2df982f02b3c06de12c65a485a8a11e498be52fc5144b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc1.h</file>
+         <hash>39c2e79bbb38c526b702f2256fa1271785843636ce406ea5711ac2cf86ea6daa</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\cmcc.h</file>
+         <hash>b4ba114991b51bc3ccbe0a03a9353842e9b00c6d626bb4dc508016f6de540adf</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_log\ble_log.h</file>
+         <hash>3cf964ad708de9c793c0d0fbc8f47dd671cecc4f599f20de0f07d78699f4eda9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\fuses.h</file>
+         <hash>f1ff44f0a5bd3bd2a35f475fb7aeabd068cec9e15ae9107035e98a261c7585f5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\osal\osal_freertos_extend.c</file>
+         <hash>f89ee8e98f2b630eea0aa34feaba123635265c143b90fb3d49718fabadef607c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\osal\osal_freertos_extend.h</file>
+         <hash>a2d0356fc305446ca12acc6926ecd18817e31ad11b3ff8a85e54ed3a99f1e4b6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\ramecc.h</file>
+         <hash>fab7ece07450f8c1f9cc9c111ed1623706ab4cb66ef8ea24ad3df51f524c105f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\initialization.c</file>
+         <hash>79ee9d587bdf1ca95d6b0a731aac68366253c1715a7e9e0f4b263af7173ec85f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\pfw.h</file>
+         <hash>c0a0e643e7d98f9a83bb463679ad19197f7382040c68a4cd7596d26e5a5fb449</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
+         <hash>869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\queue.h</file>
+         <hash>39d58a203f1b67fdb1099293914a2af9722d223586cfc5ff06e230e047919dea</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\internal.h</file>
+         <hash>e491e021d5ac7d60c362a7d6e71b9be36102473c40bc9cfacce6023cefc04958</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\tc.h</file>
+         <hash>47a5b650f536691d3d18c9da5ecc4563ff41ca9bad9535a23ae94ee5904f2daa</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\cmmask_api.h</file>
+         <hash>0b1be9f4df99de8d281c99ed8f11d7611dd2fa64a65d42482d388d286d70339c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\gpio\plib_gpio.h</file>
+         <hash>4dc4069aee7a3eb602bc43b59193c82f6a2b845d07ca9a4f6efe465fd1979333</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\version.h</file>
+         <hash>24902a559c2e8430e6381af2518b9f34226b8ea214711f949d36dd90c3f1c971</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\gpio\plib_gpio.c</file>
+         <hash>d84b22c953108f682cd12eb84438916406b347398e9058c894d4b334cfac80f6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\bt_sys_log.h</file>
+         <hash>6e274b42e61bcd4356a71dcfd70aea9fd5348520f2288d52c4c7598a108e3f49</hash>
+      </entry>
+      <entry>
+         <file>..\src\main.c</file>
+         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\ac.h</file>
+         <hash>e33a11abfa3106ee0bce95bffc908743906eb64448bf316a7228048a9021ddf9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\host_hci_defs.h</file>
+         <hash>82a2727ffe60afc5575b10fa6279508ca19b99400fd8a57d0d08c228d5f3203d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
+         <hash>d59a9e3ed4cf43a3c74a2e48f344d41be2b6363ef9394ea2c551052fe553a6af</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\stdio\xc32_monitor.c</file>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\pds\include\pds_config.h</file>
+         <hash>e5fa60f8b50cca742ec0d4c4ed29410d917b598af9b3a0f05491c8dc10ed879b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\sercom1.h</file>
+         <hash>a7897dd745e7d4eaa8820d4419c67ce7ed2f92003e7557bf4464a6e41b72a85e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\cvd.h</file>
+         <hash>0de71f03242b7061b1f9b093150a4d352679b61dfcc5b852a44b1bba864d28b1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_util\mw_aes.c</file>
+         <hash>c023e9ecd6bccb71961fc3f1e2312a812c1390c77e5cdd922b5e60f6bbb80dea</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\startup_xc32.c</file>
+         <hash>6945b6a1826ae28babaae6cd59e20b8e74e464d4de4fa6fdbb92158ffaa02257</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\dscon.h</file>
+         <hash>af94f3826675a6cb65e027150c7a3978fb0512adeed3fa8356d345d03cc40644</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\osal\osal_definitions.h</file>
+         <hash>af2f2336fac0fd5b49fb2d1c8f81baa4f554101b06f130aaa608cd9685c4ac35</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_util\mw_aes.h</file>
+         <hash>41acf2c8397c9d2f09f4e1eb9b2075b380535b119817f8f637419d981bede2fd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\nvm\plib_nvm.h</file>
+         <hash>5828792ba4998f15f0ea7d8202b45754d2f3668cfbaf8fa3f4918ad785dc2ced</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble.c</file>
+         <hash>a1dc778fa2e64137a9dfa81bc1d6a532390411e34f3f75b8a1ccfc07a1c9367d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc2.h</file>
+         <hash>b6fa6ad0ab6c14d8a44a51190e7ce96e47d321be20afccc3a78dace6dcbe2383</hash>
+      </entry>
+      <entry>
+         <file>..\src\app_ble\app_ble_dsadv.h</file>
+         <hash>fbd88d2efd0137405c778b14398de70faf5c52c1d61e939aed2b574668fe0056</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\semphr.h</file>
+         <hash>b9b2ff28a0c80fa21443690bb28de64c8b9451cccd57e484de0bcf02fc367575</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\FreeRTOS_tasks.c</file>
+         <hash>8cb1eabe18f130b2b8980e880847f773fb12a4071c763d26c51624223b32a3a4</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\event_groups.c</file>
+         <hash>a72063c3977fad098a87a5430e04e9fc5b892d703e01fbe09ea907f67aacf20e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\osal\osal.h</file>
+         <hash>c2cefdf10c48e2b0cc9ac3f137d4b4d1141f3eb5c8492d7334e1de29e6e7ea52</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\nvm\plib_nvm.c</file>
+         <hash>66a70d8a03f2b9b4bcb2f5dabf3d0573901e971112326a5078efb42e1274c9db</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
+         <hash>f28119adbc81fb0e3c957c9aebe8fb423ad93634e76ead3caa2b0818d2e123ae</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\ramecc.h</file>
+         <hash>1b328542efb53037cfb5fd2730311f2ffa5dbeb55f39bad3828b1a5ba9bf484a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\osal\osal_freertos.c</file>
+         <hash>0b0cc4b1178dc0fb47543d6505b90b99883d1f385673f9eb51019b69c18112f9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\inputslots.h</file>
+         <hash>9243eab2db80680177a0784b01f722a1d5c7e42ddbbf3a7fb9997501089d0aef</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\arb.h</file>
+         <hash>d0fb39c074c8892e28dc70758789b1b661f5d1196cf6a9109fd7bd783e1db3e1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\system\int\sys_int_mapping.h</file>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\sercom.h</file>
+         <hash>09ed6c5898719e53655a9ecaec422503f5579d77198f5f5d97a807dc12347f92</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\btzbsys.h</file>
+         <hash>526292ccc542f91ff6c00689d9d2f8e949ca52f6acf01eaab601d18ebfbccddd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\impl.h</file>
+         <hash>e1ba2d4865b9e7d8742b4223f372873bc6ca85d3bbc047a16efad39238fdbb65</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\interrupts_api.h</file>
+         <hash>27f8ee0dd2a40fdbbd9decd8d5f560e81efa4f139ef0bf0fb43dd942d872948f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\nvm.h</file>
+         <hash>821b0b6abb1558873e46115d4848dcdc57c048e30719127bf52aeeb05697fe55</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\freqm.h</file>
+         <hash>b4ca21d24096d48737965764f8376f22446c2584c428f7879824f98a3cdee9e6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\evsys.h</file>
+         <hash>2bdb64d33e1b4134ba1cfd27d6b3d81017bfe0d797937981b140450b38533d6f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\osal\osal_freertos.h</file>
+         <hash>9e0042006cd139364bcc26deb4883a7a9de77db2085a739d4783c4dd0ad29e6f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\sha2_api.h</file>
+         <hash>7a6c3222d26fe046b3246028381352892a74b2ecdefd638150162315f9500d4e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\libc_syscalls.c</file>
+         <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\lib\include\ble_dtm.h</file>
+         <hash>f83e17c278df49fb867426b4976a4bec4e58f4f7018d518de41f68f54897433d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\ed25519_api.h</file>
+         <hash>de634e84be6226f0cacd3861af0c5895742abc088d3d8ac630840671aef427cb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\device_support\include\info_block.h</file>
+         <hash>c856904feda33c7daf82dd5fec37b60b54c58e6835b0aa99b00024b73869f4cd</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\sercom0.h</file>
+         <hash>a0b00f4a4983ecbaaebe867a6d8ff562e9d80860a9e9147b4c2e3187fa3ac9d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\rcon.h</file>
+         <hash>72049e94d54524d12f95fcf6601206a6e099d44115bafb50318f576c41555ce2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\pfw.h</file>
+         <hash>1c9d6d0d2585b2209c3d11caa5dc36d18b665d033f14914c5c8f855d73186d38</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\projdefs.h</file>
+         <hash>399814721d9735e91d74ca07be3974edb20639acb46a6792230ff9f61f67b353</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\dsa_api.h</file>
+         <hash>19e980d594226a423e02d837596a4a39833b1121d5b34f562e474ce08df27edf</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\api_table.h</file>
+         <hash>1f7f0f2c69d33623d528e5c2285e19915f0130bb0c0bda7c96fdc63556050d50</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\message_buffer.h</file>
+         <hash>504a77558f13b66fd1eec5adf4d81e274f0b54c12880424833c24f577be0800a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\tc3.h</file>
+         <hash>9137f92ed51f5f15d3237ff0ded9f5b977a38abc65a61f6c50de152b22076f24</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\event_groups.h</file>
+         <hash>3b9cbd64db721c4317544700fff4e42ac68d989f71b7d610b31087bb19175839</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\cfg.h</file>
+         <hash>ad608a684ea8c3380c388af28a8c4e8c4cc89af571338842c1faa331918145e6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_info.h</file>
+         <hash>9bc50c4bb3ea684f8dbaa3080a06fcc1045014af0ac4b7c2064ff57f62f7cef0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\ble\middleware_ble\ble_dm\ble_dm_info.c</file>
+         <hash>1a0ccf621ceddac1cd3b5fe1308dba5e2fd6ea7f390d1b95213dbba464eb3635</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\statuscodes_api.h</file>
+         <hash>bb2cdbb092396142528666d2088c96a26c88f3f3c62a0d77d18982bebfd7835f</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\include\mpu_wrappers.h</file>
+         <hash>c1fc47acdb79efb0fb8a0fb8a169ae4423fdc3a6d820b2f81d49e8e077c1ed48</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\silexpk\sxbufop.h</file>
+         <hash>4662e66def6def73fa5b0e2a516e9e4d562f8d56cdaa92b853be9e1dfdc20f0a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\hmatrix2top.h</file>
+         <hash>564598c57f018a3f293b04edcd54b7feb40ebad01e307967c7a5ef9e10c98dbb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\dgi_spi.h</file>
+         <hash>e83dadd8129df10ea3d5f8aacb79c41d83a045f3532a24f27636b29b75ebe898</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\freertos_hooks.c</file>
+         <hash>ee4a4dfc44aa3d45b99065a3d972818fcbd019d39450a67f168aa7f047f55149</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\evsys\plib_evsys.c</file>
+         <hash>b2e1a8004049e687fc5544133f3346f743ced50cdaf860c8e3c7f58df3cc163f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\driver\security\sxsymcrypt\internal.h</file>
+         <hash>0697dd75fbfaf2225f75ac84654712dd245d41287f25776e82688f500fb23649</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\stream_buffer.c</file>
+         <hash>4376714fecad0f72dc4c8b45236591a7e0ffe24dd018382f56e8b0dfc2230b28</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\portable\GCC\SAM\ARM_CM4F\portmacro.h</file>
+         <hash>356ce2ec084883d8fc41d380910f828aee559f140e877629974752ea26a89792</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\peripheral\evsys\plib_evsys.h</file>
+         <hash>f7d08eb8162f271ce1db384c082586a6624e506aa7f502c64c4ab5a1aadac47d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\qspi.h</file>
+         <hash>9bcc9da79638b3ed17722126fbc1a2de19cd4faad06b11284512063da98f3c61</hash>
+      </entry>
+   </generatedFileHashHistoryMap>
+</config>

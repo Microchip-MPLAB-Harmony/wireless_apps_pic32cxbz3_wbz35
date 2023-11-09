@@ -1,0 +1,1 @@
+define({"topics":[{"title":"<ph>14.1.2.5.3.1.1<\/ph>\nTransparent Uplink Data Characteristic Behavior","shortdesc":"<p class=\"shortdesc\"\/>","href":"GUID-E702811D-F3DC-48DC-8100-C9FF9905C395_2.html","attributes":{"data-id":"GUID-E702811D-F3DC-48DC-8100-C9FF9905C395"},"menu":{"hasChildren":false},"tocID":"GUID-E702811D-F3DC-48DC-8100-C9FF9905C395-d5686e3881","topics":[]}]});

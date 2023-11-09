@@ -1,0 +1,63 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.hex.project",
+    "content": {
+        "metaDataVersion": "1.0.0",
+ 
+        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35.custom_cluster_server",
+        "version": "1.0.0",
+        "displayName": "Zigbee Custom Cluster Application - Cluster Server",
+        "shortDescription": "This aplication is a Zigbee custom cluster example, it iimplements a flowRateMonitor cluster including 7 attributes in server and 1 attribute in client. The application includes two examples to work together: custom_cluster_server example and custom_cluster_client example. It demonstrates Zigbee commissioning, finding&binding, attribute periodical report from server to client.",
+ 
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "WBZ351",
+                "versionRange": "*"
+            }
+        },
+ 
+        "board": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.boardRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.board",
+                "name": "WBZ351_CURIOSITY_BOARD",
+                "versions": "*"
+            }
+        },
+ 
+        "author": "Microchip",
+ 
+        "keywords": [
+			"MCC",
+			"Harmony",
+			"PIC32CX5109BZ31048",
+			"WBZ351",
+			"PIC32CXBZ3 Family",
+			"wireless",
+			"Zigbee",
+			"Custom",
+			"Cluster",
+			"Client",
+			"Server"
+        ],
+ 
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./../../readme.md",
+                    "mimeType": "text/markdown"
+                }
+            },
+            "hexFileNamePath": "./../../hex/custom_cluster_server.X.production.signed_1.0.0.0.hex"
+        }
+    }
+}

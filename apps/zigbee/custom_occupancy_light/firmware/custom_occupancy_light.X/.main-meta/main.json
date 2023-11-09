@@ -1,0 +1,61 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.hex.project",
+    "content": {
+        "metaDataVersion": "1.0.0",
+        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35.custom_occupancy_light",
+        "version": "1.0.0",
+        "displayName": "Zigbee Custom Device Application - Occupancy Light Device",
+        "shortDescription": "This application is a Zigbee custom device example, it implements a custom device combining clusters used by extended lighting application with occupancy sensing cluster, using the occupancy sensor to control light on and off.",
+ 
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "WBZ351",
+                "versionRange": "*"
+            }
+        },
+ 
+        "board": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.boardRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.board",
+                "name": "WBZ351_CURIOSITY_BOARD",
+                "versions": "*"
+            }
+        },
+ 
+        "author": "Microchip",
+ 
+        "keywords": [
+			"MCC",
+			"Harmony",
+			"PIC32CX5109BZ31048",
+			"WBZ351",
+			"PIC32CXBZ3 Family",
+			"wireless",
+			"Zigbee",
+			"Light",
+			"Occupancy",
+			"Custom"
+        ],
+ 
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./../../readme.md",
+                    "mimeType": "text/markdown"
+                }
+            },
+            "hexFileNamePath": "./../../hex/custom_occupancy_light.X.production.signed_1.0.0.0.hex"
+        }
+    }
+}
