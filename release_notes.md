@@ -13,8 +13,8 @@ Following table provides number of Wireless examples available for different dev
 |:--------------------------:|:-------------------:|
 | WBZ351 Curiosity Board 	 |       32             |
 
-### New Features
-## BLE Applications
+## New Features
+### BLE Applications
 - BLE peripheral Legacy Adv
 - BLE peripheral Legacy Adv 
 - BLE peripheral Ext Adv 
@@ -39,7 +39,7 @@ Following table provides number of Wireless examples available for different dev
 - BLE peripheral Code PHY transparent UART
 - BLE Peripheral BLE Multiple Advertising Sets
 
-##Zigbee Applications 
+### Zigbee Applications 
 - Zigbee Combined Interface (Coordinator)
 - Zigbee Extended Lights (Router)
 - Zigbee End Device (End Device)
