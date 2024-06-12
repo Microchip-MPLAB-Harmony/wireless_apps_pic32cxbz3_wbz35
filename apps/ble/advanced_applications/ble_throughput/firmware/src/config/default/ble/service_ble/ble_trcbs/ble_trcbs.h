@@ -66,22 +66,22 @@ extern "C" {
 /**@defgroup UUID UUID
  * @brief The definition of UUID
  * @{ */
-#define UUID_MCHP_PROPRIETARY_SERVICE_TRCB_16                      0x50, 0xEC, 0xED, 0x1A, 0xA0, 0xE8, 0xDB, 0xBD, 0xFC, 0x45, 0x20, 0x21, 0x43, 0x53, 0x53, 0x49    /* Service UUID */
-#define UUID_MCHP_TRCB_L2CAP_PSM_16                                0x1F, 0xDD, 0x25, 0x3B, 0xC1, 0x68, 0x9F, 0x9A, 0x91, 0x49, 0xDB, 0xC2, 0x43, 0x53, 0x53, 0x49    /* PSM UUID */
-#define UUID_MCHP_TRCB_CTRL_16                                     0x3C, 0xD0, 0xF7, 0x1A, 0xE9, 0x35, 0x46, 0x1E, 0xAE, 0x18, 0x84, 0x02, 0x43, 0x53, 0x53, 0x49    /* CTRL UUID */
+#define UUID_MCHP_PROPRIETARY_SERVICE_TRCB_16                      0x50,0xEC,0xED,0x1A,0xA0,0xE8,0xDB,0xBD,0xFC,0x45,0x20,0x21,0x43,0x53,0x53,0x49    /* Service UUID */
+#define UUID_MCHP_TRCB_L2CAP_PSM_16                                0x1F,0xDD,0x25,0x3B,0xC1,0x68,0x9F,0x9A,0x91,0x49,0xDB,0xC2,0x43,0x53,0x53,0x49    /* PSM UUID */
+#define UUID_MCHP_TRCB_CTRL_16                                     0x3C,0xD0,0xF7,0x1A,0xE9,0x35,0x46,0x1E,0xAE,0x18,0x84,0x02,0x43,0x53,0x53,0x49    /* CTRL UUID */
 /** @} */
 
 /**@defgroup BLE_TRCB_ASSIGN_HANDLE BLE_TRCB_ASSIGN_HANDLE
  * @brief Assigned attribute handles of BLE Transparent Credit Based Service.
  * @{ */
-#define BLE_TRCB_START_HDL                                        0x00C0                /**< The start attribute handle of BLE Transparent Credit Based service. */
+#define BLE_TRCB_START_HDL                                        (0x00C0U)                /**< The start attribute handle of BLE Transparent Credit Based service. */
 /** @} */
 
 
 /**@defgroup BLE_TRCB_PSM BLE_TRCB_PSM
  * @brief The definition of BLE Transparent Credit Based PSM.
  * @{ */
-#define BLE_TRCB_DATA_PSM                                         0x0081                /**< PSM value of data channel. */
+#define BLE_TRCB_DATA_PSM                                         (0x0081U)                /**< PSM value of data channel. */
 /** @} */
 
 

@@ -73,7 +73,7 @@
 
 // *****************************************************************************
 /* Function:
-    void CLK_Initialize( void )
+    void CLOCK_Initialize( void )
 
   Summary:
     Initializes hardware and internal data structure of the System Clock.
@@ -90,7 +90,7 @@
     function of the 'configuration bits' to configure the system oscillators.
 */
 
-void CLK_Initialize( void )
+void CLOCK_Initialize( void )
 {
     //check CLDO ready
     while ((CFG_REGS->CFG_MISCSTAT & CFG_MISCSTAT_CLDORDY_Msk) == 0U)
@@ -128,7 +128,6 @@ void CLK_Initialize( void )
     /* SPLLPOSTDIV2 = 0x1 */    
     /* SPLL_BYP     = 0x3     */
     CRU_REGS->CRU_SPLLCON = 0xc0010028U;
-
 
     //wait for PLL Lock
     while((BTZBSYS_REGS -> BTZBSYS_SUBSYS_STATUS_REG1 & 0x03U) != 0x03U)

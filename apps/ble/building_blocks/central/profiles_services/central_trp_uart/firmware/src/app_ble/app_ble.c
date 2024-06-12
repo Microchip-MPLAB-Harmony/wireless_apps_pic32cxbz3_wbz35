@@ -47,6 +47,7 @@
 
 
 
+
 #include "app_trspc_handler.h"
 
 
@@ -70,7 +71,7 @@
 // Section: Global Variables
 // *****************************************************************************
 // *****************************************************************************
-static BLE_DD_Config_T         ddConfig;
+BLE_DD_Config_T         g_ddConfig;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -162,7 +163,7 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
     //Direct event to BLE middleware
     BLE_DM_BleEventHandler(p_stackEvt);
 
-    BLE_DD_BleEventHandler(&ddConfig, p_stackEvt);
+    BLE_DD_BleEventHandler(&g_ddConfig, p_stackEvt);
 
     //Direct event to BLE profiles
 
@@ -235,7 +236,7 @@ static void APP_BleConfigAdvance(void)
     scanParam.disChannel = 0;      /* Disable specific channel during scanning */
     BLE_GAP_SetScanningParam(&scanParam);
 
-    BLE_GAP_SetConnTxPowerLevel(13, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(15, &connTxPower);      /* Connection TX Power */
 
     // Configure SMP parameters
     (void)memset(&smpParam, 0, sizeof(BLE_SMP_Config_T));
@@ -255,9 +256,10 @@ static void APP_BleConfigAdvance(void)
 
 
     // Configure BLE_DD middleware parameters
-    ddConfig.waitForSecurity = false;
-    ddConfig.initDiscInCentral = true;
-    ddConfig.initDiscInPeripheral = false;
+    g_ddConfig.waitForSecurity = false;
+    g_ddConfig.initDiscInCentral = true;
+    g_ddConfig.initDiscInPeripheral = false;
+    g_ddConfig.disableConnectedDisc = false;
 }
 
 void APP_BleStackInitBasic(void)
@@ -306,6 +308,7 @@ void APP_BleStackInitAdvance(void)
     /* Transparent Profile */
     BLE_TRSPC_Init();                                   /* Enable Client Role */
     BLE_TRSPC_EventRegister(APP_TrspcEvtHandler);   /* Enable Client Role */
+
 
 
 

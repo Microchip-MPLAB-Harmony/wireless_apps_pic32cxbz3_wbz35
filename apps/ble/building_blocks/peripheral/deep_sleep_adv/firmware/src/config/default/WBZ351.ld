@@ -85,22 +85,22 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  error BOOT_FLASH_LENGTH is greater than the max size of 0x5000
 #endif
 
+
 #ifndef BACKUPRAM_ORIGIN
 #  define BACKUPRAM_ORIGIN 0x20000000
 #endif
-
 #ifndef BACKUPRAM_LENGTH
-#  define BACKUPRAM_LENGTH 0x4000
+#  define BACKUPRAM_LENGTH 616
 #endif
-
 #ifndef RAM_ORIGIN
 #  define RAM_ORIGIN (0x20000000 + BACKUPRAM_LENGTH)
 #endif
 #ifndef RAM_LENGTH
 #  define RAM_LENGTH (0x18000 - BACKUPRAM_LENGTH)
-#elif (RAM_LENGTH > 0x18000)
+#elif ((RAM_LENGTH + BACKUPRAM_LENGTH) > 0x18000)
 #  error RAM_LENGTH is greater than the max size of 0x18000
 #endif
+
 
 #ifndef PDS_ORIGIN
 #  define PDS_ORIGIN 0x0107C000

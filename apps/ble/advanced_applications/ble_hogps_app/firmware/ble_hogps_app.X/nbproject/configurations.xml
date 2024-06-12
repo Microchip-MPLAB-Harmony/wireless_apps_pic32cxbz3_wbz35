@@ -10,14 +10,12 @@
         <itemPath>../src/app_ble/app_hogps_handler.h</itemPath>
         <itemPath>../src/app_ble/app_ble.h</itemPath>
         <itemPath>../src/app_ble/app_ble_dsadv.h</itemPath>
-        <itemPath>../src/app_ble/app_ble_log_handler.h</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
           <logicalFolder name="ble" displayName="ble" projectFiles="true">
             <logicalFolder name="lib" displayName="lib" projectFiles="true">
               <logicalFolder name="include" displayName="include" projectFiles="true">
-                <itemPath>../src/config/default/ble/lib/include/bt_sys_pta.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/att_uuid.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/ble_dtm.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/host_hci_defs.h</itemPath>
@@ -30,7 +28,6 @@
                 <itemPath>../src/config/default/ble/lib/include/stack_mgr.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/ble_smp.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/bt_sys.h</itemPath>
-                <itemPath>../src/config/default/ble/lib/include/hci.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="middleware_ble"
@@ -43,9 +40,6 @@
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_info.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_conn.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_sm.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.h</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/byte_stream.h</itemPath>
@@ -353,6 +347,12 @@
       <itemPath>../src/app_module.h</itemPath>
       <itemPath>../src/app_timer.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>ble_hogps_app.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -366,7 +366,6 @@
         <itemPath>../src/app_ble/app_ble_utility.c</itemPath>
         <itemPath>../src/app_ble/app_hogps_handler.c</itemPath>
         <itemPath>../src/app_ble/app_ble.c</itemPath>
-        <itemPath>../src/app_ble/app_ble_log_handler.c</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
@@ -380,9 +379,6 @@
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_info.c</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_conn.c</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_sm.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.c</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_aes.c</itemPath>
@@ -490,12 +486,6 @@
       <itemPath>../src/app_module.c</itemPath>
       <itemPath>../src/app_timer.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>ble_hogps_app.mc3</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -508,14 +498,14 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.1.165"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.182"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -550,6 +540,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -607,6 +598,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -646,6 +638,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -674,6 +667,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -688,6 +682,7 @@
       </C32Global>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -701,6 +696,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -735,6 +731,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
@@ -743,6 +740,7 @@
       </Tool>
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -756,6 +754,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -788,6 +787,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>

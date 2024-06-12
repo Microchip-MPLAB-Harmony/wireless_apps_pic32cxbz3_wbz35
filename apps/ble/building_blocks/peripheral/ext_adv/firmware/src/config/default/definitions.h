@@ -48,6 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "ble/lib/include/bt_sys.h"
+#include <string.h>
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -76,7 +78,8 @@
 #include "driver/device_support/include/sleep_system.h"
 #include "framework_defs.h"
 #include "app_idle_task.h"
-#include "ble/lib/include/bt_sys.h"
+#include "peripheral/evsys/plib_evsys.h"
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -101,8 +104,6 @@
 *******************************************************************************/
 #include "driver/pds/include/pds.h"
 #include "driver/pds/include/pds_config.h"
-#include "peripheral/sercom/usart/plib_sercom0_usart.h"
-#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/nvic/plib_nvic.h"
@@ -222,6 +223,31 @@ Remarks:
 
 void SYS_Tasks ( void );
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/* System Objects
+
+Summary:
+    Structure holding the system's object handles
+
+Description:
+    This structure contains the object handles for all objects in the
+    MPLAB Harmony project's system configuration.
+
+Remarks:
+    These handles are returned from the "Initialize" functions for each module
+    and must be passed into the "Tasks" function for each module.
+*/
+
+typedef struct
+{
+    char reserved;
+} SYSTEM_OBJECTS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -231,6 +257,7 @@ void SYS_Tasks ( void );
 
 
 
+extern SYSTEM_OBJECTS sysObj;
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

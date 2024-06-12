@@ -9,7 +9,6 @@
         <itemPath>../src/app_ble/app_ble.h</itemPath>
         <itemPath>../src/app_ble/app_trspc_handler.h</itemPath>
         <itemPath>../src/app_ble/app_trsps_handler.h</itemPath>
-        <itemPath>../src/app_ble/app_ble_log_handler.h</itemPath>
         <itemPath>../src/app_ble/app_ble_dsadv.h</itemPath>
         <itemPath>../src/app_ble/app_ble_utility.h</itemPath>
       </logicalFolder>
@@ -30,8 +29,6 @@
                 <itemPath>../src/config/default/ble/lib/include/stack_mgr.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/mba_error_defs.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/host_hci_defs.h</itemPath>
-                <itemPath>../src/config/default/ble/lib/include/hci.h</itemPath>
-                <itemPath>../src/config/default/ble/lib/include/bt_sys_pta.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="middleware_ble"
@@ -47,9 +44,6 @@
               </logicalFolder>
               <logicalFolder name="ble_gcm" displayName="ble_gcm" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_dd.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.h</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_assert.h</itemPath>
@@ -329,6 +323,12 @@
       <itemPath>../src/app_idle_task.h</itemPath>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>mr_ml_trp_uart.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -342,7 +342,6 @@
         <itemPath>../src/app_ble/app_ble.c</itemPath>
         <itemPath>../src/app_ble/app_trspc_handler.c</itemPath>
         <itemPath>../src/app_ble/app_trsps_handler.c</itemPath>
-        <itemPath>../src/app_ble/app_ble_log_handler.c</itemPath>
         <itemPath>../src/app_ble/app_ble_utility.c</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
@@ -360,9 +359,6 @@
               </logicalFolder>
               <logicalFolder name="ble_gcm" displayName="ble_gcm" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_dd.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.c</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_aes.c</itemPath>
@@ -451,12 +447,6 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/app_user_edits.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>mr_ml_trp_uart.mc3</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -466,13 +456,13 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.1.165"/>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.182"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
@@ -649,6 +639,7 @@
       </C32Global>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -662,7 +653,11 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -693,6 +688,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
@@ -701,6 +697,7 @@
       </Tool>
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -714,7 +711,11 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -743,6 +744,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>

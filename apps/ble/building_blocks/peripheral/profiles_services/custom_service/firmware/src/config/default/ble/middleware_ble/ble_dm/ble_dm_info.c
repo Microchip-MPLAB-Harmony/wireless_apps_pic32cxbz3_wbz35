@@ -45,20 +45,18 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include <string.h>
 #include "osal/osal_freertos_extend.h"
 #include "mba_error_defs.h"
 #include "ble_gap.h"
-#include "ble_dm/ble_dm_internal.h"
-#include "ble_dm/ble_dm_info.h"
-#include "ble_dm/ble_dm_dds.h"
+#include "ble_dm_internal.h"
+#include "ble_dm_info.h"
+#include "ble_dm_dds.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
-
 typedef struct BLE_DM_InfoCtrl_T
 {
     BLE_DM_InfoConn_T *  conn[BLE_GAP_MAX_LINK_NBR];
@@ -72,8 +70,6 @@ typedef struct BLE_DM_InfoCtrl_T
 **************************************************************************************************/
 static BLE_DM_InfoCtrl_T      *sp_dmInfoCtrl;
 
-static uint8_t          s_dmInfoFilterAcceptListCnt;
-static uint8_t          s_dmInfoFilterAcceptList[BLE_DM_MAX_FILTER_ACCEPT_LIST_NUM];
 
 /**************************************************************************************************
   Function
@@ -92,9 +88,9 @@ static BLE_DM_InfoConn_T *ble_dm_InfoGetFreeConn(void)
             if (sp_dmInfoCtrl->conn[i] != NULL)
             {
                 (void)memset((uint8_t *)sp_dmInfoCtrl->conn[i], 0, sizeof(BLE_DM_InfoConn_T));
-        }
+            }
             return sp_dmInfoCtrl->conn[i];
-    }
+        }
     }
     return NULL;
 }
@@ -122,8 +118,8 @@ static void ble_dm_FreeConn(BLE_DM_InfoConn_T * p_conn)
     if (p_conn == NULL)
     {
         return;
-}
-
+    }
+    
     for (i = 0U; i < BLE_GAP_MAX_LINK_NBR; i++)
     {
         if (sp_dmInfoCtrl->conn[i] == p_conn)
@@ -191,14 +187,15 @@ void BLE_DM_Info(STACK_Event_T *p_stackEvent)
                         {
                             BLE_DM_PairedDevInfo_T  devInfo;
 
+                            (void)memset(&devInfo, 0, sizeof(BLE_DM_PairedDevInfo_T));
                             if(BLE_DM_DdsGetPairedDevice(p_conn->devId, &devInfo)==MBA_RES_SUCCESS)
                             {
-                            BLE_SMP_PairInfo_T      pairInfo;
+                                BLE_SMP_PairInfo_T      pairInfo;
 
-                            pairInfo.lesc=devInfo.lesc;
-                            pairInfo.auth=devInfo.auth;
-                            BLE_SMP_UpdateBondingInfo(p_conn->connHandle, devInfo.encryptKeySize, &pairInfo);
-                        }
+                                pairInfo.lesc=devInfo.lesc;
+                                pairInfo.auth=devInfo.auth;
+                                (void)BLE_SMP_UpdateBondingInfo(p_conn->connHandle, devInfo.encryptKeySize, &pairInfo);
+                            }
                         }
 
                         dmEvt.connHandle=p_gapEvt->eventField.evtConnect.connHandle;
@@ -238,11 +235,14 @@ void BLE_DM_Info(STACK_Event_T *p_stackEvent)
             else
             {
 				//Shall not enter here
-        }
+            }
         }
         break;
 
         default:
+        {
+            //Do nothing
+        }
         break;
     }
 }
@@ -342,8 +342,6 @@ uint16_t BLE_DM_InfoSetResolvingList(uint8_t devCnt, uint8_t const *p_devId, uin
         return MBA_RES_INVALID_PARA;
     }
 
-    BLE_GAP_GetLocalPrivacy(&enable, &privacy);
-
     p_resolvingList = OSAL_Malloc(sizeof(BLE_GAP_ResolvingListParams_T) * devCnt);
     if (p_resolvingList == NULL)
     {
@@ -357,7 +355,9 @@ uint16_t BLE_DM_InfoSetResolvingList(uint8_t devCnt, uint8_t const *p_devId, uin
     {
         BLE_DM_PairedDevInfo_T pairedInfo;
 
-        if ((result = BLE_DM_DdsGetPairedDevice(p_devId[i], &pairedInfo)) != MBA_RES_SUCCESS)
+        (void)memset(&pairedInfo, 0, sizeof(BLE_DM_PairedDevInfo_T));
+        result = BLE_DM_DdsGetPairedDevice(p_devId[i], &pairedInfo);
+        if (result != MBA_RES_SUCCESS)
         {
             break;
         }
@@ -370,7 +370,7 @@ uint16_t BLE_DM_InfoSetResolvingList(uint8_t devCnt, uint8_t const *p_devId, uin
             break;
         }
 
-        if (pairedInfo.localIrk[0]==0x00 && memcmp(pairedInfo.localIrk, pairedInfo.localIrk+1, 15) == 0)
+        if ((pairedInfo.localIrk[0]==0x00U) && (memcmp(pairedInfo.localIrk, pairedInfo.localIrk+1, 15) == 0))
         {
             (void)memcpy(p_resolvingList[i].localIrk, privacy.localIrk, 16);
         }

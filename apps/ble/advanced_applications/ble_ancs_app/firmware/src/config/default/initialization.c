@@ -239,11 +239,6 @@ SYSTEM_OBJECTS sysObj;
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
-#define QUEUE_LENGTH_BLE        (32)
-#define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
-#define EXT_COMMON_MEMORY_SIZE  (28*1024)
-OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
-
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -269,6 +264,11 @@ OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
+
+#define QUEUE_LENGTH_BLE        (32)
+#define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
+#define EXT_COMMON_MEMORY_SIZE  (28*1024)
+OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -353,8 +353,6 @@ void SYS_Initialize ( void* data )
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
-    BT_SYS_Cfg_T        btSysCfg;
-    BT_SYS_Option_T     btOption;
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -381,8 +379,10 @@ void SYS_Initialize ( void* data )
     // Initialize the RF Clock Generator
     SYS_ClkGen_Config();
 
+    BT_SYS_Cfg_T        btSysCfg;
+    BT_SYS_Option_T     btOption;
   
-    CLK_Initialize();
+    CLOCK_Initialize();
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
@@ -397,9 +397,9 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    EVSYS_Initialize();
-
     SERCOM0_USART_Initialize();
+
+    EVSYS_Initialize();
 
     NVM_Initialize();
 
@@ -472,6 +472,7 @@ void SYS_Initialize ( void* data )
     OSAL_QUEUE_Create(&bleRequestQueueHandle, QUEUE_LENGTH_BLE, QUEUE_ITEM_SIZE_BLE);
 
     // Retrieve BLE calibration data
+    (void)memset(&btSysCfg, 0, sizeof(BT_SYS_Cfg_T));
     btSysCfg.addrValid = IB_GetBdAddr(&btSysCfg.devAddr[0]);
     btSysCfg.rssiOffsetValid =IB_GetRssiOffset(&btSysCfg.rssiOffset);
 
@@ -483,10 +484,12 @@ void SYS_Initialize ( void* data )
     btSysCfg.adcTimingValid =IB_GetAdcTiming(&btSysCfg.adcTiming08, &btSysCfg.adcTiming51);
 
     //Configure BLE option
+    (void)memset(&btOption, 0, sizeof(BT_SYS_Option_T));
     btOption.hciMode = false;
     btOption.cmnMemSize = EXT_COMMON_MEMORY_SIZE;
     //Configure BLE option
     btOption.p_cmnMemAddr = OSAL_Malloc(btOption.cmnMemSize);
+    btOption.deFeatMask = 0;
 
     // Initialize BLE Stack
     BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);

@@ -46,6 +46,7 @@
 
 
 
+
 #include "app_trsps_handler.h"
 
 
@@ -198,7 +199,7 @@ static void APP_BleConfigBasic(void)
     
 
     // Configure advertising parameters
-    BLE_GAP_SetAdvTxPowerLevel(11,&advTxPower);      /* Advertising TX Power */
+    BLE_GAP_SetAdvTxPowerLevel(15,&advTxPower);      /* Advertising TX Power */
     
     (void)memset(&advParam, 0, sizeof(BLE_GAP_AdvParams_T));
     advParam.intervalMin = 1600;     /* Advertising Interval Min */
@@ -218,7 +219,7 @@ static void APP_BleConfigBasic(void)
     (void)memcpy(appScanRspData.advData, scanRspData, appScanRspData.advLen);     /* Scan Response Data */
     BLE_GAP_SetScanRspData(&appScanRspData);
 
-    BLE_GAP_SetConnTxPowerLevel(13, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(15, &connTxPower);      /* Connection TX Power */
 }
 static void APP_BleConfigAdvance(void)
 {
@@ -302,6 +303,7 @@ void APP_BleStackInitAdvance(void)
     /* Transparent Profile */
     BLE_TRSPS_Init();                                   /* Enable Server Role */
     BLE_TRSPS_EventRegister(APP_TrspsEvtHandler);   /* Enable Server Role */
+
 
 
 

@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -155,6 +154,11 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
+
 
 
 // *****************************************************************************
@@ -170,11 +174,6 @@ SYSTEM_OBJECTS sysObj;
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
-#define QUEUE_LENGTH_BLE        (32)
-#define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
-#define EXT_COMMON_MEMORY_SIZE  (28*1024)
-OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
-//bool OnBoard_User_Button2_SW3_status = true;
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -200,6 +199,11 @@ OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
+
+#define QUEUE_LENGTH_BLE        (32)
+#define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
+#define EXT_COMMON_MEMORY_SIZE  (28*1024)
+OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -233,8 +237,6 @@ OSAL_API_LIST_TYPE     osalAPIList;
 // *****************************************************************************
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
-/* Declared in console device implementation (sys_console_uart.c) */
-extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
 
 static const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
 {
@@ -288,8 +290,6 @@ static const SYS_CONSOLE_INIT sysConsole0Init =
 
 
 
-// <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
-
 
 
 
@@ -299,7 +299,7 @@ static const SYS_CONSOLE_INIT sysConsole0Init =
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -313,11 +313,9 @@ static const SYS_CONSOLE_INIT sysConsole0Init =
 
 void SYS_Initialize ( void* data )
 {
+
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
-
-    BT_SYS_Cfg_T        btSysCfg;
-    BT_SYS_Option_T     btOption;
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -345,31 +343,45 @@ void SYS_Initialize ( void* data )
     // Initialize the RF Clock Generator
     SYS_ClkGen_Config();
 
+    BT_SYS_Cfg_T        btSysCfg;
+    BT_SYS_Option_T     btOption;
   
-    CLK_Initialize();
+    CLOCK_Initialize();
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
+
     /* Configure Prefetch, Wait States by calling the ROM function whose address is available at address 0xF2D0 */
-    typedef int (*FUNC_PCHE_SETUP)(uint32_t);
-    ((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
+    typedef int (*FUNC_PCHE_SETUP)(uint32_t setup);
+    (void)((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
                                     | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)));
+
+    /* MISRAC 2012 deviation block end */
 
 
 
 	GPIO_Initialize();
-
-    SERCOM0_USART_Initialize();
-
-    EIC_Initialize();
 
     RTC_Initialize();
 
     NVM_Initialize();
 
     ADCHS_Initialize();
+
+    SERCOM0_USART_Initialize();
+
     DMAC_Initialize();
+
+    EIC_Initialize();
+
     TCC0_CompareInitialize();
 
 
-    
+
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
     // Initialize RF System
     SYS_Load_Cal(WSS_ENABLE_BLE);
  
@@ -394,6 +406,8 @@ void SYS_Initialize ( void* data )
 
     osalAPIList.OSAL_MemAlloc = OSAL_Malloc;
     osalAPIList.OSAL_MemFree = OSAL_Free;
+
+
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -425,13 +439,26 @@ void SYS_Initialize ( void* data )
 
 
 
-    sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+   /* MISRAC 2012 deviation block end */
 
+    
+	#ifdef ENABLE_TOUCH
+//    OnBoard_User_Button2_SW3_status = GPIO_PinRead(GPIO_PIN_RA4);
+ 
+//    if(OnBoard_User_Button2_SW3_status == false)
+    {
+        touch_init();
+    }
+	#endif
 
     // Create BLE Stack Message QUEUE
     OSAL_QUEUE_Create(&bleRequestQueueHandle, QUEUE_LENGTH_BLE, QUEUE_ITEM_SIZE_BLE);
 
     // Retrieve BLE calibration data
+    (void)memset(&btSysCfg, 0, sizeof(BT_SYS_Cfg_T));
     btSysCfg.addrValid = IB_GetBdAddr(&btSysCfg.devAddr[0]);
     btSysCfg.rssiOffsetValid =IB_GetRssiOffset(&btSysCfg.rssiOffset);
 
@@ -439,36 +466,29 @@ void SYS_Initialize ( void* data )
     {
         btSysCfg.antennaGain = 3;
     }
-   
+
     btSysCfg.adcTimingValid =IB_GetAdcTiming(&btSysCfg.adcTiming08, &btSysCfg.adcTiming51);
 
     //Configure BLE option
+    (void)memset(&btOption, 0, sizeof(BT_SYS_Option_T));
     btOption.hciMode = false;
     btOption.cmnMemSize = EXT_COMMON_MEMORY_SIZE;
+    //Configure BLE option
     btOption.p_cmnMemAddr = OSAL_Malloc(btOption.cmnMemSize);
+    btOption.deFeatMask = 0;
 
     // Initialize BLE Stack
     BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);
-    
 
-    #ifdef ENABLE_TOUCH
-//    OnBoard_User_Button2_SW3_status = GPIO_PinRead(GPIO_PIN_RA4);
-
-//    if(OnBoard_User_Button2_SW3_status == false)
-    {
-        touch_init();
-    }
-#endif
-
-
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
 
 
     NVIC_Initialize();
 
+
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File

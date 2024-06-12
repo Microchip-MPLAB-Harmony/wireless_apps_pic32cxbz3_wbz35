@@ -48,7 +48,15 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "ble/lib/include/bt_sys.h"
+#include "touch/touch.h"
+#include "peripheral/rtc/plib_rtc.h"
+#include "peripheral/rcon/plib_rcon.h"
+#include "peripheral/nvm/plib_nvm.h"
+#include "peripheral/adchs/plib_adchs.h"
+#include "system/int/sys_int.h"
+#include "system/cache/sys_cache.h"
+#include "osal/osal.h"
+#include "system/debug/sys_debug.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -77,6 +85,8 @@
 #include "driver/device_support/include/sleep_system.h"
 #include "framework_defs.h"
 #include "app_idle_task.h"
+#include "ble/lib/include/bt_sys.h"
+#include <string.h>
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -108,19 +118,11 @@
 #include "peripheral/dmac/plib_dmac.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/eic/plib_eic.h"
-#include "peripheral/rtc/plib_rtc.h"
-#include "touch/touch.h"
-#include "peripheral/nvm/plib_nvm.h"
-#include "peripheral/adchs/plib_adchs.h"
 #include "peripheral/tcc/plib_tcc0.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "system/int/sys_int.h"
-#include "system/cache/sys_cache.h"
-#include "osal/osal.h"
-#include "system/debug/sys_debug.h"
 #include "app.h"
 
 
