@@ -885,8 +885,6 @@
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/sys_tasks.h</itemPath>
-          <itemPath>../src/config/default/device_sleep.h</itemPath>
-          <itemPath>../src/config/default/device_deep_sleep.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
@@ -1324,8 +1322,6 @@
           <itemPath>../src/config/default/startup_xc32.c</itemPath>
           <itemPath>../src/config/default/initialization.c</itemPath>
           <itemPath>../src/config/default/tasks.c</itemPath>
-          <itemPath>../src/config/default/device_sleep.c</itemPath>
-          <itemPath>../src/config/default/device_deep_sleep.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">

@@ -76,7 +76,7 @@
 #include "driver/device_support/include/sleep_system.h"
 #include "framework_defs.h"
 #include "app_idle_task.h"
-#include "device_sleep.h"
+//#include "device_sleep.h"
 #include "device_deep_sleep.h"
 #include "peripheral/evsys/plib_evsys.h"
 /*******************************************************************************

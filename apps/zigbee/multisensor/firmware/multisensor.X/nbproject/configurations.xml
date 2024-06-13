@@ -817,7 +817,6 @@
           <itemPath>../src/config/default/interrupts.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/device_cache.h</itemPath>
-          <itemPath>../src/config/default/device_sleep.h</itemPath>
           <itemPath>../src/config/default/framework_defs.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/sys_tasks.h</itemPath>
@@ -1209,7 +1208,6 @@
           <itemPath>../src/config/default/interrupts.c</itemPath>
           <itemPath>../src/config/default/tasks.c</itemPath>
           <itemPath>../src/config/default/initialization.c</itemPath>
-          <itemPath>../src/config/default/device_sleep.c</itemPath>
           <itemPath>../src/config/default/libc_syscalls.c</itemPath>
           <itemPath>../src/config/default/freertos_hooks.c</itemPath>
         </logicalFolder>

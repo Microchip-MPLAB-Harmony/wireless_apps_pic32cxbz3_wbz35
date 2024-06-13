@@ -810,7 +810,6 @@
               <itemPath>../src/config/default/zigbee/z3device_configs/stackConfig.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/default/device_sleep.h</itemPath>
           <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/device_vectors.h</itemPath>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
@@ -1203,7 +1202,6 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/default/device_sleep.c</itemPath>
           <itemPath>../src/config/default/libc_syscalls.c</itemPath>
           <itemPath>../src/config/default/startup_xc32.c</itemPath>
           <itemPath>../src/config/default/interrupts.c</itemPath>
