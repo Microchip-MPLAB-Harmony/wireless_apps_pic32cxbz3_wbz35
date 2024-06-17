@@ -6067,7 +6067,7 @@
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;FreeRTOS&quot; x=&quot;351&quot; y=&quot;58&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;HarmonyCore&quot; x=&quot;510&quot; y=&quot;59&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PROFILE_PXP&quot; x=&quot;249&quot; y=&quot;159&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;SERVICE_IAS&quot; x=&quot;471&quot; y=&quot;239&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;SERVICE_IAS&quot; x=&quot;472&quot; y=&quot;240&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;SERVICE_LLS&quot; x=&quot;469&quot; y=&quot;152&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;SERVICE_TPS&quot; x=&quot;669&quot; y=&quot;259&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;cmsis&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
@@ -7560,7 +7560,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>103df2a0e28a1db2e09c1c2eabbdf88c485012349e853d9d3e26782408b2b523</hash>
+         <hash>f20840e0cc812c61d8592be883ae904b3631a418f0d8fb05e45de42fba9e92c7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -7768,7 +7768,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>fd21fb66e734ecba271e6dfa678ccc20777fd6ba7a8e0535abd758f2aebc1766</hash>
+         <hash>06d7f0723d173acd9cbff3f211e78196f5396a15a71b3acf058bcbacc45b2ab3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
