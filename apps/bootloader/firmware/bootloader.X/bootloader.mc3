@@ -5671,7 +5671,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\pio\wbz351.h</file>
-         <hash>00ea1e639def675da0c8d8085bf8537fb14a72208ea2244559e167596895f95b</hash>
+         <hash>e4a2bf67dca717eeb5d83216ae29df2f7380b634b293f2d05ea9a866f0ef6a55</hash>
       </entry>
       <entry>
          <file>..\src\config\default\toolchain_specifics.h</file>
@@ -5679,7 +5679,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc4.h</file>
-         <hash>dc3685ae6c4b7cd4b8fc651bb13884bb49c0dd284621d2af53f1371fbc4bfd44</hash>
+         <hash>229af6ad03f9a2263fa454bced8bc6ce82454a7604384f3700fd42a0dec85528</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\sha1_api.h</file>
@@ -5687,11 +5687,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\rot.h</file>
-         <hash>18cd11979b8b9b00aab1db112f94bec3d2da2f75ea8ecc2b4fe929205ede0f27</hash>
+         <hash>1bb812d4a4cb3b8b93e30a748268c9c20d27c6d6940ee2a4421741a92fed3ac0</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pche.h</file>
-         <hash>efb0a9fdb3eef1b60cf6ca6bfdf99d229cb50c9ce36993db4f3d2747ea479d6a</hash>
+         <hash>4f7d814cb22e675f414eb93ab2c3af6b9c5bb7603e40330e14ffa1bd9c247d09</hash>
       </entry>
       <entry>
          <file>..\src\config\default\sys_tasks.h</file>
@@ -5703,15 +5703,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cfg.h</file>
-         <hash>22dcbb648f352a7d70f66de84d671719f6e5e6895cc4e3b4c08d57efbedf7251</hash>
+         <hash>2c3ec18d3d8a9a3941f0e57b15f6ce3652b02db63eecfd2636ed83522780d051</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pmu.h</file>
-         <hash>c477f6af8e376b150afffa7456f4735b313c2fea080c16eaa0c6a4b239bc9db4</hash>
+         <hash>b7085e81a6d3abc9e685d6109e0a2b575a4d26ab17f2f44e0317c6b5676a3fa1</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\qspi.h</file>
-         <hash>17d7373cce8c28db46382cb568d5958ef62ea080889a43ad4baf0c33b3a8d7fa</hash>
+         <hash>23e7b72465fd51d080c5e96b12f5e51d5b02be69c70f5162def651cca4b8d720</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\rsa.h</file>
@@ -5719,15 +5719,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\freqm.h</file>
-         <hash>dd80a30a77e9f65b6a22bdef5f765ba204d8ee2b6c2bc08d4c12bcea572e2506</hash>
+         <hash>c095f85336f49f440b46cb78b525e7569ebda8236ba09d9aef3a6bdea871b50a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\rtc.h</file>
-         <hash>59a62d4154d8e69d2feaec472d27919db43497c33d110e90023dd855e8c1e111</hash>
+         <hash>4b90f67d2fcd5ef00e9746af6cd4836ae41bbf88dac28e5eac8702e42b047a10</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dmac.h</file>
-         <hash>7d853e0596d59e32eb2be9c983a6df7a94c3724c52d2d661090bae874f00ab5c</hash>
+         <hash>6a36d217d3a430852d617d45abaa034b666f793426ca0fc064f262e04e381717</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\trng_api.h</file>
@@ -5735,23 +5735,23 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ccl.h</file>
-         <hash>cbaf035449a739f1004fdc32e6c3b319ae4eb9813176eff09365a9d5692f8529</hash>
+         <hash>e7f8a4686679c1c8ec6e1de06e19998f9c8b9068ee35f17e450eee540c3bfc92</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\nvm.h</file>
-         <hash>be1febbc178cecba24f1774515bc2343833795b10667962fd734c78850ad7755</hash>
+         <hash>7a24d26acb65f17d97994af1a671b58e96218f2718ccaef049ab8cb353581ea3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\rot.h</file>
-         <hash>94f93ce42fdfd168e0449836f30396c37f4c1c43a3176a255dab1ea99712c4a8</hash>
+         <hash>6c799519708571f4c1afa28e24271cb0fbae933e5b3609458008f49704ee7583</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\rcon.h</file>
-         <hash>fc4ffa3e723682cd349cdbe06c7fcca3a6460c7f0f41b7c8bcbf868d260ead32</hash>
+         <hash>86f1f6a2b4c5f4015f42997d70f4a8ce8ff33d2f0d08179571cfe58327f8de25</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc5.h</file>
-         <hash>18e7cdf562bfb5c685747eecebeae557488f86a35be99687268c482f483f4145</hash>
+         <hash>010319f0eacb13b03fa34f172625b153f09d03aeba756924b59f4a67072dc823</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -5759,11 +5759,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cmcc.h</file>
-         <hash>df45a3a716b334c324dc7a9ff98f116e852c77ffaf289f9c9e6f3a282b9d0944</hash>
+         <hash>336022f4411949af2074ab28b6ca498495126f596e88555c07f8313ceb3d6c31</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\rtc.h</file>
-         <hash>d967e8f6d4e98b23ae78dea1d63114e8a493ac9ff5503fd791ff4986bceed5bc</hash>
+         <hash>06bbf9cbdc8dfed5e03e0c1f5c40edbbd9cf263ef319491fcf9be1234d409f6c</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -5779,7 +5779,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dac_ctrl.h</file>
-         <hash>f07253f0bb1f46a30f6e00fa328ae244e8fd5b37e4fc0b2f076de0007dfe2fd7</hash>
+         <hash>93c5f605b6f47269aaf4ce547952b45e7258ecd1647da3303c30c42ccf1eed06</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\hmac_api.h</file>
@@ -5803,15 +5803,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\adchs.h</file>
-         <hash>39da652115e47f074917f093d9a0ab0d4fc250731cdfaf157ff17e93d253e766</hash>
+         <hash>016bd2aa79912b5ba256f4a02df3711d9a369aec276d889a1b081699b57961ff</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\silex.h</file>
-         <hash>c9237d7aa8313eb1c1d608eab5231a8f651f09f7829bf84bddeb445ff96afe26</hash>
+         <hash>4e7147abd65e3ff6d8097d7b99cc7c2d1b72d38bce835f49887a74e91e5b4195</hash>
       </entry>
       <entry>
          <file>..\src\dfu\pe\src\uart.c</file>
-         <hash>f2464fe787fb898b90837771c1fe4f31b0fd21b8cfb26e943a4b920237da8896</hash>
+         <hash>5e8696d99ce118a97e2ca70e18f23d7302fcd940230791f756f904383d2b2c01</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\system_common.h</file>
@@ -5819,11 +5819,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pac.h</file>
-         <hash>5f1c710ab0b6e322999b6ecc61deb9bd13a89e2dcfbfe3d2f41a754d72cb6ffc</hash>
+         <hash>7288bc15bfb96a81658740087ad218701b79043eafb8844965adc499705c3d50</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -5831,15 +5831,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\adchs.h</file>
-         <hash>3e7f3a472c4895c799b1966b9915c8fe91082b97d5686b24c767022eaf1513b7</hash>
+         <hash>0d9eb61cd31603e2e33d2fa4fc46fd26d92f168753cdfabcd3dc0b2cba817611</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pmu.h</file>
-         <hash>45a75e06e58a26fd8799357aa94017fce3609065990e19d9f4677b26ababdc4f</hash>
+         <hash>3eb25a9667a64ddd6b7eb8aba014447446fa90310ea3557cacd629f427e87da3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\zigbee.h</file>
-         <hash>80668435dc73fb6fd314f40076e57703b3239077a16f2ffc9d92fa9423bcac01</hash>
+         <hash>d0c7ce9d82a9549f3b50293b824d4333a64786ff01a2fc20ad8aea60d194f56f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\sst26\src\drv_sst26_local.h</file>
@@ -5851,11 +5851,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ac.h</file>
-         <hash>ea454efd005df1ed6106cd5c798f4e7c93c839dfd42e538ede1932597747a913</hash>
+         <hash>089855baf685982d9f6daec73067ab00dc1daad4cc58bd20f24aa75a21e14560</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dmac.h</file>
-         <hash>ba6a91c624a81d2c6a7f448c377a4990d8378b18ddb6630fa220cee29b8a9ca7</hash>
+         <hash>54b252996bb3a9b6fc7132eaaf90dc32d8f6682054e9037775d9dea2b50b613b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\ecjpake.h</file>
@@ -5863,11 +5863,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc6.h</file>
-         <hash>a368d7c389094936f403a2cdef1f75d287884927f796b0117f6b7ce628fbe25a</hash>
+         <hash>068770f4c7fd0e324aa54ea07b1b413c59564f0333c3312e7971288f1ef8ad00</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\silex.h</file>
-         <hash>b6c7e48e4c260bd65cf74a7c75578d3f88e783f404cc023467b25f5e9df38886</hash>
+         <hash>d2d98d871891cdbae5526e4563072347e42846d874178ebc766385bf29f154bc</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\system_module.h</file>
@@ -5875,7 +5875,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\zigbee.h</file>
-         <hash>73409d6f42065b684f5423609c17489fede4ec7ce8794724b3c43635d2086c0a</hash>
+         <hash>34b188500ba5ec5556873dcb01c165e02c4853fa4362374f0a9a213aa9d20717</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvic\plib_nvic.h</file>
@@ -5891,7 +5891,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ccl.h</file>
-         <hash>8d87a3fa2a352a07dc78b5f644d04a51b0642d370cc35147bca56b30bffa8508</hash>
+         <hash>9bbf53351a29344e0ad9f4b2e0905158ba1425311f48e2dffe602a1d1f27bde9</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -5899,19 +5899,19 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\fuses.h</file>
-         <hash>6fe5699bdf6913b024d2600adfb1ed6e29b6d9fe52a5d740e9a3818486e12ea0</hash>
+         <hash>b85b18c67923e43c46988d61f8f8460bada232ddde4ea822173f796326aee979</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tcc2.h</file>
-         <hash>4629b918cefde9801de4e745fa1fa311a9ab1387ebeef7560dc08630ba9cfc22</hash>
+         <hash>267d877d2235e5022294ce6430f072a2b66c3273def5f878734e614da29a03e5</hash>
       </entry>
       <entry>
          <file>..\src\application.h</file>
-         <hash>97ff225a66767eb737ff0e4cb67c0bb873997430d1465bdb9be7e37ed0632217</hash>
+         <hash>415db8109faabe7d429d07ef15b0e66a2bacdffae75bf041414efae44e103ef6</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dac_ctrl.h</file>
-         <hash>e2fca5fc33db789f1ad9032ce6c994e1acb8782b3c68ab7e38a87c6bf649924e</hash>
+         <hash>f4879a723997db9b3c2c45082b99a1d02282e314cc29991bb2ccfe6182810c52</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device_cache.h</file>
@@ -5919,11 +5919,11 @@
       </entry>
       <entry>
          <file>..\src\regdef.h</file>
-         <hash>63bf5be754256e5030b94e7637391bf3e9c97af97f7ffa7f8707f61c3d194cc3</hash>
+         <hash>d32cc731d278d2cafe923802ea45365018d3d4ca702c080945c827d50599ebc7</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dsu.h</file>
-         <hash>baa043105975e35888918189f99a9c1448340d586b92768a3f1aa2aab25cf952</hash>
+         <hash>8d9abfb46057543f556b488e569e89be09646f74b4a31772d8f64fcc2fe074e4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
@@ -5931,19 +5931,19 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pps.h</file>
-         <hash>84e6488439c023647cf44f6513ec15b180dfdd16210b530b792ef9928cbea9ad</hash>
+         <hash>a23edd48b4264fbf27c2e81b66311bf30ecff3210011ed04382482d8fba8da80</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ble.h</file>
-         <hash>9c179f50f316f92002c99e6a8f3615b9fdeb2a42ecac6753754a47a1f0a2e35d</hash>
+         <hash>20795f436e3a7d5fc3f587e294af5eaca9246a602393e7cdb21731a93d0326ba</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pche.h</file>
-         <hash>622bc175a2d415c6853cd928d3dd60b2943da0157fb2f59ffbee4dce6e2e9b98</hash>
+         <hash>a55272d9277c2b8a18cee3335ddc3078c9586278185bb4008642a010c81c1fa1</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\btzbsys.h</file>
-         <hash>6d50ad5000a0b51c8084e17ce8df56880bb6c121baaf0383a3a9f788e46a7076</hash>
+         <hash>d916cefc2d6b16942689faecb3d3186b29dd4d39b61d9d3642417433981cd22f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -5955,15 +5955,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\wbz351.h</file>
-         <hash>af4c0657541eb633afe3af0cf39fa0d4b8a0bea81709580825c3b0940262e7b4</hash>
+         <hash>fc588ba8c8ad73d4510c9ceb8c5099b96e679c399a13f3c519a401d6a2a81229</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc7.h</file>
-         <hash>f6e81a675c58089dc312737322bc1abc3f7cb19752da47454ecc899a8f7ece94</hash>
+         <hash>86ac625c98ddcddcd974a75d2b95e33a40460eb39240b88ade9098e6e185bc93</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
-         <hash>aacd69b943bbac7ac9b5b218efaca23dc2e74b7a9ef0a00ed9679e80624d9951</hash>
+         <hash>424304a9ee621ec343d9bce5057e75575abaa4528ef0f2ba741f0601eae8e115</hash>
       </entry>
       <entry>
          <file>..\src\config\default\configuration.h</file>
@@ -5971,27 +5971,27 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
-         <hash>39b2476052565e9b20debaa1266d19d5072cff729d06d053e629dc57699ec485</hash>
+         <hash>2d1939a0da512a64fea40fffe4c2f30f2d3d16344591a807c5814fc1e67fcc01</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pps.h</file>
-         <hash>95ef906d09a086176cc2418426dcddcdc29c85c4d2a2253916f6fe1729275f35</hash>
+         <hash>6bd516b50f09f66882b113e8f2be9ace56dfcc7659fe1eacf53fd575ef3f3847</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pac.h</file>
-         <hash>fed0ba616a1a301370917126fa9a3351f2fec2fc9cae3837c8a9fbdc046e4590</hash>
+         <hash>32272e987d5b2f89be637010bb1673685e7780bf6be2bad9cf424d37a4d33ca7</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cru.h</file>
-         <hash>87713306a7cac2721e8e495f14510cf1e224bb487d11c76a1fda0753d09e99b3</hash>
+         <hash>b5a671c41d46ab18ce4af3e73054aa62db11c6ca4652c7fd223a02404fcd0408</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\eic.h</file>
-         <hash>dba8ac6eadc1caed79ea57acddf68ce97dc2fbb0d492e689a7b2e3e122aa2e22</hash>
+         <hash>f05796efd4468219176fb257c55e0e868774ce9e078d0b73e2479d03b0f6499b</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ble.h</file>
-         <hash>2d27c5d3d372e552ad0de4300c73ae2a4fb969a09afca63b658aebbd4fd4f411</hash>
+         <hash>2d21eff186d3e629b03454ec7a850cfeb3bc96d08681c5eed88f301bc6e7f4de</hash>
       </entry>
       <entry>
          <file>..\src\config\default\exceptions.c</file>
@@ -6019,11 +6019,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dgi_spi.h</file>
-         <hash>899c3797c8e516b2679c4929fe291152abe78d30506c6d73cda8ba6750bd072f</hash>
+         <hash>0d5b4d0765ef4a6366402bcca098dd588f5566aef8b5f6557f2e07c9cd6d5651</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\wdt.h</file>
-         <hash>0cbeb46e58838c76461f1e196e9555e906c76629c49649b190180aedf8ff16c3</hash>
+         <hash>be97175972335c5bd7b68644ec9f386141c066efddb377a26738969cf99d963c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\int\src\sys_int.c</file>
@@ -6039,11 +6039,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\gpioa.h</file>
-         <hash>4eff77ba4d8828f45238e34eb82665baf5d857661ac233d885639bc0a18455ab</hash>
+         <hash>afab6de260f1d16d5fb02aa932d1a0d0e36012a71e644538540f68f656abf60c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\gpio.h</file>
-         <hash>b4de8f1b166f7feb8aef073e134c3662228a63b4b190f6ebf8a11512459f78f3</hash>
+         <hash>89b0ab44cb2156726c9ff6f411b9709af08c29711bf5f6f400367295e39beef0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\sst26\drv_sst26.h</file>
@@ -6051,19 +6051,19 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\arb.h</file>
-         <hash>c491e38d3d35ebdabceca1274edae85e7da9d6da816e84af3a01fb3944b7db01</hash>
+         <hash>eb5d91ad77d802e595347aec77f55392a66ad21b1da1fb00c2944c6328613c6c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dmt.h</file>
-         <hash>555bd2f2e84316f1226c7ea6d519837f9e74bc803b7a5238175f51ed8ffbad92</hash>
+         <hash>1f1ea871bc26ad9e2d5d334ef3d628f2bbfeca82b530880b2ec52bc2aff76bee</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dsu.h</file>
-         <hash>4ea7c286f9980da95d0f229e0c1344b74f6a03ee0319a50cc4a0142083b1bdb5</hash>
+         <hash>a19cda7fa16c3b93660b6c9bfb03dd93f7c459495135d12ef8f1200808b9d094</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tcc0.h</file>
-         <hash>5ac111b33a0a7fc9249312e0ca88ba7df8060214398d0c8458c8138899582220</hash>
+         <hash>48c13bc39c31b42793666b7c75e4a9597ef2fa21efa86e9f9e864a4da86dc0c3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\hash_api.h</file>
@@ -6071,7 +6071,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc0.h</file>
-         <hash>f7d163102bb4bb09cfa6e81222c9482c51d4a0997bf10404aaf474f45d3da9b1</hash>
+         <hash>26cc51cc2ee3146408dfbac5d733145b17872f44bee222feda0e80cd1bcec3d8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\statuscodes.h</file>
@@ -6087,11 +6087,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cvd.h</file>
-         <hash>dfcddeb450333f76df0045ce6b6989a7394542dfb6d7663c0eb4fd78e1dd5573</hash>
+         <hash>963a284b381689b0e8fb5afe21783ef1e492967fd6365c1df13e5b94eba2bec0</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cru.h</file>
-         <hash>e57b1bf7e80f3f440a11542ff9d538102ce883df8537d5c4ff5c3cf2db4e1bcc</hash>
+         <hash>c78b650c585cce697ed9a28c7d7608aa433afbc0fc16ab4c7eb13405050d4806</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\ec_curves_api.h</file>
@@ -6099,7 +6099,7 @@
       </entry>
       <entry>
          <file>..\src\config.c</file>
-         <hash>1a19dd3306f1daad21254e255f866a7ed7bf4e63aab12d292d0c79ee41052cfa</hash>
+         <hash>3cd37d343e8fdfa870e424dbd49d81b3fd9a5996b6b78fe9eb59db6ae4cfbcf9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\sm3_api.h</file>
@@ -6135,7 +6135,7 @@
       </entry>
       <entry>
          <file>..\src\app.c</file>
-         <hash>2294d34c39ca0d654dbff4f91166ba184d6d21c2960764ec24f71f1515bf523f</hash>
+         <hash>a13577a6cda0a4bc607562907e165f31868772c6fd5765721e5f865c258b1989</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
@@ -6147,51 +6147,51 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\wdt.h</file>
-         <hash>abf68153cee06ec71b8e084b4079c2363a737579c611cbd79d4c24e337649764</hash>
+         <hash>5f613c4cf40a0ed5e04916ddaa9b0fe0b483cd78dfee36af5c31ad9560b1e6a4</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\sercom2.h</file>
-         <hash>6d0f8e8b718d0953bc70de986d6570b20976a778b8fee61e0594f3b20b451a1d</hash>
+         <hash>b3f09746a03c16767eb82eafe83a5896ac30223e8adb5e3fce83abddb427e5d1</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\gpiob.h</file>
-         <hash>0abe0e9c4e5de6e383f7886e56fcde5051dc097f3d817b7d9b1c4ff685770b2e</hash>
+         <hash>7fa3e90ea5efa2ec4fab27ed2a2fec4c991ff157e46de39ceaec75c297f3437e</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\evsys.h</file>
-         <hash>31eb98c66cbdc6cac7a42e0710d3a678cb4cc7c8d4255ab8f62350dcc2b46550</hash>
+         <hash>3101b8cad74fc6469ceb73d9c16d9a0744a7222785c199a2e2191e2d10800da0</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\tcc.h</file>
-         <hash>8e647bff1652ae2a1a4ef0a8cbae7f3986682bc1101715218dfa6c501b3b3442</hash>
+         <hash>dadf63fd032246da51fe39ecc9ec33f481014f81d5b9233e9b322ea62f6df723</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dmt.h</file>
-         <hash>9b20e68c44bf000b8d93a5d0f558edea3087fe314f4fea9066a179ee81ec8721</hash>
+         <hash>f5769b8c8e472fd74f9cf4d9e6c3007ba4cb3f0b3bea877e0e1c17827530cd72</hash>
       </entry>
       <entry>
          <file>..\src\config\default\config.h</file>
-         <hash>d84cd983547376d67783004f4e50563a6bac0813a0f9538e2ae30f0e30077ae3</hash>
+         <hash>23a17fd6737016903f18d5850378b3a9678a88344eee39c17d7bf58702472e3a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\eic.h</file>
-         <hash>9bd40ba6db2d2c46406015ea82083478f5b85f3608d23e6f956fd91876c4ba38</hash>
+         <hash>de3a35c9191ca90c65f8f091cb5d4b0008c6606bdbc1281e817e0b2197caa705</hash>
       </entry>
       <entry>
          <file>..\src\mem_interface.h</file>
-         <hash>1bf9b057eb6f35d812fb8b12f2e8f20ca14ae03dbdd03dd20e8df598a61e23ae</hash>
+         <hash>6f93dbdfc4db7ab14d37c9e7fa0e4742b423725afe23d941ac60f6a0edfc5679</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tcc1.h</file>
-         <hash>922747ccc3a8dd970b94b06a618c6ef5cd9b085af67d634b1a1215589d7c186f</hash>
+         <hash>c40bb3ef26e2dda45c6cdf839bfc9a71738eed5ed23992d1fec33bbbfed0c45d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\hmatrix2top.h</file>
-         <hash>b0f86e6131d502cd8b62852919e4665e7e9b03ad4e671de3e0319b4659cd3e9b</hash>
+         <hash>e7a97b79efe1fa335fbd1798c18cb853f5dd32eacb4b97e4e3c0e5bdd14808c4</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dscon.h</file>
-         <hash>7838ed9ce19eb62d09a49f59a8d3e4d7558febbbd69770abaf0b929c05fc8090</hash>
+         <hash>d511b80be84000d083a3c1c7a91f4a7528269af8b7e86054d336d0859286d812</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\driver.h</file>
@@ -6211,19 +6211,19 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc1.h</file>
-         <hash>5ac2e53a2f74e7d31247ff75d927fd842f697adceccfde5ddc70a9c49e784893</hash>
+         <hash>8f58a2a3d8955e2b5772e91de6008d6a926ee19d2994f643e165535bbd2502e3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cmcc.h</file>
-         <hash>ce0365e93286e5e6bd589d7680602134484cb66abdf959b93a07764c4621c864</hash>
+         <hash>d04a74423c046c17a21883b4b762d95207721dbc3ca6da80637a9b3e1d532ca0</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\fuses.h</file>
-         <hash>c5fbf156463a49859cc6a01da1ee2319bea3addb9dce335a63a7ea4d53da2ca2</hash>
+         <hash>2acae52c3d39e21dda9e323e2fb965e552f6d27b560e9301be8592a1795bc75c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ramecc.h</file>
-         <hash>2996d789e63fc9412696c2ebdce8a7d4f268368a2606a759666af28981be7535</hash>
+         <hash>9f2145bbd3056db87a1f32260b89fc81ae38e1d4c1352cba2d6c93a712ffd0e3</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\qspi\plib_qspi.c</file>
@@ -6231,11 +6231,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>33dadd7bd2ef2fc6a1415aa41a9673ac549103d14108c0f46f257ac3ab7caecf</hash>
+         <hash>fc3c9fd8fa7fb34b27f99728adebf9115b01046eedb189d2e9f0181c5a22f37a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pfw.h</file>
-         <hash>abfbdf1ee9003f8f6d0f1f55532272901fb8f20dad59e50f32a58add50118e5f</hash>
+         <hash>59c789c4f914bd5930dd3b4864cbb396abd3265c2ad5aa784dc5878c82884781</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -6251,7 +6251,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\tc.h</file>
-         <hash>642eab630dd240213e979482a52d3efe3f76663936514fc05b4894e10222e71d</hash>
+         <hash>23fd8496839b6165bfd19c3846eeeec9b6fe99dad8297ac7385e288bd3e11924</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\cmmask_api.h</file>
@@ -6275,7 +6275,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ac.h</file>
-         <hash>22257f2c6d219062e1769737ee1de8598c695635c85df21f2067a21debcbec8f</hash>
+         <hash>0d28717422a17590c2691c91451f6fade9a1ff0e75534397d09e69588203503b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\PIC32CX5109BZ31048.ld</file>
@@ -6291,15 +6291,15 @@
       </entry>
       <entry>
          <file>..\src\dfu\pe\include\crc.h</file>
-         <hash>f8764132e48f2cad36c9fb68748378f22ab4d3da036bf0a4f64257cf9a4cffd6</hash>
+         <hash>d2754290fc425262d4ae79fe09ddbef1db51a56094ca93089422d58e76044d01</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\sercom1.h</file>
-         <hash>8f9627c58a042b51a9c7dee36a65d253c9691baf8808d5f318a13ca4efb8d53b</hash>
+         <hash>cd3147acb1cdf99564319d8c4f9b23c34e8b8cb932d329d6304a19328029c0fd</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cvd.h</file>
-         <hash>80d9c918e321946889797d89f0b4e720e76f8dba220bac660040db784050745b</hash>
+         <hash>5678474e03c614e559aee2bb57f8ddca443398dff271b91942412d20cc73e807</hash>
       </entry>
       <entry>
          <file>..\src\config\default\startup_xc32.c</file>
@@ -6307,15 +6307,15 @@
       </entry>
       <entry>
          <file>..\src\security.h</file>
-         <hash>2ce5584646817489e706d76e38ab9730fe9c48ad0b145e53720eed7c184cbafe</hash>
+         <hash>111603f5a15476cf0f410414740cdad088bc146a35f0a23d053006bb17cfd7c1</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dscon.h</file>
-         <hash>797c86815ae5e9d607fad99fb59101ac421dbf87c9456b9166e993e59332612b</hash>
+         <hash>adcc84d4cb97716fcc60296af281da0b02176387a5f2bbcf5e41e29cc13ef1c8</hash>
       </entry>
       <entry>
          <file>..\src\security.c</file>
-         <hash>76f67508d61bd0f62f64fe1386fcd2b096fe089cb78007e78f492e9dc07afb70</hash>
+         <hash>8f682d2f1da8710711bb4be056ec083f388bf0a33fcba3acbca706dae3a4fe5a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal_definitions.h</file>
@@ -6323,7 +6323,7 @@
       </entry>
       <entry>
          <file>..\src\dfu\pe\src\crc.c</file>
-         <hash>420179ac9a28274a262c29178284a6a5a30175ab117594679230dbb23a214a46</hash>
+         <hash>2d4687b9781d1c43c667d4bcc2dbefcbede847d803e742adb6404486ceb7e396</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvm\plib_nvm.h</file>
@@ -6331,11 +6331,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc2.h</file>
-         <hash>0cc3408659a29f19f368eb3ebf2838842380ae1598f43af1b66d3af029aa4471</hash>
+         <hash>d46f4acb051fd61975b0e473dee5771141eed2992362b9800a4beb3a9ade0200</hash>
       </entry>
       <entry>
          <file>..\src\dfu\pe\src\progexec.c</file>
-         <hash>32357b79b188d12618438583acbe6f803221c2e8937a80d1d9ab0c40e23c20d0</hash>
+         <hash>084e40fde877c4d04d3c0abd04184391cc4c7c9b69b0d66695102813fa4b0e16</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvm\plib_nvm.c</file>
@@ -6351,11 +6351,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ramecc.h</file>
-         <hash>708c9959aec91a8aa4a64e9100952baeded7b05c802be6ae9a3858564466a5dc</hash>
+         <hash>e1616d3e3da3fd3669419cf8ff34654c07bf53efb75d1c431b9d4a1e0a52398d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\arb.h</file>
-         <hash>8c76c50f0bcce51724396f0fc1e7ef67622a73dc7456ae87214b71d1d72506af</hash>
+         <hash>4a4d97ab5d5b561f15cfe3c019920df6a81a424dc056bd14b47111d68c659d2f</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\inputslots.h</file>
@@ -6367,11 +6367,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\sercom.h</file>
-         <hash>7f056fa4abf1832c5b02fc1fe1e9714576f97c710abf0b9ab0601f1876e7a89e</hash>
+         <hash>ccdefce9fced728a6a9b928c5db9ca8c6fae2f84e955b897dbab1fff3c4c703c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\btzbsys.h</file>
-         <hash>8f64e773c9f8cf42fa28ceb9e0a5f63e813a330e581f2c2b9f9db540e6d57a17</hash>
+         <hash>83cd1a9500269c1dae61c2e9af90e58eaa951763b8d8cf3059a2bfbdb3d6ef07</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\impl.h</file>
@@ -6383,15 +6383,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\nvm.h</file>
-         <hash>32bb4c716c6c0fbfe9c2c28bf562a41379ca35a6f8cb1ce50be79cc40a350033</hash>
+         <hash>ad0b98c08b7e9dab02a088cb31804e179ce87fb60f60151e1fa6d0ee03f1fd61</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\freqm.h</file>
-         <hash>8bf0b95ea7c7e03bf7ad998dc6633af5ead06b9123dd5480016ea1b33fcb0a8e</hash>
+         <hash>cc133bc6acbabb1ff18b465ae1bc89fdc536c723db82c39ea59da6a4934e8f4b</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\evsys.h</file>
-         <hash>ef33cbde4bdea53a01f220dfcb53fc52b9d2633ea2a6432daa70c99170bc15e0</hash>
+         <hash>0445313a44d1c60ed193fe45d15ce89360207167713dc54f329ba731e75f0dfc</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\sha2_api.h</file>
@@ -6407,15 +6407,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\sercom0.h</file>
-         <hash>a5c22141ca1e2c72f0e4bd1b459f51b2f943a24e108fa991727386c514558aa6</hash>
+         <hash>5df89e701670dc02c31396d3017d93bd4857379163f0a2abbf153f181fa037cf</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\rcon.h</file>
-         <hash>8630eb5513f6457ac6125851535eeedcc978ebb2361e68d5420e74a981be8af0</hash>
+         <hash>602fd502e9b62bbfa7a2b041b21f52e3470caabf72d3d53a1fb316190c0ba0cc</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pfw.h</file>
-         <hash>891d717ba82e48a74d93e8611dfd5080e3813ba917ea160991235e22dfbd5842</hash>
+         <hash>9ba13e22fb0436d7086e72cf30c490da4b3dcac78db7f7c1efc1f6aeb811d987</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\dsa_api.h</file>
@@ -6427,11 +6427,11 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc3.h</file>
-         <hash>a4c9b21a53b52a340d792b7d0c9096afbc8b4a649af7a660dcc3a3e6f8ef364d</hash>
+         <hash>c4f52bc4fa1898a7b0f48813b83e1ebc9664061a76fc84359961b3cd791a1653</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cfg.h</file>
-         <hash>5e93de1583338787768365d7c26a70641aebb74430fb2ead5faa9c95982dc299</hash>
+         <hash>7aece7889ed352fc19061ca623c1bc1364ead4e1940fa52631b56e39110410c1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\silexpk\statuscodes_api.h</file>
@@ -6443,15 +6443,15 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\hmatrix2top.h</file>
-         <hash>83a746012973b4efcf49398f261b9d94dedd3a9ff001f7b4aae233f441f064eb</hash>
+         <hash>30319666d41d4811603ab726177c086c551c9e0059673918002cf53e14e2736b</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dgi_spi.h</file>
-         <hash>43dc5156031bca8f2a107c067919a34998a1a58825b5cdca7b2bcd12b32071a3</hash>
+         <hash>b1fef604d699cb0acd14fc9f5b03622a486dd8fe23112f22157f45cecf176a8a</hash>
       </entry>
       <entry>
          <file>..\src\dfu\pe\include\uart.h</file>
-         <hash>046269e22223b11aa07758c61c1e78a1b26af70c1ab0c8a09653d9de658b8adc</hash>
+         <hash>f4c17f10406bdf74421d132d5865a14736f145133ac28e982bdc5b3a2ed266d6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\sst26\src\drv_sst26.c</file>
@@ -6459,19 +6459,19 @@
       </entry>
       <entry>
          <file>..\src\dfu\dfu.c</file>
-         <hash>2f5effb0ec3c3657cb4d2f8bb19a4c5a8bb09aae86e7d2f3586f1ed9d7f295ca</hash>
+         <hash>f9476c90133bf8e2346382d9569f77077bcadfddacca9cf413a2cc90f16ea657</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\evsys\plib_evsys.c</file>
-         <hash>b2e1a8004049e687fc5544133f3346f743ced50cdaf860c8e3c7f58df3cc163f</hash>
+         <hash>171913270aa095f1e8ff9192995129ff7bab22e5c793c4223f9046802e69d1e6</hash>
       </entry>
       <entry>
          <file>..\src\dfu\dfu.h</file>
-         <hash>b8b42a35a9b1081593ff96ef5100ad6db5871e056f44db7fe692bfb639152817</hash>
+         <hash>3668f50336e93df63ac357b56682efcc728154052adec3cc13406ffb433b7e06</hash>
       </entry>
       <entry>
          <file>..\src\dfu\pe\include\progexec.h</file>
-         <hash>0f5030320f09ab110c742a36a4bcdb494cfa7c7bb2a594571dfdfa9f24d22139</hash>
+         <hash>9ad7946e3bc5b84ec05cb4e3bc5b8258d9ba20d891d4b3af02887efe475f4e7a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\security\sxsymcrypt\internal.h</file>
@@ -6487,7 +6487,7 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\qspi.h</file>
-         <hash>979ea93b151c56bcd6e8eb0fd482bed6c5133f74904ae9b1fd0c2a5bdbfa740a</hash>
+         <hash>368aea2a639a2613e25cfca01a94304225d8a9430c7615a3ae9461d0d09e723f</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
