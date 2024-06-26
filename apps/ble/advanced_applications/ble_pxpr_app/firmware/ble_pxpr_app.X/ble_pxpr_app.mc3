@@ -2429,6 +2429,32 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_HEAP_1_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_HEAP_1_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_HEAP_4_C"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
+  &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_HEAP_4_C&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+  &lt;/FreeRTOS&gt;
+&lt;/FreeRTOS&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_IDLE_HOOK"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
   &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_IDLE_HOOK&quot;&gt;
@@ -2659,7 +2685,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FreeRTOS" name="FREERTOS_MEMORY_MANAGEMENT_CHOICE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;FreeRTOS&gt;
   &lt;FreeRTOS dnOrder=&quot;0&quot; id=&quot;FREERTOS_MEMORY_MANAGEMENT_CHOICE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Heap_1&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/FreeRTOS&gt;
 &lt;/FreeRTOS&gt;
 </value>
@@ -6056,7 +6084,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;376&quot; canvasWidth=&quot;818&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;362&quot; canvasWidth=&quot;817&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -7348,7 +7376,7 @@
       </entry>
       <entry>
          <file>..\src\app_ble\app_ble.c</file>
-         <hash>300d959c2a434335ada00d82ae099fd6cb1c59ab1328459d6e1b6923caf290ad</hash>
+         <hash>a00a8a418bc7dd8c8097c8c2192c7b183d8ef1a6b79fe5a625c0401bad458f62</hash>
       </entry>
       <entry>
          <file>..\src\app_ble\app_ble.h</file>
@@ -7384,7 +7412,7 @@
       </entry>
       <entry>
          <file>..\src\app_idle_task.c</file>
-         <hash>fdf686a9cf068ccb693ff4815330faf13e593c1df888c864bbc3525b7475b67a</hash>
+         <hash>86b489ebdc9d646394ccf766354024b50eacf5c162a2dcbbaeaa75c96f41af0e</hash>
       </entry>
       <entry>
          <file>..\src\app_idle_task.h</file>
@@ -7560,7 +7588,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>f20840e0cc812c61d8592be883ae904b3631a418f0d8fb05e45de42fba9e92c7</hash>
+         <hash>29addf0e38038bb675239fbe3ebefb0f9a735afb6145ffcea9b1ad33823a395a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -7592,7 +7620,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a</file>
-         <hash>ee66ce3fa44d069acf5e380cf68c4f0c1fb61a2b283adf15e8c92e81e027c17c</hash>
+         <hash>e4911a87c9719f662897ce999c4c52d96edc22d4ac2bb0b3876bc948d6bd04ca</hash>
       </entry>
       <entry>
          <file>..\src\config\default\driver\driver.h</file>
@@ -7768,7 +7796,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>06d7f0723d173acd9cbff3f211e78196f5396a15a71b3acf058bcbacc45b2ab3</hash>
+         <hash>c4cae46eda8ef113bd3f230624b0b00795aacdeb1c0dd998e7b92af66c4f3781</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
@@ -8415,8 +8443,8 @@
          <hash>284552cdf69a53d3c8afaf3f270f4bd11d8dd9ab462bb06d62b9ef99f3819619</hash>
       </entry>
       <entry>
-         <file>..\src\third_party\rtos\FreeRTOS\Source\portable\MemMang\heap_4.c</file>
-         <hash>3a16d742be46814ed11142c370519f74d004e21afdcb2b3e0584a30011f52186</hash>
+         <file>..\src\third_party\rtos\FreeRTOS\Source\portable\MemMang\heap_1.c</file>
+         <hash>7155176186aff6591df2f5f82c3b3bfe8f94c96536b604dcdc4f54e0ad8eb6e9</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\queue.c</file>
