@@ -86,12 +86,18 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #endif
 
 
+#ifndef BACKUPRAM_ORIGIN
+#  define BACKUPRAM_ORIGIN 0x20000000
+#endif
+#ifndef BACKUPRAM_LENGTH
+#  define BACKUPRAM_LENGTH 616
+#endif
 #ifndef RAM_ORIGIN
-#  define RAM_ORIGIN 0x20000000
+#  define RAM_ORIGIN (0x20000000 + BACKUPRAM_LENGTH)
 #endif
 #ifndef RAM_LENGTH
-#  define RAM_LENGTH 0x18000
-#elif (RAM_LENGTH > 0x18000)
+#  define RAM_LENGTH (0x18000 - BACKUPRAM_LENGTH)
+#elif ((RAM_LENGTH + BACKUPRAM_LENGTH) > 0x18000)
 #  error RAM_LENGTH is greater than the max size of 0x18000
 #endif
 
@@ -110,6 +116,7 @@ MEMORY
 {
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH  
   pds (RX) : ORIGIN = PDS_ORIGIN, LENGTH = PDS_LENGTH
+  bkupram    : ORIGIN = BACKUPRAM_ORIGIN, LENGTH = BACKUPRAM_LENGTH  
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH  
   config_D0045F88 : ORIGIN = 0xD0045F88, LENGTH = 0x4
   config_D0045F8C : ORIGIN = 0xD0045F8C, LENGTH = 0x4
@@ -119,6 +126,15 @@ MEMORY
 
 }
 
+SECTIONS {
+    .bkupram_data : {
+      *(.bkupram_data .bkupram_data.*)
+    } > bkupram
+    .bkupram_bss : {
+      *(.bkupram_bss .bkupram_bss.*)
+      *(.pbss .pbss.*)
+    } > bkupram
+}
 
 /*************************************************************************
  * Output region definitions.

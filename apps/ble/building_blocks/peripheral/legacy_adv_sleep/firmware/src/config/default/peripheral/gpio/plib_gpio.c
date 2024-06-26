@@ -59,19 +59,10 @@
 void GPIO_Initialize ( void )
 {
  
-    /* Disable JTAG since at least one of its pins is configured for Non-JTAG function */
-    CFG_REGS->CFG_CFGCON0CLR = CFG_CFGCON0_JTAGEN_Msk;
-    /* PORTA Initialization */
+          /* PORTA Initialization */
     GPIOA_REGS->GPIO_CNPUSET = 0x7ff3U; /* Pull-Up Enable */
     /* PORTB Initialization */
     GPIOB_REGS->GPIO_CNPUSET = 0x3fd6U; /* Pull-Up Enable */
-
-    /*  PB  */
-    GPIOB_REGS->GPIO_ANSELSET = 0x0040; //PB6 ANSEL for Temp sensor
-
-    GPIOB_REGS->GPIO_TRISSET = 0xFFFF;  //Set all pins as input
-    GPIOB_REGS->GPIO_CNPUSET = 0x3D96;  //Pull up: PRB 1, 2, 4, 7, 8, 10, 11, 12 , 13
-    GPIOB_REGS->GPIO_CNPDSET = 0x0029;  //Pull down RB0,3,5 for LED
 
 
     /* PPS Input Remapping */
