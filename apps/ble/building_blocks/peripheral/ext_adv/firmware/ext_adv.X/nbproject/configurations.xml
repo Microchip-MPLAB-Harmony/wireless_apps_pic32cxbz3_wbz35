@@ -7,8 +7,8 @@
       <logicalFolder name="app_ble" displayName="app_ble" projectFiles="true">
         <itemPath>../src/app_ble/app_ble_handler.h</itemPath>
         <itemPath>../src/app_ble/app_ble.h</itemPath>
-        <itemPath>../src/app_ble/app_ble_utility.h</itemPath>
         <itemPath>../src/app_ble/app_ble_dsadv.h</itemPath>
+        <itemPath>../src/app_ble/app_ble_utility.h</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
@@ -105,8 +105,8 @@
               </logicalFolder>
               <itemPath>../src/config/default/driver/security/api_table.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/default/driver/driver_common.h</itemPath>
             <itemPath>../src/config/default/driver/driver.h</itemPath>
+            <itemPath>../src/config/default/driver/driver_common.h</itemPath>
           </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
             <itemPath>../src/config/default/osal/osal_freertos_extend.h</itemPath>
@@ -148,11 +148,11 @@
               <itemPath>../src/config/default/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
-              <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
+              <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/default/system/system.h</itemPath>
             <itemPath>../src/config/default/system/system_module.h</itemPath>
+            <itemPath>../src/config/default/system/system.h</itemPath>
             <itemPath>../src/config/default/system/system_common.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
@@ -445,14 +445,14 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
         <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.182"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -716,6 +716,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1000000-20017fff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/i68148/Downloads/ext_adv 5/ext_adv/firmware/ext_adv.X/debug/default/ext_adv_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

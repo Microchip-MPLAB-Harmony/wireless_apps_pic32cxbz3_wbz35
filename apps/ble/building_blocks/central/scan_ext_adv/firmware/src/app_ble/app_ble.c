@@ -213,11 +213,7 @@ static void APP_BleConfigAdvance(void)
     BLE_GAP_ConfigureBuildInService(&gapServiceOptions);
 
     // Configure scan parameters
-    scanParams.le1mPhy.enable = true;       /* Scan PHY */
-    scanParams.le1mPhy.type = BLE_GAP_SCAN_TYPE_PASSIVE_SCAN;      /* Scan Type */
-    scanParams.le1mPhy.interval = 160;      /* Scan Interval */
-    scanParams.le1mPhy.window = 32;      /* Scan Window */
-    scanParams.le1mPhy.disChannel = 0;      /* Disable specific channel during scanning */
+    scanParams.le1mPhy.enable = false;      /* Scan PHY */
     scanParams.leCodedPhy.enable = true;        /* Scan PHY */
     scanParams.leCodedPhy.type = BLE_GAP_SCAN_TYPE_PASSIVE_SCAN;        /* Scan Type */
     scanParams.leCodedPhy.interval = 160;        /* Scan Interval */

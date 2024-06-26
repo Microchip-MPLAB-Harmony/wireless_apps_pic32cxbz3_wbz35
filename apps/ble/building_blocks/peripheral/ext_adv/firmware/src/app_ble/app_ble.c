@@ -56,6 +56,7 @@
 
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Macros
@@ -189,7 +190,7 @@ static void APP_BleConfigBasic(void)
     
 
 
-    BLE_GAP_SetConnTxPowerLevel(13, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(15, &connTxPower);      /* Connection TX Power */
 }
 static void APP_BleConfigAdvance(void)
 {
@@ -212,7 +213,7 @@ static void APP_BleConfigAdvance(void)
     
     //Configure advertising Set 1
     advParams.advHandle = 1;        /* Advertising Handle */
-    advParams.evtProperies = BLE_GAP_EXT_ADV_EVT_PROP_SCANNABLE_ADV; /* Advertising Event Properties */
+    advParams.evtProperies = 0; /* Advertising Event Properties */
     advParams.priIntervalMin = 1600;     /* Primary Advertising Interval Min */
     advParams.priIntervalMax = 1600;     /* Primary Advertising Interval Max */
     advParams.priChannelMap = BLE_GAP_ADV_CHANNEL_ALL;       /* Primary Advertising Channel Map */
@@ -317,6 +318,7 @@ void APP_BleStackInitAdvance(void)
     //Initialize BLE services
 
     //Initialize BLE profiles
+
 
 
 

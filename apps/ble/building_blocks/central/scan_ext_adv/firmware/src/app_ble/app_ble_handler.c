@@ -49,6 +49,7 @@
 #include "osal/osal_freertos_extend.h"
 #include "app_ble_handler.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
+#include "definitions.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variables
@@ -205,6 +206,12 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
 
+        }
+        break;
+
+        case BLE_GAP_EVT_PATH_LOSS_THRESHOLD:
+        {
+            /* TODO: implement your application code.*/
         }
         break;
 

@@ -39,7 +39,8 @@
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
-
+#define BLE_ROLE_CLIENT 1
+#define BLE_ROLE_SERVER 2
 // *****************************************************************************
 /* Application Data
 
@@ -80,6 +81,8 @@ uint16_t conn_hdl[3];// connection handle info captured @BLE_GAP_EVT_CONNECTED e
 uint8_t uart_data;
 uint8_t no_of_links;// No of connected peripheral devices
 uint8_t i = 0;// link index
+extern uint16_t conn_hdl_role[3];
+
 void uart_cb(SERCOM_USART_EVENT event, uintptr_t context)
 {
   APP_Msg_T   appMsg;   
@@ -95,9 +98,18 @@ void uart_cb(SERCOM_USART_EVENT event, uintptr_t context)
 }
 
 void APP_UartCBHandler()
-{
-    // Send the data from UART to connected device through Transparent service
-    BLE_TRSPC_SendData(conn_hdl[i], 1, &uart_data);
+{    
+    uint8_t index = 0;
+    for(index = 0; index < no_of_links; index++)
+    {
+        if(conn_hdl_role[index] != BLE_ROLE_CLIENT)
+            BLE_TRSPS_SendData(conn_hdl[index], 1, &uart_data);
+        else 
+        {
+            if(index == i)
+                BLE_TRSPC_SendData(conn_hdl[index], 1, &uart_data);
+        }
+    }   
     i++;
     if(i==no_of_links) i = 0; //reset link index    
 }

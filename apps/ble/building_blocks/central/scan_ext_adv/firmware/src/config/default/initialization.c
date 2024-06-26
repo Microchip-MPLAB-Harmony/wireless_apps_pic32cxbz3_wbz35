@@ -204,6 +204,7 @@ OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
+#define REGULATORY_REGION "ETSI"
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -332,14 +333,14 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    SERCOM0_USART_Initialize();
-
     EVSYS_Initialize();
+
+    SERCOM0_USART_Initialize();
 
     NVM_Initialize();
 
 
-
+    
     /* MISRAC 2012 deviation block start */
     /* Following MISRA-C rules deviated in this block  */
     /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
@@ -425,7 +426,7 @@ void SYS_Initialize ( void* data )
 
     // Initialize BLE Stack
     BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);
-
+    
     /* MISRAC 2012 deviation block end */
     APP_Initialize();
 

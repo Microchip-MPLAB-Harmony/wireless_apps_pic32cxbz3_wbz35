@@ -50,6 +50,10 @@
 #include "app_ble_handler.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
 
+#define BLE_ROLE_CLIENT 1
+#define BLE_ROLE_SERVER 2
+
+uint16_t conn_hdl_role[3];
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variables
@@ -80,7 +84,32 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
             SERCOM0_USART_Write((uint8_t *)"Disconnected\r\n", 15);
-
+            uint16_t rmv_conn_hdl = p_event->eventField.evtDisconnect.connHandle;
+            uint8_t i = 0;
+            for(i = 0; i < no_of_links; i++)
+            {
+                if (conn_hdl[i] == rmv_conn_hdl)
+                {
+                    uint16_t tmp_hdl = conn_hdl[no_of_links-1];                    
+                    conn_hdl[no_of_links-1] = conn_hdl[i];
+                    conn_hdl[i] = tmp_hdl;
+                    
+                    uint16_t tmp_role = conn_hdl_role[no_of_links-1];
+                    conn_hdl_role[no_of_links-1] = conn_hdl_role[i];
+                    conn_hdl_role[i] = tmp_role;
+                }
+            }
+            if(conn_hdl_role[no_of_links-1] == BLE_ROLE_CLIENT)
+            {
+                BLE_GAP_SetScanningEnable(true, BLE_GAP_SCAN_FD_ENABLE, BLE_GAP_SCAN_MODE_OBSERVER, 1000);
+                SERCOM0_USART_Write((uint8_t *)"Scanning \r\n", 11);
+            }
+            else
+            {
+                BLE_GAP_SetAdvEnable(0x01, 0x00);
+                SERCOM0_USART_Write((uint8_t *) "Advertising\r\n", 13);
+            }
+            no_of_links--;
         }
         break;
 
@@ -229,6 +258,12 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         }
         break;
 
+        case BLE_GAP_EVT_PATH_LOSS_THRESHOLD:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+
         default:
         break;
     }
@@ -298,12 +333,20 @@ void APP_GattEvtHandler(GATT_Event_T *p_event)
         case GATTC_EVT_DISC_PRIM_SERV_RESP:
         {
             /* TODO: implement your application code.*/
+            uint8_t i = 0;
+            for(i=0; i<no_of_links;i++)
+                if(conn_hdl[i] == p_event->eventField.onDiscPrimServResp.connHandle)
+                    conn_hdl_role[i] = BLE_ROLE_CLIENT;
         }
         break;
 
         case GATTC_EVT_DISC_PRIM_SERV_BY_UUID_RESP:
         {
             /* TODO: implement your application code.*/
+            uint8_t i = 0;
+            for(i=0; i<no_of_links;i++)
+                if(conn_hdl[i] == p_event->eventField.onDiscPrimServByUuidResp.connHandle)
+                    conn_hdl_role[i] = BLE_ROLE_CLIENT;
         }
         break;
 

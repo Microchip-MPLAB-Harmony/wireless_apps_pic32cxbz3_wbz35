@@ -70,7 +70,6 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 
-
 /**@addtogroup BT_SYS_DEFINES Defines
  * @{ */
 
@@ -217,6 +216,14 @@ bool BT_SYS_Init(void *p_reqQueueHandle, void *p_osalApiList, BT_SYS_Option_T *p
  *
  */
 void BT_SYS_ReadVersion(uint32_t *p_version);
+
+
+/**@brief Query if BT is ready for idle.
+ *
+ * @retval true                                     Ready for idle.
+ * @retval false                                    Not ready for idle.
+ */
+bool BT_SYS_Ready4Idle();
 
 
 /**@brief Query if BT is sleeping.

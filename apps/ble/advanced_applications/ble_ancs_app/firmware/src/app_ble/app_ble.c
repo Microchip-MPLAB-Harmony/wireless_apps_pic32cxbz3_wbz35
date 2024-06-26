@@ -75,7 +75,7 @@
 // Section: Global Variables
 // *****************************************************************************
 // *****************************************************************************
-static BLE_DD_Config_T         ddConfig;
+BLE_DD_Config_T         g_ddConfig;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -167,7 +167,7 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
     //Direct event to BLE middleware
     BLE_DM_BleEventHandler(p_stackEvt);
 
-    BLE_DD_BleEventHandler(&ddConfig, p_stackEvt);
+    BLE_DD_BleEventHandler(&g_ddConfig, p_stackEvt);
 
     //Direct event to BLE profiles
 
@@ -264,7 +264,7 @@ static void APP_BleConfigBasic(void)
     (void)memcpy(appScanRspData.advData, scanRspData, appScanRspData.advLen);     /* Scan Response Data */
     BLE_GAP_SetScanRspData(&appScanRspData);
 
-    BLE_GAP_SetConnTxPowerLevel(13, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(15, &connTxPower);      /* Connection TX Power */
 }
 static void APP_BleConfigAdvance(void)
 {
@@ -316,9 +316,9 @@ static void APP_BleConfigAdvance(void)
 
 
     // Configure BLE_DD middleware parameters
-    ddConfig.waitForSecurity = false;
-    ddConfig.initDiscInCentral = false;
-    ddConfig.initDiscInPeripheral = true;
+    g_ddConfig.waitForSecurity = false;
+    g_ddConfig.initDiscInCentral = false;
+    g_ddConfig.initDiscInPeripheral = true;
     //ddConfig.disableConnectedDisc = false; //not generated automatically by MCC, manually added
 
     //If paired device exists, set resolving list
@@ -387,6 +387,7 @@ void APP_BleStackInitAdvance(void)
 
     BLE_ANCS_Init();
     BLE_ANCS_EventRegister(APP_AncsEvtHandler);
+
 
 
     APP_BleConfigAdvance();

@@ -2,12 +2,12 @@
 
 manifest_file_version: 1.0.0
 project: central_trp_uart_codedPhy
-creation_date: 2024-06-03T11:50:43.949+05:30[Asia/Calcutta]
+creation_date: 2024-06-18T23:26:33.868+05:30[Asia/Calcutta]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
 device_name: WBZ351
-compiler: XC32 4.40
+compiler: XC32 4.35
 mcc_version: 5.5.0
 mcc_core_version: 5.7.0
 content_manager_version: 5.0.0
