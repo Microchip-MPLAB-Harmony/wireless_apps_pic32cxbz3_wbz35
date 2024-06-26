@@ -10,7 +10,6 @@
         <itemPath>../src/app_ble/app_ble_handler.h</itemPath>
         <itemPath>../src/app_ble/app_ble_utility.h</itemPath>
         <itemPath>../src/app_ble/app_ble_dsadv.h</itemPath>
-        <itemPath>../src/app_ble/app_ble_log_handler.h</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
@@ -362,7 +361,6 @@
         <itemPath>../src/app_ble/app_trspc_handler.c</itemPath>
         <itemPath>../src/app_ble/app_ble_handler.c</itemPath>
         <itemPath>../src/app_ble/app_ble_utility.c</itemPath>
-        <itemPath>../src/app_ble/app_ble_log_handler.c</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
@@ -485,14 +483,14 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.182"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.1.165"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -527,6 +525,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -583,6 +582,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -622,6 +622,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -650,6 +651,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>

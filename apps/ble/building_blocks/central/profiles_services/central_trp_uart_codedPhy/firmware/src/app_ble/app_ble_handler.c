@@ -94,15 +94,15 @@ void SYS_CONSOLE_PRINT_PHY(uint8_t phy) {
 };
 
     void SYS_CONSOLE_PRINT_extEVENT(uint8_t extEvent) {
-    if (extEvent & BLE_GAP_EXT_ADV_REPORT_EVT_TYPE_CONNECTABLE)
+    if (extEvent & BLE_GAP_EXT_ADV_RPT_TYPE_CONNECTABLE)
         SYS_CONSOLE_PRINT("| CONNECTABLE");
-    if (extEvent & BLE_GAP_EXT_ADV_REPORT_EVT_TYPE_SCANNABLE)
+    if (extEvent & BLE_GAP_EXT_ADV_RPT_TYPE_SCANNABLE)
         SYS_CONSOLE_PRINT("| SCANNABLE");
-    if (extEvent & BLE_GAP_EXT_ADV_REPORT_EVT_TYPE_DIRECTED)
+    if (extEvent & BLE_GAP_EXT_ADV_RPT_TYPE_DIRECTED)
         SYS_CONSOLE_PRINT("| DIRECTED");
-    if (extEvent & BLE_GAP_EXT_ADV_REPORT_EVT_TYPE_SCAN_RSP)
+    if (extEvent & BLE_GAP_EXT_ADV_RPT_TYPE_SCAN_RSP)
         SYS_CONSOLE_PRINT("| SCAN_RSP");
-    if (extEvent & BLE_GAP_EXT_ADV_REPORT_EVT_TYPE_LEGACY)
+    if (extEvent & BLE_GAP_EXT_ADV_RPT_TYPE_LEGACY)
         SYS_CONSOLE_PRINT("| LEGACY");
 
     SYS_CONSOLE_PRINT("\r\n");
@@ -208,7 +208,7 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         case BLE_GAP_EVT_EXT_ADV_REPORT:
         {
             /* TODO: implement your application code.*/
-//            SYS_CONSOLE_PRINT("*");
+            SYS_CONSOLE_PRINT("*");
             if ((p_event->eventField.evtExtAdvReport.addr.addr[0] == 0xA1 && p_event->eventField.evtExtAdvReport.addr.addr[1] == 0xA2) ||
                     (p_event->eventField.evtExtAdvReport.addr.addr[0] == 0xB1 && p_event->eventField.evtExtAdvReport.addr.addr[1] == 0xB2) ||
                     (p_event->eventField.evtExtAdvReport.addr.addr[0] == 0xC1 && p_event->eventField.evtExtAdvReport.addr.addr[1] == 0xC2)) {
@@ -223,7 +223,7 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
 
                 // found so disable ext scanning
                 BLE_GAP_ExtScanningEnable_T extScan;
-                extScan.duration = 0x2710;  //100seconds scan
+                extScan.duration = 0x2710; //100seconds scan
                 extScan.enable = true; //disable scanning
                 extScan.filterDuplicates = BLE_GAP_SCAN_FD_DISABLE;
                 extScan.period = 0x0000;
@@ -256,7 +256,7 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
                 extCreateConnParam.leCodedPhy.connParams.latency = 0;
                 extCreateConnParam.leCodedPhy.connParams.supervisionTimeout = 0x48;
 
-                BLE_GAP_ExtCreateConnection(BLE_GAP_INIT_FP_FILTER_ACCEPT_LIST_NOT_USED,
+                BLE_GAP_ExtCreateConnection(BLE_GAP_INIT_FP_FAL_NOT_USED,
                         &(p_event->eventField.evtExtAdvReport.addr),
                         &extCreateConnParam);
             }            
@@ -339,7 +339,7 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         case BLE_GAP_EVT_SCAN_TIMEOUT:
         {
             /* TODO: implement your application code.*/
-            SYS_CONSOLE_PRINT("\r\nScan Completed \r\n");            
+            SYS_CONSOLE_PRINT("Scan Completed \r\n");            
         }
         break;
 
@@ -371,13 +371,13 @@ void APP_BleL2capEvtHandler(BLE_L2CAP_Event_T *p_event)
 {
     switch(p_event->eventId)
     {
-        case BLE_L2CAP_EVT_CONN_PARA_UPDATE_REQ:
+        case BLE_L2CAP_EVT_CONN_PARA_UPD_REQ:
         {
             /* TODO: implement your application code.*/
         }
         break;
 
-        case BLE_L2CAP_EVT_CONN_PARA_UPDATE_RSP:
+        case BLE_L2CAP_EVT_CONN_PARA_UPD_RSP:
         {
             /* TODO: implement your application code.*/
         }
