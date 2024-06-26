@@ -20,7 +20,6 @@
                 <itemPath>../src/config/default/ble/lib/include/gap_defs.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/ble_gap.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/ble_smp.h</itemPath>
-                <itemPath>../src/config/default/ble/lib/include/bt_sys_pta.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/host_hci_defs.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/bt_sys.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/ble_l2cap.h</itemPath>
@@ -29,7 +28,6 @@
                 <itemPath>../src/config/default/ble/lib/include/gatt.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/mba_error_defs.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/bt_sys_log.h</itemPath>
-                <itemPath>../src/config/default/ble/lib/include/hci.h</itemPath>
                 <itemPath>../src/config/default/ble/lib/include/stack_mgr.h</itemPath>
               </logicalFolder>
             </logicalFolder>
@@ -46,9 +44,6 @@
               </logicalFolder>
               <logicalFolder name="ble_gcm" displayName="ble_gcm" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_dd.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.h</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_aes.h</itemPath>
@@ -384,9 +379,6 @@
               </logicalFolder>
               <logicalFolder name="ble_gcm" displayName="ble_gcm" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_dd.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.c</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_aes.c</itemPath>
