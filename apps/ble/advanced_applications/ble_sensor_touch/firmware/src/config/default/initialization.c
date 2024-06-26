@@ -445,14 +445,14 @@ void SYS_Initialize ( void* data )
    /* MISRAC 2012 deviation block end */
 
     
-	#ifdef ENABLE_TOUCH
+//	#ifdef ENABLE_TOUCH
 //    OnBoard_User_Button2_SW3_status = GPIO_PinRead(GPIO_PIN_RA4);
  
 //    if(OnBoard_User_Button2_SW3_status == false)
-    {
+//    {
         touch_init();
-    }
-	#endif
+//    }
+//	#endif
 
     // Create BLE Stack Message QUEUE
     OSAL_QUEUE_Create(&bleRequestQueueHandle, QUEUE_LENGTH_BLE, QUEUE_ITEM_SIZE_BLE);

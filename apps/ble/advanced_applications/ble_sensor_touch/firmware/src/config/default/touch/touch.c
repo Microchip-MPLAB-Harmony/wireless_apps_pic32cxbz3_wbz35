@@ -225,6 +225,11 @@ static void qtm_measure_complete_callback(void)
 {
     touch_postprocess_request = 1u;
 	all_measure_complete = 1;
+    
+    APP_Msg_T appMsg;
+    
+    appMsg.msgId = APP_MSG_TOUCH_MEAS;
+    OSAL_QUEUE_SendISR(&appData.appQueue, &appMsg);   
 }
 
 /*============================================================================
@@ -344,9 +349,12 @@ Notes  :
 void touch_timer_handler(void)
 {
  
-  
+  APP_Msg_T appMsg;
         time_to_measure_touch_var = 1u;
         qtm_update_qtlib_timer(DEF_TOUCH_MEASUREMENT_PERIOD_MS);
+        
+        appMsg.msgId = APP_MSG_TOUCH_MEAS;
+    OSAL_QUEUE_SendISR(&appData.appQueue, &appMsg);
 }
 static void timer_handler( uint32_t intCause, uintptr_t context )
 {
