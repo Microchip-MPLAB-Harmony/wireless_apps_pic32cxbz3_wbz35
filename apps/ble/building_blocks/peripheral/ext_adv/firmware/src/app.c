@@ -57,17 +57,11 @@
 #include "app_ble.h"
 
 
-
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
-
-
-
-
 
 // *****************************************************************************
 /* Application Data
@@ -156,7 +150,6 @@ void APP_Tasks ( void )
         {
             bool appInitialized = true;
             //appData.appQueue = xQueueCreate( 10, sizeof(APP_Msg_T) );
-
             APP_BleStackInit();
             
             // Enable Ext Adv
@@ -179,7 +172,6 @@ void APP_Tasks ( void )
         {
             if (OSAL_QUEUE_Receive(&appData.appQueue, &appMsg, OSAL_WAIT_FOREVER))
             {
-
                 if(p_appMsg->msgId==APP_MSG_BLE_STACK_EVT)
                 {
                     // Pass BLE Stack Event Message to User Application for handling
@@ -190,9 +182,6 @@ void APP_Tasks ( void )
                     // Pass BLE LOG Event Message to User Application for handling
                     APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
                 }
-
-
-
             }
             break;
         }

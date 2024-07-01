@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -167,6 +166,8 @@
 // Section: System Data
 // *****************************************************************************
 // *****************************************************************************
+/* Structure to hold the object handles for the modules in the system. */
+SYSTEM_OBJECTS sysObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -198,11 +199,10 @@
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
-#define REGULATORY_REGION "ETSI"
 
 #define QUEUE_LENGTH_BLE        (32)
 #define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
-#define EXT_COMMON_MEMORY_SIZE  (22*1024)
+#define EXT_COMMON_MEMORY_SIZE  (28*1024)
 OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 /*******************************************************************************
@@ -270,7 +270,7 @@ OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -284,6 +284,7 @@ OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 void SYS_Initialize ( void* data )
 {
+
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
@@ -315,15 +316,18 @@ void SYS_Initialize ( void* data )
 
     BT_SYS_Cfg_T        btSysCfg;
     BT_SYS_Option_T     btOption;
-
   
     CLOCK_Initialize();
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
+
     /* Configure Prefetch, Wait States by calling the ROM function whose address is available at address 0xF2D0 */
     typedef int (*FUNC_PCHE_SETUP)(uint32_t setup);
     (void)((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
                                     | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)));
 
     /* MISRAC 2012 deviation block end */
+
 
 
 	GPIO_Initialize();
@@ -335,7 +339,7 @@ void SYS_Initialize ( void* data )
     NVM_Initialize();
 
 
-    
+
     /* MISRAC 2012 deviation block start */
     /* Following MISRA-C rules deviated in this block  */
     /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
@@ -365,6 +369,7 @@ void SYS_Initialize ( void* data )
 
     osalAPIList.OSAL_MemAlloc = OSAL_Malloc;
     osalAPIList.OSAL_MemFree = OSAL_Free;
+
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -401,7 +406,6 @@ void SYS_Initialize ( void* data )
     (void)memset(&btSysCfg, 0, sizeof(BT_SYS_Cfg_T));
     btSysCfg.addrValid = IB_GetBdAddr(&btSysCfg.devAddr[0]);
     btSysCfg.rssiOffsetValid =IB_GetRssiOffset(&btSysCfg.rssiOffset);
-    btSysCfg.antennaGain = IB_GetAntennaGain(&btSysCfg.antennaGain);
 
     if (!IB_GetAntennaGain(&btSysCfg.antennaGain))
     {
@@ -420,16 +424,16 @@ void SYS_Initialize ( void* data )
 
     // Initialize BLE Stack
     BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);
-    
+
     /* MISRAC 2012 deviation block end */
     APP_Initialize();
 
 
     NVIC_Initialize();
 
+
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File
