@@ -22446,14 +22446,6 @@
          <hash>bdb7df18d73a20855737be35a4cc4f5977c9ae239ab9c4d5f38b03517f5e148a</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\device_sleep.c</file>
-         <hash>6e89fc76f5e7ed9add726e148866d5462a9bc2a743d637e592d83d139dcf4c07</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\default\device_sleep.h</file>
-         <hash>3f5a822e4cd519457e18c78ed8f998c24056b17da7438aab02d6c70370cf9da5</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\device_vectors.h</file>
          <hash>8323e45e290ab359ea2828704c32f36d3326e4bd508e5e27f471a6e48429592f</hash>
       </entry>

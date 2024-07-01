@@ -208,7 +208,7 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         case BLE_GAP_EVT_EXT_ADV_REPORT:
         {
             /* TODO: implement your application code.*/
-            SYS_CONSOLE_PRINT("*");
+            //SYS_CONSOLE_PRINT("*");
             if ((p_event->eventField.evtExtAdvReport.addr.addr[0] == 0xA1 && p_event->eventField.evtExtAdvReport.addr.addr[1] == 0xA2) ||
                     (p_event->eventField.evtExtAdvReport.addr.addr[0] == 0xB1 && p_event->eventField.evtExtAdvReport.addr.addr[1] == 0xB2) ||
                     (p_event->eventField.evtExtAdvReport.addr.addr[0] == 0xC1 && p_event->eventField.evtExtAdvReport.addr.addr[1] == 0xC2)) {

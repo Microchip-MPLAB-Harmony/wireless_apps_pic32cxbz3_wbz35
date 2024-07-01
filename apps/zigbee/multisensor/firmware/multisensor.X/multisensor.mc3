@@ -15151,16 +15151,8 @@
          <hash>7161a2a80eba7ce74906aa61891b0290c05d2b8ad6509aaa91f1ea04003cdbef</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\device_sleep.c</file>
-         <hash>6e89fc76f5e7ed9add726e148866d5462a9bc2a743d637e592d83d139dcf4c07</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\zigbee\lib\inc\bdb\include\bdbZllBindings.h</file>
          <hash>aa4f119bdb43557ca736aca30b4921680932109b1f2c9d63217bd7a639b8355f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\default\device_sleep.h</file>
-         <hash>3f5a822e4cd519457e18c78ed8f998c24056b17da7438aab02d6c70370cf9da5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\zigbee\z3device\multiSensor\osBasicCluster.c</file>
