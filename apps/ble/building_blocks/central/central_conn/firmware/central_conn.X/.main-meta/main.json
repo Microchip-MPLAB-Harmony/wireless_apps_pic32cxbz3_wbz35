@@ -1,40 +1,47 @@
 {
-    "metaDataVersion": "1.0.0",
-    "category": "com.microchip.hex.project",
-    "content": {
-        "metaDataVersion": "1.0.0",
- 
-        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35.central_conn",
-        "version": "4.6.5",
- 
-        "displayName": "central_conn",
-        "shortDescription": "BLE central connection App",
- 
-        "device": {
-            "metaDataVersion": "1.0.0",
-            "category": "com.microchip.portal.contentRef",
-            "content": {
-                "metaDataVersion": "1.0.0",
-                "category": "com.microchip.device",
-                "name": "WBZ351",
-                "versionRange": "*"
-            }
-        },
- 
-        "board": {
-            "metaDataVersion": "1.0.0",
-            "category": "com.microchip.portal.boardRef",
-            "content": {
-                "metaDataVersion": "1.0.0",
-                "category": "com.microchip.board",
-                "name": "WBZ351_CURIOSITY_BOARD",
-                "versions": "*"
-            }
-        },
- 
-        "author": "Microchip",
- 
-        "keywords": [
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.3.0",
+		"name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35_central_conn",
+		"version": "1.1.0",
+		"displayName": "BLE Central Connection Application",
+		"projectName": "central_conn",
+		"shortDescription": "This example application acts as a ble central device and connect with another ble peripheral device.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=6.20"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=4.40"
+			}
+		],
+		"dfp": {
+			"name": "PIC32CXBZ3_DFP",
+			"semverRange": "^1.2.182"
+		},
+		"configurator": {
+			"name": "MCC",
+			"semverRange": ">=5.7.0"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "WBZ351",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"peripherals": [
+			"UART",
+			"GPIO"
+		],
+		"keywords": [
 			"MCC",
 			"Harmony",
 			"PIC32CX5109BZ31048",
@@ -42,22 +49,18 @@
 			"PIC32CXBZ3 Family",
 			"wireless",
 			"BLE",
-			"CentralConn",
-			"CentralConnection",
-			"central_conn"
-        ],
- 
-        "additionalData": {
-            "longDescription": {
-                "metaDataVersion": "1.0.0",
-                "category": "com.microchip.portal.fileRef",
-                "content": {
-                    "metaDataVersion": "1.0.0",
-                    "fileName": "./../../readme.md",
-                    "mimeType": "text/markdown"
-                }
-            },
-            "hexFileNamePath": "./../../hex/central_conn.X.production.signed,hex"
-        }
-    }
+			"Connection"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
 }

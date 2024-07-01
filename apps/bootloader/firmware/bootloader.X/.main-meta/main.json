@@ -1,15 +1,31 @@
 {
     "metaDataVersion": "1.0.0",
-    "category": "com.microchip.hex.project",
+    "category": "com.microchip.ide.project",
     "content": {
-        "metaDataVersion": "1.0.0",
- 
-        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35.bootloader",
-        "version": "4.6.5",
- 
-        "displayName": "bootloader",
-        "shortDescription": "This is used secondary bootloader for OTA applications",
- 
+        "metaDataVersion": "1.3.0",
+        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35_bootloader",
+        "version": "1.1.0",
+        "displayName": "PIC32CXBZ3 Bootloader Application",
+        "projectName": "bootloader",
+        "shortDescription": "This example application is bootloader application for PIC32CXBZ device to  download the application using Over the Air firmware download feature.",
+        "ide": {
+            "name": "MPLABX",
+            "semverRange": ">=6.20"
+        },
+        "compiler": [
+            {
+                "name": "XC32",
+                "semverRange": ">=4.40"
+            }
+        ],
+        "dfp": {
+            "name": "PIC32CXBZ3_DFP",
+            "semverRange": "^1.2.182"
+        },
+        "configurator": {
+            "name": "MCC",
+            "semverRange": ">=5.7.0"
+        },
         "device": {
             "metaDataVersion": "1.0.0",
             "category": "com.microchip.portal.contentRef",
@@ -20,31 +36,20 @@
                 "versionRange": "*"
             }
         },
- 
-        "board": {
-            "metaDataVersion": "1.0.0",
-            "category": "com.microchip.portal.boardRef",
-            "content": {
-                "metaDataVersion": "1.0.0",
-                "category": "com.microchip.board",
-                "name": "WBZ351_CURIOSITY_BOARD",
-                "versions": "*"
-            }
-        },
- 
         "author": "Microchip",
- 
-        "keywords": [
-			"MCC",
-			"Harmony",
-			"PIC32CX5109BZ31048",
-			"WBZ351",
-			"PIC32CXBZ3 Family",
-			"wireless",
-			"BLE",
-			"bootloader"
+        "peripherals": [
+            "UART"
         ],
- 
+        "keywords": [
+            "MCC",
+            "Harmony",
+            "PIC32CX5109BZ31048",
+            "WBZ351",
+            "PIC32CXBZ3 Family",
+            "wireless",
+            "BLE",
+            "Connection"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
@@ -54,8 +59,7 @@
                     "fileName": "./../../readme.md",
                     "mimeType": "text/markdown"
                 }
-            },
-            "hexFileNamePath": "./../../hex/bootloader.X.production.signed,hex"
+            }
         }
     }
 }
