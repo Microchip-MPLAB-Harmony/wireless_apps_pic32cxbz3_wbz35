@@ -1,9 +1,9 @@
 format_version: v1.0
 configName: default
-folderName: multisensor_deepSleep
+folderName: multisensor
 frameworkPath: MCC
 processor: WBZ351
-projectName: multisensor_deepSleep
+projectName: multisensor
 settings:
   PackageFilter: ''
   FORCE_OPTIMIZATION: 'false'

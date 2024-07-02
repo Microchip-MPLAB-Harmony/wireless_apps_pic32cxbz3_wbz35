@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>multisensor</name>
+            <name>multisensor_deepSleep</name>
             <creation-uuid>b1dbffd8-081a-4dcf-b5b3-3d9ba115bc4e</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>

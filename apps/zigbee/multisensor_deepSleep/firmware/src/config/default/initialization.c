@@ -323,7 +323,7 @@ void SYS_Initialize ( void* data )
 
 
   
-    CLK_Initialize();
+    CLOCK_Initialize();
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
@@ -391,7 +391,6 @@ void SYS_Initialize ( void* data )
 	//Config retention RAM size
 	PMU_REGS->PMU_WCMSIZ &= ~PMU_WCMSIZ_SRAM1_SIZ_Msk;
 	PMU_REGS->PMU_WCMSIZ |= PMU_WCMSIZ_SRAM1_SIZ_16K_SRAM;
-
 
 
 /*******************************************************************************
