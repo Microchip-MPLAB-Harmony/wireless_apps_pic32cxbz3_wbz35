@@ -3,11 +3,11 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.3.0",
-        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35_deep_sleep_adv",
+        "name": "com.microchip.mcu32.mplabx.project.wireless_apps_pic32cxbz3_wbz35_ext_adv",
         "version": "1.1.0",
-        "displayName": "BLE Peripheral Deep Sleep Advertisment Application",
-        "projectName": "ble_deep_sleep_adv",
-        "shortDescription": "This example application demonstrates the functionality of Deep Sleep Advertisements on WBZ351 Curiosity Board. The WBZ351 device will be put to deep sleep mode upon power on reset followed by periodic deep sleep + advertisement upon device wake up through INT0(Button interrupt).",
+        "displayName": "BLE Peripheral Extended Advertisment Application",
+        "projectName": "ext_adv",
+        "shortDescription": "This example application users enable Extended Advertisements (1M, 2M, coded PHY -- 125kbps) on WBZ351 Curiosity Board. This example (ext_adv) enables users to send application data using extended advertisements.",
         "ide": {
             "name": "MPLABX",
             "semverRange": ">=6.20"
@@ -24,7 +24,7 @@
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.7.0"
+            "semverRange": ">=5.5.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -38,9 +38,8 @@
         },
         "author": "Microchip",
         "peripherals": [
-            "RCON",
-            "GPIO",
-            "RTC"
+            "UART",
+            "GPIO"
         ],
         "keywords": [
             "MCC",
@@ -50,7 +49,7 @@
             "PIC32CXBZ3 Family",
             "wireless",
             "BLE",
-            "Deep Sleep Advertisement"
+            "Extended Advertisment"
         ],
         "additionalData": {
             "longDescription": {

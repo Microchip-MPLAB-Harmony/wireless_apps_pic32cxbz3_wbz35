@@ -24,7 +24,7 @@
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.7.0"
+            "semverRange": ">=5.5.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -48,7 +48,8 @@
             "WBZ351",
             "PIC32CXBZ3 Family",
             "wireless",
-            "BLE"
+            "BLE",
+            "HCI"
         ],
         "additionalData": {
             "longDescription": {
