@@ -1,48 +1,45 @@
 /*
  * Instance header file for WBZ351
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-06-23T14:51:53Z */
+/* file generated from device description file (ATDF) version 2023-11-08T18:46:18Z */
 #ifndef _WBZ35_TCC0_INSTANCE_
 #define _WBZ35_TCC0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TCC0 peripheral ========== */
-#define TCC0_INSTANCE_ID                         (13)       
-#define TCC0_SIZE                                (24)       
-#define TCC0_MASTER_SLAVE_MODE                   (1)        
 #define TCC0_CC_NUM                              (6)        
-#define TCC0_OW_NUM                              (6)        
 #define TCC0_DITHERING                           (1)        
-#define TCC0_OTMX                                (1)        
-#define TCC0_DTI                                 (1)        
-#define TCC0_SWAP                                (1)        
-#define TCC0_PG                                  (1)        
-#define TCC0_DMAC_ID_OVF                         (10)       
 #define TCC0_DMAC_ID_MC0                         (11)       
 #define TCC0_DMAC_ID_MC1                         (12)       
 #define TCC0_DMAC_ID_MC2                         (13)       
 #define TCC0_DMAC_ID_MC3                         (14)       
 #define TCC0_DMAC_ID_MC4                         (15)       
 #define TCC0_DMAC_ID_MC5                         (16)       
+#define TCC0_DMAC_ID_OVF                         (10)       
+#define TCC0_DTI                                 (1)        
 #define TCC0_GCLK_ID                             (21)       
+#define TCC0_INSTANCE_ID                         (13)       
+#define TCC0_MASTER_SLAVE_MODE                   (1)        
+#define TCC0_OTMX                                (1)        
+#define TCC0_OW_NUM                              (6)        
+#define TCC0_PG                                  (1)        
+#define TCC0_SIZE                                (24)       
+#define TCC0_SWAP                                (1)        
 
 #endif /* _WBZ35_TCC0_INSTANCE_ */

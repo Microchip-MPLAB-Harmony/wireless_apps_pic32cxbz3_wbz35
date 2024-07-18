@@ -144,6 +144,7 @@
             <itemPath>../src/config/default/touch/qtm_common_components_api.h</itemPath>
             <itemPath>../src/config/default/touch/qtm_scroller_0x000b_api.h</itemPath>
             <itemPath>../src/config/default/touch/qtm_freq_hop_auto_0x0004_api.h</itemPath>
+            <itemPath>../src/config/default/touch/qtm_freq_hop_0x0006_api.h</itemPath>
           </logicalFolder>
           <logicalFolder name="zigbee" displayName="zigbee" projectFiles="true">
             <logicalFolder name="lib" displayName="lib" projectFiles="true">
@@ -506,56 +507,6 @@
                     <itemPath>../src/config/default/zigbee/lib/inc/zdo/include/zdoPermissions.h</itemPath>
                   </logicalFolder>
                 </logicalFolder>
-                <logicalFolder name="zgp" displayName="zgp" projectFiles="true">
-                  <logicalFolder name="GPInfrastructure"
-                                 displayName="GPInfrastructure"
-                                 projectFiles="true">
-                    <logicalFolder name="highZgp" displayName="highZgp" projectFiles="true">
-                      <logicalFolder name="include" displayName="include" projectFiles="true">
-                        <logicalFolder name="private" displayName="private" projectFiles="true">
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpClusterServer.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpProxyBasic.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpClusterClient.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpProxyTable.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpHighMem.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpSinkBasic.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpSinkTable.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpClusterGeneric.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/private/zgpHighGeneric.h</itemPath>
-                        </logicalFolder>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/zgpCluster.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/zgpInfraDevice.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/zgpClusterStructure.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/zgpClusterZclInterface.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/highZgp/include/zgpMiddleProxy.h</itemPath>
-                      </logicalFolder>
-                    </logicalFolder>
-                    <logicalFolder name="lowZgp" displayName="lowZgp" projectFiles="true">
-                      <logicalFolder name="include" displayName="include" projectFiles="true">
-                        <logicalFolder name="private" displayName="private" projectFiles="true">
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpTaskManager.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpLowGeneric.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpNvmTable.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpLowMem.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpPacket.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpLowProxy.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpCstub.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpDstub.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpLowSink.h</itemPath>
-                          <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/private/zgpNvmTableBindings.h</itemPath>
-                        </logicalFolder>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/zgpLowMiddleProxy.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/zgpLowGpdf.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/zgpLow.h</itemPath>
-                        <itemPath>../src/config/default/zigbee/lib/inc/ZGP/GPInfrastructure/lowZgp/include/zgpLowNvmTable.h</itemPath>
-                      </logicalFolder>
-                    </logicalFolder>
-                  </logicalFolder>
-                  <logicalFolder name="include" displayName="include" projectFiles="true">
-                    <itemPath>../src/config/default/zigbee/lib/inc/ZGP/include/zgpDbg.h</itemPath>
-                    <itemPath>../src/config/default/zigbee/lib/inc/ZGP/include/zgpCommon.h</itemPath>
-                  </logicalFolder>
-                </logicalFolder>
                 <logicalFolder name="zllplatform" displayName="zllplatform" projectFiles="true">
                   <logicalFolder name="infrastructure"
                                  displayName="infrastructure"
@@ -885,27 +836,28 @@
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/sys_tasks.h</itemPath>
+          <itemPath>../src/config/default/device_deep_sleep.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
         <logicalFolder name="Source" displayName="Source" projectFiles="true">
           <logicalFolder name="include" displayName="include" projectFiles="true">
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/queue.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/event_groups.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/list.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/timers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/portable.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stack_macros.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/semphr.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/croutine.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/queue.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/portable.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stack_macros.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/event_groups.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/list.h</itemPath>
           </logicalFolder>
           <logicalFolder name="portable" displayName="portable" projectFiles="true">
             <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
@@ -1208,44 +1160,6 @@
                   <itemPath>../src/config/default/zigbee/systemresource/zcl/src/zclOtauClientUpgrade.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="zgp" displayName="zgp" projectFiles="true">
-                <logicalFolder name="GPInfrastructure"
-                               displayName="GPInfrastructure"
-                               projectFiles="true">
-                  <logicalFolder name="highZgp" displayName="highZgp" projectFiles="true">
-                    <logicalFolder name="src" displayName="src" projectFiles="true">
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpMiddleProxy.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpProxyTable.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpProxyBasic.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpHighGeneric.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpProxyPdt.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpClusterGeneric.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpClusterServer.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpHighMem.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpSinkTable.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpSinkBasic.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpSinkPdt.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/highZgp/src/zgpClusterClient.c</itemPath>
-                    </logicalFolder>
-                  </logicalFolder>
-                  <logicalFolder name="lowZgp" displayName="lowZgp" projectFiles="true">
-                    <logicalFolder name="src" displayName="src" projectFiles="true">
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpDstub.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpLowGeneric.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpLowMem.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpTaskManager.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpPacket.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpLowProxy.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpLowSink.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpCstub.c</itemPath>
-                      <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/lowZgp/src/zgpNvmTable.c</itemPath>
-                    </logicalFolder>
-                  </logicalFolder>
-                  <logicalFolder name="src" displayName="src" projectFiles="true">
-                    <itemPath>../src/config/default/zigbee/systemresource/ZGP/GPInfrastructure/src/zgpGeneric.c</itemPath>
-                  </logicalFolder>
-                </logicalFolder>
-              </logicalFolder>
               <logicalFolder name="zllplatform" displayName="zllplatform" projectFiles="true">
                 <logicalFolder name="infrastructure"
                                displayName="infrastructure"
@@ -1328,6 +1242,7 @@
           <itemPath>../src/config/default/startup_xc32.c</itemPath>
           <itemPath>../src/config/default/initialization.c</itemPath>
           <itemPath>../src/config/default/tasks.c</itemPath>
+          <itemPath>../src/config/default/device_deep_sleep.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
@@ -1344,13 +1259,13 @@
               <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_4.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/list.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/queue.c</itemPath>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/croutine.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/timers.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="sensors" displayName="sensors" projectFiles="true">
@@ -1374,14 +1289,14 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.182"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.183"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1394,6 +1309,7 @@
             <linkerLibFileItem>../src/config/default/touch/lib/qtm_touch_key_cm4_0x0002.X.a</linkerLibFileItem>
             <linkerLibFileItem>../src/config/default/touch/lib/qtm_scroller_cm4_0x000b.X.a</linkerLibFileItem>
             <linkerLibFileItem>../src/config/default/touch/lib/qtm_freq_hop_auto_cm4_0x0004.X.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/default/touch/lib/qtm_freq_hop_cm4_0x0006.X.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -1562,6 +1478,7 @@
       </C32Global>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -1575,6 +1492,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -1607,6 +1525,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.specifictoolpack"/>
@@ -1614,6 +1533,7 @@
       </Tool>
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
@@ -1627,6 +1547,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -1659,6 +1580,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.specifictoolpack"/>

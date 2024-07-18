@@ -1,32 +1,101 @@
 /*
  * Component description for FUSES
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-06-23T14:51:53Z */
+/* file generated from device description file (ATDF) version 2023-11-08T18:46:18Z */
 #ifndef _WBZ35_FUSES_COMPONENT_H_
 #define _WBZ35_FUSES_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR FUSES                                        */
 /* ************************************************************************** */
+
+/* -------- FUSES_ALTFBCFG7 : (FUSES Offset: 0x00) (R/W 32) RESERVED -------- */
+#define FUSES_ALTFBCFG7_RESETVALUE            _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFBCFG7) RESERVED  Reset Value */
+
+#define FUSES_ALTFBCFG7_Msk                   _UINT32_(0x00000000)                                 /* (FUSES_ALTFBCFG7) Register Mask  */
+
+
+/* -------- FUSES_ALTFBCFG6 : (FUSES Offset: 0x04) (R/W 32) RESERVED -------- */
+#define FUSES_ALTFBCFG6_RESETVALUE            _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFBCFG6) RESERVED  Reset Value */
+
+#define FUSES_ALTFBCFG6_Msk                   _UINT32_(0x00000000)                                 /* (FUSES_ALTFBCFG6) Register Mask  */
+
+
+/* -------- FUSES_ALTFUSERID : (FUSES Offset: 0x08) (R/W 32) ALT USERID -------- */
+#define FUSES_ALTFUSERID_RESETVALUE           _UINT32_(0xFFFF)                                     /*  (FUSES_ALTFUSERID) ALT USERID  Reset Value */
+
+#define FUSES_ALTFUSERID_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTFUSERID) Register Mask  */
+
+
+/* -------- FUSES_ALTDEVCFG4 : (FUSES Offset: 0x0C) (R/W 32) ALT CFGCON4 Fuses -------- */
+#define FUSES_ALTDEVCFG4_RESETVALUE           _UINT32_(0x840E4000)                                 /*  (FUSES_ALTDEVCFG4) ALT CFGCON4 Fuses  Reset Value */
+
+#define FUSES_ALTDEVCFG4_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG4) Register Mask  */
+
+
+/* -------- FUSES_ALTDEVCFG2 : (FUSES Offset: 0x10) (R/W 32) ALT CFGCON2 Fuses -------- */
+#define FUSES_ALTDEVCFG2_RESETVALUE           _UINT32_(0x5F74FF38)                                 /*  (FUSES_ALTDEVCFG2) ALT CFGCON2 Fuses  Reset Value */
+
+#define FUSES_ALTDEVCFG2_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG2) Register Mask  */
+
+
+/* -------- FUSES_ALTDEVCFG1 : (FUSES Offset: 0x14) (R/W 32) ALT CFGCON1 Fuses -------- */
+#define FUSES_ALTDEVCFG1_RESETVALUE           _UINT32_(0x1410443B)                                 /*  (FUSES_ALTDEVCFG1) ALT CFGCON1 Fuses  Reset Value */
+
+#define FUSES_ALTDEVCFG1_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG1) Register Mask  */
+
+
+/* -------- FUSES_ALTDEVCFG0 : (FUSES Offset: 0x18) (R/W 32) ALT CFGCON0 Fuses -------- */
+#define FUSES_ALTDEVCFG0_RESETVALUE           _UINT32_(0x7100000B)                                 /*  (FUSES_ALTDEVCFG0) ALT CFGCON0 Fuses  Reset Value */
+
+#define FUSES_ALTDEVCFG0_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG0) Register Mask  */
+
+
+/* -------- FUSES_ALTFBCFG0 : (FUSES Offset: 0x1C) (R/W 32) ALT NVR BCFG0 -------- */
+#define FUSES_ALTFBCFG0_RESETVALUE            _UINT32_(0x80000002)                                 /*  (FUSES_ALTFBCFG0) ALT NVR BCFG0  Reset Value */
+
+#define FUSES_ALTFBCFG0_Msk                   _UINT32_(0x00000000)                                 /* (FUSES_ALTFBCFG0) Register Mask  */
+
+
+/* -------- FUSES_ALTFCPN3 : (FUSES Offset: 0x30) (R/W 32) RESERVED -------- */
+#define FUSES_ALTFCPN3_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFCPN3) RESERVED  Reset Value */
+
+#define FUSES_ALTFCPN3_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN3) Register Mask  */
+
+
+/* -------- FUSES_ALTFCPN2 : (FUSES Offset: 0x34) (R/W 32) RESERVED -------- */
+#define FUSES_ALTFCPN2_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFCPN2) RESERVED  Reset Value */
+
+#define FUSES_ALTFCPN2_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN2) Register Mask  */
+
+
+/* -------- FUSES_ALTFCPN1 : (FUSES Offset: 0x38) (R/W 32) RESERVED -------- */
+#define FUSES_ALTFCPN1_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFCPN1) RESERVED  Reset Value */
+
+#define FUSES_ALTFCPN1_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN1) Register Mask  */
+
+
+/* -------- FUSES_ALTFCPN0 : (FUSES Offset: 0x3C) (R/W 32) ALT NVR CPN Register -------- */
+#define FUSES_ALTFCPN0_RESETVALUE             _UINT32_(0x10000000)                                 /*  (FUSES_ALTFCPN0) ALT NVR CPN Register  Reset Value */
+
+#define FUSES_ALTFCPN0_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN0) Register Mask  */
+
 
 /* -------- FUSES_FBCFG7 : (FUSES Offset: 0x100) (R/W 32) RESERVED -------- */
 #define FUSES_FBCFG7_RESETVALUE               _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_FBCFG7) RESERVED  Reset Value */
@@ -60,7 +129,7 @@
 #define FUSES_DEVCFG4_RTCEVENT_SEL(value)     (FUSES_DEVCFG4_RTCEVENT_SEL_Msk & (_UINT32_(value) << FUSES_DEVCFG4_RTCEVENT_SEL_Pos)) /* Assigment of value for RTCEVENT_SEL in the FUSES_DEVCFG4 register */
 #define   FUSES_DEVCFG4_RTCEVENT_SEL_ONE_SEC_Val _UINT32_(0x0)                                        /* (FUSES_DEVCFG4) 1-Second Clock  */
 #define   FUSES_DEVCFG4_RTCEVENT_SEL_ALARM_PULSE_Val _UINT32_(0x1)                                        /* (FUSES_DEVCFG4) Alarm Pulse  */
-#define   FUSES_DEVCFG4_RTCEVENT_SEL_32_KHZ_Val _UINT32_(0x1)                                        /* (FUSES_DEVCFG4) 32 kHz Clock  */
+#define   FUSES_DEVCFG4_RTCEVENT_SEL_32_KHZ_Val _UINT32_(0x2)                                        /* (FUSES_DEVCFG4) 32 kHz Clock  */
 #define FUSES_DEVCFG4_RTCEVENT_SEL_ONE_SEC    (FUSES_DEVCFG4_RTCEVENT_SEL_ONE_SEC_Val << FUSES_DEVCFG4_RTCEVENT_SEL_Pos) /* (FUSES_DEVCFG4) 1-Second Clock Position  */
 #define FUSES_DEVCFG4_RTCEVENT_SEL_ALARM_PULSE (FUSES_DEVCFG4_RTCEVENT_SEL_ALARM_PULSE_Val << FUSES_DEVCFG4_RTCEVENT_SEL_Pos) /* (FUSES_DEVCFG4) Alarm Pulse Position  */
 #define FUSES_DEVCFG4_RTCEVENT_SEL_32_KHZ     (FUSES_DEVCFG4_RTCEVENT_SEL_32_KHZ_Val << FUSES_DEVCFG4_RTCEVENT_SEL_Pos) /* (FUSES_DEVCFG4) 32 kHz Clock Position  */
@@ -857,91 +926,7 @@
 #define FUSES_FCPN0_Msk                       _UINT32_(0x10000000)                                 /* (FUSES_FCPN0) Register Mask  */
 
 
-/* -------- FUSES_ALTFBCFG7 : (FUSES Offset: 0x00) (R/W 32) RESERVED -------- */
-#define FUSES_ALTFBCFG7_RESETVALUE            _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFBCFG7) RESERVED  Reset Value */
-
-#define FUSES_ALTFBCFG7_Msk                   _UINT32_(0x00000000)                                 /* (FUSES_ALTFBCFG7) Register Mask  */
-
-
-/* -------- FUSES_ALTFBCFG6 : (FUSES Offset: 0x04) (R/W 32) RESERVED -------- */
-#define FUSES_ALTFBCFG6_RESETVALUE            _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFBCFG6) RESERVED  Reset Value */
-
-#define FUSES_ALTFBCFG6_Msk                   _UINT32_(0x00000000)                                 /* (FUSES_ALTFBCFG6) Register Mask  */
-
-
-/* -------- FUSES_ALTFUSERID : (FUSES Offset: 0x08) (R/W 32) ALT USERID -------- */
-#define FUSES_ALTFUSERID_RESETVALUE           _UINT32_(0xFFFF)                                     /*  (FUSES_ALTFUSERID) ALT USERID  Reset Value */
-
-#define FUSES_ALTFUSERID_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTFUSERID) Register Mask  */
-
-
-/* -------- FUSES_ALTDEVCFG4 : (FUSES Offset: 0x0C) (R/W 32) ALT CFGCON4 Fuses -------- */
-#define FUSES_ALTDEVCFG4_RESETVALUE           _UINT32_(0x840E4000)                                 /*  (FUSES_ALTDEVCFG4) ALT CFGCON4 Fuses  Reset Value */
-
-#define FUSES_ALTDEVCFG4_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG4) Register Mask  */
-
-
-/* -------- FUSES_ALTDEVCFG2 : (FUSES Offset: 0x10) (R/W 32) ALT CFGCON2 Fuses -------- */
-#define FUSES_ALTDEVCFG2_RESETVALUE           _UINT32_(0x5F74FF38)                                 /*  (FUSES_ALTDEVCFG2) ALT CFGCON2 Fuses  Reset Value */
-
-#define FUSES_ALTDEVCFG2_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG2) Register Mask  */
-
-
-/* -------- FUSES_ALTDEVCFG1 : (FUSES Offset: 0x14) (R/W 32) ALT CFGCON1 Fuses -------- */
-#define FUSES_ALTDEVCFG1_RESETVALUE           _UINT32_(0x1410443B)                                 /*  (FUSES_ALTDEVCFG1) ALT CFGCON1 Fuses  Reset Value */
-
-#define FUSES_ALTDEVCFG1_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG1) Register Mask  */
-
-
-/* -------- FUSES_ALTDEVCFG0 : (FUSES Offset: 0x18) (R/W 32) ALT CFGCON0 Fuses -------- */
-#define FUSES_ALTDEVCFG0_RESETVALUE           _UINT32_(0x7100000B)                                 /*  (FUSES_ALTDEVCFG0) ALT CFGCON0 Fuses  Reset Value */
-
-#define FUSES_ALTDEVCFG0_Msk                  _UINT32_(0x00000000)                                 /* (FUSES_ALTDEVCFG0) Register Mask  */
-
-
-/* -------- FUSES_ALTFBCFG0 : (FUSES Offset: 0x1C) (R/W 32) ALT NVR BCFG0 -------- */
-#define FUSES_ALTFBCFG0_RESETVALUE            _UINT32_(0x80000002)                                 /*  (FUSES_ALTFBCFG0) ALT NVR BCFG0  Reset Value */
-
-#define FUSES_ALTFBCFG0_Msk                   _UINT32_(0x00000000)                                 /* (FUSES_ALTFBCFG0) Register Mask  */
-
-
-/* -------- FUSES_ALTFCPN3 : (FUSES Offset: 0x30) (R/W 32) RESERVED -------- */
-#define FUSES_ALTFCPN3_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFCPN3) RESERVED  Reset Value */
-
-#define FUSES_ALTFCPN3_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN3) Register Mask  */
-
-
-/* -------- FUSES_ALTFCPN2 : (FUSES Offset: 0x34) (R/W 32) RESERVED -------- */
-#define FUSES_ALTFCPN2_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFCPN2) RESERVED  Reset Value */
-
-#define FUSES_ALTFCPN2_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN2) Register Mask  */
-
-
-/* -------- FUSES_ALTFCPN1 : (FUSES Offset: 0x38) (R/W 32) RESERVED -------- */
-#define FUSES_ALTFCPN1_RESETVALUE             _UINT32_(0xFFFFFFFF)                                 /*  (FUSES_ALTFCPN1) RESERVED  Reset Value */
-
-#define FUSES_ALTFCPN1_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN1) Register Mask  */
-
-
-/* -------- FUSES_ALTFCPN0 : (FUSES Offset: 0x3C) (R/W 32) ALT NVR CPN Register -------- */
-#define FUSES_ALTFCPN0_RESETVALUE             _UINT32_(0x10000000)                                 /*  (FUSES_ALTFCPN0) ALT NVR CPN Register  Reset Value */
-
-#define FUSES_ALTFCPN0_Msk                    _UINT32_(0x00000000)                                 /* (FUSES_ALTFCPN0) Register Mask  */
-
-
 /** \brief FUSES register offsets definitions */
-#define FUSES_FBCFG7_REG_OFST          _UINT32_(0x100)     /* (FUSES_FBCFG7) RESERVED Offset */
-#define FUSES_FBCFG6_REG_OFST          _UINT32_(0x104)     /* (FUSES_FBCFG6) RESERVED Offset */
-#define FUSES_FUSERID_REG_OFST         _UINT32_(0x108)     /* (FUSES_FUSERID) USER Page USERID Offset */
-#define FUSES_DEVCFG4_REG_OFST         _UINT32_(0x10C)     /* (FUSES_DEVCFG4) USER Page CFGCON4 Fuses Offset */
-#define FUSES_DEVCFG2_REG_OFST         _UINT32_(0x110)     /* (FUSES_DEVCFG2) USER Page CFGCON2 Fuses Offset */
-#define FUSES_DEVCFG1_REG_OFST         _UINT32_(0x114)     /* (FUSES_DEVCFG1) USER Page CFGCON1 Fuses Offset */
-#define FUSES_DEVCFG0_REG_OFST         _UINT32_(0x118)     /* (FUSES_DEVCFG0) USER Page CFGCON0 Fuses Offset */
-#define FUSES_FBCFG0_REG_OFST          _UINT32_(0x11C)     /* (FUSES_FBCFG0) NVR BCFG User Configuration Area Offset */
-#define FUSES_FCPN3_REG_OFST           _UINT32_(0x130)     /* (FUSES_FCPN3) RESERVED Offset */
-#define FUSES_FCPN2_REG_OFST           _UINT32_(0x134)     /* (FUSES_FCPN2) RESERVED Offset */
-#define FUSES_FCPN1_REG_OFST           _UINT32_(0x138)     /* (FUSES_FCPN1) RESERVED Offset */
-#define FUSES_FCPN0_REG_OFST           _UINT32_(0x13C)     /* (FUSES_FCPN0) NVR CPN Register Offset */
 #define FUSES_ALTFBCFG7_REG_OFST       _UINT32_(0x00)      /* (FUSES_ALTFBCFG7) RESERVED Offset */
 #define FUSES_ALTFBCFG6_REG_OFST       _UINT32_(0x04)      /* (FUSES_ALTFBCFG6) RESERVED Offset */
 #define FUSES_ALTFUSERID_REG_OFST      _UINT32_(0x08)      /* (FUSES_ALTFUSERID) ALT USERID Offset */
@@ -954,6 +939,18 @@
 #define FUSES_ALTFCPN2_REG_OFST        _UINT32_(0x34)      /* (FUSES_ALTFCPN2) RESERVED Offset */
 #define FUSES_ALTFCPN1_REG_OFST        _UINT32_(0x38)      /* (FUSES_ALTFCPN1) RESERVED Offset */
 #define FUSES_ALTFCPN0_REG_OFST        _UINT32_(0x3C)      /* (FUSES_ALTFCPN0) ALT NVR CPN Register Offset */
+#define FUSES_FBCFG7_REG_OFST          _UINT32_(0x100)     /* (FUSES_FBCFG7) RESERVED Offset */
+#define FUSES_FBCFG6_REG_OFST          _UINT32_(0x104)     /* (FUSES_FBCFG6) RESERVED Offset */
+#define FUSES_FUSERID_REG_OFST         _UINT32_(0x108)     /* (FUSES_FUSERID) USER Page USERID Offset */
+#define FUSES_DEVCFG4_REG_OFST         _UINT32_(0x10C)     /* (FUSES_DEVCFG4) USER Page CFGCON4 Fuses Offset */
+#define FUSES_DEVCFG2_REG_OFST         _UINT32_(0x110)     /* (FUSES_DEVCFG2) USER Page CFGCON2 Fuses Offset */
+#define FUSES_DEVCFG1_REG_OFST         _UINT32_(0x114)     /* (FUSES_DEVCFG1) USER Page CFGCON1 Fuses Offset */
+#define FUSES_DEVCFG0_REG_OFST         _UINT32_(0x118)     /* (FUSES_DEVCFG0) USER Page CFGCON0 Fuses Offset */
+#define FUSES_FBCFG0_REG_OFST          _UINT32_(0x11C)     /* (FUSES_FBCFG0) NVR BCFG User Configuration Area Offset */
+#define FUSES_FCPN3_REG_OFST           _UINT32_(0x130)     /* (FUSES_FCPN3) RESERVED Offset */
+#define FUSES_FCPN2_REG_OFST           _UINT32_(0x134)     /* (FUSES_FCPN2) RESERVED Offset */
+#define FUSES_FCPN1_REG_OFST           _UINT32_(0x138)     /* (FUSES_FCPN1) RESERVED Offset */
+#define FUSES_FCPN0_REG_OFST           _UINT32_(0x13C)     /* (FUSES_FCPN0) NVR CPN Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief FUSES_DEVICECFG register API structure */

@@ -94,6 +94,10 @@ typedef enum
   #define  ADCHS_CH5  (5U)
   #define  ADCHS_CH6  (6U)
   #define  ADCHS_CH7  (7U)
+  #define  ADCHS_CH8  (8U)
+  #define  ADCHS_CH9  (9U)
+  #define  ADCHS_CH10  (10U)
+  #define  ADCHS_CH11  (11U)
 typedef uint32_t ADCHS_CHANNEL_NUM;
 
 

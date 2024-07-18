@@ -1,26 +1,23 @@
 /*
  * Component description for CCL
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-06-23T14:51:53Z */
+/* file generated from device description file (ATDF) version 2023-11-08T18:46:18Z */
 #ifndef _WBZ35_CCL_COMPONENT_H_
 #define _WBZ35_CCL_COMPONENT_H_
 
@@ -212,7 +209,6 @@
 #define CCL_CTRL_REG_OFST              _UINT32_(0x00)      /* (CCL_CTRL) Control Offset */
 #define CCL_SEQCTRL_REG_OFST           _UINT32_(0x04)      /* (CCL_SEQCTRL) SEQ Control x Offset */
 #define CCL_SEQCTRL0_REG_OFST          _UINT32_(0x04)      /* (CCL_SEQCTRL0) SEQ Control x Offset */
-#define CCL_SEQCTRL1_REG_OFST          _UINT32_(0x05)      /* (CCL_SEQCTRL1) SEQ Control x Offset */
 #define CCL_LUTCTRL_REG_OFST           _UINT32_(0x08)      /* (CCL_LUTCTRL) LUT Control x Offset */
 #define CCL_LUTCTRL0_REG_OFST          _UINT32_(0x08)      /* (CCL_LUTCTRL0) LUT Control x Offset */
 #define CCL_LUTCTRL1_REG_OFST          _UINT32_(0x0C)      /* (CCL_LUTCTRL1) LUT Control x Offset */
@@ -223,8 +219,8 @@ typedef struct
 {  /* Configurable Custom Logic */
   __IO  uint8_t                        CCL_CTRL;           /**< Offset: 0x00 (R/W  8) Control */
   __I   uint8_t                        Reserved1[0x03];
-  __IO  uint8_t                        CCL_SEQCTRL[2];     /**< Offset: 0x04 (R/W  8) SEQ Control x */
-  __I   uint8_t                        Reserved2[0x02];
+  __IO  uint8_t                        CCL_SEQCTRL[1];     /**< Offset: 0x04 (R/W  8) SEQ Control x */
+  __I   uint8_t                        Reserved2[0x03];
   __IO  uint32_t                       CCL_LUTCTRL[2];     /**< Offset: 0x08 (R/W  32) LUT Control x */
 } ccl_registers_t;
 

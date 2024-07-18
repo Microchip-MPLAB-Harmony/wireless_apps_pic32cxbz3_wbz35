@@ -1,45 +1,43 @@
 /*
  * Instance header file for WBZ351
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-06-23T14:51:53Z */
+/* file generated from device description file (ATDF) version 2023-11-08T18:46:18Z */
 #ifndef _WBZ35_EVSYS_INSTANCE_
 #define _WBZ35_EVSYS_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for EVSYS peripheral ========== */
-#define EVSYS_INSTANCE_ID                        (35)       
-#define EVSYS_CHIP_EVSYS_PADDR_MSB               (12)       
-#define EVSYS_CHIP_EVSYS_EXTEVT_NUM              (0)        
 #define EVSYS_CHIP_EVSYS_ASYNCHRONOUS_CHANNELS   (0xFFFFF000) 
 #define EVSYS_CHIP_EVSYS_CHANNELS                (32)       
-#define EVSYS_CHIP_EVSYS_GENERATORS              (81)       
-#define EVSYS_CHIP_EVSYS_SYNCH_NUM               (12)       
-#define EVSYS_CHIP_EVSYS_USERS                   (57)       
 #define EVSYS_CHIP_EVSYS_CHANNELS_BITS           (5)        
+#define EVSYS_CHIP_EVSYS_EXTEVT_NUM              (0)        
+#define EVSYS_CHIP_EVSYS_GENERATORS              (81)       
 #define EVSYS_CHIP_EVSYS_GENERATORS_BITS         (7)        
+#define EVSYS_CHIP_EVSYS_PADDR_MSB               (12)       
+#define EVSYS_CHIP_EVSYS_SYNCH_NUM               (12)       
 #define EVSYS_CHIP_EVSYS_SYNCH_NUM_BITS          (4)        
+#define EVSYS_CHIP_EVSYS_USERS                   (57)       
 #define EVSYS_CHIP_EVSYS_USERS_BITS              (6)        
 #define EVSYS_GCLK_ID_0                          (8)        
 #define EVSYS_GCLK_ID_1                          (9)        
+#define EVSYS_GCLK_ID_10                         (18)       
+#define EVSYS_GCLK_ID_11                         (19)       
 #define EVSYS_GCLK_ID_2                          (10)       
 #define EVSYS_GCLK_ID_3                          (11)       
 #define EVSYS_GCLK_ID_4                          (12)       
@@ -48,7 +46,6 @@
 #define EVSYS_GCLK_ID_7                          (15)       
 #define EVSYS_GCLK_ID_8                          (16)       
 #define EVSYS_GCLK_ID_9                          (17)       
-#define EVSYS_GCLK_ID_10                         (18)       
-#define EVSYS_GCLK_ID_11                         (19)       
+#define EVSYS_INSTANCE_ID                        (35)       
 
 #endif /* _WBZ35_EVSYS_INSTANCE_ */

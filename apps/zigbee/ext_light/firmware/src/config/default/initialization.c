@@ -381,7 +381,7 @@ void SYS_Initialize ( void* data )
     SYS_ClkGen_Config();
 
   
-    CLK_Initialize();
+    CLOCK_Initialize();
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
@@ -397,9 +397,9 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    EVSYS_Initialize();
-
     SERCOM0_USART_Initialize();
+
+    EVSYS_Initialize();
 
     EIC_Initialize();
 
@@ -443,7 +443,6 @@ void SYS_Initialize ( void* data )
 
     osalAPIList.OSAL_MemAlloc = OSAL_Malloc;
     osalAPIList.OSAL_MemFree = OSAL_Free;
-
 
 
 /*******************************************************************************
