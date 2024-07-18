@@ -172,6 +172,11 @@
 // Section: Library/Stack Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+#define QUEUE_LENGTH_BLE        (32)
+#define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
+#define EXT_COMMON_MEMORY_SIZE  (28*1024)
+OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
+
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -197,11 +202,6 @@
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
-
-#define QUEUE_LENGTH_BLE        (32)
-#define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
-#define EXT_COMMON_MEMORY_SIZE  (28*1024)
-OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -286,6 +286,8 @@ void SYS_Initialize ( void* data )
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
+    BT_SYS_Cfg_T        btSysCfg;
+    BT_SYS_Option_T     btOption;
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -312,8 +314,6 @@ void SYS_Initialize ( void* data )
     // Initialize the RF Clock Generator
     SYS_ClkGen_Config();
 
-    BT_SYS_Cfg_T        btSysCfg;
-    BT_SYS_Option_T     btOption;
   
     CLOCK_Initialize();
     /* MISRAC 2012 deviation block start */
@@ -367,7 +367,6 @@ void SYS_Initialize ( void* data )
 
     osalAPIList.OSAL_MemAlloc = OSAL_Malloc;
     osalAPIList.OSAL_MemFree = OSAL_Free;
-
 
 
 /*******************************************************************************

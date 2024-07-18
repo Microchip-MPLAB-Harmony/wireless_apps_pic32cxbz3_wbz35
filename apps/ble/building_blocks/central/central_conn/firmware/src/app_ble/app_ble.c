@@ -232,7 +232,7 @@ static void APP_BleConfigAdvance(void)
     scanParam.disChannel = 0;      /* Disable specific channel during scanning */
     BLE_GAP_SetScanningParam(&scanParam);
 
-    BLE_GAP_SetConnTxPowerLevel(15, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(14, &connTxPower);      /* Connection TX Power */
 
     // Configure SMP parameters
     (void)memset(&smpParam, 0, sizeof(BLE_SMP_Config_T));

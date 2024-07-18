@@ -48,6 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "ble/lib/include/bt_sys.h"
+#include <string.h>
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -76,10 +78,8 @@
 #include "driver/device_support/include/sleep_system.h"
 #include "framework_defs.h"
 #include "app_idle_task.h"
-#include "ble/lib/include/bt_sys.h"
-#include <string.h>
-#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -110,11 +110,11 @@
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "peripheral/nvm/plib_nvm.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
+#include "peripheral/nvm/plib_nvm.h"
 #include "app.h"
 
 

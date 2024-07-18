@@ -79,9 +79,8 @@ void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(vo
 }
 
 /* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 8.6 deviated 40 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 39 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
-extern void RTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void FREQM_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void CHANGE_NOTICE_A_Handler    ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -145,7 +144,7 @@ const H3DeviceVectors exception_table=
     .pfnDebugMonitor_Handler       = DebugMonitor_Handler,
     .pfnPendSV_Handler             = xPortPendSVHandler,
     .pfnSysTick_Handler            = xPortSysTickHandler,
-    .pfnRTC_Handler                = RTC_Handler,
+    .pfnRTC_Handler                = RTC_InterruptHandler,
     .pfnEIC_Handler                = EIC_Handler,
     .pfnFREQM_Handler              = FREQM_Handler,
     .pfnNVM_Handler                = NVM_InterruptHandler,

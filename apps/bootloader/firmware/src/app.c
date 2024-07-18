@@ -983,7 +983,7 @@ void APP_Tasks ( void )
   			uint32_t portv;
   			uint32_t pval = 1;
 	
-						/* Set to Digital mode */
+			/* Set to Digital mode */
   			((gpio_registers_t*)GPIO_PORT_A)->GPIO_ANSELCLR = (1 << 4);
   			/* Read the GPIO Port for Button Press Identification */
   			portv = ((gpio_registers_t*)GPIO_PORT_A)->GPIO_PORT;

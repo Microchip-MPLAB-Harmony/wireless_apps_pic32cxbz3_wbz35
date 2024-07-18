@@ -196,7 +196,7 @@ static void APP_BleConfigBasic(void)
     
 
     // Configure advertising parameters
-    BLE_GAP_SetAdvTxPowerLevel(15,&advTxPower);      /* Advertising TX Power */
+    BLE_GAP_SetAdvTxPowerLevel(8,&advTxPower);      /* Advertising TX Power */
     
     (void)memset(&advParam, 0, sizeof(BLE_GAP_AdvParams_T));
     advParam.intervalMin = 32;     /* Advertising Interval Min */
@@ -216,7 +216,7 @@ static void APP_BleConfigBasic(void)
     (void)memcpy(appScanRspData.advData, scanRspData, appScanRspData.advLen);     /* Scan Response Data */
     BLE_GAP_SetScanRspData(&appScanRspData);
 
-    BLE_GAP_SetConnTxPowerLevel(15, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(14, &connTxPower);      /* Connection TX Power */
 }
 static void APP_BleConfigAdvance(void)
 {

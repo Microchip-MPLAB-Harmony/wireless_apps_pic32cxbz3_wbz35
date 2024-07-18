@@ -48,8 +48,6 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "ble/lib/include/bt_sys.h"
-#include <string.h>
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -80,6 +78,8 @@
 #include "app_idle_task.h"
 #include "device_sleep.h"
 #include "device_deep_sleep.h"
+#include "ble/lib/include/bt_sys.h"
+#include <string.h>
 #include "peripheral/evsys/plib_evsys.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -114,7 +114,10 @@
 #include "peripheral/nvm/plib_nvm.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "system/int/sys_int.h"
+#include "system/cache/sys_cache.h"
 #include "osal/osal.h"
+#include "system/debug/sys_debug.h"
 #include "app.h"
 
 
@@ -223,6 +226,31 @@ Remarks:
 
 void SYS_Tasks ( void );
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/* System Objects
+
+Summary:
+    Structure holding the system's object handles
+
+Description:
+    This structure contains the object handles for all objects in the
+    MPLAB Harmony project's system configuration.
+
+Remarks:
+    These handles are returned from the "Initialize" functions for each module
+    and must be passed into the "Tasks" function for each module.
+*/
+
+typedef struct
+{
+    char reserved;
+} SYSTEM_OBJECTS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -232,6 +260,7 @@ void SYS_Tasks ( void );
 
 
 
+extern SYSTEM_OBJECTS sysObj;
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
