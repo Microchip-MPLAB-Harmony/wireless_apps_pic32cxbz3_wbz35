@@ -59,7 +59,7 @@ Following table provides number of Wireless examples available for different dev
 
 ### Development Tools
 
-- [MPLAB® X IDE v6.15]
+- [MPLAB® X IDE v6.20]
 - MPLAB® X IDE plug-ins:
 - MPLAB® Code Configurator (MCC) `v5.5.7`
 - [MPLAB® XC32 C/C++ Compiler v4.35]
