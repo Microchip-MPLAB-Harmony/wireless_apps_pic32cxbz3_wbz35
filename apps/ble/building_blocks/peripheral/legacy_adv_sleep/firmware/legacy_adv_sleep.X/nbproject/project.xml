@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>legacy_adv</name>
+            <name>legacy_adv_sleep</name>
             <creation-uuid>2db27e3a-293a-4125-ad38-0de2dd9babed</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>

@@ -136,7 +136,7 @@ void CLOCK_Initialize( void )
     }
 
     /* OSWEN    = SWITCH    */
-    /* SOSCEN   = OFF   */
+    /* SOSCEN   = ON   */
     /* CF       = NO_FAILDET       */
     /* SLPEN    = IDLE    */
     /* CLKLOCK  = UNLOCKED  */
@@ -144,7 +144,7 @@ void CLOCK_Initialize( void )
     /* WAKE2SPD = FRC */
     /* DRMEN    = NO_EFFECT    */
     /* FRCDIV   = DIV_1   */
-    CRU_REGS->CRU_OSCCON = 0x200105;
+    CRU_REGS->CRU_OSCCON = 0x200107;
 
     CRU_REGS->CRU_OSCCONSET = CRU_OSCCON_OSWEN_Msk;  /* request oscillator switch to occur */
 
@@ -180,7 +180,7 @@ void CLOCK_Initialize( void )
     /* Peripheral Module Disable Configuration */
 
 
-    CFG_REGS->CFG_PMD1 = 0x208103cf;
+    CFG_REGS->CFG_PMD1 = 0x208003cf;
     CFG_REGS->CFG_PMD2 = 0x0;
     CFG_REGS->CFG_PMD3 = 0x7ffe;
 

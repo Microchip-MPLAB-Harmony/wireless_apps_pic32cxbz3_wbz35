@@ -1,7 +1,7 @@
 format_version: v1.0
 configName: default
 folderName: legacy_scan
-frameworkPath: C:\BLE Chimera+Buckland
+frameworkPath: D:\h3
 processor: WBZ351
 projectName: legacy_scan
 settings:

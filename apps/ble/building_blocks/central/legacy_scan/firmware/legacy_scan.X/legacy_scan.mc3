@@ -106,6 +106,40 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_CONN_TX_PWR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_CONN_TX_PWR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;14&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;14&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_DEV_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_DEV_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Microchip&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_DEV_NAME_CHECK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
+  &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_DEV_NAME_CHECK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;BLE_STACK_LIB&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/BLE_STACK_LIB&gt;
+&lt;/BLE_STACK_LIB&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BLE_STACK_LIB" name="GAP_EXT_ADV_DATA"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;BLE_STACK_LIB&gt;
   &lt;BLE_STACK_LIB dnOrder=&quot;0&quot; id=&quot;GAP_EXT_ADV_DATA&quot;&gt;
@@ -1466,7 +1500,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\FreeRTOSConfig.h</file>
-         <hash>7108c3acf12cdb3005c953332ab50959f6fa2cf37c97127a33199a999e5c2c87</hash>
+         <hash>02d6266abe42b87f171a485557a70630027bad2ef76be3e250dd86bb85661c64</hash>
       </entry>
       <entry>
          <file>..\src\config\default\WBZ351.ld</file>
@@ -1598,7 +1632,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>ebd15e608d2c73b945f950834cc204c85fa41717a62309b71e40c543ed930843</hash>
+         <hash>7f247245e738adb0eba5ff5c0493a398acda4f37b080127ae198e5c5244786a1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>

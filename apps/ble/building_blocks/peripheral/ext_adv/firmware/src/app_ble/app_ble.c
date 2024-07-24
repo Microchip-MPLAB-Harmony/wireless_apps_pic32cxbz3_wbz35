@@ -212,7 +212,7 @@ static void APP_BleConfigAdvance(void)
     
     //Configure advertising Set 1
     advParams.advHandle = 1;        /* Advertising Handle */
-    advParams.evtProperies = BLE_GAP_EXT_ADV_EVT_PROP_SCANNABLE_ADV; /* Advertising Event Properties */
+    advParams.evtProperies = 0;//BLE_GAP_EXT_ADV_EVT_PROP_SCANNABLE_ADV; /* Advertising Event Properties */
     advParams.priIntervalMin = 1600;     /* Primary Advertising Interval Min */
     advParams.priIntervalMax = 1600;     /* Primary Advertising Interval Max */
     advParams.priChannelMap = BLE_GAP_ADV_CHANNEL_ALL;       /* Primary Advertising Channel Map */

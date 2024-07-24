@@ -55,6 +55,7 @@
 #include "app.h"
 #include "definitions.h"
 #include "app_ble.h"
+#include "config/default/peripheral/rtc/plib_rtc.h"
 
 
 // *****************************************************************************
@@ -151,6 +152,7 @@ void APP_Tasks ( void )
             bool appInitialized = true;
             //appData.appQueue = xQueueCreate( 10, sizeof(APP_Msg_T) );
             APP_BleStackInit();
+            RTC_Timer32Start();
             
             // Enable Ext Adv
             BLE_GAP_ExtAdvEnableParams_T extAdvEnableParam;

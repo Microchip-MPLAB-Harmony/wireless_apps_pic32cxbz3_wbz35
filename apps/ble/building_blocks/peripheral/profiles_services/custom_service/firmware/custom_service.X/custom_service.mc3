@@ -4974,7 +4974,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\FreeRTOSConfig.h</file>
-         <hash>02d6266abe42b87f171a485557a70630027bad2ef76be3e250dd86bb85661c64</hash>
+         <hash>7108c3acf12cdb3005c953332ab50959f6fa2cf37c97127a33199a999e5c2c87</hash>
       </entry>
       <entry>
          <file>..\src\config\default\WBZ351.ld</file>
@@ -5122,7 +5122,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>fd851d1559068516dbc91d84e3a7f8bed79e9aaa211e51e97d438ba208e049b5</hash>
+         <hash>33decb6d562d646087243466e3d7d6d3e1776a9e90304ef28434b83f45dfc207</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -5346,7 +5346,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>fa1fde969175e1db760d7d6d2f5003cce67b4574d3ff2b9559611ba67d38f2ff</hash>
+         <hash>3cd3adba9b17e43112dc7500ccc70e2a8abffe54fa08c7b720e62280491c5350</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>

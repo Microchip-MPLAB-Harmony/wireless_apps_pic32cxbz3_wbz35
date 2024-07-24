@@ -124,9 +124,9 @@
 #pragma config RTCEVENT_SEL =      ONE_SEC
 #pragma config RTCEVENT_EN =      OFF
 #pragma config VBKP_1KCSEL =      _32K
-#pragma config VBKP_32KCSEL =      FRC
+#pragma config VBKP_32KCSEL =      SOSC
 #pragma config VBKP_DIVSEL =      DIV_31_25
-#pragma config LPCLK_MOD =      DIV_1
+#pragma config LPCLK_MOD =      DIV_1_024
 #pragma config RTCEVTYPE =      OUT
 #pragma config CPEN_DLY =      _8_LPRC
 #pragma config DSZPBOREN =      OFF
@@ -135,7 +135,7 @@
 #pragma config DSWDTEN =      OFF
 #pragma config DSEN =    OFF
 #pragma config UVREGROVR =      CONTROLLED
-#pragma config LPOSCEN =      OFF
+#pragma config LPOSCEN =      ON
 #pragma config RTCNTM_CSEL =      RAW
 
 /*** FBCFG0 ***/
@@ -335,6 +335,8 @@ void SYS_Initialize ( void* data )
     SERCOM0_USART_Initialize();
 
     EVSYS_Initialize();
+
+    RTC_Initialize();
 
     NVM_Initialize();
 
