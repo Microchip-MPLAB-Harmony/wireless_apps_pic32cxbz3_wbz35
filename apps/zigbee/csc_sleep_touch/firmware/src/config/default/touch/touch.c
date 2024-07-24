@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.14.0 Release
+  Touch Library v3.16.0 Release
 
   Company:
     Microchip Technology Inc.
@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (C) [2023], Microchip Technology Inc., and its subsidiaries. All rights reserved.
+Copyright (C) [2024], Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
 The software and documentation is provided by microchip and its contributors
 "as is" and any express, implied or statutory warranties, including, but not
@@ -108,9 +108,9 @@ static uint8_t  freq_hop_autotune_counters[NUM_FREQ_STEPS];
 
 /* Configuration */
 qtm_freq_hop_autotune_config_t qtm_freq_hop_autotune_config1 = {DEF_NUM_CHANNELS,
-    NUM_FREQ_STEPS,
-    &ptc_qtlib_acq_gen1.freq_option_select,
-    &freq_hop_delay_selection[0],
+                                                                NUM_FREQ_STEPS,
+                                                                &ptc_qtlib_acq_gen1.freq_option_select,
+                                                                &freq_hop_delay_selection[0],
                                                                 DEF_FREQ_AUTOTUNE_ENABLE,
                                                                 FREQ_AUTOTUNE_MAX_VARIANCE,
                                                                 FREQ_AUTOTUNE_COUNT_IN};
@@ -189,8 +189,8 @@ static touch_ret_t touch_sensors_config(void)
     touch_ret_t touch_ret = TOUCH_SUCCESS;
 
     /* Init acquisition module */
-    qtm_cvd_init_acquisition_module(&qtlib_acq_set1);
-    qtm_cvd_qtlib_assign_signal_memory(&touch_acq_signals_raw[0]);
+    touch_ret = qtm_cvd_init_acquisition_module(&qtlib_acq_set1);
+    touch_ret = qtm_cvd_qtlib_assign_signal_memory(&touch_acq_signals_raw[0]);
 
     /* Initialize sensor nodes */
     for (sensor_nodes = 0u; sensor_nodes < (uint16_t) DEF_NUM_CHANNELS; sensor_nodes++) {
@@ -307,7 +307,7 @@ void touch_process(void)
             touch_ret = qtm_freq_hop_autotune(&qtm_freq_hop_autotune_control1);
             if (TOUCH_SUCCESS != touch_ret) {
                 qtm_error_callback(1);
-            }
+        }
             touch_ret = qtm_key_sensors_process(&qtlib_key_set1);
             if (TOUCH_SUCCESS != touch_ret) {
                 qtm_error_callback(2);
@@ -343,25 +343,22 @@ Notes  :
 ============================================================================*/
 void touch_timer_handler(void)
 {
-    APP_Msg_T appMsg;
-  
+ 
   
         time_to_measure_touch_var = 1u;
         qtm_update_qtlib_timer(DEF_TOUCH_MEASUREMENT_PERIOD_MS);
-    appMsg.msgId = APP_MSG_TOUCH_MEAS;
-    OSAL_QUEUE_SendISR(&appData.appQueue, &appMsg);
 }
-void timer_handler( uint32_t intCause, uintptr_t context )
+static void timer_handler( uint32_t intCause, uintptr_t context )
 {
      touch_timer_handler();
 }
-uintptr_t tmr_context;
+static uintptr_t tmr_context;
 
 void touch_timer_config(void)
 {
 	RTC_Timer32CallbackRegister(timer_handler,tmr_context);
 	RTC_Timer32Start();
-	RTC_Timer32Compare0Set(DEF_TOUCH_MEASUREMENT_PERIOD_MS*(RTC_Timer32FrequencyGet()/1000));
+	RTC_Timer32Compare0Set((uint16_t)((uint16_t)(DEF_TOUCH_MEASUREMENT_PERIOD_MS)* (uint16_t)(RTC_Timer32FrequencyGet()/((uint32_t)1000))));
 }
 
 uint16_t get_sensor_node_signal(uint16_t sensor_node)
@@ -416,7 +413,7 @@ void calibrate_node(uint16_t sensor_node)
     touch_ret = qtm_init_sensor_key(&qtlib_key_set1, (uint8_t) sensor_node, &ptc_qtlib_node_stat1[sensor_node]);
     if(touch_ret != TOUCH_SUCCESS) {
 		/* Error condition */
-}
+	}
 }
 
 uint8_t get_scroller_state(uint16_t sensor_node)

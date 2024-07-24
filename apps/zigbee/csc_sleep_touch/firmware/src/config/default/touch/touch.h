@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.13.1 Release
+  Touch Library v3.16.0 Release
 
   Company:
     Microchip Technology Inc.
@@ -16,7 +16,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (c) 2023 released Microchip Technology Inc.  All rights reserved.
+Copyright (c) 2024 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -114,19 +114,19 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 
 #define NODE_0_PARAMS                                                                                               \
 {                                                                                                                  \
-   Y(4), Y(0), 30,0, NODE_GAIN(GAIN_1, GAIN_1), FILTER_LEVEL_16                   \
+   Y(4), Y(0), 30,0, NODE_GAIN(GAIN_1, GAIN_1), (uint8_t)FILTER_LEVEL_16                   \
 }
 #define NODE_1_PARAMS                                                                                               \
 {                                                                                                                  \
-   Y(4), Y(6), 30,0, NODE_GAIN(GAIN_1, GAIN_1), FILTER_LEVEL_16                   \
+   Y(4), Y(6), 30,0, NODE_GAIN(GAIN_1, GAIN_1), (uint8_t)FILTER_LEVEL_16                   \
 }
 #define NODE_2_PARAMS                                                                                               \
 {                                                                                                                  \
-   Y(4), Y(5), 30,0, NODE_GAIN(GAIN_1, GAIN_1), FILTER_LEVEL_16                   \
+   Y(4), Y(5), 30,0, NODE_GAIN(GAIN_1, GAIN_1), (uint8_t)FILTER_LEVEL_16                   \
 }
 #define NODE_3_PARAMS                                                                                               \
 {                                                                                                                  \
-   Y(4), Y(1), 30,0, NODE_GAIN(GAIN_1, GAIN_1), FILTER_LEVEL_16                   \
+   Y(4), Y(1), 30,0, NODE_GAIN(GAIN_1, GAIN_1), (uint8_t)FILTER_LEVEL_16                   \
 }
 
 /**********************************************************/

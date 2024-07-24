@@ -1,7 +1,7 @@
 format_version: v1.0
 configName: default
 folderName: CSC_Sleep
-frameworkPath: MCC
+frameworkPath: D:\h3
 processor: WBZ351
 projectName: CSC_Sleep
 settings:
@@ -11,4 +11,4 @@ settings:
   TRUSTZONE: 'false'
   CMSISPath: dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: dev_packs\Microchip\PIC32CX-BZ3_DFP\1.1.165\WBZ35\atdf\WBZ351.atdf
+  DFPPath: dev_packs\Microchip\PIC32CX-BZ3_DFP\1.1.171\WBZ35\atdf\WBZ351.atdf

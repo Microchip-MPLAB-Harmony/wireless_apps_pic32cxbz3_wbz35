@@ -44,7 +44,6 @@
 #include "interrupts.h"
 #include "plib_rtc.h"
 #include <stdlib.h>
-#include <limits.h>
 
 volatile static RTC_OBJECT rtcObj;
 
@@ -77,7 +76,6 @@ void RTC_Initialize(void)
 
     RTC_REGS->MODE0.RTC_INTENSET = 0x100U;
 
-    RTC_REGS->MODE0.RTC_EVCTRL = 0x100U;
 }
 
 

@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -322,8 +321,6 @@ void SYS_Initialize ( void* data )
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-    // Initialize the RF Clock Generator
-    SYS_ClkGen_Config();
 
   
     CLOCK_Initialize();
@@ -338,46 +335,26 @@ void SYS_Initialize ( void* data )
     /* MISRAC 2012 deviation block end */
 
 
-	uint8_t deepSleepWakeupSrc;
-    
-	DEVICE_DeepSleepWakeSrc_T wakeSrc;
-	DEVICE_GetDeepSleepWakeUpSrc(&wakeSrc);
-   
-    
-    GPIO_PortOutputEnable(GPIO_PORT_B, (1<<10));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<9));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<7));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<10));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<8));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<4));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<13));
-    GPIO_PortOutputEnable(GPIO_PORT_A, (1<<14));
 
-	
-    deepSleepWakeupSrc = (uint8_t) wakeSrc;
-	if ((wakeSrc == DEVICE_DEEP_SLEEP_WAKE_NONE) || (wakeSrc == DEVICE_DEEP_SLEEP_WAKE_MCLR))  
-	{
-		deepSleepWakeupSrc = (uint8_t) DEVICE_DEEP_SLEEP_WAKE_NONE;
-		RTC_Initialize();
-	}
-	
-   
+
 	GPIO_Initialize();
 
     EVSYS_Initialize();
 
     TC0_TimerInitialize();
 
+    RTC_Initialize();
+
     NVM_Initialize();
 
-    TCC2_PWMInitialize();
-
     ADCHS_Initialize();
+
+    TCC2_PWMInitialize();
 
     TCC0_CompareInitialize();
 
 
-    
+
     /* MISRAC 2012 deviation block start */
     /* Following MISRA-C rules deviated in this block  */
     /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
@@ -413,7 +390,6 @@ void SYS_Initialize ( void* data )
 	PMU_REGS->PMU_WCMSIZ |= PMU_WCMSIZ_SRAM1_SIZ_16K_SRAM;
 
 
-
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -442,11 +418,10 @@ void SYS_Initialize ( void* data )
 
 
 
-    #ifdef ENABLE_TOUCH
-        touch_init();
-    #endif
+    
+	touch_init();
 
-    // Create ZIGBEE Stack Message QUEUE
+	// Create ZIGBEE Stack Message QUEUE
     OSAL_QUEUE_Create(&zigbeeRequestQueueHandle, QUEUE_LENGTH_ZIGBEE, QUEUE_ITEM_SIZE_ZIGBEE);
 
     // Retrieve Zigbee's data from Information Base
@@ -458,8 +433,6 @@ void SYS_Initialize ( void* data )
     // Initialize ZIGBEE Stack
     Zigbee_Init(&osalAPIList, &zigbeeRequestQueueHandle, NULL, &zgbIBdata);
 
-    // pass the above read wakep src for the stack to use
-	CS_WriteParameter(CS_DEVICE_DEEP_SLEEP_WAKEUP_SRC_ID, &deepSleepWakeupSrc);
     //uint8_t value = PMU_Set_Mode(PMU_MODE_BUCK_PWM); //Set PMU as PWM mode
     //PMU_Set_Mode(PMU_MODE_BUCK_PWM); //Set PMU as PWM mode // For Buck Mode : PMU_MODE_MLDO
 

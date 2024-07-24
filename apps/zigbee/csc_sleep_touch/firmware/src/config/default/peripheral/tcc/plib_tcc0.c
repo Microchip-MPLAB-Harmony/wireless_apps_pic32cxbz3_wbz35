@@ -230,7 +230,6 @@ void TCC0_CompareCallbackRegister( TCC_CALLBACK callback, uintptr_t context )
     TCC0_CallbackObject.context = context;
 }
 
-
 /* Compare match interrupt handler */
 void __attribute__((used)) TCC0_InterruptHandler( void )
 {
@@ -245,7 +244,7 @@ void __attribute__((used)) TCC0_InterruptHandler( void )
     if(TCC0_CallbackObject.callback_fn != NULL)
     {
         TCC0_CallbackObject.callback_fn(status, context);
-}
+    }
 }
 
   

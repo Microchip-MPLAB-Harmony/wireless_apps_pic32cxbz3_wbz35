@@ -81,8 +81,6 @@ void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(vo
 /* MISRAC 2012 deviation block start */
 /* MISRA C-2012 Rule 8.6 deviated 38 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
-extern void vPortSVCHandler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void xPortPendSVHandler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void FREQM_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void CHANGE_NOTICE_A_Handler    ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -95,10 +93,8 @@ extern void PAC_Handler                ( void ) __attribute__((weak, alias("Dumm
 extern void RAMECC_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM0_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SERCOM1_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void TCC0_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TCC1_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TCC2_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void TC0_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TC1_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TC2_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TC3_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -106,7 +102,7 @@ extern void TC4_Handler                ( void ) __attribute__((weak, alias("Dumm
 extern void TC5_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TC6_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TC7_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void ADCHS_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void ADCHS_IRQ_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void AC_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SILEX_0_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SILEX_1_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -172,7 +168,7 @@ const H3DeviceVectors exception_table=
     .pfnTC5_Handler                = TC5_Handler,
     .pfnTC6_Handler                = TC6_Handler,
     .pfnTC7_Handler                = TC7_Handler,
-    .pfnADCHS_IRQ_Handler          = ADCHS_Handler,
+    .pfnADCHS_IRQ_Handler          = ADCHS_IRQ_Handler,
     .pfnAC_Handler                 = AC_Handler,
     .pfnSILEX_0_Handler            = SILEX_0_Handler,
     .pfnSILEX_1_Handler            = SILEX_1_Handler,

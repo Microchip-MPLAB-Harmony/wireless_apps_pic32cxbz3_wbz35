@@ -78,7 +78,6 @@
 #include "app_idle_task.h"
 //#include "device_sleep.h"
 #include "device_deep_sleep.h"
-#include "peripheral/evsys/plib_evsys.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -103,13 +102,14 @@
 *******************************************************************************/
 #include "driver/pds/include/pds.h"
 #include "driver/pds/include/pds_config.h"
+#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/rtc/plib_rtc.h"
-#include "peripheral/tc/plib_tc0.h"
 #include "touch/touch.h"
+#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/nvm/plib_nvm.h"
 #include "peripheral/adchs/plib_adchs.h"
 #include "peripheral/tcc/plib_tcc2.h"
@@ -119,7 +119,6 @@
 #include "zigbee/z3device_configs/stackConfig.h"
 #include "zigbee/z3device_configs/zigbeeAppConfig.h"
 #include "zigbee/z3device/common/include/zgb_task.h"
-#include "zigbee/z3device/common/include/z3Device.h"
 #include "zigbee/lib/inc/pds/include/wlPdsMemIds.h"
 #include "zigbee/lib/inc/mac_phy/mac_hwd_phy/RF231_RF212/PHY/include/phyInit.h"
 #include "zigbee/lib/inc/systemenvironment/include/sysTaskManager.h"
