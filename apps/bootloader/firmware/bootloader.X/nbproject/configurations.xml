@@ -9,42 +9,42 @@
           <logicalFolder name="driver" displayName="driver" projectFiles="true">
             <logicalFolder name="security" displayName="security" projectFiles="true">
               <logicalFolder name="silexpk" displayName="silexpk" projectFiles="true">
-                <itemPath>../src/config/default/driver/security/silexpk/core_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/rsa.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/ecjpake.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/ed448_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/montgomery_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/dsa_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/ec_curves_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/adapter_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/internal.h</itemPath>
                 <itemPath>../src/config/default/driver/security/silexpk/statuscodes_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/inputslots.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/impl.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/version.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/rsa.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/sxbufop.h</itemPath>
                 <itemPath>../src/config/default/driver/security/silexpk/iomem.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/ec_curves_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/montgomery_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/impl.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/ecjpake.h</itemPath>
                 <itemPath>../src/config/default/driver/security/silexpk/ed25519_api.h</itemPath>
                 <itemPath>../src/config/default/driver/security/silexpk/cmddefs_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/dsa_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/inputslots.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/ed448_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/adapter_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/version.h</itemPath>
                 <itemPath>../src/config/default/driver/security/silexpk/eccweierstrass_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/sxbufop.h</itemPath>
-                <itemPath>../src/config/default/driver/security/silexpk/internal.h</itemPath>
+                <itemPath>../src/config/default/driver/security/silexpk/core_api.h</itemPath>
               </logicalFolder>
               <logicalFolder name="sxsymcrypt" displayName="sxsymcrypt" projectFiles="true">
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/cmac_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/trng_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/interrupts_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/sm3_api.h</itemPath>
                 <itemPath>../src/config/default/driver/security/sxsymcrypt/internal.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/sha2_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/blkcipher_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/sha1_api.h</itemPath>
                 <itemPath>../src/config/default/driver/security/sxsymcrypt/trnginternal.h</itemPath>
                 <itemPath>../src/config/default/driver/security/sxsymcrypt/mac_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/cmmask_api.h</itemPath>
                 <itemPath>../src/config/default/driver/security/sxsymcrypt/aead_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/hash_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/hmac_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/sm3_api.h</itemPath>
                 <itemPath>../src/config/default/driver/security/sxsymcrypt/statuscodes.h</itemPath>
                 <itemPath>../src/config/default/driver/security/sxsymcrypt/keyref_api.h</itemPath>
-                <itemPath>../src/config/default/driver/security/sxsymcrypt/interrupts_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/hmac_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/blkcipher_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/sha2_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/trng_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/sha1_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/cmmask_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/hash_api.h</itemPath>
+                <itemPath>../src/config/default/driver/security/sxsymcrypt/cmac_api.h</itemPath>
               </logicalFolder>
               <itemPath>../src/config/default/driver/security/api_table.h</itemPath>
             </logicalFolder>
@@ -57,8 +57,8 @@
             <itemPath>../src/config/default/driver/driver.h</itemPath>
           </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
-            <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/default/osal/osal.h</itemPath>
+            <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/default/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
@@ -99,23 +99,23 @@
               <itemPath>../src/config/default/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
-              <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
               <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
+              <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/default/system/system_common.h</itemPath>
             <itemPath>../src/config/default/system/system.h</itemPath>
+            <itemPath>../src/config/default/system/system_common.h</itemPath>
             <itemPath>../src/config/default/system/system_module.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/config/default/device_vectors.h</itemPath>
           <itemPath>../src/config/default/device.h</itemPath>
-          <itemPath>../src/config/default/interrupts.h</itemPath>
-          <itemPath>../src/config/default/definitions.h</itemPath>
-          <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
-          <itemPath>../src/config/default/sys_tasks.h</itemPath>
-          <itemPath>../src/config/default/config.h</itemPath>
-          <itemPath>../src/config/default/device_cache.h</itemPath>
-          <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
+          <itemPath>../src/config/default/definitions.h</itemPath>
+          <itemPath>../src/config/default/interrupts.h</itemPath>
+          <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/default/device_vectors.h</itemPath>
+          <itemPath>../src/config/default/configuration.h</itemPath>
+          <itemPath>../src/config/default/device_cache.h</itemPath>
+          <itemPath>../src/config/default/config.h</itemPath>
+          <itemPath>../src/config/default/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -123,114 +123,114 @@
           <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
             <logicalFolder name="Core" displayName="Core" projectFiles="true">
               <logicalFolder name="Include" displayName="Include" projectFiles="true">
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="WBZ351_DFP" displayName="WBZ351_DFP" projectFiles="true">
           <logicalFolder name="component" displayName="component" projectFiles="true">
-            <itemPath>../src/packs/WBZ351_DFP/component/pfw.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/cru.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/eic.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/dscon.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/dmt.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/dsu.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/dac_ctrl.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/cvd.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/dgi_spi.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/arb.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/zigbee.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/adchs.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/gpio.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/fuses.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/btzbsys.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/ac.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/rcon.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/ble.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/pps.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/pmu.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/rot.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/cfg.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/hmatrix2top.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/qspi.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/pac.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/silex.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/ccl.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/nvm.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/evsys.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/rtc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/dac_ctrl.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/eic.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/dmac.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/ramecc.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/tcc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/dmt.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/pps.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/dsu.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/dgi_spi.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/cru.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/cvd.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/arb.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/cmcc.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/tc.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/sercom.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/pfw.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/zigbee.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/freqm.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/pche.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/component/cmcc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/dscon.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/btzbsys.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/gpio.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/evsys.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/hmatrix2top.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/cfg.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/adchs.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/qspi.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/ccl.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/pmu.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/rtc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/nvm.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/pac.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/ramecc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/rot.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/silex.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/sercom.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/rcon.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/ac.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="instance" displayName="instance" projectFiles="true">
-            <itemPath>../src/packs/WBZ351_DFP/instance/ac.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc2.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/adchs.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/dscon.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/rcon.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/qspi.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/cvd.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/hmatrix2top.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/nvm.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/gpiob.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/ac.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/dsu.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/ramecc.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/dmt.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/dmac.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/sercom1.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/btzbsys.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/fuses.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/pche.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/ramecc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/dgi_spi.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/pmu.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/eic.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/cru.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/ble.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/rot.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/gpioa.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/pps.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/silex.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/ccl.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/dac_ctrl.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/evsys.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc0.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/zigbee.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/pfw.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tcc1.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/arb.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/silex.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/dgi_spi.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc1.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/hmatrix2top.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/cvd.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/sercom1.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/cmcc.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/pche.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tcc2.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tcc0.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/gpioa.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc6.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/ble.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc7.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/pps.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc0.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/cfg.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/eic.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/wdt.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/pac.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc4.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/pmu.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/freqm.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/sercom0.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/dscon.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/gpiob.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/tc5.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/rtc.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/rot.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/rcon.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/ccl.h</itemPath>
-            <itemPath>../src/packs/WBZ351_DFP/instance/nvm.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/zigbee.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/btzbsys.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/adchs.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/arb.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/fuses.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/pfw.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/tc2.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/WBZ351_DFP/pio/wbz351.h</itemPath>
@@ -243,10 +243,10 @@
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/application.h</itemPath>
       <itemPath>../src/mem_interface.h</itemPath>
-      <itemPath>../src/dfu/pe/include/progexec.h</itemPath>
       <itemPath>../src/dfu/pe/include/crc.h</itemPath>
-      <itemPath>../src/dfu/dfu.h</itemPath>
+      <itemPath>../src/dfu/pe/include/progexec.h</itemPath>
       <itemPath>../src/dfu/pe/include/uart.h</itemPath>
+      <itemPath>../src/dfu/dfu.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -308,12 +308,12 @@
               <itemPath>../src/config/default/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/default/interrupts.c</itemPath>
           <itemPath>../src/config/default/exceptions.c</itemPath>
-          <itemPath>../src/config/default/tasks.c</itemPath>
-          <itemPath>../src/config/default/startup_xc32.c</itemPath>
-          <itemPath>../src/config/default/libc_syscalls.c</itemPath>
           <itemPath>../src/config/default/initialization.c</itemPath>
+          <itemPath>../src/config/default/interrupts.c</itemPath>
+          <itemPath>../src/config/default/libc_syscalls.c</itemPath>
+          <itemPath>../src/config/default/startup_xc32.c</itemPath>
+          <itemPath>../src/config/default/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/config.c</itemPath>
@@ -321,9 +321,9 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/dfu/pe/src/uart.c</itemPath>
-      <itemPath>../src/dfu/dfu.c</itemPath>
       <itemPath>../src/dfu/pe/src/progexec.c</itemPath>
       <itemPath>../src/dfu/pe/src/crc.c</itemPath>
+      <itemPath>../src/dfu/dfu.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -340,8 +340,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
         <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.183"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="configuration.header.zota_manufacture_code"

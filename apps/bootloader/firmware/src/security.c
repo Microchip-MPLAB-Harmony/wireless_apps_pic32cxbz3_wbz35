@@ -426,7 +426,7 @@ uint32_t SecurityStatusGet(void)
     uint32_t codeProt = 0;
     
     //Read dbg lck status to determine whether the device is secured or not
-    secBoot = ((SECCFG & 192) >> ROT_SECCFG_DEBUG_LCK_Pos) ;
+    secBoot = ((SECCFG & 192) >> 6) ;
             
     //Read code protection status
     codeProt = (((DSU_REGS->DSU_STATUSB) & DSU_STATUSB_PROT_Msk) >> DSU_STATUSB_PROT_Pos);

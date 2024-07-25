@@ -253,7 +253,7 @@ Archive member included to satisfy reference by file (symbol)
 ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a(rf_plat.o)
                               ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a(rf_system.o) (RfWriteDfeRegByRange)
 ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a(sleep_system.o)
-                              build/default/production/_ext/1171490990/device_deep_sleep.o (DEVICE_SLEEP_ConfigWssLowPowerMode)
+                              build/default/production/_ext/1171490990/device_sleep.o (DEVICE_SLEEP_DisableDebugBus)
 ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a(info_block_plat.o)
                               ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a(info_block.o) (IB_PMU_REG_proc)
 ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a(pmu_dvr.o)
@@ -998,8 +998,8 @@ Microchip PIC32 Memory-Usage Report By Module
          888           0           4         892         37c    groupsCluster.o                 build/default/production/_ext/410253077/groupsCluster.o
          880           0           0         880         370    tcKeyEstablishHandler.o         zigbee_alldevice_lib.a
          852           0          25         877         36d    bdbCommissioning.o              zigbee_alldevice_lib.a
-         868           0           0         868         364    phyTxPowerConverter.o           zigbee_alldevice_lib.a
          868           0           0         868         364    machwiAssociateHandler.o        zigbee_alldevice_lib.a
+         868           0           0         868         364    phyTxPowerConverter.o           zigbee_alldevice_lib.a
          860           0           0         860         35c    sspCcmHandler.o                 zigbee_alldevice_lib.a
          856           0           0         856         358    machwiPollHandler.o             zigbee_alldevice_lib.a
          646           0         180         826         33a    N_Security_Calc.o               zigbee_alldevice_lib.a
@@ -1013,10 +1013,10 @@ Microchip PIC32 Memory-Usage Report By Module
          156           0         588         744         2e8    zigbee_init.o                   build/default/production/_ext/677812807/zigbee_init.o
          740           0           0         740         2e4    tcAuthenticHandler.o            zigbee_alldevice_lib.a
          692          32           0         724         2d4    N_AddressManager.o              zigbee_alldevice_lib.a
-         720           0           0         720         2d0    sspHashHandler.o                zigbee_alldevice_lib.a
          700          20           0         720         2d0    sysUtils.o                      build/default/production/_ext/2010351915/sysUtils.o
-         708           0           0         708         2c4    _udivmoddi4.o                   libgcc.a
+         720           0           0         720         2d0    sspHashHandler.o                zigbee_alldevice_lib.a
          704           0           4         708         2c4    machwdSetHandler.o              zigbee_alldevice_lib.a
+         708           0           0         708         2c4    _udivmoddi4.o                   libgcc.a
          700           0           1         701         2bd    phySetTrxState.o                zigbee_alldevice_lib.a
          680           0           8         688         2b0    plib_nvm.o                      build/default/production/_ext/60176403/plib_nvm.o
          552           0         132         684         2ac    appTimer.o                      build/default/production/_ext/1852899459/appTimer.o
@@ -1030,8 +1030,8 @@ Microchip PIC32 Memory-Usage Report By Module
          564           0           0         564         234    machwiStartHandler.o            zigbee_alldevice_lib.a
          560           0           0         560         230    machwiTransactionQueue.o        zigbee_alldevice_lib.a
          537           0          12         549         225    N_Task.o                        zigbee_alldevice_lib.a
-         468          80           0         548         224    cscScenesCluster.o              build/default/production/_ext/1965740351/cscScenesCluster.o
          548           0           0         548         224    pic32cxBSP.o                    build/default/production/_ext/677812807/pic32cxBSP.o
+         468          80           0         548         224    cscScenesCluster.o              build/default/production/_ext/1965740351/cscScenesCluster.o
          534           0           0         534         216    __aeabi_ddiv.o                  libm-fast-emfloat.a
          516           0          16         532         214    app_idle_task.o                 build/default/production/_ext/1360937237/app_idle_task.o
          504           0           0         504         1f8    machwiTransactionHandler.o      zigbee_alldevice_lib.a
@@ -1054,8 +1054,8 @@ Microchip PIC32 Memory-Usage Report By Module
          396           1           8         405         195    halMacIsr.o                     build/default/production/_ext/2026454998/halMacIsr.o
          392           0          12         404         194    plib_rtc_timer.o                build/default/production/_ext/60180175/plib_rtc_timer.o
          396           1           0         397         18d    phyAntDiversity.o               zigbee_alldevice_lib.a
-         384           0           0         384         180    initialization.o                build/default/production/_ext/1171490990/initialization.o
          352          20          12         384         180    ZDO_Unpack.o                    build/default/production/_ext/767432612/ZDO_Unpack.o
+         384           0           0         384         180    initialization.o                build/default/production/_ext/1171490990/initialization.o
            0           0         376         376         178    tcMem.o                         zigbee_alldevice_lib.a
          372           2           0         374         176    info_block_plat.o               pic32cx_bz3_device_support.a
          372           0           0         372         174    osal_freertos.o                 build/default/production/_ext/1529399856/osal_freertos.o
@@ -1065,8 +1065,8 @@ Microchip PIC32 Memory-Usage Report By Module
          344           0          16         360         168    phyTxFrame.o                    zigbee_alldevice_lib.a
            0         356           0         356         164    cscClusters.o                   build/default/production/_ext/1965740351/cscClusters.o
          352           0           0         352         160    machwiDataHandler.o             zigbee_alldevice_lib.a
-         352           0           0         352         160    sysDuplicateTable.o             build/default/production/_ext/2010351915/sysDuplicateTable.o
          348           0           4         352         160    identifyCluster.o               build/default/production/_ext/410253077/identifyCluster.o
+         352           0           0         352         160    sysDuplicateTable.o             build/default/production/_ext/2010351915/sysDuplicateTable.o
          248          88           4         340         154    cscGroupsCluster.o              build/default/production/_ext/1965740351/cscGroupsCluster.o
          336           0           0         336         150    plib_adchs.o                    build/default/production/_ext/1982400153/plib_adchs.o
          336           0           0         336         150    pmu_system.o                    pic32cx_bz3_device_support.a
@@ -1079,8 +1079,8 @@ Microchip PIC32 Memory-Usage Report By Module
          304           0           0         304         130    __aeabi_dmul.o                  libm-fast-emfloat.a
          292           0           8         300         12c    app.o                           build/default/production/_ext/1360937237/app.o
          264           1          21         286         11e    errH.o                          build/default/production/_ext/677812807/errH.o
-           0           0         280         280         118    macMem.o                        zigbee_alldevice_lib.a
          272           0           8         280         118    plib_tc0.o                      build/default/production/_ext/829342655/plib_tc0.o
+           0           0         280         280         118    macMem.o                        zigbee_alldevice_lib.a
          280           0           0         280         118    plib_nvic.o                     build/default/production/_ext/1865468468/plib_nvic.o
          272           0           0         272         110    sleep_system.o                  pic32cx_bz3_device_support.a
          268           0           0         268         10c    plib_clk.o                      build/default/production/_ext/60165520/plib_clk.o
@@ -1092,9 +1092,9 @@ Microchip PIC32 Memory-Usage Report By Module
          252           0           0         252          fc    csPersistentMem.o               build/default/production/_ext/1992166216/csPersistentMem.o
          238           0           0         238          ee    interrupts.o                    build/default/production/_ext/1171490990/interrupts.o
          180          56           0         236          ec    cscCommissioningCluster.o       build/default/production/_ext/1965740351/cscCommissioningCluster.o
+         228           0           0         228          e4    machwiBeaconHandler.o           zigbee_alldevice_lib.a
          228           0           0         228          e4    machwdRxBuffer.o                zigbee_alldevice_lib.a
          228           0           0         228          e4    timer.o                         build/default/production/_ext/1852899459/timer.o
-         228           0           0         228          e4    machwiBeaconHandler.o           zigbee_alldevice_lib.a
          224           0           0         224          e0    sysMutex.o                      build/default/production/_ext/2010351915/sysMutex.o
            0           0         224         224          e0    sspMem.o                        zigbee_alldevice_lib.a
          220           0           2         222          de    zclTaskManager.o                zigbee_alldevice_lib.a
@@ -1102,9 +1102,9 @@ Microchip PIC32 Memory-Usage Report By Module
          220           0           0         220          dc    tcTaskManager.o                 zigbee_alldevice_lib.a
          212           0           0         212          d4    machwiSetGetHandler.o           zigbee_alldevice_lib.a
          196           0           1         197          c5    machwdTrxHandler.o              zigbee_alldevice_lib.a
-         152          24          16         192          c0    bdbSecurity.o                   zigbee_alldevice_lib.a
          192           0           0         192          c0    tcRemoveHandler.o               zigbee_alldevice_lib.a
          192           0           0         192          c0    app_zigbee_handler.o            build/default/production/_ext/628245630/app_zigbee_handler.o
+         152          24          16         192          c0    bdbSecurity.o                   zigbee_alldevice_lib.a
          176           0          16         192          c0    bdbInstallCode.o                zigbee_alldevice_lib.a
          188           0           0         188          bc    machwdTrxCtrl.o                 zigbee_alldevice_lib.a
          180           2           2         184          b8    halTaskManager.o                build/default/production/_ext/1852899459/halTaskManager.o
@@ -1119,36 +1119,36 @@ Microchip PIC32 Memory-Usage Report By Module
          144           0           0         144          90    phyRegAccess.o                  zigbee_alldevice_lib.a
          136           0           4         140          8c    wlPdsInit.o                     pds.a
          138           0           0         138          8a    startup_xc32.o                  build/default/production/_ext/1171490990/startup_xc32.o
-         132           0           0         132          84    machwdResetHandler.o            zigbee_alldevice_lib.a
          120           0          12         132          84    sysAssert.o                     build/default/production/_ext/2010351915/sysAssert.o
+         132           0           0         132          84    machwdResetHandler.o            zigbee_alldevice_lib.a
          128           0           0         128          80    zclCommandAnalyzer.o            zigbee_alldevice_lib.a
-         124           0           0         124          7c    N_Util.o                        build/default/production/_ext/176650468/N_Util.o
          124           0           0         124          7c    machwdRegAccessHandler.o        zigbee_alldevice_lib.a
+         124           0           0         124          7c    N_Util.o                        build/default/production/_ext/176650468/N_Util.o
          112           0          12         124          7c    sysIdleHandler.o                build/default/production/_ext/2010351915/sysIdleHandler.o
          106           0          16         122          7a    N_Log.o                         zigbee_alldevice_lib.a
          112           0           8         120          78    tasks.o                         build/default/production/_ext/1171490990/tasks.o
          108           0           4         112          70    bdbReset.o                      zigbee_alldevice_lib.a
-         100           0           4         104          68    data_init.o                     libpic32c.a
           96           0           8         104          68    N_Task-Internal-Microchip.o     zigbee_alldevice_lib.a
+         100           0           4         104          68    data_init.o                     libpic32c.a
           96           0           5         101          65    sysSleep.o                      build/default/production/_ext/2010351915/sysSleep.o
           56           0          44         100          64    halTrng.o                       build/default/production/_ext/2026454998/halTrng.o
           88           0          12         100          64    cscColorControlCluster.o        build/default/production/_ext/1965740351/cscColorControlCluster.o
-          72           0          28         100          64    crtbegin.o                      c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+fp/hard/crtbegin.o
          100           0           0         100          64    N_Address.o                     zigbee_alldevice_lib.a
-          88           6           4          98          62    cscOnOffCluster.o               build/default/production/_ext/1965740351/cscOnOffCluster.o
+          72           0          28         100          64    crtbegin.o                      c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+fp/hard/crtbegin.o
           88           6           4          98          62    cscLevelControlCluster.o        build/default/production/_ext/1965740351/cscLevelControlCluster.o
+          88           6           4          98          62    cscOnOffCluster.o               build/default/production/_ext/1965740351/cscOnOffCluster.o
           94           0           0          94          5e    __libc_start_main.o             libc-musl.a
           92           0           0          92          5c    machwdRndHandler.o              zigbee_alldevice_lib.a
           88           0           0          88          58    app_zigbee.o                    build/default/production/_ext/628245630/app_zigbee.o
           88           0           0          88          58    machwdCalibHandler.o            zigbee_alldevice_lib.a
           84           0           0          84          54    pmu_dvr.o                       pic32cx_bz3_device_support.a
-           0           0          80          80          50    libc.o                          libc-musl.a
           80           0           0          80          50    phyEd.o                         zigbee_alldevice_lib.a
-          76           0           0          76          4c    zclApsInterface.o               zigbee_alldevice_lib.a
+           0           0          80          80          50    libc.o                          libc-musl.a
           76           0           0          76          4c    __aeabi_d2f.o                   libm-fast-emfloat.a
-          76           0           0          76          4c    plib_gpio.o                     build/default/production/_ext/1865254177/plib_gpio.o
           76           0           0          76          4c    freertos_hooks.o                build/default/production/_ext/1171490990/freertos_hooks.o
           76           0           0          76          4c    sysTimer.o                      build/default/production/_ext/2010351915/sysTimer.o
+          76           0           0          76          4c    zclApsInterface.o               zigbee_alldevice_lib.a
+          76           0           0          76          4c    plib_gpio.o                     build/default/production/_ext/1865254177/plib_gpio.o
           52          20           0          72          48    N_Timer-Internal-Microchip.o    zigbee_alldevice_lib.a
           68           0           0          68          44    rf_plat.o                       pic32cx_bz3_device_support.a
           68           0           0          68          44    memmove.o                       libc-size-musl.a
@@ -1166,21 +1166,21 @@ Microchip PIC32 Memory-Usage Report By Module
           30           0           0          30          1e    tcIndInput.o                    zigbee_alldevice_lib.a
           30           0           0          30          1e    pic32_data_init_copy.o          libpic32c.a
           28           0           1          29          1d    phyStateMachine.o               zigbee_alldevice_lib.a
-          28           0           0          28          1c    __aeabi_ui2d.o                  libm-fast-emfloat.a
           28           0           0          28          1c    memcpy.o                        libc-size-musl.a
+          28           0           0          28          1c    __aeabi_ui2d.o                  libm-fast-emfloat.a
           28           0           0          28          1c    memcmp.o                        libc-size-musl.a
           26           0           0          26          1a    tcResetHandler.o                zigbee_alldevice_lib.a
           24           0           0          24          18    exceptions.o                    build/default/production/_ext/1171490990/exceptions.o
           20           0           0          20          14    memset.o                        libc-size-musl.a
           18           0           0          18          12    pic32_data_init_clear.o         libpic32c.a
           18           0           0          18          12    sspReset.o                      zigbee_alldevice_lib.a
-          16           0           0          16          10    main.o                          build/default/production/_ext/1360937237/main.o
           16           0           0          16          10    crtn.o                          c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+fp/hard/crtn.o
+          16           0           0          16          10    main.o                          build/default/production/_ext/1360937237/main.o
           12           0           0          12           c    sysInit.o                       build/default/production/_ext/2010351915/sysInit.o
-           8           0           0           8           8    crti.o                          c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+fp/hard/crti.o
            8           0           0           8           8    __aeabi_dsub.o                  libm-fast-emfloat.a
-           0           0           4           4           4    __environ.o                     libc-musl.a
+           8           0           0           8           8    crti.o                          c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+fp/hard/crti.o
            4           0           0           4           4    plib_evsys.o                    build/default/production/_ext/1986646378/plib_evsys.o
+           0           0           4           4           4    __environ.o                     libc-musl.a
            4           0           0           4           4    _dvmd_tls.o                     libgcc.a
 --------------------------------------------------------------------------------
       249217        4213       69387      322817       4ed01    dist/default/production/CSC_Sleep.X.production.elf
@@ -1708,6 +1708,21 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0xe0 build/default/production/_ext/1014039709/sys_cache.o
  .ARM.attributes
                 0x0000000000000000       0x34 build/default/production/_ext/1014039709/sys_cache.o
+ .text          0x0000000000000000      0xbf0 build/default/production/_ext/1171490990/device_sleep.o
+ .data          0x0000000000000000        0x0 build/default/production/_ext/1171490990/device_sleep.o
+ .bss           0x0000000000000000       0x34 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_info    0x0000000000000000     0x19e6 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_abbrev  0x0000000000000000      0x359 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_loc     0x0000000000000000      0xa97 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_aranges
+                0x0000000000000000       0x20 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_ranges  0x0000000000000000      0x3a0 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_line    0x0000000000000000     0x1283 build/default/production/_ext/1171490990/device_sleep.o
+ .debug_str     0x0000000000000000     0x12fc build/default/production/_ext/1171490990/device_sleep.o
+ .comment       0x0000000000000000       0x2c build/default/production/_ext/1171490990/device_sleep.o
+ .debug_frame   0x0000000000000000       0x74 build/default/production/_ext/1171490990/device_sleep.o
+ .ARM.attributes
+                0x0000000000000000       0x34 build/default/production/_ext/1171490990/device_sleep.o
  .data          0x0000000000000000        0x0 ..\src\config\default\driver\pds\pds.a(wlPdsDataServer.o)
  .data          0x0000000000000000        0x0 ..\src\config\default\driver\pds\pds.a(wlPdsInit.o)
  .data          0x0000000000000000        0x0 ..\src\config\default\driver\pds\pds.a(D_Nv.o)
@@ -2309,6 +2324,7 @@ LOAD build/default/production/_ext/677812807/zgpTranslationTable.o
 LOAD build/default/production/_ext/829342655/plib_tc0.o
 LOAD build/default/production/_ext/2010351915/sysSleep.o
 LOAD build/default/production/_ext/1014039709/sys_cache.o
+LOAD build/default/production/_ext/1171490990/device_sleep.o
 LOAD ..\src\config\default\driver\pds\pds.a
 LOAD ..\src\config\default\zigbee\lib\zigbee_alldevice_lib.a
 LOAD ..\src\config\default\driver\device_support\pic32cx_bz3_device_support.a

@@ -5397,6 +5397,18 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ZIGBEE_COLOR_SCENE_CONTROLLER" name="DEVICE_DEEP_SLEEP_ENABLED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ZIGBEE_COLOR_SCENE_CONTROLLER&gt;
+  &lt;ZIGBEE_COLOR_SCENE_CONTROLLER dnOrder=&quot;0&quot; id=&quot;DEVICE_DEEP_SLEEP_ENABLED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;ZIGBEE_COLOR_SCENE_CONTROLLER&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/ZIGBEE_COLOR_SCENE_CONTROLLER&gt;
+&lt;/ZIGBEE_COLOR_SCENE_CONTROLLER&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ZIGBEE_COLOR_SCENE_CONTROLLER" name="DEVICE_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ZIGBEE_COLOR_SCENE_CONTROLLER&gt;
   &lt;ZIGBEE_COLOR_SCENE_CONTROLLER dnOrder=&quot;0&quot; id=&quot;DEVICE_NAME&quot;&gt;
@@ -17108,8 +17120,13 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="ENABLE_DEEP_SLEEP"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
   &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;ENABLE_DEEP_SLEEP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;false&quot;/&gt;
       &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pic32cx_bz3_devsupport&gt;
@@ -17223,6 +17240,17 @@
   &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;WSS_ENABLE_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;WSS_ENABLE_ZB&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/pic32cx_bz3_devsupport&gt;
+&lt;/pic32cx_bz3_devsupport&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pic32cx_bz3_devsupport" name="ZB_DEEP_SLEEP_SUPPORTED"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pic32cx_bz3_devsupport&gt;
+  &lt;pic32cx_bz3_devsupport dnOrder=&quot;0&quot; id=&quot;ZB_DEEP_SLEEP_SUPPORTED&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pic32cx_bz3_devsupport&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pic32cx_bz3_devsupport&gt;
 &lt;/pic32cx_bz3_devsupport&gt;
@@ -18641,6 +18669,19 @@
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;lib_qtouch&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
+  &lt;/rtc&gt;
+&lt;/rtc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="rtc" name="RTC_SYS_INIT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;rtc&gt;
+  &lt;rtc dnOrder=&quot;0&quot; id=&quot;RTC_SYS_INIT&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
   &lt;/rtc&gt;
 &lt;/rtc&gt;
 </value>

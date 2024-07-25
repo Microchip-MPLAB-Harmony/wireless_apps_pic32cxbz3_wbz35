@@ -147,6 +147,7 @@ build/default/production/_ext/1965740351/cscOnOffCluster.o: \
  ../src/config/default/driver/device_support/include/rf_system.h \
  ../src/config/default/driver/device_support/include/sleep_system.h \
  ../src/config/default/framework_defs.h ../src/app_idle_task.h \
+ ../src/config/default/device_sleep.h \
  ../src/config/default/device_deep_sleep.h \
  ../src/config/default/driver/pds/include/pds.h \
  ../src/config/default/driver/pds/include/pds_config.h \
@@ -155,7 +156,6 @@ build/default/production/_ext/1965740351/cscOnOffCluster.o: \
  ../src/config/default/peripheral/gpio/plib_gpio.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/cmcc/plib_cmcc.h \
- ../src/config/default/peripheral/rtc/plib_rtc.h \
  ../src/config/default/touch/touch.h \
  ../src/config/default/touch/touch_api_ptc.h \
  ../src/config/default/touch/qtm_common_components_api.h \
@@ -165,6 +165,7 @@ build/default/production/_ext/1965740351/cscOnOffCluster.o: \
  ../src/config/default/touch/qtm_scroller_0x000b_api.h \
  ../src/config/default/peripheral/tc/plib_tc0.h \
  ../src/config/default/peripheral/tc/plib_tc_common.h \
+ ../src/config/default/peripheral/rtc/plib_rtc.h \
  ../src/config/default/peripheral/nvm/plib_nvm.h \
  ../src/config/default/peripheral/adchs/plib_adchs.h \
  ../src/config/default/peripheral/adchs/plib_adchs_common.h \
@@ -499,6 +500,8 @@ build/default/production/_ext/1965740351/cscOnOffCluster.o: \
 
 ../src/app_idle_task.h:
 
+../src/config/default/device_sleep.h:
+
 ../src/config/default/device_deep_sleep.h:
 
 ../src/config/default/driver/pds/include/pds.h:
@@ -514,8 +517,6 @@ build/default/production/_ext/1965740351/cscOnOffCluster.o: \
 ../src/config/default/peripheral/nvic/plib_nvic.h:
 
 ../src/config/default/peripheral/cmcc/plib_cmcc.h:
-
-../src/config/default/peripheral/rtc/plib_rtc.h:
 
 ../src/config/default/touch/touch.h:
 
@@ -534,6 +535,8 @@ build/default/production/_ext/1965740351/cscOnOffCluster.o: \
 ../src/config/default/peripheral/tc/plib_tc0.h:
 
 ../src/config/default/peripheral/tc/plib_tc_common.h:
+
+../src/config/default/peripheral/rtc/plib_rtc.h:
 
 ../src/config/default/peripheral/nvm/plib_nvm.h:
 
