@@ -42,6 +42,8 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
  ../src/config/default/peripheral/gpio/plib_gpio.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/cmcc/plib_cmcc.h \
+ ../src/config/default/peripheral/tc/plib_tc0.h \
+ ../src/config/default/peripheral/tc/plib_tc_common.h \
  ../src/config/default/touch/touch.h \
  ../src/config/default/touch/touch_api_ptc.h \
  ../src/config/default/touch/qtm_common_components_api.h \
@@ -49,8 +51,6 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
  ../src/config/default/touch/qtm_touch_key_0x0002_api.h \
  ../src/config/default/touch/qtm_freq_hop_auto_0x0004_api.h \
  ../src/config/default/touch/qtm_scroller_0x000b_api.h \
- ../src/config/default/peripheral/tc/plib_tc0.h \
- ../src/config/default/peripheral/tc/plib_tc_common.h \
  ../src/config/default/peripheral/rtc/plib_rtc.h \
  ../src/config/default/peripheral/nvm/plib_nvm.h \
  ../src/config/default/peripheral/adchs/plib_adchs.h \
@@ -170,8 +170,13 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
  ../src/config/default/zigbee/lib/inc/zcl/include/zclMem.h \
  ../src/config/default/zigbee/lib/inc/zdo/include/zdo.h \
  ../src/config/default/zigbee/lib/inc/zdo/include/private/zdoDbg.h \
+ ../src/config/default/zigbee/z3device/common/include/z3Device.h \
+ ../src/config/default/zigbee/z3device/clusters/include/haClusters.h \
+ ../src/config/default/zigbee/z3device/common/include/appConsts.h \
  ../src/config/default/zigbee/lib/inc/pds/include/wlPdsMemIds.h \
  ../src/config/default/driver/pds/include/pds.h \
+ ../src/config/default/zigbee/z3device/common/include/pic32cxBSP.h \
+ ../src/config/default/zigbee/lib/inc/pds/include/wlPdsMemIds.h \
  ../src/config/default/zigbee/lib/inc/mac_phy/mac_hwd_phy/RF231_RF212/PHY/include/phyInit.h \
  ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysTaskManager.h \
  ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysSleep.h \
@@ -190,11 +195,7 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
  ../src/config/default/system/system_common.h \
  ../src/config/default/system/system_module.h \
  ../src/config/default/system/system_common.h ../src/app.h \
- ../src/config/default/zigbee/z3device/common/include/z3Device.h \
- ../src/config/default/zigbee/z3device/clusters/include/haClusters.h \
- ../src/config/default/zigbee/z3device/common/include/appConsts.h \
- ../src/config/default/zigbee/lib/inc/pds/include/wlPdsMemIds.h \
- ../src/config/default/zigbee/z3device/common/include/pic32cxBSP.h
+ ../src/config/default/zigbee/z3device/common/include/z3Device.h
 
 ../src/config/default/zigbee/lib/Zigbee_AllDevice_Makerules.h:
 
@@ -284,6 +285,10 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
 
 ../src/config/default/peripheral/cmcc/plib_cmcc.h:
 
+../src/config/default/peripheral/tc/plib_tc0.h:
+
+../src/config/default/peripheral/tc/plib_tc_common.h:
+
 ../src/config/default/touch/touch.h:
 
 ../src/config/default/touch/touch_api_ptc.h:
@@ -297,10 +302,6 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
 ../src/config/default/touch/qtm_freq_hop_auto_0x0004_api.h:
 
 ../src/config/default/touch/qtm_scroller_0x000b_api.h:
-
-../src/config/default/peripheral/tc/plib_tc0.h:
-
-../src/config/default/peripheral/tc/plib_tc_common.h:
 
 ../src/config/default/peripheral/rtc/plib_rtc.h:
 
@@ -540,9 +541,19 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
 
 ../src/config/default/zigbee/lib/inc/zdo/include/private/zdoDbg.h:
 
+../src/config/default/zigbee/z3device/common/include/z3Device.h:
+
+../src/config/default/zigbee/z3device/clusters/include/haClusters.h:
+
+../src/config/default/zigbee/z3device/common/include/appConsts.h:
+
 ../src/config/default/zigbee/lib/inc/pds/include/wlPdsMemIds.h:
 
 ../src/config/default/driver/pds/include/pds.h:
+
+../src/config/default/zigbee/z3device/common/include/pic32cxBSP.h:
+
+../src/config/default/zigbee/lib/inc/pds/include/wlPdsMemIds.h:
 
 ../src/config/default/zigbee/lib/inc/mac_phy/mac_hwd_phy/RF231_RF212/PHY/include/phyInit.h:
 
@@ -585,11 +596,3 @@ build/default/production/_ext/677812807/pic32cxBSP.o: \
 ../src/app.h:
 
 ../src/config/default/zigbee/z3device/common/include/z3Device.h:
-
-../src/config/default/zigbee/z3device/clusters/include/haClusters.h:
-
-../src/config/default/zigbee/z3device/common/include/appConsts.h:
-
-../src/config/default/zigbee/lib/inc/pds/include/wlPdsMemIds.h:
-
-../src/config/default/zigbee/z3device/common/include/pic32cxBSP.h:

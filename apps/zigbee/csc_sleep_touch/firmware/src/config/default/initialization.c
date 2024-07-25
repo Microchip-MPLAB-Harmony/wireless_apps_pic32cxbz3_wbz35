@@ -335,6 +335,17 @@ void SYS_Initialize ( void* data )
     /* MISRAC 2012 deviation block end */
 
 
+	uint8_t deepSleepWakeupSrc;
+	
+	DEVICE_DeepSleepWakeSrc_T wakeSrc;
+	DEVICE_GetDeepSleepWakeUpSrc(&wakeSrc);
+
+	deepSleepWakeupSrc = (uint8_t) wakeSrc;
+	if ((wakeSrc == DEVICE_DEEP_SLEEP_WAKE_NONE) || (wakeSrc == DEVICE_DEEP_SLEEP_WAKE_MCLR))  
+	{
+		deepSleepWakeupSrc = (uint8_t) DEVICE_DEEP_SLEEP_WAKE_NONE;
+		RTC_Initialize();
+	}
 
 
 	GPIO_Initialize();
@@ -342,8 +353,6 @@ void SYS_Initialize ( void* data )
     EVSYS_Initialize();
 
     TC0_TimerInitialize();
-
-    RTC_Initialize();
 
     NVM_Initialize();
 
@@ -433,6 +442,8 @@ void SYS_Initialize ( void* data )
     // Initialize ZIGBEE Stack
     Zigbee_Init(&osalAPIList, &zigbeeRequestQueueHandle, NULL, &zgbIBdata);
 
+    // pass the above read wakep src for the stack to use
+	CS_WriteParameter(CS_DEVICE_DEEP_SLEEP_WAKEUP_SRC_ID, &deepSleepWakeupSrc);
     //uint8_t value = PMU_Set_Mode(PMU_MODE_BUCK_PWM); //Set PMU as PWM mode
     //PMU_Set_Mode(PMU_MODE_BUCK_PWM); //Set PMU as PWM mode // For Buck Mode : PMU_MODE_MLDO
 

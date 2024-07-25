@@ -35,7 +35,52 @@ build/default/production/_ext/1852899459/appTimer.o: \
  ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysAssert.h \
  ../src/config/default/zigbee/lib/inc/systemenvironment/include/dbg.h \
  ../src/config/default/zigbee/lib/inc/hal/cortexm4/pic32cx/include/halDbg.h \
- ../src/config/default/zigbee/lib/inc/hal/cortexm4/pic32cx/include/halAppClock.h
+ ../src/config/default/zigbee/lib/inc/hal/cortexm4/pic32cx/include/halAppClock.h \
+ ../src/config/default/zigbee/lib/inc/configserver/include/configserver.h \
+ ../src/config/default/zigbee/lib/inc/configserver/include/csDefaults.h \
+ ../src/config/default/zigbee/lib/inc/configserver/include/stackVersion.h \
+ ../src/config/default/zigbee/lib/inc/aps/include/apsCommon.h \
+ ../src/config/default/zigbee/lib/inc/zdo/include/appFramework.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/mac.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/phy.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macAddr.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macAffix.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macphyPib.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macAssociate.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macCommon.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macCommStatus.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macBeacon.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macSuperframe.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macData.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macDisassociate.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macOrphan.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macPoll.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macPurge.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macReset.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macRxEnable.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macScan.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macSetGet.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macStart.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macSync.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/rfBattery.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/rfRandom.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/rfCalibration.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/rfRegAccess.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macBanNode.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/mac_env/include/macenvPib.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/mac_env/include/macenvMem.h \
+ ../src/config/default/zigbee/lib/inc/mac_phy/include/macEnvironment.h \
+ ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysQueue.h \
+ ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysEvents.h \
+ ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysEventsHandler.h \
+ ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysUtils.h \
+ ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysIncrementMacro.h \
+ ../src/config/default/zigbee/lib/inc/systemenvironment/include/sysRepeatMacro.h \
+ ../src/config/default/zigbee/lib/inc/nwk/include/nwkCommon.h \
+ ../src/config/default/zigbee/lib/inc/configserver/include/private/csVarTable.h \
+ ../src/config/default/zigbee/lib/inc/configserver/include/private/csConstTable.h \
+ ../src/config/default/zigbee/lib/inc/configserver/include/private/csMemTable.h \
+ ../src/config/default/peripheral/rtc/plib_rtc.h
 
 ../src/config/default/zigbee/lib/Zigbee_AllDevice_Makerules.h:
 
@@ -110,3 +155,93 @@ build/default/production/_ext/1852899459/appTimer.o: \
 ../src/config/default/zigbee/lib/inc/hal/cortexm4/pic32cx/include/halDbg.h:
 
 ../src/config/default/zigbee/lib/inc/hal/cortexm4/pic32cx/include/halAppClock.h:
+
+../src/config/default/zigbee/lib/inc/configserver/include/configserver.h:
+
+../src/config/default/zigbee/lib/inc/configserver/include/csDefaults.h:
+
+../src/config/default/zigbee/lib/inc/configserver/include/stackVersion.h:
+
+../src/config/default/zigbee/lib/inc/aps/include/apsCommon.h:
+
+../src/config/default/zigbee/lib/inc/zdo/include/appFramework.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/mac.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/phy.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macAddr.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macAffix.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macphyPib.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macAssociate.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macCommon.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macCommStatus.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macBeacon.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macSuperframe.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macData.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macDisassociate.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macOrphan.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macPoll.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macPurge.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macReset.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macRxEnable.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macScan.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macSetGet.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macStart.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macSync.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/rfBattery.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/rfRandom.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/rfCalibration.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/rfRegAccess.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macBanNode.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/mac_env/include/macenvPib.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/mac_env/include/macenvMem.h:
+
+../src/config/default/zigbee/lib/inc/mac_phy/include/macEnvironment.h:
+
+../src/config/default/zigbee/lib/inc/systemenvironment/include/sysQueue.h:
+
+../src/config/default/zigbee/lib/inc/systemenvironment/include/sysEvents.h:
+
+../src/config/default/zigbee/lib/inc/systemenvironment/include/sysEventsHandler.h:
+
+../src/config/default/zigbee/lib/inc/systemenvironment/include/sysUtils.h:
+
+../src/config/default/zigbee/lib/inc/systemenvironment/include/sysIncrementMacro.h:
+
+../src/config/default/zigbee/lib/inc/systemenvironment/include/sysRepeatMacro.h:
+
+../src/config/default/zigbee/lib/inc/nwk/include/nwkCommon.h:
+
+../src/config/default/zigbee/lib/inc/configserver/include/private/csVarTable.h:
+
+../src/config/default/zigbee/lib/inc/configserver/include/private/csConstTable.h:
+
+../src/config/default/zigbee/lib/inc/configserver/include/private/csMemTable.h:
+
+../src/config/default/peripheral/rtc/plib_rtc.h:

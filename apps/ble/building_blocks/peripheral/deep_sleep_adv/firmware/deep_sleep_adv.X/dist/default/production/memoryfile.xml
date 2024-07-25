@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production/deep_sleep_adv.X.production.elf">
+    <memory name="program">
+      <units>bytes</units>
+      <length>507392</length>
+      <used>147472</used>
+      <free>359920</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>97688</length>
+      <used>72561</used>
+      <free>25127</free>
+    </memory>
+  </executable>
+</project>
