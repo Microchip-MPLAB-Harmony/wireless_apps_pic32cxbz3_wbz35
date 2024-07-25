@@ -8,9 +8,9 @@ New MPLAB Code Configurator users are recommended to go through the **[overview]
 
 Building blocks are divided into 3 categories based on the device roles and features users are interested in developing. This segregation is important as users interested in developing only a certain type of device would be provided only the training modules and necessary reference examples related to the device type.
 
-1.  **[Peripheral Building Blocks](apps/ble/building_blocks/peripheral/readme.md)**
+1.  **[Peripheral Building Blocks](peripheral/readme.md)**
 
-2.  **[Central Building Blocks](apps/ble/building_blocks/central/readme.md)**
+2.  **[Central Building Blocks](central/readme.md)**
 
 
 
