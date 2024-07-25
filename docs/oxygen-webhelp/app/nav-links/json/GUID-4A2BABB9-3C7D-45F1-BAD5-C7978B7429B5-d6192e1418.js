@@ -1,0 +1,1 @@
+define({"topics":[{"title":"<ph>10.4.1.1<\/ph>\nAPP_OTA_HDL_Mode_T","href":"GUID-CBFFF24C-4BA1-47FC-8AC4-7731929F39A5.html","attributes":{"data-id":"app-ota-hdl-mode-t"},"menu":{"hasChildren":false},"tocID":"app-ota-hdl-mode-t-d6192e1426","topics":[]}]});

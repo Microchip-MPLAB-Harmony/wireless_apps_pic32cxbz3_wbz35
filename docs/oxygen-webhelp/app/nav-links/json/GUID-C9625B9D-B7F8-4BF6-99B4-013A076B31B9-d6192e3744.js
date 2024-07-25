@@ -1,0 +1,1 @@
+define({"topics":[{"title":"<ph>13.1.2.2.3.1.1<\/ph>\nManufacturer Specific Data or Service Data AD Types","shortdesc":"<p class=\"shortdesc\"\/>","href":"GUID-F3137FC1-4C33-4502-8E80-74C16C90018A_2.html","attributes":{"data-id":"GUID-F3137FC1-4C33-4502-8E80-74C16C90018A"},"menu":{"hasChildren":false},"tocID":"GUID-F3137FC1-4C33-4502-8E80-74C16C90018A-d6192e3754","topics":[]}]});
