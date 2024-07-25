@@ -1,3 +1,4 @@
 # ZIGBEE Dim Light Touch
 
--   **Refer the ZIGBEE Dim Light Touch application document link (https://onlinedocs.microchip.com/oxy/GUID-99E91F8E-E9F7-4C2C-B98A-E9662A2ABA50-en-US-1/GUID-E89ACC5A-F639-4894-AD9C-699E14F389A7.html)**
+-   **Refer the ZIGBEE Dim Light Touch for Amazon Echo Plus application document link (https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_DIM_LIT_MON_AMZ_ECH&version=latest&redirect=true)**
+-   **Refer the ZIGBEE Dim Light Touch using combined interface application document link (https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_DIM_LIT_MON_COMB_INT&version=latest&redirect=true)**

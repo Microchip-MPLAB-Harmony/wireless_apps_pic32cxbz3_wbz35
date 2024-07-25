@@ -8,7 +8,7 @@ New MPLAB Code Configurator users are recommended to go through the **[overview]
 
 Building blocks are divided into 3 categories based on the device roles and features users are interested in developing. This segregation is important as users interested in developing only a certain type of device would be provided only the training modules and necessary reference examples related to the device type.
 
-1.  [Peripheral Building Blocks](https:onlinedocs.microchip.com/oxy/GUID-99E91F8E-E9F7-4C2C-B98A-E9662A2ABA50-en-US-1/GUID-B3B46369-F5B4-401B-8405-658BE34988F4.html)**
+1.  [Peripheral Building Blocks](apps/wireless_apps_pic32cxbz3_wbz35/apps/ble/building_blocks/peripheral/readme.md)**
 
 2.  [Central Building Blocks](https:onlinedocs.microchip.com/oxy/GUID-99E91F8E-E9F7-4C2C-B98A-E9662A2ABA50-en-US-1/GUID-E8C0DDA5-3AD0-42A4-B4EF-BCB02811BF8C.html)**
 
