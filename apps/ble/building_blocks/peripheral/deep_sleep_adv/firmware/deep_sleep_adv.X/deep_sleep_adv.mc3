@@ -1,4 +1,4 @@
-<config configName="default" projectName="deep_sleep_adv" configVersion="1.1" device="WBZ351" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
+<config configName="default" projectName="deep_sleep_adv" configVersion="1.1" device="WBZ351" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -9447,11 +9447,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvic\plib_nvic.c</file>
-         <hash>058223568653674d96be0e3ffdb8f8cdec47131aaa48de886751985235084572</hash>
+         <hash>244c6296ea4248ea4fe5b1a8418bf9180ebf9afc9e15a588f7480df041621271</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvic\plib_nvic.h</file>
-         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
+         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\nvm\plib_nvm.c</file>
