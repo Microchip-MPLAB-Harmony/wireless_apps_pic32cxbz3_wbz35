@@ -11,6 +11,6 @@ Refer the BLE Peripherals application document link
 -   **[two_set_adv](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_MULTI_ADV_SET&version=latest&redirect=true)**
 -   **[custom_service](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_BLE_CUS_SER&version=latest&redirect=true)**
 -   **[peripheral_trp_uart](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_PERIPH_BLE_TRANSP_UART&version=latest&redirect=true)**
--   **[peripheral_trp_uart_codedPhy](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_PERIPH_BLE_TRANSP_UART&version=latest&redirect=true)**
+-   **[peripheral_trp_uart_codedPhy](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ3_PERIPH_BLE_TRANSP_UART_CPHY&version=latest&redirect=true)**
 
 

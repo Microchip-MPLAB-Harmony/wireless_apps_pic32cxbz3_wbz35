@@ -47,7 +47,7 @@ The following applications are provided to demonstrate the typical use case of o
 | [BLE Central Connection](apps/ble/building_blocks/central/central_conn/readme.md) | PIC32CX-BZ |
 | [BLE Central transparent UART](apps/ble/building_blocks/central/profiles_services/central_trp_uart/readme.md) | PIC32CX-BZ |
 | [BLE Central Multilink](apps/ble/building_blocks/central/profiles_services/multilink/readme.md) | PIC32CX-BZ |
-| [UART](apps/ble/building_blocks/chip_peripherals/uart_hello_world/readme.md) | PIC32CX-BZ |
+| [UART Hello World](apps/ble/building_blocks/chip_peripherals/uart_hello_world/readme.md) | PIC32CX-BZ |
 | [BLE Multirole](apps/ble/building_blocks/multirole/readme.md) | PIC32CX-BZ |
 | [Bootloader](apps/bootloader/readme.md) | PIC32CX-BZ |
 | [BLE Central Code PHY transparent UART](apps/ble/building_blocks/central/profiles_services/central_trp_uart_codedPhy/readme.md) | PIC32CX-BZ |
@@ -73,8 +73,8 @@ The following applications are provided to demonstrate the typical use case of o
 | [Zigbee Custom Occupancy Light](apps/zigbee/custom_occupancy_light/readme.md) | PIC32CX-BZ |
 | [Zigbee Custom Cluster Client](apps/zigbee/custom_cluster_client/readme.md) | PIC32CX-BZ |
 | [Zigbee Multisensor DeepSleep](apps/zigbee/multisensor_deepSleep/readme.md) | PIC32CX-BZ |
-| [Zigbee ](apps/zigbee/csc_sleep_touch/readme.md) | PIC32CX-BZ |
-| [Zigbee ](apps/zigbee/dim_light_touch/readme.md) | PIC32CX-BZ |
+| [Zigbee CSC Sleep Touch](apps/zigbee/csc_sleep_touch/readme.md) | PIC32CX-BZ |
+| [Zigbee Dimmable Light](apps/zigbee/dim_light_touch/readme.md) | PIC32CX-BZ |
 ____
 
 #License
@@ -101,12 +101,11 @@ Redistribution and use in source and binary forms, with or without modification,
 
 ____
 
+[![Developer Help](https://img.shields.io/badge/Youtube-Developer%20Help-red.svg)](https://www.youtube.com/MicrochipDeveloperHelp)
+[![Developer Help](https://img.shields.io/badge/XWiki-Developer%20Help-torquiose.svg)](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/)
 [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology)
 [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology)
 [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/)
 [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech)
-
-[![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35.svg?style=social)]()
-[![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/wireless_apps_pic32cxbz3_wbz35.svg?style=social)]()
 
 

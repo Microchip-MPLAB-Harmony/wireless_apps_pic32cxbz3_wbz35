@@ -1,3 +1,3 @@
 # BLE Bootloader
 
--   **Refer the Bootloader application document link (https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=BZ2_APP_DEV.DFU.BOOTLOADER&version=latest&redirect=true)**
+-   **Refer the Bootloader application document link (https://onlinedocs.microchip.com/oxy/GUID-99E91F8E-E9F7-4C2C-B98A-E9662A2ABA50-en-US-5/GUID-FA51CD20-B332-4E6F-90BF-C9F506970F6C.html)**
