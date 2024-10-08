@@ -25,7 +25,6 @@ The following applications are provided to demonstrate the typical use case of B
         * [Connection](ble/building_blocks/central/central_conn/readme.md)
         * [Legacy Scan](ble/building_blocks/central/legacy_scan/readme.md)
         * [Transparent UART](ble/building_blocks/central/profiles_services/central_trp_uart/readme.md)
-		* [BLE Central Code PHY transparent UART](ble/building_blocks/central/profiles_services/central_trp_uart_codedPhy/readme.md)
         * [Transparent UART Multilink](ble/building_blocks/central/profiles_services/multilink/readme.md)
         * [Scan Extended Advertisement](ble/building_blocks/central/scan_ext_adv/readme.md)
         * [BLE Central Code PHY transparent UART](ble/building_blocks/central/profiles_services/central_trp_uart_codedPhy/readme.md)		
