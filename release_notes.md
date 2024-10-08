@@ -17,8 +17,7 @@ Following table provides number of Wireless examples available for different dev
 - 
 
 ### Bug fixes and Improvements
-- None
-
+- Perma link updated
 
 ### Known Issues
 - None 
