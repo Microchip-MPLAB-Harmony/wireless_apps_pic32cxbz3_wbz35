@@ -139,6 +139,16 @@ void APP_BleStackInit()
     HCI_AppCmdRegister(App_HciVendorCommandCb);
 
     HCI_Init(preferAclTxBufNum);
+
+    HCI_AdvInit();  /* Advertising */
+    HCI_ExtAdvInit();  /* Enable Extended Advertising */
+    HCI_PeriodicAdvInit();  /* Enable Periodic Advertising */
+    HCI_ScanInit();  /* Scan */
+    HCI_ExtScanInit();  /* Enable Extended Scan */
+    HCI_ConnPeripheralInit();   /* Peripheral */
+    HCI_ConnCentralInit();  /* Central */
+    HCI_ExtConnCntrlInit();  /* Enable Extended Central */
+    HCI_SyncInit();  /* Enable Synchronization */
 }
 
 void APP_BleStackEvtHandler(STACK_HCI_Cb_T *p_stackHciCb)

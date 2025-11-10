@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -79,7 +79,6 @@
 #include "framework_defs.h"
 #include "app_idle_task.h"
 #include "peripheral/evsys/plib_evsys.h"
-#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -104,15 +103,17 @@
 *******************************************************************************/
 #include "driver/pds/include/pds.h"
 #include "driver/pds/include/pds_config.h"
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/dmac/plib_dmac.h"
 #include "peripheral/cmcc/plib_cmcc.h"
-#include "FreeRTOS.h"
-#include "task.h"
 #include "peripheral/rcon/plib_rcon.h"
 #include "peripheral/nvm/plib_nvm.h"
+#include "driver/usart/drv_usart.h"
+#include "FreeRTOS.h"
+#include "task.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "system/dma/sys_dma.h"
@@ -131,13 +132,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "WBZ351"
-#define DEVICE_ARCH			 "CORTEX-M4"
-#define DEVICE_FAMILY		 "PIC32CX_BZ3"
-#define DEVICE_SERIES		 "WBZ35"
+#define DEVICE_NAME          "WBZ351"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "PIC32CX_BZ3"
+#define DEVICE_SERIES        "WBZ35"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 64000000
+#define CPU_CLOCK_FREQUENCY 64000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -249,7 +250,8 @@ Remarks:
 
 typedef struct
 {
-    char reserved;
+    SYS_MODULE_OBJ  drvUsart0;
+
 } SYSTEM_OBJECTS;
 
 // *****************************************************************************

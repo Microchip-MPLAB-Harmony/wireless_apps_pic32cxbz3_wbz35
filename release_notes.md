@@ -26,7 +26,7 @@ Following table provides number of Wireless examples available for different dev
 
 - [MPLAB® X IDE v6.25]
 - MPLAB® X IDE plug-ins:
-- MPLAB® Code Configurator (MCC) `v5.7.1`
+- MPLAB® Code Configurator (MCC) `v5.6.3`
 - [MPLAB® XC32 C/C++ Compiler v4.60]
 - **DFP 1.3.216 or above version**
 

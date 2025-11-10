@@ -16,8 +16,7 @@ Refer to the following links for more information.
 This repository contains the MPLAB® Harmony 3 Wireless BLE, and Zigbee Application Examples solutions and example applications. 
 Quickly incorporate connectivity to your designs with Wireless BLE, and Zigbee Application Examples ICs, modules, software and 
 development kits that make connecting effortless for your customers. 
-Our comprehensive Wireless BLE, and Zigbee Application Examples portfolio has the technology to meet your range, data rate, interoperability, frequency and 
-topology needs. Refer to the following links for release notes, training materials, and interface reference information.
+Our comprehensive Wireless BLE, and Zigbee Application Examples portfolio has the technology to meet your range, data rate, interoperability, frequency and topology needs. Refer to the following links for release notes, training materials, and interface reference information.
 
 - [Release Notes](./release_notes.md)
 - [MPLAB® Harmony License](mplab_harmony_license.md)
@@ -62,6 +61,24 @@ The following applications are provided to demonstrate the typical use case of o
 | [BLE Peripheral ANPS](apps/ble/advanced_applications/ble_anps_app/readme.md) | PIC32CX-BZ |
 | [BLE Proximity Monitor PXPM](apps/ble/advanced_applications/ble_pxpm_app/readme.md) | PIC32CX-BZ |
 | [BLE Proximity Reporter PXPR](apps/ble/advanced_applications/ble_pxpr_app/readme.md) | PIC32CX-BZ |
+
+| IEEE_802_15_4 Applications | Families |
+| --- | :---: |
+| [IEEE_802_15_4 demoapp_ffd](apps/ieee_802_15_4/MAC/push_pull_mac_app/demoapp_ffd/readme.md) | PIC32CX-BZ |
+| [IEEE_802_15_4 demoapp_rfd](apps/ieee_802_15_4/MAC/push_pull_mac_app/demoapp_rfd/readme.md) | PIC32CX-BZ |
+| [IEEE_802_15_4 p2p_phy](apps/ieee_802_15_4/PHY/p2p_phy/readme.md) | PIC32CX-BZ |
+
+| Thread Applications | Families |
+| --- | :---: |
+| [Thread cli_ftd](apps/thread/building_blocks/cli/cli_ftd/readme.md) | PIC32CX-BZ |
+| [Thread cli_mtd](apps/thread/building_blocks/cli/cli_mtd/readme.md) | PIC32CX-BZ |
+| [Thread demo_app_udp_ftd](apps/thread/building_blocks/demo_app_udp/demo_app_udp_ftd/readme.md) | PIC32CX-BZ |
+| [Thread demo_app_udp_mtd](apps/thread/building_blocks/demo_app_udp/demo_app_udp_mtd/readme.md) | PIC32CX-BZ |
+| [Thread rcp_uart](apps/thread/building_blocks/rcp_uart/readme.md) | PIC32CX-BZ |
+| [Thread CoAP coap_ftd_client](apps/thread/advanced_applications/CoAP/coap_ftd_client/readme.md) | PIC32CX-BZ |
+| [Thread CoAP coap_ftd_server](apps/thread/advanced_applications/CoAP/coap_ftd_server/readme.md) | PIC32CX-BZ |
+| [Thread CoAP coap_sed_client](apps/thread/advanced_applications/CoAP/coap_sed_client/readme.md) | PIC32CX-BZ |
+| [Thread CoAP coap_sed_server](apps/thread/advanced_applications/CoAP/coap_sed_server/readme.md) | PIC32CX-BZ |
 
 
 | Zigbee Examples | Families |
