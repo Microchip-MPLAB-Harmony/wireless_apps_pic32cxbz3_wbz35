@@ -30,11 +30,7 @@
 
 #define METADATA_HEADER_SIZE                0x200
 #define SLOT0_BASE_ADDR                     0x01000000
-#if SOC_VER == BIGBUCK
-  #define SLOT1_BASE_ADDR                   0x01080000
-#else
-  #define SLOT1_BASE_ADDR                   0x01040000
-#endif
+#define SLOT1_BASE_ADDR                   	0x01040000
 
 #define SLOT0_HEADER                        SLOT0_BASE_ADDR
 #define SLOT0_FIRMWARE                      (SLOT0_BASE_ADDR + METADATA_HEADER_SIZE)

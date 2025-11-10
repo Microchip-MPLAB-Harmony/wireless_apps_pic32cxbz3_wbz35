@@ -66,6 +66,7 @@
 #include <z3device/clusters/include/commissioningCluster.h>
 #include <z3device/common/include/z3Device.h>
 
+
 /******************************************************************************
                     Prototypes section
 ******************************************************************************/
@@ -147,6 +148,9 @@ static void processColorLoopSetCmd(const ScanValue_t *args);
 static void processStopMoveStepCmd(const ScanValue_t *args);
 static void processMoveColorTemperatureCmd(const ScanValue_t *args);
 static void processStepColorTemperatureCmd(const ScanValue_t *args);
+
+
+
 #endif // ZCL_COMMANDS_IN_CONSOLE == 1
 
 /******************************************************************************
@@ -290,6 +294,7 @@ const ConsoleCommand_t zclHelpCmds[]=
   {"moveColorTemperature", "sdddddddd", processMoveColorTemperatureCmd, "[addrMode][addr][ep][moveMode][rate][colorTempMin][colorTempMax][optMask][optOvrd]\r\n"},
   {"stepColorTemperature", "sddddddddd", processStepColorTemperatureCmd, "[addrMode][addr][ep][stepMode][stepSize][transitTime][colorTempMin][colorTempMax][optMask][optOvrd]\r\n"},
 
+  
 #endif // #if ZCL_COMMANDS_IN_CONSOLE == 1
   {0,0,0,0},
 };
@@ -1145,6 +1150,7 @@ static void processStepColorTemperatureCmd(const ScanValue_t *args)
                                                 args[9].uint8
                                                );
 }
+
 
 #endif // #if ZCL_COMMANDS_IN_CONSOLE == 1
 

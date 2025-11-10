@@ -176,18 +176,13 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-{
-}
-
-
 
 static void APP_BleConfigBasic(void)
 {
     int8_t                          connTxPower;
     int8_t                          advTxPower;
     BLE_GAP_AdvParams_T             advParam;
-    uint8_t advData[]={0x02, 0x01, 0x04, 0x0A, 0x09, 0x4D, 0x69, 0x63, 0x72, 0x6F, 0x63, 0x68, 0x69, 0x70, 0x05, 0x16, 0xDA, 0xFE, 0xFF, 0x01};
+    uint8_t advData[]={0x02, 0x01, 0x05, 0x0A, 0x09, 0x4D, 0x69, 0x63, 0x72, 0x6F, 0x63, 0x68, 0x69, 0x70, 0x05, 0x16, 0xDA, 0xFE, 0xFF, 0x01};
     BLE_GAP_AdvDataParams_T         appAdvData;
 
     BLE_GAP_Addr_T devAddr;
@@ -203,7 +198,7 @@ static void APP_BleConfigBasic(void)
     BLE_GAP_SetDeviceAddr(&devAddr);
 
     // Configure advertising parameters
-    BLE_GAP_SetAdvTxPowerLevel(11,&advTxPower);      /* Advertising TX Power */
+    BLE_GAP_SetAdvTxPowerLevel(11,&advTxPower);      /* Advertising TX Power11 */
     
     (void)memset(&advParam, 0, sizeof(BLE_GAP_AdvParams_T));
     advParam.intervalMin = 1600;     /* Advertising Interval Min */

@@ -103,8 +103,17 @@ APP_TIMER_TmrElem_T *p_tmrElem)
         break;
     }
 
-    result = APP_TIMER_SetTimer(p_tmrElem, timeout, isPeriodicTimer);
-    return result;
+    if(APP_RES_SUCCESS == (result = APP_TIMER_SetTimer(p_tmrElem, timeout, isPeriodicTimer)))
+    {
+        tmrId = APP_TIMER_LED_IND_SWITCH_04;
+        p_tmrElem = &s_alertDurationTmr;
+        APP_TIMER_SetTimerElem(tmrId, 0U, NULL, p_tmrElem);
+        return result = APP_TIMER_SetTimer(p_tmrElem, APP_TIMER_5S, false);
+    }
+    else
+    {
+        return result;
+    }
 }
 
 static void app_SetLedIndTimer(BLE_PXPR_AlertLevel_T levle)

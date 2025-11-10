@@ -49,9 +49,7 @@
 #include "app.h"
 #include "ble_util/byte_stream.h"
 #include "app_led.h"
-#include "app_error_defs.h"
 
-#define NEW_PIC32CXBZ3_A0 1
 // *****************************************************************************
 // *****************************************************************************
 // Section: Macros
@@ -85,21 +83,13 @@ static APP_LED_Elem_T s_appLedElement[APP_LED_ELEM_NUMBER];
 // Section: Function Prototypes
 // *****************************************************************************
 // *****************************************************************************
-#ifdef NEW_PIC32CXBZ3_A0
 static const APP_LED_Param_T s_appLedMode[APP_LED_MODE_NUMBER] = {
     {APP_LED_TYPE_GREEN, 1, 0, 50,  50,  3000},
     {APP_LED_TYPE_GREEN, 2, 0, 50,  50,  3000},
     {APP_LED_TYPE_GREEN, 2, 0, 150, 50,  1500}
 };
-#else
-static const APP_LED_Param_T s_appLedMode[APP_LED_MODE_NUMBER] = {
-    {APP_LED_TYPE_BLUE, 1, 0, 50,  50,  3000},
-    {APP_LED_TYPE_BLUE, 2, 0, 50,  50,  3000},
-    {APP_LED_TYPE_BLUE, 2, 0, 150, 50,  1500}
-};
-#endif
 
-#define APP_LED_TMR_ID_INST_MERGE(id, instance) ((((uint16_t)id) << 8) | instance)
+#define APP_LED_TMR_ID_INST_MERGE(id, instance) ((((uint16_t)(id)) << 8) | (uint16_t)(instance))
 static uint16_t app_led_SetTimer(uint16_t idInstance, void *p_tmrParam, uint32_t timeout, bool isPeriodicTimer,
 APP_TIMER_TmrElem_T *p_tmrElem)
 {
@@ -169,25 +159,39 @@ static void app_led_On(uint8_t ledType)
 
 static void app_led_Reload(APP_LED_Elem_T *p_ledElem)
 {
+    uint16_t ret;
+
     p_ledElem->state = APP_LED_STATE_OFF;
     p_ledElem->tmpFlashCnt = p_ledElem->flashCnt;
     p_ledElem->tmpFlashCnt--;
     // Set timer.
-    app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
+    ret = app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
         (void *)p_ledElem, p_ledElem->onInterval, false, &(p_ledElem->intervalTmr));
+    if (ret != APP_RES_SUCCESS)
+    {
+        //if error occurs
+    }
 
     app_led_On(p_ledElem->type);
 }
 
 static void app_led_CycleProc(APP_LED_Elem_T *p_ledElem)
 {
-    if (p_ledElem->cycleCnt > 0)
+    uint16_t ret;
+
+    if (p_ledElem->cycleCnt > 0U)
     {
-        if (p_ledElem->tmpCycleCnt > 0)
+        if (p_ledElem->tmpCycleCnt > 0U)
+        {
             p_ledElem->tmpCycleCnt--;
+        }
         else
         {
-            APP_LED_Stop(p_ledElem->handler);
+            ret = APP_LED_Stop(p_ledElem->handler);
+            if (ret != APP_RES_SUCCESS)
+            {
+                //if error occurs
+            }
             return;
         }
     }
@@ -198,7 +202,7 @@ void APP_LED_Init(void)
 {
     uint8_t i;
 
-#ifdef NEW_PIC32CXBZ3_A0
+#ifdef NEW_BUCKLAND_A0
     // GPIO register initialization for LED.
     GPIOB_REGS->GPIO_ANSELCLR = (1 << (GPIO_PIN_RB3 >> 4U)); //digital mode, follow the coding style of plib_gpio
     GPIO_PinOutputEnable(GPIO_PIN_RB3);
@@ -215,24 +219,27 @@ void APP_LED_Init(void)
     GPIO_PinClear(GPIO_PIN_RB3);
     GPIO_PinClear(GPIO_PIN_RB5);
 #endif
-    memset(s_appLedElement, 0, APP_LED_ELEM_NUMBER * sizeof(APP_LED_Elem_T));
+    (void)memset(s_appLedElement, 0, APP_LED_ELEM_NUMBER * sizeof(APP_LED_Elem_T));
     for (i = 0; i < APP_LED_ELEM_NUMBER; i++)
+    {
         s_appLedElement[i].handler = APP_LED_HANDLER_NULL;
+    }
     g_appLedHandler = APP_LED_HANDLER_NULL;
 }
 
 void APP_LED_StateMachine(uint8_t event, APP_LED_Elem_T *p_ledElem)
 {
     uint16_t deltaInterval;
-    
+    uint16_t ret;
+
     switch(p_ledElem->state)
     {
         case APP_LED_STATE_NULL:
         {
             if (event == APP_LED_EVENT_START)
             {
-                
-                if (p_ledElem->cycleCnt > 0)
+
+                if (p_ledElem->cycleCnt > 0U)
                 {
                     p_ledElem->tmpCycleCnt = p_ledElem->cycleCnt;
                     p_ledElem->tmpCycleCnt--;
@@ -246,28 +253,50 @@ void APP_LED_StateMachine(uint8_t event, APP_LED_Elem_T *p_ledElem)
         {
             if (event == APP_LED_EVENT_INTERVAL)
             {
-                if (p_ledElem->tmpFlashCnt > 0)
+                if (p_ledElem->tmpFlashCnt > 0U)
+                {
                     p_ledElem->tmpFlashCnt--;
+                }
                 else
                 {
                     p_ledElem->state = APP_LED_STATE_REMAIN;
-                    if (p_ledElem->duration <= ((p_ledElem->offInterval + p_ledElem->onInterval) 
+                    if (p_ledElem->duration <= ((p_ledElem->offInterval + p_ledElem->onInterval)
                         * p_ledElem->flashCnt))
+                    {
                         deltaInterval = 0;
+                    }
                     else
-                        deltaInterval = p_ledElem->duration - (p_ledElem->offInterval + p_ledElem->onInterval) 
+                    {
+                        deltaInterval = p_ledElem->duration - (p_ledElem->offInterval + p_ledElem->onInterval)
                             * p_ledElem->flashCnt;
-                    if (deltaInterval > 0)
-                        app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
+                    }
+                    if (deltaInterval > 0U)
+                    {
+                        ret = app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
                             (void *)p_ledElem, deltaInterval, false, &(p_ledElem->intervalTmr));
+                        if (ret != APP_RES_SUCCESS)
+                        {
+                            //if error occurs
+                        }
+                    }
                     else
-                        app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
+                    {
+                        ret = app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
                             (void *)p_ledElem, 1, false, &(p_ledElem->intervalTmr));
+                        if (ret != APP_RES_SUCCESS)
+                        {
+                            //if error occurs
+                        }
+                    }
                     break;
                 }
                 p_ledElem->state = APP_LED_STATE_OFF;
-                app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
+                ret = app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
                     (void *)p_ledElem, p_ledElem->onInterval, false, &(p_ledElem->intervalTmr));
+                if (ret != APP_RES_SUCCESS)
+                {
+                    //if error occurs
+                }
 
                 app_led_On(p_ledElem->type);
             }
@@ -279,8 +308,12 @@ void APP_LED_StateMachine(uint8_t event, APP_LED_Elem_T *p_ledElem)
             if (event == APP_LED_EVENT_INTERVAL)
             {
                 p_ledElem->state = APP_LED_STATE_ON;
-                app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
+                ret = app_led_SetTimer(APP_LED_TMR_ID_INST_MERGE(APP_TIMER_LED_01, APP_LED_EVENT_INTERVAL),
                     (void *)p_ledElem, p_ledElem->offInterval, false, &(p_ledElem->intervalTmr));
+                if (ret != APP_RES_SUCCESS)
+                {
+                    //if error occurs
+                }
 
                 app_led_Off(p_ledElem->type);
             }
@@ -307,7 +340,7 @@ uint16_t APP_LED_Stop(uint8_t ledHandler)
     if (ledHandler < APP_LED_ELEM_NUMBER)
     {
         p_ledElem = &(s_appLedElement[ledHandler]);
-        if (p_ledElem->state != APP_LED_STATE_NULL)
+        if (p_ledElem->state != (uint8_t)APP_LED_STATE_NULL)
         {
             app_led_Off(p_ledElem->type);
             p_ledElem->state = APP_LED_STATE_NULL;
@@ -322,22 +355,27 @@ uint16_t APP_LED_Stop(uint8_t ledHandler)
             p_ledElem->duration = 0;
         }
         else
+        {
             return APP_RES_SUCCESS;
+        }
     }
     else
+    {
         return APP_RES_INVALID_PARA;
+    }
 
     return status;
 }
 
-uint8_t APP_LED_Start(APP_LED_Param_T *p_ledParam)
+uint8_t APP_LED_Start(const APP_LED_Param_T *p_ledParam)
 {
     uint8_t i = 0;
     APP_LED_Elem_T *p_ledElem;
-    
+    uint16_t ret;
+
     if (p_ledParam != NULL)
     {
-        if (p_ledParam->duration < ((p_ledParam->offInterval + p_ledParam->onInterval) 
+        if (p_ledParam->duration < ((p_ledParam->offInterval + p_ledParam->onInterval)
             * p_ledParam->flashCnt))
         {
             return APP_LED_HANDLER_NULL;
@@ -345,20 +383,28 @@ uint8_t APP_LED_Start(APP_LED_Param_T *p_ledParam)
         // Stop the type LED
         for (i = 0; i < APP_LED_ELEM_NUMBER; i++)
         {
-            if((s_appLedElement[i].state != APP_LED_STATE_NULL)
+            if((s_appLedElement[i].state != (uint8_t)APP_LED_STATE_NULL)
                 && (s_appLedElement[i].type == p_ledParam->type))
             {
-                APP_LED_Stop(s_appLedElement[i].handler);
+                ret = APP_LED_Stop(s_appLedElement[i].handler);
+                if (ret != APP_RES_SUCCESS)
+                {
+                    //if error occurs
+                }
             }
         }
         // Get LED element
         for (i = 0; i < APP_LED_ELEM_NUMBER; i++)
         {
-            if (s_appLedElement[i].state == APP_LED_STATE_NULL)
+            if (s_appLedElement[i].state == (uint8_t)APP_LED_STATE_NULL)
+            {
                 break;
+            }
         }
         if (i >= APP_LED_ELEM_NUMBER)
+        {
             return APP_LED_HANDLER_NULL;
+        }
         p_ledElem = &(s_appLedElement[i]);
         p_ledElem->handler = i;
         p_ledElem->type = p_ledParam->type;
@@ -372,15 +418,17 @@ uint8_t APP_LED_Start(APP_LED_Param_T *p_ledParam)
         return p_ledElem->handler;
     }
     else
+    {
         return APP_LED_HANDLER_NULL;
+    }
 }
 
 uint8_t APP_LED_StartByMode(uint8_t mode)
 {
-    APP_LED_Param_T *p_ledMode;
+    const APP_LED_Param_T *p_ledMode;
     uint8_t ledHandler;
 
-    p_ledMode = (APP_LED_Param_T *)&(s_appLedMode[mode]);
+    p_ledMode = (const APP_LED_Param_T *)&(s_appLedMode[mode]);
     ledHandler = APP_LED_Start(p_ledMode);
 
     return ledHandler;

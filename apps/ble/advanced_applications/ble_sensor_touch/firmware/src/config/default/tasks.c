@@ -60,8 +60,11 @@
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
+
 /* Handle for the APP_Tasks. */
 TaskHandle_t xAPP_Tasks;
+
+
 
 static void lAPP_Tasks(  void *pvParameters  )
 {   
@@ -107,14 +110,15 @@ void SYS_Tasks ( void )
 
 
     /* Maintain the application's state machine. */
-        /* Create OS Thread for APP_Tasks. */
-    (void) xTaskCreate((TaskFunction_t) lAPP_Tasks,
-                "APP_Tasks",
-                4096,
-                NULL,
-                1,
-                &xAPP_Tasks);
-
+    
+    /* Create OS Thread for APP_Tasks. */
+    (void) xTaskCreate(
+           (TaskFunction_t) lAPP_Tasks,
+           "APP_Tasks",
+           4096,
+           NULL,
+           1U ,
+           &xAPP_Tasks);
 
 
 

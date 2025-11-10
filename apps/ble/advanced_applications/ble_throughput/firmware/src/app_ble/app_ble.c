@@ -51,6 +51,7 @@
 #include "app_trspc_handler.h"
 
 #include "ble_gcm/ble_dd.h"
+#include "bt_sys_log.h"
 
 
 

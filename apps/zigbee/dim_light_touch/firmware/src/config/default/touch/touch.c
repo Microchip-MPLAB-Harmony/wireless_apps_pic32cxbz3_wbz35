@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Copyright (C) [2023], Microchip Technology Inc., and its subsidiaries. All rights reserved.
+Copyright (C) [2025], Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
 The software and documentation is provided by microchip and its contributors
 "as is" and any express, implied or statutory warranties, including, but not
@@ -189,8 +189,8 @@ static touch_ret_t touch_sensors_config(void)
     touch_ret_t touch_ret = TOUCH_SUCCESS;
 
     /* Init acquisition module */
-    qtm_cvd_init_acquisition_module(&qtlib_acq_set1);
-    qtm_cvd_qtlib_assign_signal_memory(&touch_acq_signals_raw[0]);
+    touch_ret = qtm_cvd_init_acquisition_module(&qtlib_acq_set1);
+    touch_ret = qtm_cvd_qtlib_assign_signal_memory(&touch_acq_signals_raw[0]);
 
     /* Initialize sensor nodes */
     for (sensor_nodes = 0u; sensor_nodes < (uint16_t) DEF_NUM_CHANNELS; sensor_nodes++) {
@@ -351,17 +351,17 @@ void touch_timer_handler(void)
 	appMsg.msgId = APP_MSG_TOUCH_MEAS;
     OSAL_QUEUE_SendISR(&appData.appQueue, &appMsg);
 }
-void timer_handler( uint32_t intCause, uintptr_t context )
+static void timer_handler( uint32_t intCause, uintptr_t context )
 {
      touch_timer_handler();
 }
-uintptr_t tmr_context;
+static uintptr_t tmr_context;
 
 void touch_timer_config(void)
 {
 	RTC_Timer32CallbackRegister(timer_handler,tmr_context);
 	RTC_Timer32Start();
-	RTC_Timer32Compare0Set(DEF_TOUCH_MEASUREMENT_PERIOD_MS*(RTC_Timer32FrequencyGet()/1000));
+	RTC_Timer32Compare0Set((uint16_t)((uint16_t)(DEF_TOUCH_MEASUREMENT_PERIOD_MS)* (uint16_t)(RTC_Timer32FrequencyGet()/((uint32_t)1000))));
 }
 
 uint16_t get_sensor_node_signal(uint16_t sensor_node)

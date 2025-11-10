@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -76,8 +76,7 @@
 #include "driver/device_support/include/sleep_system.h"
 #include "framework_defs.h"
 #include "app_idle_task.h"
-#include "peripheral/evsys/plib_evsys.h"
-
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -109,12 +108,12 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/eic/plib_eic.h"
-#include "peripheral/tc/plib_tc0.h"
-#include "touch/touch.h"
 #include "peripheral/rtc/plib_rtc.h"
+#include "touch/touch.h"
+#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/nvm/plib_nvm.h"
-#include "peripheral/tcc/plib_tcc2.h"
 #include "peripheral/adchs/plib_adchs.h"
+#include "peripheral/tcc/plib_tcc2.h"
 #include "peripheral/tcc/plib_tcc0.h"
 #include "driver/usart/drv_usart.h"
 #include "zigbee/z3device_configs/stackConfig.h"
@@ -144,13 +143,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "WBZ351"
-#define DEVICE_ARCH			 "CORTEX-M4"
-#define DEVICE_FAMILY		 "PIC32CX_BZ3"
-#define DEVICE_SERIES		 "WBZ35"
+#define DEVICE_NAME          "WBZ351"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "PIC32CX_BZ3"
+#define DEVICE_SERIES        "WBZ35"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 64000000
+#define CPU_CLOCK_FREQUENCY 64000000U
 
 // *****************************************************************************
 // *****************************************************************************

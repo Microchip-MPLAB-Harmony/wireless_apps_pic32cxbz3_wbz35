@@ -43,7 +43,7 @@
 #include "osal/osal_freertos_extend.h"
 #include "app_ble.h"
 #include "app_ble_handler.h"
-
+#include "peripheral/gpio/plib_gpio.h" 
 
 
 
@@ -237,7 +237,6 @@ static void APP_BleConfigAdvance(void)
     dmConfig.connConfig.minAcceptPeripheralLatency = 0;    /* Minimum Connection Latency */
     dmConfig.connConfig.maxAcceptPeripheralLatency = 499;    /* Maximum Connection Latency */
     BLE_DM_Config(&dmConfig);
-
 
 }
 

@@ -15,7 +15,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -77,6 +76,7 @@
 #pragma config INT0P =      NEG
 #pragma config FECCCON =         OFF
 #pragma config FRECCDIS =      OFF
+
 
 
 /*** DEVCFG1 ***/
@@ -141,7 +141,7 @@
 
 /*** FBCFG0 ***/
 #pragma config BINFOVALID =      VALID
-#pragma config PCSCMODE =      SINGLE
+#pragma config PCSCMODE =      DUAL
 
 /*** FCPN0 ***/
 #pragma config CP =      DISABLED
@@ -155,6 +155,12 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 7.2 - Deviation record ID - H3_MISRAC_2012_R_7_2_DR_1 */
+/* MISRA C-2012 Rule 11.1 - Deviation record ID - H3_MISRAC_2012_R_11_1_DR_1 */
+/* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+/* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
 
 
 // *****************************************************************************
@@ -163,7 +169,6 @@
 // *****************************************************************************
 // *****************************************************************************
 /* Structure to hold the object handles for the modules in the system. */
-SYSTEM_OBJECTS sysObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -195,12 +200,11 @@ SYSTEM_OBJECTS sysObj;
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
-#define REGULATORY_REGION "ETSI"
 
 #define QUEUE_LENGTH_BLE        (32)
 #define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
-#define EXT_COMMON_MEMORY_SIZE  (28*1024)
-OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
+#define EXT_COMMON_MEMORY_SIZE  (31*1024)
+OSAL_SEM_HANDLE_TYPE bleRequestSemHandle;
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -265,15 +269,6 @@ void _on_reset(void)
     // Initialize the RF Clock Generator
     SYS_ClkGen_Config();
 
-    CLOCK_Initialize();
-  
-    typedef int (*FUNC_PCHE_SETUP)(uint32_t);
-    ((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
-                                    | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)));
-									
-									
-	//Set RF as idle mode
-	RF_SetIdleMode();
 }
 
 
@@ -285,7 +280,7 @@ void _on_reset(void)
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -299,6 +294,7 @@ void _on_reset(void)
 
 void SYS_Initialize ( void* data )
 {
+
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
@@ -329,12 +325,16 @@ void SYS_Initialize ( void* data )
     BT_SYS_Cfg_T        btSysCfg;
     BT_SYS_Option_T     btOption;
   
-//    CLK_Initialize();
-//    /* Configure Prefetch, Wait States by calling the ROM function whose address is available at address 0xF2D0 */
-//    typedef int (*FUNC_PCHE_SETUP)(uint32_t);
-//    ((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
-//                                    | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)));
+    CLOCK_Initialize();
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
+    /* Configure Prefetch, Wait States by calling the ROM function whose address is available at address 0xF2D0 */
+    typedef void (*FUNC_PCHE_SETUP)(uint32_t setup);
+    (void)((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
+                                    | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)  | PCHE_CHECON_ADRWS(0)));
+
+    /* MISRAC 2012 deviation block end */
 
     DEVICE_DeepSleepWakeSrc_T wakeSrc;
     DEVICE_GetDeepSleepWakeUpSrc(&wakeSrc);
@@ -342,41 +342,20 @@ void SYS_Initialize ( void* data )
 	GPIO_Initialize();
 
     EVSYS_Initialize();
-
-   
     
-
-
-    if ((wakeSrc == DEVICE_DEEP_SLEEP_WAKE_NONE) || (wakeSrc == DEVICE_DEEP_SLEEP_WAKE_MCLR))
-	{
-        RTC_Initialize();
+    if (wakeSrc == DEVICE_DEEP_SLEEP_WAKE_NONE) //Initialize RTC if wake source is none(i.e power on reset)
+    {
+      RTC_Initialize();
     }
+
     NVM_Initialize();
 
 
-/*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
-*
-* Subject to your compliance with these terms, you may use Microchip software
-* and any derivatives exclusively with Microchip products. It is your
-* responsibility to comply with third party license terms applicable to your
-* use of third party software (including open source software) that may
-* accompany Microchip software.
-*
-* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-* PARTICULAR PURPOSE.
-*
-* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-    
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
     // Initialize RF System
     SYS_Load_Cal(WSS_ENABLE_BLE);
  
@@ -402,10 +381,9 @@ void SYS_Initialize ( void* data )
     osalAPIList.OSAL_MemAlloc = OSAL_Malloc;
     osalAPIList.OSAL_MemFree = OSAL_Free;
 
-	//Config retention RAM size
-	PMU_REGS->PMU_WCMSIZ &= ~PMU_WCMSIZ_SRAM1_SIZ_Msk;
-	PMU_REGS->PMU_WCMSIZ |= PMU_WCMSIZ_SRAM1_SIZ_16K_SRAM;
-
+    //Config retention RAM size
+    PMU_REGS->PMU_WCMSIZ &= ~PMU_WCMSIZ_SRAM1_SIZ_Msk;
+    PMU_REGS->PMU_WCMSIZ |= PMU_WCMSIZ_SRAM1_SIZ_16K_SRAM;
 
 
 /*******************************************************************************
@@ -436,13 +414,13 @@ void SYS_Initialize ( void* data )
 
 
 
-    // Create BLE Stack Message QUEUE
-    OSAL_QUEUE_Create(&bleRequestQueueHandle, QUEUE_LENGTH_BLE, QUEUE_ITEM_SIZE_BLE);
+    // Create BLE Stack Message SEM
+    OSAL_SEM_Create(&bleRequestSemHandle, OSAL_SEM_TYPE_BINARY, 0, 0);
 
     // Retrieve BLE calibration data
+    (void)memset(&btSysCfg, 0, sizeof(BT_SYS_Cfg_T));
     btSysCfg.addrValid = IB_GetBdAddr(&btSysCfg.devAddr[0]);
     btSysCfg.rssiOffsetValid =IB_GetRssiOffset(&btSysCfg.rssiOffset);
-    //btSysCfg.antennaGainValid = IB_GetAntennaGain(&btSysCfg.antennaGain);
 
     if (!IB_GetAntennaGain(&btSysCfg.antennaGain))
     {
@@ -452,25 +430,26 @@ void SYS_Initialize ( void* data )
     btSysCfg.adcTimingValid =IB_GetAdcTiming(&btSysCfg.adcTiming08, &btSysCfg.adcTiming51);
 
     //Configure BLE option
+    (void)memset(&btOption, 0, sizeof(BT_SYS_Option_T));
     btOption.hciMode = false;
     btOption.cmnMemSize = EXT_COMMON_MEMORY_SIZE;
+    //Configure BLE option
     btOption.p_cmnMemAddr = OSAL_Malloc(btOption.cmnMemSize);
+    btOption.deFeatMask = (BT_SYS_FEAT_CHC);
 
     // Initialize BLE Stack
-    BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);
-    
+    BT_SYS_Init(&bleRequestSemHandle, &osalAPIList, &btOption, &btSysCfg);
 
 
-
-
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
 
 
     NVIC_Initialize();
 
+
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File

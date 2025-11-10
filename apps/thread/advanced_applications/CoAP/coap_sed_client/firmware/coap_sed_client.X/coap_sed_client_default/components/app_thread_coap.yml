@@ -1,0 +1,109 @@
+configVersion: 1.0.0
+componentName: app_thread_coap
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: app_thread_coap
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_system_pic32cxbz_wbz
+  type: package
+  version: v1.8.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: app_thread_coap
+          x: '761'
+          y: '9'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    COAP_RESOUCES_NUMBER_CONFIG:
+      attributes:
+        id: COAP_RESOUCES_NUMBER_CONFIG
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: Integer
+    RESOURCE_ID1_CONFIG:
+      attributes:
+        id: RESOURCE_ID1_CONFIG
+      children:
+      - children:
+        - attributes:
+            value: APP_LED_RESOURCE
+          type: User
+        type: Values
+      type: String
+    RESOURCE_ID2_CONFIG:
+      attributes:
+        id: RESOURCE_ID2_CONFIG
+      children:
+      - children:
+        - attributes:
+            value: APP_RESOURCE_LED
+          type: User
+        type: Values
+      type: String
+    RESOURCE_URI1_CONFIG:
+      attributes:
+        id: RESOURCE_URI1_CONFIG
+      children:
+      - children:
+        - attributes:
+            value: led
+          type: User
+        type: Values
+      type: String
+    RESOURCE_URI2_CONFIG:
+      attributes:
+        id: RESOURCE_URI2_CONFIG
+      children:
+      - children:
+        - attributes:
+            value: led
+          type: User
+        type: Values
+      type: String
+    THREAD_DEVICE_ROLE_CONFIG:
+      attributes:
+        id: THREAD_DEVICE_ROLE_CONFIG
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    THREAD_SLEEP_ENABLE:
+      attributes:
+        id: THREAD_SLEEP_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'false'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

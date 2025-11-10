@@ -209,6 +209,18 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         }
         break;
 
+        case BLE_GAP_EVT_FEATURE_EXCHANGE_COMPL:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+
+        case BLE_GAP_EVT_SUBRATE_CHANGE:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+
         default:
         break;
     }
@@ -395,7 +407,13 @@ void APP_GattEvtHandler(GATT_Event_T *p_event)
             /* TODO: implement your application code.*/
         }
         break;
-
+        
+        case GATTS_EVT_ENC_DATA_KEY_MATL_REQ:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+        
         default:
         break;        
     }

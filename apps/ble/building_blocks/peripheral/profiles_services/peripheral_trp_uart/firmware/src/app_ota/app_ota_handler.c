@@ -16,7 +16,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -65,10 +65,8 @@
 // Section: Macros
 // *****************************************************************************
 // *****************************************************************************
-#define FLASH_IMAGE_ID   0x9E000003
 
-#define APP_OTA_RES_SUCCESS 0x0000
-#define APP_OTA_RES_FAIL    0x0001
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -92,6 +90,8 @@ static uint8_t s_OTAMode;
 static APP_BLE_ConnList_T *s_pOTAConnLink = NULL;
 static uint16_t s_connHandle, s_fwImageValidate = 0;
 
+#define APP_OTA_RES_SUCCESS 0x0000
+#define APP_OTA_RES_FAIL    0x0001
 
 // *****************************************************************************
 // *****************************************************************************
@@ -201,6 +201,12 @@ void APP_OTA_HDL_Reset(void)
     APP_TIMER_SetTimer(APP_TIMER_OTA_REBOOT, APP_TIMER_500MS, false);
 }
 
+void APP_OTA_BLE_Disconnect(void)
+{
+    BLE_GAP_Disconnect(s_connHandle, GAP_DISC_REASON_REMOTE_TERMINATE);
+}
+
+
 void APP_OTA_Timeout_Handler(void)
 {
     if (APP_OTA_HDL_GetOTAMode() == APP_OTA_MODE_OTA)
@@ -219,8 +225,6 @@ void APP_OTA_Reboot_Handler(void)
     {
         RCON_SoftwareReset();
     }
-    else
-        APP_OTA_HDL_Reset();
 }
 
 void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
@@ -233,34 +237,37 @@ void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
             uint8_t appVerison[BLE_ATT_DEFAULT_MTU_LEN] = {'\0'};
             uint16_t result = APP_RES_FAIL, appVerisonLength = BLE_ATT_DEFAULT_MTU_LEN;			
             BLE_OTAPS_DevInfo_T devInfo = {0};
-            uint32_t fwImageId = 0;
 
+            memset(appVerison, '\0', sizeof(appVerison));
+            memset(&devInfo, 0x00, sizeof(BLE_OTAPS_DevInfo_T));
             result = GATTS_GetHandleValue(DIS_HDL_CHARVAL_FW_REV, &appVerison[0], &appVerisonLength);
             if (result == APP_RES_SUCCESS)
             {
                 devInfo.fwImageVer = (appVerison[0]-'0') << 24 | (appVerison[2]-'0') << 16 | (appVerison[4]-'0') << 8 | (appVerison[6]-'0');
             }
             
+            s_fwImageValidate = 0;
             s_connHandle = p_event->eventField.evtUpdateReq.connHandle;
 			
-            fwImageId = p_event->eventField.evtUpdateReq.fwImageId;
-
-            if (p_event->eventField.evtUpdateReq.fwImageFileType == BLE_OTAPS_IMG_FILE_TYPE_INT)
-            {
-                s_fwImageValidate = p_event->eventField.evtUpdateReq.fwImageCrc16;
-            }
-            else if (p_event->eventField.evtUpdateReq.fwImageFileType == BLE_OTAPS_IMG_FILE_TYPE_EXT)
+            if (p_event->eventField.evtUpdateReq.fwImageFileType == BLE_OTAPS_IMG_FILE_TYPE_EXT)
             {
                 s_fwImageValidate = p_event->eventField.evtUpdateReq.fwImageChksum;
             }
+			//For PFM OTA
+            else if (p_event->eventField.evtUpdateReq.fwImageFileType == BLE_OTAPS_IMG_FILE_TYPE_INT)
+            {
+                s_fwImageValidate = p_event->eventField.evtUpdateReq.fwImageCrc16;
+            }			
+			else
+			{
+				result = APP_RES_INVALID_PARA;
+			}
             
-            if (fwImageId != FLASH_IMAGE_ID)
+            
             {
-                BLE_OTAPS_UpdateResponse(s_connHandle, false, &devInfo);
-            }
-            else
-            {
+                APP_OTA_HDL_SetOTAMode(APP_OTA_MODE_OTA);
                 BLE_OTAPS_UpdateResponse(s_connHandle, true, &devInfo);
+                APP_OTA_HDL_Prepare(s_connHandle);
             }            
         }
         break;
@@ -268,8 +275,6 @@ void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
         case BLE_OTAPS_EVT_START_IND:
         {
             /* TODO: implement your application code.*/
-			APP_OTA_HDL_SetOTAMode(APP_OTA_MODE_OTA);
-            APP_OTA_HDL_Prepare(s_connHandle);
             APP_OTA_HDL_Start();            
         }
         break;
@@ -280,13 +285,17 @@ void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
             APP_OTA_HDL_Updating();            
         }
         break;
+
+        case BLE_OTAPS_EVT_UPDATING_REQ:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
         
         case BLE_OTAPS_EVT_COMPLETE_IND:
         {
-            /* TODO: implement your application code.*/
-            if (p_event->eventField.evtCompleteInd.errStatus == false)
+             if (p_event->eventField.evtCompleteInd.errStatus == APP_OTA_RES_SUCCESS)
             {
-                APP_OTA_HDL_Complete();
                 if (MW_DFU_FwImageValidate(s_fwImageValidate) == APP_OTA_RES_SUCCESS)
                 {
                     //After reset, the new FW will activate.
@@ -306,18 +315,25 @@ void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
             }
             else
             {
+                BLE_OTAPS_CompleteResponse(false);
                 APP_OTA_HDL_ErrorHandle(s_connHandle);
-            }            
+            }
         }
         break;
-        
+            
         case BLE_OTAPS_EVT_RESET_IND:
         {
             /* TODO: implement your application code.*/
             APP_OTA_HDL_Reset();            
         }
         break;
-
+        
+        case BLE_OTAPS_EVT_ERR_UNSPECIFIED_IND:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+        
         default:
         break;
     }
@@ -325,16 +341,11 @@ void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
 
 void APP_OTA_HDL_Init(void)
 {
-
-    uint8_t initVector[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-    
+    uint8_t initVector[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};    
     uint8_t key[] = {0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
 
     BLE_OTAPS_SetEncrytionInfo(initVector, key);
-					
-
     APP_OTA_HDL_SetOTAMode(APP_OTA_MODE_IDLE);
-
 }	
 /*******************************************************************************
  End of File

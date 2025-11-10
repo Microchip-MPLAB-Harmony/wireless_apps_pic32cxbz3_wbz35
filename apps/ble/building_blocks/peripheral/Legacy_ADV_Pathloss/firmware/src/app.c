@@ -55,6 +55,7 @@
 #include "app.h"
 #include "definitions.h"
 #include "app_ble.h"
+#include "bt_sys_log.h"
 
 
 
@@ -180,11 +181,11 @@ void APP_Tasks ( void )
                     // Pass BLE Stack Event Message to User Application for handling
                     APP_BleStackEvtHandler((STACK_Event_T *)p_appMsg->msgData);
                 }
-                else if(p_appMsg->msgId==APP_MSG_BLE_STACK_LOG)
-                {
-                    // Pass BLE LOG Event Message to User Application for handling
-                    APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
-                }
+                // else if(p_appMsg->msgId==APP_MSG_BLE_STACK_LOG)
+                // {
+                //     // Pass BLE LOG Event Message to User Application for handling
+                //     APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
+                // }
                 else if(p_appMsg->msgId==APP_MSG_CONNECT_CB)
                 {
                     APP_Msg_T appMsg;

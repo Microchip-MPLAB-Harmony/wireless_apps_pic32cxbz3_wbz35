@@ -17,7 +17,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -69,7 +69,7 @@ typedef enum APP_TIMER_TimerId_T
 {
     APP_TIMER_OTA_TIMEOUT,
     APP_TIMER_OTA_REBOOT,
-    APP_TIMER_ID_2,
+    APP_TIMER_BLE_DISCONNECT,
     APP_TIMER_ID_3,
     APP_TIMER_ID_4,
     APP_TIMER_ID_5,
@@ -82,6 +82,7 @@ typedef enum APP_TIMER_TimerId_T
 #define APP_TIMER_10MS                                 0x0A     /**< 10ms timer. */
 #define APP_TIMER_12MS                                 0x0C     /**< 12ms timer. */
 #define APP_TIMER_18MS                                 0x12     /**< 18ms timer. */
+#define APP_TIMER_20MS                                 0x14     /**< 20ms timer. */
 #define APP_TIMER_30MS                                 0x1E     /**< 30ms timer. */
 #define APP_TIMER_50MS                                 0x32     /**< 50ms timer. */
 #define APP_TIMER_100MS                                0x64     /**< 100ms timer. */

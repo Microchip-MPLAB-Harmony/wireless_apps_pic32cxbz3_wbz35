@@ -39,8 +39,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _APP_CONFIG_H_
-#define _APP_CONFIG_H_
+#ifndef APP_CONFIG_H
+#define APP_CONFIG_H
 
 #if !defined _USE_LIB_ || defined _SUPER_SET_LIB_
 #include "zigbeeAppDeviceSelect.h" 
@@ -121,7 +121,7 @@
 #define APP_JOIN_ATTEMPT_INTERVAL   3
 
 // Specifies maximum number of scenes that can be stored
-#define MAX_SCENES_AMOUNT 16u
+#define MAX_SCENES_AMOUNT (16U)
 
 #define APP_ENABLE_CONSOLE 1
 
@@ -219,6 +219,7 @@
 
 //#define ZGP_ENABLE_MULTI_SENSOR_SUPPORT
   
+
   // Enabling manufacturer specific cmd/cluster handling in sink
   //#define ZGP_SINK_ENABLE_MANUFAC_SPECIFIC_HANDLING
   
@@ -237,11 +238,11 @@
 //ZB_COMMISSIONING_ON_STARTUP != 0
 //-----------------------------------------------
 #if (ZB_COMMISSIONING_ON_STARTUP != 0)
-#define APP_COMMISSIONING_FORMING 0
+#define APP_COMMISSIONING_FORMING 0U
   
-#define APP_COMMISSIONING_TOUCHLINK 0
+#define APP_COMMISSIONING_TOUCHLINK 0U
 
-#define APP_COMMISSIONING_STEERING 1
+#define APP_COMMISSIONING_STEERING 1U
 
 #define APP_COMMISSIONING_FINDING_AND_BINDING 1
 #endif
@@ -254,4 +255,4 @@
 #include <zigbee/z3device_configs/bitcloudPreInclude.h>
 #endif
 #include <zigbee/z3device_configs/stackConfig.h>
-#endif // _APP_CONFIG_H_
+#endif // APP_CONFIG_H

@@ -44,7 +44,10 @@
 // *****************************************************************************
 // *****************************************************************************
 #include "app_otaps_handler.h"
-#include "../app_ota/app_ota_handler.h"
+#include <string.h>
+#include <stdint.h>
+#include "ble_otaps/ble_otaps.h"
+#include "app_ota/app_ota_handler.h"
 
 
 // *****************************************************************************

@@ -52,9 +52,10 @@
 #include "ble_dm/ble_dm_dds.h"
 
 #include "ble_hids/ble_hids.h"
-#include "app_module.h"
+#include "app_hogps.h"
 #include "device_deep_sleep.h"
 #include "app_conn.h"
+#include "app_led.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variables
@@ -69,31 +70,13 @@
 // *****************************************************************************
 void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
 {
+    uint16_t ret;
+
     switch(p_event->eventId)
     {
         case BLE_GAP_EVT_CONNECTED:
         {
             /* TODO: implement your application code.*/
-            GATTS_BondingParams_T gattsParams;
-
-            if (!g_pairedDevInfo.bPaired)
-            {
-                if (p_event->eventField.evtConnect.remoteAddr.addrType == BLE_GAP_ADDR_TYPE_RANDOM_RESOLVABLE)
-                {
-                    g_extPairedDevInfo.bConnectedByResolvedAddr = true;
-                }
-                else
-                {
-                    g_extPairedDevInfo.bConnectedByResolvedAddr = false;
-                }
-            }
-            else
-            {
-                APP_GetPairedDevGattInfoFromFlash(&g_PairedDevGattInfo);
-                gattsParams.serviceChange= g_PairedDevGattInfo.serviceChange;
-                gattsParams.clientSupportFeature= g_PairedDevGattInfo.clientSupportFeature;
-                GATTS_UpdateBondingInfo(p_event->eventField.evtConnect.connHandle, &gattsParams, g_PairedDevGattInfo.numOfCccd, g_PairedDevGattInfo.cccdList);
-            }
         }
         break;
 
@@ -143,8 +126,12 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         case BLE_GAP_EVT_ADV_TIMEOUT:
         {
             /* TODO: implement your application code.*/
-            g_pairedDevInfo.state=APP_HOGPS_STATE_IDLE;
-            APP_LED_Stop(g_appLedHandler);
+            g_ctrlInfo.state=APP_HOGPS_STATE_IDLE;
+            ret=APP_LED_Stop(g_appLedHandler);
+            if (ret != APP_RES_SUCCESS)
+            {
+                //if error occurs
+            }
 
             DEVICE_EnterExtremeDeepSleep(true);
         }
@@ -292,7 +279,9 @@ void APP_BleL2capEvtHandler(BLE_L2CAP_Event_T *p_event)
 }
 
 void APP_GattEvtHandler(GATT_Event_T *p_event)
-{   
+{
+    APP_HOGPS_ConnList_T *p_conn;
+
     switch(p_event->eventId)
     {
         case GATTC_EVT_ERROR_RESP:
@@ -406,11 +395,15 @@ void APP_GattEvtHandler(GATT_Event_T *p_event)
         case GATTS_EVT_CLIENT_CCCDLIST_CHANGE:
         {
             /* TODO: implement your application code.*/
-            g_PairedDevGattInfo.serviceChange=GATT_DB_CHANGE_AWARE; //Currently no Characteristic: Service Changed in GATT Service
-            g_PairedDevGattInfo.clientSupportFeature=0x00;          //Currently no Characteristic: Client Supported Features in GATT Service
-            g_PairedDevGattInfo.numOfCccd=p_event->eventField.onClientCccdListChange.numOfCccd;
-            memcpy((uint8_t *)g_PairedDevGattInfo.cccdList, (uint8_t *)p_event->eventField.onClientCccdListChange.p_cccdList, (g_PairedDevGattInfo.numOfCccd*sizeof(GATTS_CccdList_T)));
-            APP_SetPairedDevGattInfoInFlash(&g_PairedDevGattInfo);
+            p_conn = APP_GetConnListByHandle(p_event->eventField.onClientCccdListChange.connHandle);
+            if (p_conn != NULL)
+            {
+                p_conn->gattInfo.serviceChange=GATT_DB_CHANGE_AWARE; //Currently no Characteristic: Service Changed in GATT Service
+                p_conn->gattInfo.clientSupportFeature=0x00;          //Currently no Characteristic: Client Supported Features in GATT Service
+                p_conn->gattInfo.numOfCccd=p_event->eventField.onClientCccdListChange.numOfCccd;
+                (void)memcpy((uint8_t *)p_conn->gattInfo.cccdList, (uint8_t *)p_event->eventField.onClientCccdListChange.p_cccdList, (p_conn->gattInfo.numOfCccd*sizeof(GATTS_CccdList_T)));
+                APP_SetPairedDevGattInfoInFlash(&p_conn->gattInfo);
+            }
 
             OSAL_Free(p_event->eventField.onClientCccdListChange.p_cccdList);
         }
@@ -504,51 +497,62 @@ void APP_BleSmpEvtHandler(BLE_SMP_Event_T *p_event)
         break;
 
         default:
-        break;        
+        break;
     }
 }
 
 void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
 {
+    BLE_GAP_Addr_T  localAddr;
+    APP_HOGPS_ConnList_T *p_conn;
+    bool bPaired;
+    uint8_t devId;
+    GATTS_BondingParams_T gattsParams;
+
     switch(p_event->eventId)
     {
         case BLE_DM_EVT_DISCONNECTED:
         {
             /* TODO: implement your application code.*/
-            if (g_bConnTimeout)
+            p_conn = APP_GetConnListByHandle(p_event->connHandle);
+            if (p_conn != NULL)
             {
-                DEVICE_EnterExtremeDeepSleep(true);
-            }
-            else
-            {
-                APP_CONN_StopTimeoutTimer();
+                APP_InitConnList(p_conn->connIndex);
 
-                if (g_bAllowNewPairing)
+                if (g_ctrlInfo.bConnTimeout == true)
                 {
-                    //Start for new pairing
-                    //Clear paired device info
-                    APP_InitPairedDeviceInfo();
-                    //Set a new IRK
-                    APP_SetLocalIRK();
-                    //Set a new local address-Random Static Address
-                    APP_GenerateRandomStaticAddress(&g_extPairedDevInfo.localAddr);
-                    BLE_GAP_SetDeviceAddr(&g_extPairedDevInfo.localAddr);
-                    //Clear filter accept list
-                    APP_SetFilterAcceptList(false);
-                    //Clear resolving list
-                    APP_SetResolvingList(false);
-                    //Set the configuration of advertising
-                    APP_ConfigAdvDirect(false);
-                    //Start advertising
-                    APP_EnableAdvDirect(false);
+                    DEVICE_EnterExtremeDeepSleep(true);
                 }
                 else
                 {
-                    //Start to reconnect
-                    APP_ConfigAdvDirect(true);
-                    APP_SetFilterAcceptList(true);
-                    APP_SetResolvingList(g_extPairedDevInfo.bConnectedByResolvedAddr);
-                    APP_EnableAdvDirect(true);
+                    APP_CONN_StopTimeoutTimer();
+
+                    bPaired=APP_GetPairedDeviceId(&devId);
+                    if ((g_ctrlInfo.bAllowNewPairing) || (bPaired == false))
+                    {
+                        //Start for new pairing
+                        //Set a new IRK
+                        APP_SetLocalIRK();
+                        //Set a new local address-Random Static Address
+                        APP_GenerateRandomStaticAddress(&localAddr);
+                        BLE_GAP_SetDeviceAddr(&localAddr);
+                        //Clear filter accept list
+                        APP_SetFilterAcceptList(false);
+                        //Clear resolving list
+                        APP_SetResolvingList(false);
+                        //Set the configuration of advertising
+                        APP_ConfigAdv(APP_ADV_TYPE_ADV);
+                        //Start advertising
+                        APP_EnableAdv(APP_ADV_TYPE_ADV);
+                    }
+                    else
+                    {
+                        //Start to reconnect
+                        APP_ConfigAdv(APP_ADV_TYPE_ADV_DIRECT);
+                        APP_SetFilterAcceptList(true);
+                        APP_SetResolvingList(true);
+                        APP_EnableAdv(APP_ADV_TYPE_ADV_DIRECT);
+                    }
                 }
             }
         }
@@ -557,13 +561,27 @@ void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
         case BLE_DM_EVT_CONNECTED:
         {
             /* TODO: implement your application code.*/
-            g_bAllowNewPairing=false;
+            p_conn = APP_GetFreeConnList();
+            if (p_conn != NULL)
+            {
+                p_conn->connHandle = p_event->connHandle;
 
-            g_pairedDevInfo.connHandle=p_event->connHandle;
-            g_pairedDevInfo.state=APP_HOGPS_STATE_CONN;
-            g_appLedHandler=APP_LED_StartByMode(APP_LED_MODE_CONN);
+                g_ctrlInfo.bAllowNewPairing=false;
+                g_ctrlInfo.state=APP_HOGPS_STATE_CONN;
+                g_appLedHandler=APP_LED_StartByMode(APP_LED_MODE_CONN);
 
-            APP_CONN_StartTimeoutTimer();
+                APP_CONN_StartTimeoutTimer();
+
+                //if paired, load GATT data from pds
+                bPaired=APP_GetPairedDeviceId(&devId);
+                if (bPaired == true)
+                {
+                    APP_GetPairedDevGattInfoFromFlash(&p_conn->gattInfo);
+                    gattsParams.serviceChange= p_conn->gattInfo.serviceChange;
+                    gattsParams.clientSupportFeature= p_conn->gattInfo.clientSupportFeature;
+                    GATTS_UpdateBondingInfo(p_conn->connHandle, &gattsParams, p_conn->gattInfo.numOfCccd, p_conn->gattInfo.cccdList);
+                }
+            }
         }
         break;
 
@@ -582,8 +600,6 @@ void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
         case BLE_DM_EVT_SECURITY_FAIL:
         {
             /* TODO: implement your application code.*/
-            APP_LED_BLUE_OFF
-            APP_LED_RED_ON
         }
         break;
 
@@ -598,36 +614,26 @@ void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
             /* TODO: implement your application code.*/
             BLE_DM_PairedDevInfo_T  *p_devInfo;
 
-            g_pairedDevInfo.bPaired=true;
+
             p_devInfo = OSAL_Malloc(sizeof(BLE_DM_PairedDevInfo_T));
-            if (p_devInfo)
+            if (p_devInfo != NULL)
             {
                 if (BLE_DM_GetPairedDevice(p_event->peerDevId, p_devInfo) == MBA_RES_SUCCESS)
                 {
-                    g_pairedDevInfo.bAddrLoaded=true;
-                    memcpy(&g_pairedDevInfo.addr, &p_devInfo->remoteAddr, sizeof(BLE_GAP_Addr_T));
-
-                    //Remove previous pairing data, store new pairing data(actually APP only stores peerDevId, pairing data has been stored by DM already)
-                    if (g_pairedDevInfo.bPeerDevIdExist)
+                    //There is previous pairing data
+                    if (g_ctrlInfo.peerDevId < BLE_DM_MAX_PAIRED_DEVICE_NUM)
                     {
-                        if (g_pairedDevInfo.peerDevId != p_event->peerDevId)
+                        //Paired with different device from previous paired device, delete previous pairing data
+                        if (g_ctrlInfo.peerDevId != p_event->peerDevId)
                         {
-                            BLE_DM_DeletePairedDevice(g_pairedDevInfo.peerDevId);
+                            BLE_DM_DeletePairedDevice(g_ctrlInfo.peerDevId);
                         }
                     }
-                    else
-                    {
-                        g_pairedDevInfo.bPeerDevIdExist=true;
-                    }
-                    g_pairedDevInfo.peerDevId =p_event->peerDevId;
-
-                    //Write extended Paired Device info once Paired Device info finished the writing in flash.
-                    APP_SetExtPairedDevInfoInFlash(&g_extPairedDevInfo);
+                    g_ctrlInfo.peerDevId =p_event->peerDevId;
                 }
                 else
                 {
                     //Should not happen
-                    g_pairedDevInfo.bAddrLoaded=false;
                 }
                 OSAL_Free(p_devInfo);
             }

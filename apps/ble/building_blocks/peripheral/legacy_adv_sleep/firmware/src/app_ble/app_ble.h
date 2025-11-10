@@ -173,26 +173,6 @@ void APP_BleStackInitAdvance(void);
 void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt);
 
 
-/*******************************************************************************
-  Function:
-    void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-
-  Summary:
-     Function for handling APP_MSG_BLE_STACK_LOG message.
-
-  Description:
-
-  Precondition:
-
-  Parameters:
-    None.
-
-  Returns:
-    None.
-
-*/
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt);
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

@@ -62,6 +62,58 @@
 // Section: Functions
 // *****************************************************************************
 // *****************************************************************************
+uint8_t APP_Adv_Parser(uint8_t type, uint8_t* advData, uint8_t advLen, uint8_t* dataBuf)
+{
+    // pointing to the first byte of advData
+    uint8_t i=1;
+    
+    if(advLen<=1)
+        return 0;
+    
+    for(; i< advLen; i += advData[i-1] + 1)
+    {
+        if(advData[i] == type)
+            break;
+    }
+    
+    if((i>= advLen)||                    // Cannot find the AD type
+       (i + advData[i-1] - 1 > advLen))  // Check the data integrity 
+        return 0;
+        
+    // data point to the AD data
+    memcpy(dataBuf, advData+i+1, advData[i-1]-1);
+    
+    // return the AD length
+    return advData[i-1]-1;
+}
+
+void APP_HexToAscii(uint8_t byteNum, uint8_t *p_hex, uint8_t *p_ascii)
+{
+    uint8_t i, j, c;
+    uint8_t digitNum = byteNum * 2;
+
+    if (p_hex == NULL || p_ascii == NULL)
+        return;
+
+    for (i = 0; i < digitNum; i++)
+    {
+        j = i / 2;
+        c = p_hex[j] & 0x0F;
+
+        if (c >= 0x00 && c <= 0x09)
+        {
+            p_ascii[digitNum - i - 1] = c + 0x30;
+        }
+        else if (c >= 0x0A && c <= 0x0F)
+        {
+            p_ascii[digitNum - i - 1] = c - 0x0A + 'A';
+        }
+
+        p_hex[j] /= 16;
+    }
+}
+
+
 void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
 {
     switch(p_event->eventId)
@@ -111,15 +163,35 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
 
         case BLE_GAP_EVT_EXT_ADV_REPORT:
         {
-            /* TODO: implement your application code.*/
+            uint8_t adLen, adContent[BLE_GAP_ADV_MAX_LENGTH];
+            uint8_t printLen, printBuf[50];    
+            
+            memset(adContent, 0 , BLE_GAP_ADV_MAX_LENGTH);
+            memset(printBuf, 0, sizeof(printBuf));
+            printLen = 0;
+            // Check the advertisement if it contains Complete name field
+            adLen= APP_Adv_Parser(0x09, p_event->eventField.evtExtAdvReport.advData,
+                                        p_event->eventField.evtExtAdvReport.length, adContent);            
+            //Found
+            if(adLen)
+            {   
+                // Print out the Complete name
+                memcpy(printBuf, adContent, adLen);
+                printLen = adLen;
+
+                printBuf[printLen++] = ' ';
+                // Print out the BD address
+                APP_HexToAscii(GAP_MAX_BD_ADDRESS_LEN,p_event->eventField.evtAdvReport.addr.addr, printBuf+printLen);
+                printLen+=GAP_MAX_BD_ADDRESS_LEN*2;
+
+                printBuf[printLen++] = '\r';
+                printBuf[printLen++] = '\n';
+                SERCOM0_USART_Write(printBuf, printLen);                                        
+
+	            // GPIO will toggle if it can scan any EXT ADV PDU            
+	          
             // GPIO will toggle if it can scan any EXT ADV PDU near based on BLE_GAP_SCAN_PHY chosen
-            GPIOB_REGS->GPIO_PORTINV = 0x08;
-            // length value of 19 is chosen as a filter as ext_adv example sends 19 bytes of data
-            // user can modify filter mechanism based on their requirements
-            if (p_event->eventField.evtExtAdvReport.length == 19)
-            {
-                SERCOM0_USART_Write((uint8_t *)"\r\n", 2);
-                SERCOM0_USART_Write(&p_event->eventField.evtExtAdvReport.advData[5], 9);
+            GPIOB_REGS->GPIO_PORTINV = 0x08;				
             }
         }
         break;

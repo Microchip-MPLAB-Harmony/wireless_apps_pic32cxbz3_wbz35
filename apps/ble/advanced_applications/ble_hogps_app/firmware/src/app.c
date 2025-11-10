@@ -58,7 +58,7 @@
 #include "app_timer.h"
 #include "app_led.h"
 #include "app_key.h"
-#include "app_module.h"
+#include "app_hogps.h"
 #include "app_conn.h"
 
 
@@ -172,6 +172,9 @@ void APP_Tasks ( void )
 
             if (appInitialized)
             {
+                bool bPaired;
+                uint8_t devId;
+                uint8_t i;
 
                 appData.state = APP_STATE_SERVICE_TASKS;
 
@@ -181,27 +184,34 @@ void APP_Tasks ( void )
                 APP_CONN_Init();
                 APP_CONN_TimeOutActionRegister(APP_ConnTimeoutAction);
 
-                APP_EnableAdvDirect(g_pairedDevInfo.bPaired);
+                for (i = 0; i < APP_HOGPS_MAX_CONN_NBR; i++)
+                {
+                    APP_InitConnList(i);
+                }
+
+                APP_InitBleConfig();
+                bPaired=APP_GetPairedDeviceId(&devId);
+                APP_EnableAdv(bPaired ? APP_ADV_TYPE_ADV_DIRECT: APP_ADV_TYPE_ADV);
             }
             break;
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-            if (OSAL_QUEUE_Receive(&appData.appQueue, &appMsg, OSAL_WAIT_FOREVER))
+            if (OSAL_QUEUE_Receive(&appData.appQueue, &appMsg, OSAL_WAIT_FOREVER) == OSAL_RESULT_TRUE)
             {
 
-                if(p_appMsg->msgId==APP_MSG_BLE_STACK_EVT)
+                if(p_appMsg->msgId==(uint8_t)APP_MSG_BLE_STACK_EVT)
                 {
                     // Pass BLE Stack Event Message to User Application for handling
                     APP_BleStackEvtHandler((STACK_Event_T *)p_appMsg->msgData);
                 }
-                else if(p_appMsg->msgId==APP_MSG_BLE_STACK_LOG)
+                else if(p_appMsg->msgId==(uint8_t)APP_MSG_BLE_STACK_LOG)
                 {
                     // Pass BLE LOG Event Message to User Application for handling
                     APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
                 }
-                else if(p_appMsg->msgId==APP_MSG_LED_TIMEOUT)
+                else if(p_appMsg->msgId==(uint8_t)APP_MSG_LED_TIMEOUT)
                 {
                     APP_LED_Elem_T *p_ledElem;
                     uint8_t     instance;
@@ -210,17 +220,20 @@ void APP_Tasks ( void )
                     p_ledElem = (APP_LED_Elem_T *)((APP_TIMER_TmrElem_T *)p_appMsg->msgData)->p_tmrParam;
                     APP_LED_StateMachine(instance, p_ledElem);
                 }
-                else if(p_appMsg->msgId==APP_MSG_KEY_SCAN)
+                else if(p_appMsg->msgId==(uint8_t)APP_MSG_KEY_SCAN)
                 {
                     APP_KEY_Scan();
                 }
-                else if(p_appMsg->msgId==APP_MSG_CONN_TIMEOUT)
+                else if(p_appMsg->msgId==(uint8_t)APP_MSG_CONN_TIMEOUT)
                 {
                     APP_CONN_TimeoutAction();
                 }
+                else
+                {
+
+                }
             }
             break;
-
         }
 
         /* TODO: implement your application state machine.*/

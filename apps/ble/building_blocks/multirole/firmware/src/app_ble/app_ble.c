@@ -271,7 +271,7 @@ static void APP_BleConfigAdvance(void)
     (void)memset(&smpParam, 0, sizeof(BLE_SMP_Config_T));
     smpParam.ioCapability = BLE_SMP_IO_NOINPUTNOOUTPUT;                  /* IO Capability */
     smpParam.authReqFlag |= BLE_SMP_OPTION_BONDING;             /* Authentication Setting: Bonding */
-    smpParam.authReqFlag |= BLE_SMP_OPTION_SECURE_CONNECTION;   /* Authentication Setting: Secure Connections */
+    smpParam.authReqFlag |= ( 0| BLE_SMP_OPTION_SECURE_CONNECTION);   /* Authentication Setting: Secure Connections */
     BLE_SMP_Config(&smpParam);
 
     // Configure BLE_DM middleware parameters

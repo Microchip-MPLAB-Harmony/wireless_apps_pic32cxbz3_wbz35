@@ -83,9 +83,9 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
             retNum = sprintf(s_strBuf,
-                "BLE_ANPC_EVT_SUPP_NEW_ALERT_CAT_IND\n"
-                "  connHandle: %04x\n"
-                "  category: %04x\n",
+                "BLE_ANPC_EVT_SUPP_NEW_ALERT_CAT_IND\r\n"
+                "  connHandle: %04x\r\n"
+                "  category: %04x\r\n",
                 p_event->eventField.evtSuppNewAlertCatInd.connHandle,
                 p_event->eventField.evtSuppNewAlertCatInd.category);
             if (retNum > 0)
@@ -99,9 +99,9 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
             retNum = sprintf(s_strBuf,
-                "BLE_ANPC_EVT_SUPP_UNREAD_ALERT_STAT_CAT_IND\n"
-                "  connHandle: %04x\n"
-                "  category: %04x\n",
+                "BLE_ANPC_EVT_SUPP_UNREAD_ALERT_STAT_CAT_IND\r\n"
+                "  connHandle: %04x\r\n"
+                "  category: %04x\r\n",
                 p_event->eventField.evtSuppUnreadAlertCatInd.connHandle,
                 p_event->eventField.evtSuppUnreadAlertCatInd.category);
             if (retNum > 0)
@@ -125,7 +125,7 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
                 if (p_conn->bCccdEnable == true)
                 {
                     retNum = sprintf(s_strBuf,
-                        "BLE_ANPC_EVT_WRITE_NEW_ALERT_NTFY_RSP_IND_ENABLE\n");
+                        "BLE_ANPC_EVT_WRITE_NEW_ALERT_NTFY_RSP_IND_ENABLE\r\n");
                     if (retNum > 0)
                     {
                         APP_UartMsg(s_strBuf);
@@ -136,7 +136,7 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
                 else
                 {
                     retNum = sprintf(s_strBuf,
-                        "BLE_ANPC_EVT_WRITE_NEW_ALERT_NTFY_RSP_IND_DISABLE\n");
+                        "BLE_ANPC_EVT_WRITE_NEW_ALERT_NTFY_RSP_IND_DISABLE\r\n");
                     if (retNum > 0)
                     {
                         APP_UartMsg(s_strBuf);
@@ -161,7 +161,7 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
                 if (p_conn->bCccdEnable == true)
                 {
                     retNum = sprintf(s_strBuf,
-                        "BLE_ANPC_EVT_WRITE_UNREAD_ALERT_NTFY_RSP_IND_ENABLE\n");
+                        "BLE_ANPC_EVT_WRITE_UNREAD_ALERT_NTFY_RSP_IND_ENABLE\r\n");
                     if (retNum > 0)
                     {
                         APP_UartMsg(s_strBuf);
@@ -171,7 +171,7 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
                 else
                 {
                     retNum = sprintf(s_strBuf,
-                        "BLE_ANPC_EVT_WRITE_UNREAD_ALERT_NTFY_RSP_IND_DISABLE\n");
+                        "BLE_ANPC_EVT_WRITE_UNREAD_ALERT_NTFY_RSP_IND_DISABLE\r\n");
                     if (retNum > 0)
                     {
                         APP_UartMsg(s_strBuf);
@@ -201,12 +201,12 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
             (void)memcpy(p_txtStr,p_event->eventField.evtNewAlertInd.p_receivedValue, strLen);
             p_txtStr[strLen] = '\0';
             retNum = sprintf(s_strBuf,
-                "BLE_ANPC_EVT_NEW_ALERT_IND\n"
-                "  connHandle: %04x\n"
-                "  categoryId: %02x\n"
-                "  numOfNewAlert: %02x\n"
-                "  receivedLength: %04x\n"
-                "  txtStr: %s\n",
+                "BLE_ANPC_EVT_NEW_ALERT_IND\r\n"
+                "  connHandle: %04x\r\n"
+                "  categoryId: %02x\r\n"
+                "  numOfNewAlert: %02x\r\n"
+                "  receivedLength: %04x\r\n"
+                "  txtStr: %s\r\n",
                 p_event->eventField.evtNewAlertInd.connHandle,
                 p_event->eventField.evtNewAlertInd.categoryId,
                 p_event->eventField.evtNewAlertInd.numOfNewAlert,
@@ -224,10 +224,10 @@ void APP_AnpcEvtHandler(BLE_ANPC_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
             retNum = sprintf(s_strBuf,
-                "BLE_ANPC_EVT_UNREAD_ALERT_STAT_IND\n"
-                "  connHandle: %04x\n"
-                "  category: %02x\n"
-                "  unreadCnt: %02x\n",
+                "BLE_ANPC_EVT_UNREAD_ALERT_STAT_IND\r\n"
+                "  connHandle: %04x\r\n"
+                "  category: %02x\r\n"
+                "  unreadCnt: %02x\r\n",
                 p_event->eventField.evtUnreadAlertStatInd.connHandle,
                 p_event->eventField.evtUnreadAlertStatInd.categoryId,
                 p_event->eventField.evtUnreadAlertStatInd.unreadCnt);

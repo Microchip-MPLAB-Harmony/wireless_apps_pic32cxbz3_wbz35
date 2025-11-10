@@ -1,0 +1,92 @@
+configVersion: 1.0.0
+componentName: Bootloader
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: Bootloader
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_pic32cxbz_wbz
+  type: package
+  version: v1.6.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: Bootloader_nvm
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: nvm
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: NVM_MEMORY
+            type: String
+          type: Attributes
+        type: DirectDependency
+      - attributes:
+          id: Bootloader_usart
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: sercom0
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: SERCOM0_UART
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: Bootloader
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: Bootloader
+          x: '1062'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    BOOTLOADER_DFU_SERCOM_INSTANCE_NUM:
+      attributes:
+        id: BOOTLOADER_DFU_SERCOM_INSTANCE_NUM
+      children:
+      - children:
+        - attributes:
+            id: Bootloader
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    BOOTLOADER_GPIO_PORT:
+      attributes:
+        id: BOOTLOADER_GPIO_PORT
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+  userData: {}

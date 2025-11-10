@@ -65,6 +65,7 @@
 #define configUSE_TIME_SLICING                  1
 #define configUSE_NEWLIB_REENTRANT              0
 #define configUSE_TASK_FPU_SUPPORT              0
+#define configCHECK_HANDLER_INSTALLATION        0
 
 
 /* Hook function related definitions. */

@@ -224,6 +224,13 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         }
         break;
 
+        case BLE_GAP_EVT_FEATURE_EXCHANGE_COMPL:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+
+
         default:
         break;
     }
@@ -552,4 +559,13 @@ void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
         default:
         break;
     }
+}
+
+void APP_DdEvtHandler(BLE_DD_Event_T *p_event)
+{
+
+
+
+
+
 }

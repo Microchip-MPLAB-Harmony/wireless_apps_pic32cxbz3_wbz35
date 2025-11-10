@@ -58,7 +58,7 @@
 #include <stdlib.h>
 #include "configuration.h"
 #include "osal/osal_freertos_extend.h"
-
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

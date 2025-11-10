@@ -1,0 +1,326 @@
+configVersion: 1.0.0
+componentName: BLE_STACK_LIB
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: BLE_STACK_LIB
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: FreeRTOS-Kernel
+  type: package
+  version: V11.1.0
+- dependencyPackage: ''
+  name: bsp
+  type: package
+  version: v3.22.0
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.5
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.22.7
+- dependencyPackage: ''
+  name: wireless_ble
+  type: package
+  version: v1.5.0
+- dependencyPackage: ''
+  name: wireless_pic32cxbz_wbz
+  type: package
+  version: v1.6.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: BLE_STACK_LIB
+          x: '480'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    APP_ANP_CLIENT:
+      attributes:
+        id: APP_ANP_CLIENT
+      children:
+      - children:
+        - attributes:
+            id: PROFILE_ANP
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    BLE_ANTENNA_GAIN:
+      attributes:
+        id: BLE_ANTENNA_GAIN
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    BLE_BOOL_GATT_CLIENT:
+      attributes:
+        id: BLE_BOOL_GATT_CLIENT
+      children:
+      - children:
+        - attributes:
+            id: PROFILE_ANP
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    GAP_ADV_DATA:
+      attributes:
+        id: GAP_ADV_DATA
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 0x02, 0x01, 0x05, 0x09, 0x09, 0x41, 0x4E, 0x50, 0x43, 0x2D, 0x44,
+              0x45, 0x56, 0x03, 0x03, 0x11, 0x18
+          type: Dynamic
+        type: Values
+      type: String
+    GAP_ADV_DATA_LEN:
+      attributes:
+        id: GAP_ADV_DATA_LEN
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '17'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GAP_ADV_DATA_LOCAL_NAME:
+      attributes:
+        id: GAP_ADV_DATA_LOCAL_NAME
+      children:
+      - children:
+        - attributes:
+            value: ANPC-DEV
+          type: User
+        type: Values
+      type: String
+    GAP_ADV_DATA_LOCAL_NAME_EN:
+      attributes:
+        id: GAP_ADV_DATA_LOCAL_NAME_EN
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    GAP_ADV_DATA_UDD:
+      attributes:
+        id: GAP_ADV_DATA_UDD
+      children:
+      - children:
+        - attributes:
+            value: '03031118'
+          type: User
+        type: Values
+      type: String
+    GAP_ADV_DATA_UDD_EN:
+      attributes:
+        id: GAP_ADV_DATA_UDD_EN
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    GAP_DEV_NAME:
+      attributes:
+        id: GAP_DEV_NAME
+      children:
+      - children:
+        - attributes:
+            value: ANPC-DEV
+          type: User
+        type: Values
+      type: String
+    GAP_DEV_NAME_CHECK:
+      attributes:
+        id: GAP_DEV_NAME_CHECK
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    GAP_EXT_ADV_DATA:
+      attributes:
+        id: GAP_EXT_ADV_DATA
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 0x02, 0x01, 0x05, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63,
+              0x78, 0x2D, 0x62, 0x7A
+          type: Dynamic
+        type: Values
+      type: String
+    GAP_EXT_ADV_DATA_2:
+      attributes:
+        id: GAP_EXT_ADV_DATA_2
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 0x02, 0x01, 0x05, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63,
+              0x78, 0x2D, 0x62, 0x7A
+          type: Dynamic
+        type: Values
+      type: String
+    GAP_EXT_ADV_DATA_LEN:
+      attributes:
+        id: GAP_EXT_ADV_DATA_LEN
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '15'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GAP_EXT_ADV_DATA_LEN_2:
+      attributes:
+        id: GAP_EXT_ADV_DATA_LEN_2
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '15'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GAP_EXT_SCAN_RSP_DATA:
+      attributes:
+        id: GAP_EXT_SCAN_RSP_DATA
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62,
+              0x7A
+          type: Dynamic
+        type: Values
+      type: String
+    GAP_EXT_SCAN_RSP_DATA_2:
+      attributes:
+        id: GAP_EXT_SCAN_RSP_DATA_2
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62,
+              0x7A
+          type: Dynamic
+        type: Values
+      type: String
+    GAP_EXT_SCAN_RSP_DATA_LEN:
+      attributes:
+        id: GAP_EXT_SCAN_RSP_DATA_LEN
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '12'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GAP_EXT_SCAN_RSP_DATA_LEN_2:
+      attributes:
+        id: GAP_EXT_SCAN_RSP_DATA_LEN_2
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '12'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GAP_SCAN_RSP_DATA:
+      attributes:
+        id: GAP_SCAN_RSP_DATA
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: 0x02, 0x0A, 0x09
+          type: Dynamic
+        type: Values
+      type: String
+    GAP_SCAN_RSP_DATA_LEN:
+      attributes:
+        id: GAP_SCAN_RSP_DATA_LEN
+      children:
+      - children:
+        - attributes:
+            id: BLE_STACK_LIB
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GAP_SCAN_RSP_DATA_LOCAL_NAME:
+      attributes:
+        id: GAP_SCAN_RSP_DATA_LOCAL_NAME
+      children:
+      - children:
+        - attributes:
+            value: pic32cx-bz
+          type: User
+        type: Values
+      type: String
+    GAP_SCAN_RSP_DATA_LOCAL_NAME_EN:
+      attributes:
+        id: GAP_SCAN_RSP_DATA_LOCAL_NAME_EN
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    GAP_SCAN_RSP_DATA_UDD:
+      attributes:
+        id: GAP_SCAN_RSP_DATA_UDD
+      children:
+      - children:
+        - attributes:
+            value: 020A09
+          type: User
+        type: Values
+      type: String
+    GAP_SCAN_RSP_DATA_UDD_EN:
+      attributes:
+        id: GAP_SCAN_RSP_DATA_UDD_EN
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

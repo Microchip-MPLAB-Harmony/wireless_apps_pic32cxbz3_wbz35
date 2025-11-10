@@ -66,8 +66,11 @@
 /* Handle for the zigbee_task. */
 TaskHandle_t zigbeeTaskHandle;
 
+
 /* Handle for the APP_Tasks. */
 TaskHandle_t xAPP_Tasks;
+
+
 
 static void lAPP_Tasks(  void *pvParameters  )
 {   
@@ -103,19 +106,20 @@ void SYS_Tasks ( void )
 
     /* Maintain Middleware & Other Libraries */
         if (xTaskCreate(zigbee_task, "ZGB", TASK_ZGB_STACK_SIZE, NULL, TASK_ZGB_PRIORITY, &zigbeeTaskHandle) != pdPASS)
-        while (1);
+        while (true);
 
 
 
     /* Maintain the application's state machine. */
-        /* Create OS Thread for APP_Tasks. */
-    (void) xTaskCreate((TaskFunction_t) lAPP_Tasks,
-                "APP_Tasks",
-                1024,
-                NULL,
-                1,
-                &xAPP_Tasks);
-
+    
+    /* Create OS Thread for APP_Tasks. */
+    (void) xTaskCreate(
+           (TaskFunction_t) lAPP_Tasks,
+           "APP_Tasks",
+           1024,
+           NULL,
+           1U ,
+           &xAPP_Tasks);
 
 
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright (C) 2024 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -21,10 +21,10 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
+
 #ifndef RF_SYSTEM_H
 #define RF_SYSTEM_H
 
-#include <xc.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
@@ -119,17 +119,6 @@ void SYS_ClkGen_Config(void);
 *@retval None
 */
 void RF_SetIdleMode(void);
-
-// *****************************************************************************
-/**
-*@brief registers needs to be updated depending on the current temperature.
-*
-*@param int16_t temp            Temperathre value.
-*@param uint8_t compLutSel      Compensation table selection.
-*
-*@retval None
-*/
-void CalBiasCompensation(int16_t temp, uint8_t compLutSel);
 
 #ifdef __cplusplus
 }

@@ -175,6 +175,7 @@ void APP_BleSmpEvtHandler(BLE_SMP_Event_T *p_event);
 */
 void APP_DmEvtHandler(BLE_DM_Event_T *p_event);
 
+
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

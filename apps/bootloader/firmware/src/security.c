@@ -25,7 +25,7 @@
 
 #include "security.h"
 #include "application.h"
-#include "packs/WBZ351_DFP/component/rot.h"
+//#include "component/rot.h"
 
 extern uint8_t Flash_EraseSector(uint32_t addr, uint16_t pageCount);
 extern void delay(uint32_t value);
@@ -426,7 +426,7 @@ uint32_t SecurityStatusGet(void)
     uint32_t codeProt = 0;
     
     //Read dbg lck status to determine whether the device is secured or not
-    secBoot = ((SECCFG & 192) >> 6) ;
+    secBoot = ((SECCFG & 0xC0) >> 0x06) ;
             
     //Read code protection status
     codeProt = (((DSU_REGS->DSU_STATUSB) & DSU_STATUSB_PROT_Msk) >> DSU_STATUSB_PROT_Pos);

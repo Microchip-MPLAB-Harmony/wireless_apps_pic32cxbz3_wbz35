@@ -60,6 +60,11 @@
  */
 #define APP_IDLE_RTC_TIMER_FACTOR_POSC                   ( 12UL )   //1.2ms
 
+/* A fiddle factor to estimate the number of SysTick counts that would have
+ * occurred while the SysTick counter is stopped during tickless idle
+ * calculations. */
+#define APP_IDLE_MISSED_COUNTS_FACTOR                    ( 94UL )
+
 /* The RTC is a 32-bit counter. */
 #define APP_IDLE_MAX_32_BIT_NUMBER                  ( 0xffffffffUL )
 
@@ -70,6 +75,8 @@
 #define APP_IDLE_NVIC_SYSTICK_CTRL_REG           ( * ( ( volatile uint32_t * ) 0xe000e010 ) )
 #define APP_IDLE_NVIC_SYSTICK_LOAD_REG           ( * ( ( volatile uint32_t * ) 0xe000e014 ) )
 #define APP_IDLE_NVIC_SYSTICK_CURRENT_VALUE_REG  ( * ( ( volatile uint32_t * ) 0xe000e018 ) )
+#define APP_IDLE_NVIC_INT_CTRL_REG               ( * ( ( volatile uint32_t * ) 0xe000ed04 ) )
+
 
 /* ...then bits in the registers. */
 #define APP_IDLE_NVIC_SYSTICK_ENABLE_BIT         ( 1UL << 0UL )
@@ -77,6 +84,7 @@
 #define APP_IDLE_NVIC_SYSTICK_CLK_BIT            ( 1UL << 2UL )
 #define APP_IDLE_NVIC_SYSTICK_COUNT_FLAG_BIT     ( 1UL << 16UL )
 #define APP_IDLE_NVIC_PENDSVCLEAR_BIT            ( 1UL << 27UL )
+#define APP_IDLE_NVIC_PEND_SYSTICK_SET_BIT       ( 1UL << 26UL )
 #define APP_IDLE_NVIC_PEND_SYSTICK_CLEAR_BIT     ( 1UL << 25UL )
 
 
@@ -104,11 +112,18 @@ static bool s_rtcIntFlag;
 static uint32_t xMaximumPossibleSuppressedTicksRtc = 0UL;
 
 /*
+ * The maximum number of tick periods that can be suppressed is limited by the
+ * 24 bit resolution of the SysTick timer.
+ */
+static uint32_t s_xMaximumPossibleSuppressedTicksIdle = 0;
+
+/*
  * Compensate for the CPU cycles that pass while the SysTick is stopped (low
  * power functionality only.
  */
 static uint32_t s_ulStoppedTimerCompensationRtcP = 0UL;
 static uint32_t s_ulStoppedTimerCompensationRtcS = 0UL;
+static uint32_t s_ulStoppedTimerCompensationIdle = 0UL;
 
 static uint32_t s_rtcCntBeforeSleep = 0UL;
 static bool s_chkRtcCnt;
@@ -265,6 +280,8 @@ void vPortSetupTimerInterrupt( void )
     /* Calculate the constants required to configure the tick interrupt. */
 
     ulTimerCountsForOneTick = ( APP_IDLE_SYSTICK_CLOCK_HZ / configTICK_RATE_HZ );
+    s_xMaximumPossibleSuppressedTicksIdle = APP_IDLE_MAX_24_BIT_NUMBER / ulTimerCountsForOneTick;
+    s_ulStoppedTimerCompensationIdle = APP_IDLE_MISSED_COUNTS_FACTOR;
 
     /*
        RTC count per one ms (CNT/ms) = RTC Clock / 1000 
@@ -312,6 +329,7 @@ void vPortSetupTimerInterrupt( void )
 void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
 {
     bool isSystemCanSleep = false;
+    uint32_t ulCompleteTickPeriods = 0;
 
     /* If a context switch is pending or a task is waiting for the scheduler
     to be unsuspended then abandon the low power entry. */
@@ -325,7 +343,6 @@ void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
     if (((isZBIdleTaskReadyToSleep) &&
         (xExpectedIdleTime > 512) && (xExpectedIdleTime < MAX_SLEEP_ALLOWED)))
     {
-        uint32_t ulCompleteTickPeriods = 0;
         TickType_t xModifiableIdleTime = 0;
         uint32_t ulRtcCntBeforeSleep = 0;
         uint32_t ulRtcCntAfterSleep = 0;

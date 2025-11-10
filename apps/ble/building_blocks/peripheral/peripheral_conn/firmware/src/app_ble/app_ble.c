@@ -172,21 +172,10 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
+
+void APP_DdEvtHandler(BLE_DD_Event_T *p_event)
 {
 }
-
-static void APP_DdEvtHandler(BLE_DD_Event_T *p_event)
-{
-
-
-
-
-
-}
-
-
-
 static void APP_BleConfigBasic(void)
 {
     int8_t                          connTxPower;
@@ -242,7 +231,8 @@ static void APP_BleConfigAdvance(void)
     gapServiceOptions.charDeviceName.enableWriteProperty = false;             /* Enable Device Name Write Property */
     gapServiceOptions.charAppearance.appearance = 0x0;                          /* Appearance */
     gapServiceOptions.charPeriPreferConnParam.enable = false;                    /* Enable Peripheral Preffered Connection Parameters */
-    
+    gapServiceOptions.charEncDataKeyMatl.enable = false;                   /* Enable Encrypted Data Key Material */
+    gapServiceOptions.charLeGattSecLvls.enable = false;    
     BLE_GAP_ConfigureBuildInService(&gapServiceOptions);
     
     
@@ -268,6 +258,7 @@ static void APP_BleConfigAdvance(void)
     ddConfig.waitForSecurity = false;
     ddConfig.initDiscInCentral = true;
     ddConfig.initDiscInPeripheral = false;
+    ddConfig.disableConnectedDisc = false;
 }
 
 void APP_BleStackInitBasic(void)
@@ -306,7 +297,7 @@ void APP_BleStackInitAdvance(void)
 
     BLE_DD_Init();
     BLE_DD_EventRegister(APP_DdEvtHandler);
-    
+
 
 
     //Initialize BLE services

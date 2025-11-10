@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
- * MPLAB XC32 Compiler -  PIC32CX1012BZ25048 linker script
+ * MPLAB XC32 Compiler -  PIC32CXBZ3 linker script
  * 
  * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.

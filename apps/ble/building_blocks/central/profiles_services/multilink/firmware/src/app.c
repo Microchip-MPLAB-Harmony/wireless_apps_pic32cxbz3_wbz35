@@ -76,7 +76,7 @@
 
     Application strings and buffers are be defined outside this structure.
 */
-
+void APP_UartCBHandler();
 APP_DATA appData;
 
 // *****************************************************************************
@@ -127,19 +127,24 @@ void APP_Initialize ( void )
 uint16_t conn_hdl[3] = {0xFFFF, 0xFFFF, 0xFFFF};// connection handle info captured @BLE_GAP_EVT_CONNECTED event
 uint8_t no_of_links;// No of connected peripheral devices
 uint8_t i = 0;// link index
+uint8_t data;
 void uart_cb(SERCOM_USART_EVENT event, uintptr_t context)
 {
-  // If RX data from UART reached threshold (previously set to 1)
-  if( event == SERCOM_USART_EVENT_READ_THRESHOLD_REACHED )
-  {
-    uint8_t data;
-    // Read 1 byte data from UART
-    SERCOM0_USART_Read(&data, 1);
-    // Send the data from UART to connected device through Transparent service
+    APP_Msg_T   appMsg;  
+    if( event == SERCOM_USART_EVENT_READ_THRESHOLD_REACHED )
+    {
+        
+        SERCOM0_USART_Read(&data, 1);
+        appMsg.msgId = APP_MSG_UART_CB;
+        OSAL_QUEUE_Send(&appData.appQueue, &appMsg, 0); 
+        
+    }
+}
+void APP_UartCBHandler()
+{
     BLE_TRSPC_SendData(conn_hdl[i], 1, &data);
     i++;
-    if(i==no_of_links) i = 0; //reset link index
-  }
+    if(i==no_of_links) i = 0; //reset link index 
 }
 
 
@@ -194,11 +199,10 @@ void APP_Tasks ( void )
                     // Pass BLE Stack Event Message to User Application for handling
                     APP_BleStackEvtHandler((STACK_Event_T *)p_appMsg->msgData);
                 }
-                else if(p_appMsg->msgId==APP_MSG_BLE_STACK_LOG)
+                else if(p_appMsg->msgId==APP_MSG_UART_CB)
                 {
-                    // Pass BLE LOG Event Message to User Application for handling
-                    APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
-                }
+                    APP_UartCBHandler();
+                }   
             }
             break;
         }

@@ -31,35 +31,42 @@
     ble_dis.h
 
   Summary:
-    This file contains the BLE Device Information Service functions for application user.
+    Interface for the BLE Device Information Service, providing access to device-related data.
 
   Description:
-    This file contains the BLE Device Information Service functions for application user.
+    This header defines the interface for the BLE Device Information Service, which allows
+    an application to expose manufacturer and device information over BLE.
  *******************************************************************************/
 
-
-/**
- * @addtogroup BLE_DIS BLE DIS
- * @{
- * @brief Header file for the BLE Device Information Service.
- * @note Definitions and prototypes for the BLE Device Information Service stack layer application programming interface.
- */
 #ifndef BLE_DIS_H
 #define BLE_DIS_H
 
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
-
 extern "C" {
-
 #endif
 // DOM-IGNORE-END
+
+/**
+ * @addtogroup BLE_SERVICE BLE Service
+ * @{
+ */
+
+/**
+ * @addtogroup BLE_DIS BLE Device Information Service
+ * @brief Provides access to the BLE Device Information Service.
+ * @note This section defines the API for the BLE Device Information Service, which
+ *          enables the retrieval of device information by a peer device.
+ * @{
+ */
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Macros
 // *****************************************************************************
 // *****************************************************************************
+// Enable flags for Device Information Service (DIS) characteristics
 #define DIS_MANU_NAME_ENABLE      /* Manufacturer Name */
 #define DIS_MODEL_NUM_ENABLE      /* Model Name */
 //#define DIS_SERIAL_NUM_ENABLE     /* Serial Name */
@@ -70,90 +77,110 @@ extern "C" {
 //#define DIS_IEEE_ENABLE           /* IEEE 11073-20601 */
 //#define DIS_PNP_ID_ENABLE         /* PnP ID */
 
+// Predefined values for Device Information Service (DIS) characteristics
 #define DIS_MANU_NAME                                  "Manufacture Name"    /* Manufacture Name */
 #define DIS_MODEL_NUM                                  "Model Number"    /* Model Number */
 #define DIS_SERIAL_NUM                                 "Serial Number"    /* Serial Number */
 #define DIS_HW_REVISION                                "Hardware Revision"    /* Hardware Revision */
 #define DIS_FW_REVISION                                "1.0.0.0"    /* Firmware Revision */
 #define DIS_SW_REVISION                                "Software"    /* Software Revision */
-#define DIS_SYSTEM_ID                                  "System Id"    /* System Id */
-#define DIS_IEEE_11073_20601                           "NULL"    /* IEEE 11073-20601 Data */
-#define DIS_PNP_ID                                     "NULL"    /* PnP Id */
+#define DIS_SYSTEM_ID                                  0x00,0x00    /* System Id */
+#define DIS_IEEE_11073_20601                           0x00,0x00    /* IEEE 11073-20601 Data */
+#define DIS_PNP_ID                                     0x00,0x00    /* PnP Id */
 
-#define UUID_DEVICE_INFO_SERVICE                       (0x180AU)      /**< Device Information Service. */
+/**
+ * @addtogroup BLE_DIS_DEFINES Defines
+ * @{
+ */
 
-/**@defgroup BLE_DIS_ASSIGN_HANDLE BLE_DIS_ASSIGN_HANDLE
- * @brief Assigned attribute handles of BLE Device Information Service.
- * @{ */
-#define DIS_START_HDL                                  (0x0080U)      /**< The start attribute handle of device information service. */
+/**
+ * @defgroup BLE_DIS_UUID_DEF Device Information Service UUID definitions
+ * @brief Bluetooth SIG-defined UUIDs for the Device Information Service characteristics.
+ * @{
+ */
+#define UUID_DEVICE_INFO_SERVICE            (0x180AU)       /**< UUID for Device Information Service. */
 /** @} */
 
-/**@brief Definition of BLE Device Information Service attribute handle */
+/**
+ * @defgroup BLE_DIS_ASSIGN_HANDLE BLE DIS assigned handles
+ * @brief Handles associated with the BLE Device Information Service attributes.
+ * @{ */
+#define DIS_START_HDL                       (0x0080U)       /**< Start handle for the BLE Device Information Service. */
+
+/* Enumeration of attribute handles for the BLE Device Information Service. */
 typedef enum BLE_DIS_AttributeHandle_T
 {
-    DIS_HDL_SVC = DIS_START_HDL,           /**< Handle of Primary Service of BLE Device Information Service. */
+    DIS_HDL_SVC = DIS_START_HDL,                            /**< Handle for the Device Information Service primary service. */
 #ifdef DIS_MANU_NAME_ENABLE
-    DIS_HDL_CHAR_MANU_NAME,                /**< Handle of Manufacture Name characteristic. */
-    DIS_HDL_CHARVAL_MANU_NAME,             /**< Handle of Manufacture Name characteristic value. */
+    DIS_HDL_CHAR_MANU_NAME,                                 /**< Handle for the Manufacture Name String characteristic. */
+    DIS_HDL_CHARVAL_MANU_NAME,                              /**< Handle for the Manufacture Name String characteristic value. */
 #endif
 #ifdef DIS_MODEL_NUM_ENABLE
-    DIS_HDL_CHAR_MODEL_NUM,                /**< Handle of Model Number characteristic. */
-    DIS_HDL_CHARVAL_MODEL_NUM,             /**< Handle of Model Number characteristic value. */
+    DIS_HDL_CHAR_MODEL_NUM,                                 /**< Handle for the Model Number String characteristic. */
+    DIS_HDL_CHARVAL_MODEL_NUM,                              /**< Handle for the Model Number String characteristic value. */
 #endif
 #ifdef DIS_SERIAL_NUM_ENABLE
-    DIS_HDL_CHAR_SERIAL_NUM,               /**< Handle of Serial Number characteristic. */
-    DIS_HDL_CHARVAL_SERIAL_NUM,            /**< Handle of Serial Number characteristic value. */
+    DIS_HDL_CHAR_SERIAL_NUM,                                /**< Handle for the Serial Number String characteristic. */
+    DIS_HDL_CHARVAL_SERIAL_NUM,                             /**< Handle for the Serial Number String characteristic value. */
 #endif
 #ifdef DIS_HW_REV_ENABLE
-    DIS_HDL_CHAR_HW_REV,                   /**< Handle of Hardware Revision characteristic. */
-    DIS_HDL_CHARVAL_HW_REV,                /**< Handle of Hardware Revision characteristic value. */
+    DIS_HDL_CHAR_HW_REV,                                    /**< Handle for the Hardware Revision String characteristic. */
+    DIS_HDL_CHARVAL_HW_REV,                                 /**< Handle for the Hardware Revision String characteristic value. */
 #endif
 #ifdef DIS_FW_REV_ENABLE
-    DIS_HDL_CHAR_FW_REV,                   /**< Handle of Firmware Revision characteristic. */
-    DIS_HDL_CHARVAL_FW_REV,                /**< Handle of Firmware Revision characteristic value. */
+    DIS_HDL_CHAR_FW_REV,                                    /**< Handle for the Firmware Revision String characteristic. */
+    DIS_HDL_CHARVAL_FW_REV,                                 /**< Handle for the Firmware Revision String characteristic value. */
 #endif
 #ifdef DIS_SW_REV_ENABLE
-    DIS_HDL_CHAR_SW_REV,                   /**< Handle of Software Revision characteristic. */
-    DIS_HDL_CHARVAL_SW_REV,                /**< Handle of Software Revision characteristic value. */
+    DIS_HDL_CHAR_SW_REV,                                    /**< Handle for the Software Revision String characteristic. */
+    DIS_HDL_CHARVAL_SW_REV,                                 /**< Handle for the Software Revision String characteristic value. */
 #endif
 #ifdef DIS_SYSTEM_ID_ENABLE
-    DIS_HDL_CHAR_SYSTEM_ID,                /**< Handle of System ID characteristic. */
-    DIS_HDL_CHARVAL_SYSTEM_ID,             /**< Handle of System ID characteristic value. */
+    DIS_HDL_CHAR_SYSTEM_ID,                                 /**< Handle for the System ID characteristic. */
+    DIS_HDL_CHARVAL_SYSTEM_ID,                              /**< Handle for the System ID characteristic value. */
 #endif
 #ifdef DIS_IEEE_ENABLE
-    DIS_HDL_CHAR_IEEE_RCDL,                /**< Handle of IEEE 11073-20601 Regulatory Certification Data List characteristic. */
-    DIS_HDL_CHARVAL_IEEE_RCDL,             /**< Handle of IEEE 11073-20601 Regulatory Certification Data List characteristic value. */
+    DIS_HDL_CHAR_IEEE_RCDL,                                 /**< Handle for the IEEE 11073-20601 Regulatory Certification Data List characteristic. */
+    DIS_HDL_CHARVAL_IEEE_RCDL,                              /**< Handle for the IEEE 11073-20601 Regulatory Certification Data List characteristic value. */
 #endif
 #ifdef DIS_PNP_ID_ENABLE
-    DIS_HDL_CHAR_PNP_ID,                   /**< Handle of PnP ID characteristic. */
-    DIS_HDL_CHARVAL_PNP_ID,                /**< Handle of PnP ID characteristic value. */
+    DIS_HDL_CHAR_PNP_ID,                                    /**< Handle for the PnP ID characteristic. */
+    DIS_HDL_CHARVAL_PNP_ID,                                 /**< Handle for the PnP ID characteristic value. */
 #endif
     DIS_HDL_END
 }BLE_DIS_AttributeHandle_T;
 
-/**@defgroup BLE_DIS_ASSIGN_HANDLE BLE_DIS_ASSIGN_HANDLE
- * @brief Assigned attribute handles of BLE Device Information Service.
- * @{ */
-
-#define DIS_END_HDL                                     (DIS_HDL_END-1)         /**< The end attribute handle of device information service. */
+#define DIS_END_HDL                         (DIS_HDL_END-1) /**< End handle for the Device Information Service. */
 /** @} */
 
-
+/** @} */ //BLE_DIS_DEFINES
 // *****************************************************************************
 // *****************************************************************************
 // Section: Function Prototypes
 // *****************************************************************************
 // *****************************************************************************
+/**
+ * @addtogroup BLE_DIS_FUNS Functions
+ * @{
+ */
 
 /**
- *@brief Initialize BLE Device Information Service callback function.
+ * @brief Adds the BLE Device Information Service to the GATT server.
  *
- *
- *@return MBA_RES_SUCCESS                    Successfully register BLE Device Information service.
- *@return MBA_RES_NO_RESOURCE                Fail to register service.
+ * This function adds the BLE Device Information Service to the BLE stack's GATT server,
+ * enabling the service to be discovered and accessed by remote BLE devices.
+ * 
+ * @retval MBA_RES_SUCCESS                    The BLE Device Information service was successfully added.
+ * @retval MBA_RES_NO_RESOURCE                Insufficient resource to add the BLE Device Information service.
  *
  */
 uint16_t BLE_DIS_Add(void);
+
+/** @} */ //BLE_DIS_FUNS
+
+/** @} */
+
+/** @} */
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
@@ -161,8 +188,4 @@ uint16_t BLE_DIS_Add(void);
 #endif
 //DOM-IGNORE-END
 
-#endif
-
-/**
-  @}
- */
+#endif //BLE_DIS_H

@@ -107,7 +107,9 @@
   #define COLOR_X_BLUE            10000U
   #define COLOR_Y_BLUE            10000U
 #endif
+#ifndef BDB_COMMISSIONING_TOUCHLINK
 #define BDB_COMMISSIONING_TOUCHLINK 0
+#endif
 /******************************************************************************
                     Prototypes section
 ******************************************************************************/
@@ -206,6 +208,10 @@ static void configureImageKeyDone(void);
                     Prototypes section
 ******************************************************************************/
 
+/******************************************************************************
+                    Static functions section
+******************************************************************************/
+static void APP_RestoreZCLAttributes(void);
 
 /******************************************************************************
                     Implementations section
@@ -219,6 +225,7 @@ void appDeviceInit(void)
 #if APP_ENABLE_CONSOLE == 1
   initConsole();
 #endif
+  uint8_t deepSleepWakeupSrc = 0U;
 
   /* Restore memory in case of power failure */
   if (PDS_IsAbleToRestore(Z3DEVICE_APP_MEMORY_MEM_ID))
@@ -257,6 +264,12 @@ void appDeviceInit(void)
 #ifdef OTAU_CLIENT
   cscAddOTAUClientCluster();
 #endif //OTAU_CLIENT
+
+  CS_ReadParameter(CS_DEVICE_DEEP_SLEEP_WAKEUP_SRC_ID, &deepSleepWakeupSrc);
+
+  /* Execute only if it is wakenup from deep sleep. */
+  if(deepSleepWakeupSrc > 0U)
+    APP_RestoreZCLAttributes();
 
 #if defined (_SLEEP_WHEN_IDLE_)
 #if (ZB_COMMISSIONING_ON_STARTUP == 1)
@@ -311,6 +324,17 @@ void cscFindingBindingFinishedForACluster(Endpoint_t ResponentEp, ClusterId_t cl
 void APP_BackupZCLAttributes(void)
 {
 	//Add implementation here to backup zcl attributes if any.
+
+  //Custom Cluster Backup function Callback
+}
+
+
+/******************************************************************************
+                    Static functions section
+******************************************************************************/
+static void APP_RestoreZCLAttributes(void)
+{
+  
 }
 
 /**************************************************************************//**

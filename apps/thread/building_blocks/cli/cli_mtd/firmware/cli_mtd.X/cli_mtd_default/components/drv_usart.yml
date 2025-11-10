@@ -1,0 +1,50 @@
+configVersion: 1.0.0
+componentName: drv_usart
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: drv_usart
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.5
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: drv_usart
+          x: '1030'
+          y: '404'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    DRV_USART_COMMON_MODE:
+      attributes:
+        id: DRV_USART_COMMON_MODE
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: OPEN_THREAD
+            value: Asynchronous
+          type: Dynamic
+        type: Values
+      type: Combo
+  userData: {}

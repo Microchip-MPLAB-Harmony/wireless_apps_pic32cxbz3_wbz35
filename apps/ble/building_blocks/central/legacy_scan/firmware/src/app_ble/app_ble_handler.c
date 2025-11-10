@@ -49,6 +49,9 @@
 #include "osal/osal_freertos_extend.h"
 #include "app_ble_handler.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
+#include "ble_smp.h"
+#include "ble_l2cap.h"
+#include "gatt.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variables

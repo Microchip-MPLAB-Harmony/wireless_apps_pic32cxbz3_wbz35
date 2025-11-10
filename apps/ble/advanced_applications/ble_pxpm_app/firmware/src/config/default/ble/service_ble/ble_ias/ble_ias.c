@@ -55,16 +55,16 @@
 // Section: Macros
 // *****************************************************************************
 // *****************************************************************************
-
+#define BLE_IAS_MIN_KEY_SIZE                                0x10        // The minimum key size for attribute permissions (IAS).
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Local Variables
 // *****************************************************************************
 // *****************************************************************************
-
-static const uint8_t s_svcUuidIas[ATT_UUID_LENGTH_2] =                 {UINT16_TO_BYTES(UUID_IMMEDIATE_ALERT_SERVICE)};
-static const uint8_t s_chUuidAlertLevel[ATT_UUID_LENGTH_2] =             {UINT16_TO_BYTES(UUID_ALERT_LEVEL)};
+/* UUIDs for Immediate Alert Service and its Characteristics */
+static const uint8_t s_svcUuidIas[ATT_UUID_LENGTH_2] =              {UINT16_TO_BYTES(UUID_IMMEDIATE_ALERT_SERVICE)};
+static const uint8_t s_chUuidAlertLevel[ATT_UUID_LENGTH_2] =        {UINT16_TO_BYTES(UUID_ALERT_LEVEL)};
 
 /* Immediate Alert Service Declaration */
 static uint16_t s_svcUuidIasLen = (uint16_t)sizeof(s_svcUuidIas);
@@ -105,7 +105,11 @@ static GATTS_Attribute_T s_iasList[] = {
         (uint16_t *) & s_iasAlertLevelValLen,
         (uint16_t)sizeof(s_iasAlertLevelVal),
         0,
+#ifdef BLE_PXPR_IAS_AUTH_ENABLE
         PERMISSION_WRITE | PERMISSION_WRITE_ENC
+#else
+        PERMISSION_WRITE
+#endif
     },
 };
 

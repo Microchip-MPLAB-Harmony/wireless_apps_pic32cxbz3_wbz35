@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -74,6 +74,9 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+#define APP_INVALID_CONN_HANDLE         0xFFFF
+#define APP_SET_DEFAULT_INTERVAL        0x10 /* 20ms */
+#define APP_SET_DEFAULT_TIMEOUT         0x48 /* 720ms */
 
 /*******************************************************************************
   Function:
@@ -174,6 +177,7 @@ void APP_BleSmpEvtHandler(BLE_SMP_Event_T *p_event);
 
 */
 void APP_DmEvtHandler(BLE_DM_Event_T *p_event);
+
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

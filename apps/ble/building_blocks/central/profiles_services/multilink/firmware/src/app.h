@@ -58,7 +58,7 @@
 #include <stdlib.h>
 #include "configuration.h"
 #include "osal/osal_freertos_extend.h"
-
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -99,7 +99,7 @@ typedef enum APP_MsgId_T
     APP_MSG_BLE_STACK_EVT,
     APP_MSG_BLE_STACK_LOG,
 
-
+    APP_MSG_UART_CB,        
     APP_MSG_ZB_STACK_EVT,
     APP_MSG_ZB_STACK_CB,
     APP_MSG_STACK_END

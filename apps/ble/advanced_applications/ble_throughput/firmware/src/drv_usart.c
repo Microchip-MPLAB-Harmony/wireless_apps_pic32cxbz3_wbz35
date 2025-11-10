@@ -93,10 +93,10 @@ _DRV_UART_Status_T DRV_UART_PutFifo(_DRV_UART_AsyncDev_T *p_dev)
     
     if (p_dev->remainTxBytes) 
     {
-        uint8_t  *data_ptr ;
+        //uint8_t  *data_ptr;
         uint16_t remain;
         uint16_t curr_ubuffer_ridx = p_dev->wbufferReadIdx;   
-        void *dst = (void *)&p_dev->p_sercomReg->USART_INT.SERCOM_DATA;
+//        void *dst = (void *)&p_dev->p_sercomReg->USART_INT.SERCOM_DATA;
         
         if (p_dev->busy == DRV_UART_IDLE)
             p_dev->busy = DRV_UART_BUSY;
@@ -107,7 +107,7 @@ _DRV_UART_Status_T DRV_UART_PutFifo(_DRV_UART_AsyncDev_T *p_dev)
             remain = wbufferSize - curr_ubuffer_ridx;
         
         p_dev->sentTxBytes = remain;
-        data_ptr = &p_dev->wbuffer[curr_ubuffer_ridx];
+        //data_ptr = &p_dev->wbuffer[curr_ubuffer_ridx];
 
     }
     else

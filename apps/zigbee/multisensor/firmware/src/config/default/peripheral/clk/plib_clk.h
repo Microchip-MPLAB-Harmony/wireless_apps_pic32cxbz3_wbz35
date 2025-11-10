@@ -103,7 +103,7 @@
     None.
 */
 
-void CLK_Initialize( void );
+void CLOCK_Initialize( void );
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

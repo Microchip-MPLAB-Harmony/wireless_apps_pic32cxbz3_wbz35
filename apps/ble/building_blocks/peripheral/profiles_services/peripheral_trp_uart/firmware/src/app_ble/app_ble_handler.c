@@ -45,11 +45,21 @@
 // *****************************************************************************
 #include <string.h>
 #include <stdint.h>
+#include <stdio.h>
+#include "configuration.h"
 #include "osal/osal_freertos_extend.h"
 #include "app_ble_handler.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
 #include "system/console/sys_console.h"
+#include "app_timer/app_timer.h"
 #include "../app_ble_conn_handler.h"
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local Variables
+// *****************************************************************************
+// *****************************************************************************
+static uint16_t                  s_bleConnHandle;
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variables
@@ -80,6 +90,8 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
             SYS_CONSOLE_PRINT("\r\n\r\nDisconnected!\r\n");
+            BLE_GAP_SetAdvEnable(0x01, 0x00);
+            SERCOM0_USART_Write((uint8_t *) "Advertising\r\n", 13);
         }
         break;
 
@@ -209,6 +221,18 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
             /* TODO: implement your application code.*/
         }
         break;		
+
+        case BLE_GAP_EVT_FEATURE_EXCHANGE_COMPL:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+
+        case BLE_GAP_EVT_SUBRATE_CHANGE:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
 
         default:
         break;
@@ -408,7 +432,25 @@ void APP_BleSmpEvtHandler(BLE_SMP_Event_T *p_event)
     {
         case BLE_SMP_EVT_PAIRING_COMPLETE:
         {
-            /* TODO: implement your application code.*/
+            if (p_event->eventField.evtPairingComplete.status != BLE_SMP_PAIRING_SUCCESS)
+            {
+                s_bleConnHandle = p_event->eventField.evtPairingComplete.connHandle;
+
+                APP_TIMER_SetTimer(APP_TIMER_BLE_DISCONNECT, APP_TIMER_100MS, false);
+            }
+            else if (p_event->eventField.evtPairingComplete.status == BLE_SMP_PAIRING_SUCCESS)
+            {
+                uint8_t i;
+
+                SYS_CONSOLE_PRINT("\r\n [BLE] Pairing Successful:\r\n");
+                SYS_CONSOLE_PRINT("\r\n [BLE] Link Key:");
+                //Link key
+                for (i=0; i<16; i++)
+                {
+                    SYS_CONSOLE_PRINT("%02X",p_event->eventField.evtPairingComplete.encryptKey[i]);
+                }
+                SYS_CONSOLE_PRINT("\r\n");                
+            }
         }
         break;
 

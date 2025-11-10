@@ -43,6 +43,7 @@
 #include "osal/osal_freertos_extend.h"
 #include "app_ble.h"
 #include "app_ble_handler.h"
+#include "bt_sys_log.h"
 
 
 

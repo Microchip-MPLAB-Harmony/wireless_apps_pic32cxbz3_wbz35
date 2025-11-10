@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -78,7 +78,6 @@
 #include "app_idle_task.h"
 #include "ble/lib/include/bt_sys.h"
 #include <string.h>
-#include "peripheral/evsys/plib_evsys.h"
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
@@ -104,6 +103,7 @@
 #include "driver/pds/include/pds.h"
 #include "driver/pds/include/pds_config.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
+#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/nvic/plib_nvic.h"
@@ -111,7 +111,10 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "peripheral/nvm/plib_nvm.h"
+#include "system/int/sys_int.h"
+#include "system/cache/sys_cache.h"
 #include "osal/osal.h"
+#include "system/debug/sys_debug.h"
 #include "app.h"
 
 
@@ -125,13 +128,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "WBZ351"
-#define DEVICE_ARCH			 "CORTEX-M4"
-#define DEVICE_FAMILY		 "PIC32CX_BZ3"
-#define DEVICE_SERIES		 "WBZ35"
+#define DEVICE_NAME          "WBZ351"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "PIC32CX_BZ3"
+#define DEVICE_SERIES        "WBZ35"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 64000000
+#define CPU_CLOCK_FREQUENCY 64000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -220,6 +223,31 @@ Remarks:
 
 void SYS_Tasks ( void );
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/* System Objects
+
+Summary:
+    Structure holding the system's object handles
+
+Description:
+    This structure contains the object handles for all objects in the
+    MPLAB Harmony project's system configuration.
+
+Remarks:
+    These handles are returned from the "Initialize" functions for each module
+    and must be passed into the "Tasks" function for each module.
+*/
+
+typedef struct
+{
+    char reserved;
+} SYSTEM_OBJECTS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -229,6 +257,7 @@ void SYS_Tasks ( void );
 
 
 
+extern SYSTEM_OBJECTS sysObj;
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

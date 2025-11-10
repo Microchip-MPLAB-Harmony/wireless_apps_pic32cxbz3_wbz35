@@ -44,7 +44,7 @@
 // *****************************************************************************
 // *****************************************************************************
 #include "app_hogps_handler.h"
-#include "app_module.h"
+#include "app_hogps.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -99,7 +99,7 @@ void APP_HogpsEvtHandler(BLE_HOGPS_Event_T *p_event)
             /* TODO: implement your application code.*/
             if (p_event->eventField.evtOutputReportWrite.length == 1)
             {
-                if (p_event->eventField.evtOutputReportWrite.p_data[0] & 0x02)//Caps lock
+                if ((p_event->eventField.evtOutputReportWrite.p_data[0] & 0x02) == 0x02)//Caps lock
                 {
                     APP_PressFewKeys(g_userKeysCAPON, APP_USER_KEYS_NUM);
                     bCapsOn=true;

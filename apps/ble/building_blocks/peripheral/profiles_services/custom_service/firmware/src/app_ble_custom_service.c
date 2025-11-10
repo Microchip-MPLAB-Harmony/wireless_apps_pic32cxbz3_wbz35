@@ -89,7 +89,8 @@ uint8_t APP_CustomService_RGB_Handler(uint8_t *p_cmd)
     bleCSdata.RGB_LED.Blue = p_cmd[2];
     
     SYS_CONSOLE_PRINT ("[BLE] RGB LED data 0x%X 0x%X 0x%X \r\n",p_cmd[0],p_cmd[1],p_cmd[2]);
-    if(bleCSdata.rgbOnOffStatus == LED_ON)
+	 //Disabling this RGB LED on WBZ351 does not turn ON after writing FFFFFF via BLE when USR BTN-2 is pressed - WBZ351-35
+    //if(bleCSdata.rgbOnOffStatus == LED_ON)
     {    
         if(bleCSdata.RGB_LED.Red)
             SYS_CONSOLE_PRINT("------RED LED: ON not supported!\r\n");//RGB_LED_RED_On();

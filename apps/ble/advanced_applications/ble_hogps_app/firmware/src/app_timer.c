@@ -58,7 +58,7 @@
 // Section: Macros
 // *****************************************************************************
 // *****************************************************************************
-
+#define STR_APP_TIMER "APP_Timer"
 
 
 // *****************************************************************************
@@ -87,7 +87,9 @@ static void app_timer_OneShotTimerExpiredHandle(TimerHandle_t xTimer)
     APP_Msg_T appMsg;
 
     if (xTimer == NULL)
+    {
         return;
+    }
     p_tmrId = (APP_TIMER_TmrElem_T *)pvTimerGetTimerID(xTimer);
 
     if (p_tmrId != NULL)
@@ -124,7 +126,9 @@ static void app_timer_PeriodicTimerExpiredHandle(TimerHandle_t xTimer)
     APP_Msg_T appMsg;
 
     if (xTimer == NULL)
+    {
         return;
+    }
     p_tmrId = (APP_TIMER_TmrElem_T *)pvTimerGetTimerID(xTimer);
 
     if (p_tmrId != NULL)
@@ -159,15 +163,15 @@ void APP_TIMER_SetTimerElem(uint8_t timerId, uint8_t instance, void *p_tmrParam,
 
 uint16_t APP_TIMER_SetTimer(APP_TIMER_TmrElem_T *p_timerId, uint32_t timeout, bool isPeriodicTimer)
 {
-    char timerName[] = "APP_Timer0";
+    char timerName[12];
     uint8_t nameLen;
 
-    if ((p_timerId == NULL) || (timeout == 0))
+    if ((p_timerId == NULL) || (timeout == 0U))
     {
         return APP_RES_INVALID_PARA;
     }
 
-    if (p_timerId->tmrHandle)
+    if (p_timerId->tmrHandle != NULL)
     {
         if (xTimerStop(p_timerId->tmrHandle, 0) != pdPASS)
         {
@@ -179,9 +183,19 @@ uint16_t APP_TIMER_SetTimer(APP_TIMER_TmrElem_T *p_timerId, uint32_t timeout, bo
         }
         p_timerId->tmrHandle = NULL;
     }
-    
-    nameLen = sizeof(timerName) / sizeof(char) - 1;   //-1 means the end character
-    timerName[nameLen - 1] = '0' + p_timerId->tmrId;           //Switch to ASCII
+
+    nameLen = strlen(STR_APP_TIMER);
+    if (sizeof(timerName) > nameLen)
+    {
+        //create the string of timer name: "APP_Timer3" when p_timerId->tmrId is 3
+        (void)memcpy(timerName, STR_APP_TIMER, strlen(STR_APP_TIMER));
+        timerName[nameLen] = (char)((uint8_t)'0' + p_timerId->tmrId);
+        timerName[nameLen + 1U] = '\0';
+    }
+    else
+    {
+        return APP_RES_FAIL;
+    }
 
     if (isPeriodicTimer)
     {
@@ -192,7 +206,7 @@ uint16_t APP_TIMER_SetTimer(APP_TIMER_TmrElem_T *p_timerId, uint32_t timeout, bo
         p_timerId->tmrHandle = xTimerCreate(timerName, (timeout / portTICK_PERIOD_MS), pdFALSE, (void *)p_timerId, app_timer_OneShotTimerExpiredHandle);
     }
 
-    if (p_timerId->tmrHandle)
+    if (p_timerId->tmrHandle != NULL)
     {
         if (pdFAIL == xTimerStart(p_timerId->tmrHandle, 0))
         {

@@ -61,6 +61,7 @@ void GPIO_Initialize ( void )
  
           /* PORTA Initialization */
     /* PORTB Initialization */
+    GPIOB_REGS->GPIO_ANSELCLR = 0x8U; /* Digital Mode Enable */
 
 
     /* PPS Input Remapping */

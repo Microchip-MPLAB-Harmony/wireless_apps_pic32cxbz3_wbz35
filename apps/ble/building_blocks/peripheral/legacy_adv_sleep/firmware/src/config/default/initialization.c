@@ -15,7 +15,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -76,6 +76,7 @@
 #pragma config INT0P =      NEG
 #pragma config FECCCON =         OFF
 #pragma config FRECCDIS =      OFF
+
 
 
 /*** DEVCFG1 ***/
@@ -140,7 +141,7 @@
 
 /*** FBCFG0 ***/
 #pragma config BINFOVALID =      VALID
-#pragma config PCSCMODE =      SINGLE
+#pragma config PCSCMODE =      DUAL
 
 /*** FCPN0 ***/
 #pragma config CP =      DISABLED
@@ -155,9 +156,10 @@
 // *****************************************************************************
 // *****************************************************************************
 /* Following MISRA-C rules are deviated in the below code block */
-/* MISRA C-2012 Rule 11.1 */
-/* MISRA C-2012 Rule 11.3 */
-/* MISRA C-2012 Rule 11.8 */
+/* MISRA C-2012 Rule 7.2 - Deviation record ID - H3_MISRAC_2012_R_7_2_DR_1 */
+/* MISRA C-2012 Rule 11.1 - Deviation record ID - H3_MISRAC_2012_R_11_1_DR_1 */
+/* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+/* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
 
 
 
@@ -166,6 +168,8 @@
 // Section: System Data
 // *****************************************************************************
 // *****************************************************************************
+/* Structure to hold the object handles for the modules in the system. */
+SYSTEM_OBJECTS sysObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -200,8 +204,8 @@ OSAL_API_LIST_TYPE     osalAPIList;
 
 #define QUEUE_LENGTH_BLE        (32)
 #define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
-#define EXT_COMMON_MEMORY_SIZE  (28*1024)
-OSAL_QUEUE_HANDLE_TYPE bleRequestQueueHandle;
+#define EXT_COMMON_MEMORY_SIZE  (31*1024)
+OSAL_SEM_HANDLE_TYPE bleRequestSemHandle;
 
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -327,9 +331,9 @@ void SYS_Initialize ( void* data )
     /* MISRA C-2012 Rule 11.1 deviated 1 time. Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
     /* Configure Prefetch, Wait States by calling the ROM function whose address is available at address 0xF2D0 */
-    typedef int (*FUNC_PCHE_SETUP)(uint32_t setup);
+    typedef void (*FUNC_PCHE_SETUP)(uint32_t setup);
     (void)((FUNC_PCHE_SETUP)(*(uint32_t*)0xF2D0))((PCHE_REGS->PCHE_CHECON & (~(PCHE_CHECON_PFMWS_Msk | PCHE_CHECON_ADRWS_Msk | PCHE_CHECON_PREFEN_Msk)))
-                                    | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)));
+                                    | (PCHE_CHECON_PFMWS(2) | PCHE_CHECON_PREFEN(1)  | PCHE_CHECON_ADRWS(0)));
 
     /* MISRAC 2012 deviation block end */
 
@@ -337,14 +341,13 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    EVSYS_Initialize();
-
     SERCOM0_USART_Initialize();
+
+    EVSYS_Initialize();
 
     RTC_Initialize();
 
     NVM_Initialize();
-
 
 
     /* MISRAC 2012 deviation block start */
@@ -380,9 +383,9 @@ void SYS_Initialize ( void* data )
     // Set Power mode of the system
     PMU_Set_Mode(PMU_MODE_MLDO);
 
-	//Config retention RAM size
-	PMU_REGS->PMU_WCMSIZ &= ~PMU_WCMSIZ_SRAM1_SIZ_Msk;
-	PMU_REGS->PMU_WCMSIZ |= PMU_WCMSIZ_SRAM1_SIZ_16K_SRAM;
+    //Config retention RAM size
+    PMU_REGS->PMU_WCMSIZ &= ~PMU_WCMSIZ_SRAM1_SIZ_Msk;
+    PMU_REGS->PMU_WCMSIZ |= PMU_WCMSIZ_SRAM1_SIZ_16K_SRAM;
 
 
 /*******************************************************************************
@@ -413,8 +416,8 @@ void SYS_Initialize ( void* data )
 
 
 
-    // Create BLE Stack Message QUEUE
-    OSAL_QUEUE_Create(&bleRequestQueueHandle, QUEUE_LENGTH_BLE, QUEUE_ITEM_SIZE_BLE);
+    // Create BLE Stack Message SEM
+    OSAL_SEM_Create(&bleRequestSemHandle, OSAL_SEM_TYPE_BINARY, 0, 0);
 
     // Retrieve BLE calibration data
     (void)memset(&btSysCfg, 0, sizeof(BT_SYS_Cfg_T));
@@ -434,10 +437,11 @@ void SYS_Initialize ( void* data )
     btOption.cmnMemSize = EXT_COMMON_MEMORY_SIZE;
     //Configure BLE option
     btOption.p_cmnMemAddr = OSAL_Malloc(btOption.cmnMemSize);
-    btOption.deFeatMask = 0;
+    btOption.deFeatMask = (BT_SYS_FEAT_CHC);
 
     // Initialize BLE Stack
-    BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);
+    BT_SYS_Init(&bleRequestSemHandle, &osalAPIList, &btOption, &btSysCfg);
+
 
     /* MISRAC 2012 deviation block end */
     APP_Initialize();

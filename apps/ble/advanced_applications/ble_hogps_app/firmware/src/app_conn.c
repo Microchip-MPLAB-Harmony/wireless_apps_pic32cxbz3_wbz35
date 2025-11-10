@@ -45,6 +45,7 @@
 // *****************************************************************************
 #include <string.h>
 #include "app_conn.h"
+#include "app_error_defs.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -82,7 +83,7 @@ static APP_ConnTimeOutActionCb_T   s_appConnTimeOutActionCb;
 // Section: Functions
 // *****************************************************************************
 // *****************************************************************************
-#define APP_CONN_TMR_ID_INST_MERGE(id, instance) ((((uint16_t)id) << 8) | instance)
+#define APP_CONN_TMR_ID_INST_MERGE(id, instance) ((((uint16_t)(id)) << 8) | (uint16_t)(instance))
 static uint16_t app_conn_SetTimer(uint16_t idInstance, void *p_tmrParam, uint32_t timeout, bool isPeriodicTimer,
 APP_TIMER_TmrElem_T *p_tmrElem)
 {
@@ -96,36 +97,54 @@ APP_TIMER_TmrElem_T *p_tmrElem)
     return result;
 }
 
-void APP_CONN_TimeOutActionRegister(APP_ConnTimeOutActionCb_T ActCb)
+void APP_CONN_TimeOutActionRegister(APP_ConnTimeOutActionCb_T actCb)
 {
-    s_appConnTimeOutActionCb  = ActCb;
+    s_appConnTimeOutActionCb  = actCb;
 }
 
 void APP_CONN_Init(void)
 {
-    memset((uint8_t *)&s_connTmr, 0, sizeof(APP_TIMER_TmrElem_T));
+    (void)memset((uint8_t *)&s_connTmr, 0, sizeof(APP_TIMER_TmrElem_T));
     s_appConnTimeOutActionCb=NULL;
 }
 
 void APP_CONN_StartTimeoutTimer(void)
 {
-    app_conn_SetTimer(APP_CONN_TMR_ID_INST_MERGE(APP_TIMER_CONN_TIMEOUT_03, 0), NULL, APP_TIMER_3MIN,
+    uint16_t ret;
+
+    ret=app_conn_SetTimer(APP_CONN_TMR_ID_INST_MERGE(APP_TIMER_CONN_TIMEOUT_03, 0), NULL, APP_TIMER_3MIN,
             false, &s_connTmr);
+    if (ret != APP_RES_SUCCESS)
+    {
+        //if error occurs
+    }
 }
 
 void APP_CONN_StopTimeoutTimer(void)
 {
+    uint16_t ret;
+
     if (s_connTmr.tmrHandle != NULL)
     {
-        APP_TIMER_StopTimer(&s_connTmr.tmrHandle);
+        ret=APP_TIMER_StopTimer(&s_connTmr.tmrHandle);
+        if (ret != APP_RES_SUCCESS)
+        {
+            //if error occurs
+        }
     }
 }
 
 void APP_CONN_ResetTimeoutTimer(void)
 {
+    uint16_t ret;
+
     if (s_connTmr.tmrHandle != NULL)
     {
-        APP_TIMER_ResetTimer(s_connTmr.tmrHandle);
+        ret=APP_TIMER_ResetTimer(s_connTmr.tmrHandle);
+        if (ret != APP_RES_SUCCESS)
+        {
+            //if error occurs
+        }
     }
 }
 

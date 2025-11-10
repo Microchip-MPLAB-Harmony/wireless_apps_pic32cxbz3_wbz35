@@ -403,7 +403,7 @@ static bool APP_LED_QueryWorkModeInMultiLink(uint8_t wkMode, uint8_t role)
 {
     uint16_t connHandle;
     uint8_t i;
-    APP_TRP_ConnList_T *p_trpConn;
+    APP_TRP_ConnList_T *p_trpConn= NULL;
     
     for (i=0; i< BLE_GAP_MAX_LINK_NBR; i++)
     {
@@ -427,7 +427,7 @@ static bool APP_LED_QueryWorkModeInMultiLink(uint8_t wkMode, uint8_t role)
 static uint8_t APP_LED_DecidebyWorkMode(uint8_t defaultMode, APP_BLE_ConnList_T * p_bleConn)
 {
     uint8_t changeMode = defaultMode;
-    APP_TRP_ConnList_T *p_trpConn;
+    APP_TRP_ConnList_T *p_trpConn = NULL;
     uint8_t role = BLE_GAP_ROLE_CENTRAL;
     
     role = APP_GetBleRoleByLink(p_bleConn);

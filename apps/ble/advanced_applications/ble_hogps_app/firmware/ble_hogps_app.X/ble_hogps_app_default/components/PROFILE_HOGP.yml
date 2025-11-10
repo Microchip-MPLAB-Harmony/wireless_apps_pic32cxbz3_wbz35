@@ -1,0 +1,71 @@
+configVersion: 1.0.0
+componentName: PROFILE_HOGP
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: PROFILE_HOGP
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_ble
+  type: package
+  version: v1.5.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: BLE_BAS_Dependency
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: SERVICE_BAS
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: BLE_BAS_Capability
+            type: String
+          type: Attributes
+        type: DirectDependency
+      - attributes:
+          id: BLE_HIDS_Dependency
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: SERVICE_HIDS
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: BLE_HIDS_Capability
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: PROFILE_HOGP
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: PROFILE_HOGP
+          x: '471'
+          y: '353'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols: {}
+  userData: {}

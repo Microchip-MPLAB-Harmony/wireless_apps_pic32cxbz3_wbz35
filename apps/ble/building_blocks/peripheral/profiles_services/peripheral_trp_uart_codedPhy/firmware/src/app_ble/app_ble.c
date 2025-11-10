@@ -180,9 +180,6 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-{
-}
 
 
 
@@ -210,9 +207,11 @@ static void APP_BleConfigAdvance(void)
     uint8_t devName[]={GAP_DEV_NAME_VALUE};
     int8_t selectedTxPower;
     BLE_GAP_ExtAdvParams_T advParams;
-    uint8_t advData[]={0x02, 0x01, 0x05, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A};
+    //uint8_t advData[]={0x02, 0x01, 0x05, 0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A};
+    uint8_t advData[]={0x02, 0x01, 0x05, 0x0C, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A, 0x36};
     BLE_GAP_ExtAdvDataParams_T appAdvData;
-    uint8_t scanRspData[]={0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A};
+    //uint8_t scanRspData[]={0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A};
+    uint8_t scanRspData[]={0x0C, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A, 0x36};
     BLE_GAP_ExtAdvDataParams_T appScanRspData;
 
     BLE_SMP_Config_T                smpParam;
@@ -226,7 +225,7 @@ static void APP_BleConfigAdvance(void)
     
     //Configure advertising Set 1
     advParams.advHandle = 0;        /* Advertising Handle */
-    advParams.evtProperies = BLE_GAP_EXT_ADV_EVT_PROP_CONNECTABLE_ADV|BLE_GAP_EXT_ADV_EVT_PROP_SCANNABLE_ADV;   /* Advertising Event Properties */
+    advParams.evtProperies = BLE_GAP_EXT_ADV_EVT_PROP_CONNECTABLE_ADV|BLE_GAP_EXT_ADV_EVT_PROP_SCANNABLE_ADV|BLE_GAP_EXT_ADV_EVT_PROP_LEGACY_ADV;   /* Advertising Event Properties */
     advParams.priIntervalMin = 32;     /* Primary Advertising Interval Min */
     advParams.priIntervalMax = 32;     /* Primary Advertising Interval Max */
     advParams.priChannelMap = BLE_GAP_ADV_CHANNEL_ALL;       /* Primary Advertising Channel Map */
@@ -238,6 +237,8 @@ static void APP_BleConfigAdvance(void)
     advParams.secPhy = BLE_GAP_PHY_TYPE_LE_CODED;      /* Secondary Advertising PHY */
     advParams.sid = 0;     /* Advertising SID */
     advParams.scanReqNotifiEnable = false;   /* Scan Request Notification Enable */
+    advParams.priPhyOptions = BLE_GAP_CODED_PHY_HOST_NO_PREFERRED;  /* Primary Advertising PHY Option */
+    advParams.secPhyOptions = BLE_GAP_CODED_PHY_HOST_NO_PREFERRED;  /* Secondary Advertising PHY Option */
     BLE_GAP_SetExtAdvParams(&advParams, &selectedTxPower);
 
     appAdvData.advHandle = 0;
@@ -269,6 +270,8 @@ static void APP_BleConfigAdvance(void)
     gapServiceOptions.charDeviceName.enableWriteProperty = false;             /* Enable Device Name Write Property */
     gapServiceOptions.charAppearance.appearance = 0x0;                          /* Appearance */
     gapServiceOptions.charPeriPreferConnParam.enable = false;                    /* Enable Peripheral Preferred Connection Parameters */
+    gapServiceOptions.charEncDataKeyMatl.enable = false;                   /* Enable Encrypted Data Key Material */
+    gapServiceOptions.charLeGattSecLvls.enable = false;                     /* Enable LE GATT Security Levels */
 
     BLE_GAP_ConfigureBuildInService(&gapServiceOptions);
 

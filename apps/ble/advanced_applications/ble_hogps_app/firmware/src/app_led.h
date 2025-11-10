@@ -52,34 +52,24 @@
 // *****************************************************************************
 #include "app_timer.h"
 #include "peripheral/gpio/plib_gpio.h"
+#include "app_error_defs.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Macros
 // *****************************************************************************
 // *****************************************************************************
-#define NEW_BUCKLAND_A0  //ONLY Green LED is available on WBZ351 because Red/Blue LEDs are occupied by other peripheral.
-
-#ifdef NEW_BUCKLAND_A0
 #define APP_LED_RED_ON
 #define APP_LED_RED_OFF
 #define APP_LED_GREEN_ON        GPIO_PinSet(GPIO_PIN_RB3);
 #define APP_LED_GREEN_OFF       GPIO_PinClear(GPIO_PIN_RB3);
 #define APP_LED_BLUE_ON
 #define APP_LED_BLUE_OFF
-#else
-#define APP_LED_RED_ON          GPIO_PinSet(GPIO_PIN_RB0);
-#define APP_LED_RED_OFF         GPIO_PinClear(GPIO_PIN_RB0);
-#define APP_LED_GREEN_ON        GPIO_PinSet(GPIO_PIN_RB3);
-#define APP_LED_GREEN_OFF       GPIO_PinClear(GPIO_PIN_RB3);
-#define APP_LED_BLUE_ON         GPIO_PinSet(GPIO_PIN_RB5);
-#define APP_LED_BLUE_OFF        GPIO_PinClear(GPIO_PIN_RB5);
-#endif
 
-#define APP_LED_ELEM_NUMBER     3
-#define APP_LED_HANDLER_NULL    0xFF
-#define APP_LED_EVENT_START     0x01
-#define APP_LED_EVENT_INTERVAL  0x02
+#define APP_LED_ELEM_NUMBER     (3U)
+#define APP_LED_HANDLER_NULL    (0xFFU)
+#define APP_LED_EVENT_START     (0x01U)
+#define APP_LED_EVENT_INTERVAL  (0x02U)
 
 enum APP_LED_STATE_T
 {
@@ -158,7 +148,7 @@ extern uint8_t g_appLedHandler;
 void APP_LED_Init(void);
 void APP_LED_StateMachine(uint8_t event, APP_LED_Elem_T *p_ledElem);
 uint16_t APP_LED_Stop(uint8_t ledHandler);
-uint8_t APP_LED_Start(APP_LED_Param_T *p_ledParam);
+uint8_t APP_LED_Start(const APP_LED_Param_T *p_ledParam);
 uint8_t APP_LED_StartByMode(uint8_t mode);
 
 #endif

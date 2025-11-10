@@ -186,7 +186,7 @@ void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
 {
 }
 
-static void APP_DdEvtHandler(BLE_DD_Event_T *p_event)
+void APP_DdEvtHandler(BLE_DD_Event_T *p_event)
 {
 
     BLE_TRSPC_BleDdEventHandler(p_event);

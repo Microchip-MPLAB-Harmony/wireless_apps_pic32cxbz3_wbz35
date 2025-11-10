@@ -38,7 +38,7 @@
 // DOM-IGNORE-END
 
 
-#define PDS_APP_MAX_ITEMS_AMOUNT        2
+#define PDS_APP_MAX_ITEMS_AMOUNT        1
 #define PDS_APP_MAX_DIR_MEM_ID_AMOUNT   0
 #define PDS_BLE_MAX_ITEMS_AMOUNT        16
 

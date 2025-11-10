@@ -161,7 +161,7 @@ void APP_Tasks ( void )
             if (appInitialized)
             {
                 bool bPaired;
-                char buf[11];
+                char buf[12];
                 uint8_t devId;
                 int retNum;
 
@@ -170,7 +170,7 @@ void APP_Tasks ( void )
                 APP_KEY_MsgRegister(APP_KeyFunction);
                 APP_LED_Init();
                 APP_UartInit();
-                retNum  = sprintf (buf, "ANPC init\n");
+                retNum  = sprintf (buf, "ANPC init\r\n");
                 if (retNum > 0)
                 {
                     APP_UartMsg(buf);

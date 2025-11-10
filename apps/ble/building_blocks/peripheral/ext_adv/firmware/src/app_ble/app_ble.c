@@ -177,23 +177,10 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-{
-}
-
-
 
 static void APP_BleConfigBasic(void)
 {
     int8_t                          connTxPower;
-    
-
-
-    BLE_GAP_SetConnTxPowerLevel(13, &connTxPower);      /* Connection TX Power */
-}
-static void APP_BleConfigAdvance(void)
-{
-    uint8_t devName[]={GAP_DEV_NAME_VALUE};
     int8_t selectedTxPower;
     BLE_GAP_ExtAdvParams_T advParams;
     uint8_t advData[]={0x02, 0x01, 0x05, 0x0A, 0x09, 0x4D, 0x69, 0x63, 0x72, 0x6F, 0x63, 0x68, 0x69, 0x70, 0x04, 0x16, 0xDA, 0xFE, 0x0F};
@@ -201,20 +188,12 @@ static void APP_BleConfigAdvance(void)
     uint8_t scanRspData[]={0x0B, 0x09, 0x70, 0x69, 0x63, 0x33, 0x32, 0x63, 0x78, 0x2D, 0x62, 0x7A};
     BLE_GAP_ExtAdvDataParams_T appScanRspData;
 
-    BLE_SMP_Config_T                smpParam;
 
-    BLE_DM_Config_T                 dmConfig;
-    BLE_GAP_ServiceOption_T         gapServiceOptions;
-    
-
-    // Configure Device Name
-    BLE_GAP_SetDeviceName(sizeof(devName), devName);    /* Device Name */
-    
     //Configure advertising Set 1
     advParams.advHandle = 1;        /* Advertising Handle */
-    advParams.evtProperies = 0;//BLE_GAP_EXT_ADV_EVT_PROP_SCANNABLE_ADV; /* Advertising Event Properties */
-    advParams.priIntervalMin = 1600;     /* Primary Advertising Interval Min */
-    advParams.priIntervalMax = 1600;     /* Primary Advertising Interval Max */
+    advParams.evtProperies = 0; /* Advertising Event Properties */
+    advParams.priIntervalMin = 512;     /* Primary Advertising Interval Min */
+    advParams.priIntervalMax = 512;     /* Primary Advertising Interval Max */
     advParams.priChannelMap = BLE_GAP_ADV_CHANNEL_ALL;       /* Primary Advertising Channel Map */
     memset(&advParams.peerAddr, 0x00, sizeof(advParams.peerAddr));
     advParams.filterPolicy = BLE_GAP_ADV_FILTER_DEFAULT;    /* Advertising Filter Policy */
@@ -224,6 +203,8 @@ static void APP_BleConfigAdvance(void)
     advParams.secPhy = BLE_GAP_PHY_TYPE_LE_CODED;      /* Secondary Advertising PHY */
     advParams.sid = 1;     /* Advertising SID */
     advParams.scanReqNotifiEnable = false;   /* Scan Request Notification Enable */
+    advParams.priPhyOptions = 0;  /* Primary Advertising PHY Option */
+    advParams.secPhyOptions = 0;  /* Secondary Advertising PHY Option */
     BLE_GAP_SetExtAdvParams(&advParams, &selectedTxPower);
 
     appAdvData.advHandle = 1;
@@ -250,6 +231,22 @@ static void APP_BleConfigAdvance(void)
     BLE_GAP_SetExtScanRspData(&appScanRspData);
     OSAL_Free(appScanRspData.p_advData);
 
+
+    BLE_GAP_SetConnTxPowerLevel(14, &connTxPower);      /* Connection TX Power */
+}
+
+static void APP_BleConfigAdvance(void)
+{
+
+    uint8_t devName[]={GAP_DEV_NAME_VALUE};
+    BLE_SMP_Config_T                smpParam;
+
+    BLE_DM_Config_T                 dmConfig;
+    BLE_GAP_ServiceOption_T         gapServiceOptions;
+
+
+    // Configure Device Name
+    BLE_GAP_SetDeviceName(sizeof(devName), devName);    /* Device Name */
 
     // GAP Service option
     gapServiceOptions.charDeviceName.enableWriteProperty = false;             /* Enable Device Name Write Property */
@@ -284,6 +281,7 @@ void APP_BleStackInitBasic(void)
     BLE_GAP_Init();
 
     BLE_GAP_AdvInit();  /* Advertising */
+    BLE_GAP_ExtAdvInit();   /* Enable Extended Advertising */
 
     BLE_GAP_ConnPeripheralInit();   /* Peripheral */
 }
@@ -296,12 +294,12 @@ void APP_BleStackInitAdvance(void)
     STACK_EventRegister(APP_BleStackCb);
 
 
-    BLE_GAP_ExtAdvInit();   /* Enable Extended Advertising */
 
 
 
     BLE_L2CAP_Init();
 
+    /* GAP/SMP/L2CAP shall be initialized before GATTS */
     GATTS_Init(gattsInitParam);
 
 

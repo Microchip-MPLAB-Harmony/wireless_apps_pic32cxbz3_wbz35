@@ -199,7 +199,7 @@ SYSTEM_OBJECTS sysObj;
 
 OSAL_API_LIST_TYPE     osalAPIList;
 
-
+//#define POWER_CTRL_ENABLE
 #define QUEUE_LENGTH_BLE        (32)
 #define QUEUE_ITEM_SIZE_BLE     (sizeof(void *))
 #define EXT_COMMON_MEMORY_SIZE  (28*1024)
@@ -419,7 +419,11 @@ void SYS_Initialize ( void* data )
     btOption.cmnMemSize = EXT_COMMON_MEMORY_SIZE;
     //Configure BLE option
     btOption.p_cmnMemAddr = OSAL_Malloc(btOption.cmnMemSize);
+#ifndef POWER_CTRL_ENABLE
+    btOption.deFeatMask = BT_SYS_FEAT_PWR_CTRL;
+#else
     btOption.deFeatMask = 0;
+#endif
 
     // Initialize BLE Stack
     BT_SYS_Init(&bleRequestQueueHandle, &osalAPIList, &btOption, &btSysCfg);

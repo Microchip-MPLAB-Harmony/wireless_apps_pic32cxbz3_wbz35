@@ -176,6 +176,26 @@ void APP_BleSmpEvtHandler(BLE_SMP_Event_T *p_event);
 */
 void APP_DmEvtHandler(BLE_DM_Event_T *p_event);
 
+/*******************************************************************************
+  Function:
+    void APP_DdEvtHandler( BLE_DD_Event_T *p_event )
+
+  Summary:
+     BLE application DD event handler.
+
+  Description:
+
+  Precondition:
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+*/
+void APP_DdEvtHandler(BLE_DD_Event_T *p_event);
+
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

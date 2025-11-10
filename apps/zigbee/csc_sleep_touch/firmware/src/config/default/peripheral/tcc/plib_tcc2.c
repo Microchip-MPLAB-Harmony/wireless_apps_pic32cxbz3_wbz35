@@ -61,12 +61,12 @@ void TCC2_PWMInitialize(void)
 {
     /* Reset TCC */
     TCC2_REGS->TCC_CTRLA = TCC_CTRLA_SWRST_Msk;
-    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_SWRST_Msk) != 0U)
+    while((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_SWRST_Msk) == TCC_SYNCBUSY_SWRST_Msk)
     {
         /* Wait for sync */
     }
     /* Clock prescaler */
-    TCC2_REGS->TCC_CTRLA = TCC_CTRLA_PRESCALER_DIV1 
+    TCC2_REGS->TCC_CTRLA = TCC_CTRLA_PRESCALER_DIV1
                             | TCC_CTRLA_PRESCSYNC_PRESC ;
     TCC2_REGS->TCC_WEXCTRL = TCC_WEXCTRL_OTMX(0UL);
     /* Dead time configurations */
@@ -94,7 +94,7 @@ void TCC2_PWMInitialize(void)
 void TCC2_PWMStart(void)
 {
     TCC2_REGS->TCC_CTRLA |= TCC_CTRLA_ENABLE_Msk;
-    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) != 0U)
+    while((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) == TCC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for sync */
     }
@@ -104,7 +104,7 @@ void TCC2_PWMStart(void)
 void TCC2_PWMStop (void)
 {
     TCC2_REGS->TCC_CTRLA &= ~TCC_CTRLA_ENABLE_Msk;
-    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) != 0U)
+    while((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) == TCC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for sync */
     }
@@ -118,14 +118,14 @@ bool TCC2_PWM16bitPeriodSet (uint16_t period)
     {
         TCC2_REGS->TCC_PERBUF = period;
         status = true;
-    }    
+    }
     return status;
 }
 
 /* Read TCC period */
 uint16_t TCC2_PWM16bitPeriodGet (void)
 {
-    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_PER_Msk) != 0U)
+    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_PER_Msk) == TCC_SYNCBUSY_PER_Msk)
     {
         /* Wait for sync */
     }
@@ -146,8 +146,8 @@ bool TCC2_PWMPatternSet(uint8_t pattern_enable, uint8_t pattern_output)
     {
         TCC2_REGS->TCC_PATTBUF = (uint16_t)(pattern_enable | ((uint32_t)pattern_output << 8U));
         status = true;
-    }   
-    return status; 
+    }
+    return status;
 }
 
 
@@ -176,7 +176,7 @@ uint16_t TCC2_PWM16bitCounterGet( void )
 void TCC2_PWM16bitCounterSet (uint16_t countVal)
 {
     TCC2_REGS->TCC_COUNT = countVal;
-    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_COUNT_Msk) != 0U)
+    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_COUNT_Msk) == TCC_SYNCBUSY_COUNT_Msk)
     {
         /* Wait for sync */
     }
@@ -186,7 +186,7 @@ void TCC2_PWM16bitCounterSet (uint16_t countVal)
 void TCC2_PWMForceUpdate(void)
 {
     TCC2_REGS->TCC_CTRLBSET |= (uint8_t)TCC_CTRLBCLR_CMD_UPDATE;
-    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) != 0U)
+    while ((TCC2_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) == TCC_SYNCBUSY_CTRLB_Msk)
     {
         /* Wait for sync */
     }

@@ -1,6 +1,6 @@
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -55,8 +55,10 @@
 #include "app.h"
 #include "definitions.h"
 #include "app_ble.h"
+#include "app_ble_conn_handler.h"
 #include "ble_trsps/ble_trsps.h"
 #include "system/console/sys_console.h"
+#include "ble_otaps/ble_otaps.h"
 #include "app_ota/app_ota_handler.h"
 #include "ble_dis/ble_dis.h"
 // *****************************************************************************
@@ -181,8 +183,10 @@ void APP_Tasks ( void )
             // Register the UART RX callback function
             SERCOM0_USART_ReadCallbackRegister(uart_cb, (uintptr_t)NULL);
             APP_BleStackInit();
+			BLE_DIS_Add();
             APP_OTA_HDL_Init();
-            BLE_DIS_Add();
+            
+			//RTC_Timer32Start();
             // Start Advertisement
             BLE_GAP_SetAdvEnable(0x01, 0x00);
             SYS_CONSOLE_PRINT("\r\nFirmware Revision: %s\r\n", DIS_FW_REVISION);
@@ -205,22 +209,23 @@ void APP_Tasks ( void )
                     // Pass BLE Stack Event Message to User Application for handling
                     APP_BleStackEvtHandler((STACK_Event_T *)p_appMsg->msgData);
                 }
-                else if(p_appMsg->msgId==APP_MSG_BLE_STACK_LOG)
-                {
-                    // Pass BLE LOG Event Message to User Application for handling
-                    APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
-                }
                 else if(p_appMsg->msgId==APP_MSG_UART_CB)
                 {
                     // Pass BLE UART Data transmission target BLE UART Device handling
                     APP_UartCBHandler();
                 }
-                else if(p_appMsg->msgId == APP_TIMER_OTA_TIMEOUT_MSG){
+                else if(p_appMsg->msgId == APP_TIMER_OTA_TIMEOUT_MSG)
+				{
                     APP_OTA_Timeout_Handler();
                 } 
-                else if(p_appMsg->msgId == APP_TIMER_OTA_REBOOT_MSG){
+                else if(p_appMsg->msgId == APP_TIMER_OTA_REBOOT_MSG)
+				{
                     APP_OTA_Reboot_Handler();
                 } 
+                else if(p_appMsg->msgId == APP_TIMER_BLE_DISCONNECT_MSG)
+				{
+                    APP_OTA_BLE_Disconnect();
+                }                 
             }
             break;
         }

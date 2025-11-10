@@ -96,9 +96,9 @@ void TCC0_CompareInitialize( void )
     /* Configure timer one shot mode & direction */
     TCC0_REGS->TCC_CTRLBSET = (uint8_t)(TCC_CTRLBSET_LUPD_Msk);
 
-    
+
     TCC0_REGS->TCC_PER = 65535U;
-    
+
     TCC0_REGS->TCC_CC[0] = 24U;
     TCC0_REGS->TCC_CC[1] = 24U;
     TCC0_REGS->TCC_CC[2] = 24U;
@@ -144,10 +144,10 @@ uint32_t TCC0_CompareFrequencyGet( void )
 void TCC0_CompareCommandSet(TCC_COMMAND command)
 {
     TCC0_REGS->TCC_CTRLBSET = (uint8_t)((uint32_t)command << TCC_CTRLBSET_CMD_Pos);
-    while((TCC0_REGS->TCC_SYNCBUSY) != 0U)
+    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) == TCC_SYNCBUSY_CTRLB_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current counter value */
@@ -190,7 +190,7 @@ bool TCC0_Compare24bitPeriodSet( uint32_t period )
     while((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_PER_Msk) == TCC_SYNCBUSY_PER_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }
@@ -211,7 +211,7 @@ bool TCC0_Compare24bitMatchSet(TCC0_CHANNEL_NUM channel, uint32_t compareValue )
     while(((TCC0_REGS->TCC_SYNCBUSY) & (1UL << (TCC_SYNCBUSY_CC0_Pos + (uint32_t)channel))) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }

@@ -72,7 +72,7 @@ typedef void (*APP_ConnTimeOutActionCb_T)(void);
 // *****************************************************************************
 // *****************************************************************************
 void APP_CONN_Init(void);
-void APP_CONN_TimeOutActionRegister(APP_ConnTimeOutActionCb_T ActCb);
+void APP_CONN_TimeOutActionRegister(APP_ConnTimeOutActionCb_T actCb);
 void APP_CONN_StartTimeoutTimer(void);
 void APP_CONN_StopTimeoutTimer(void);
 void APP_CONN_ResetTimeoutTimer(void);

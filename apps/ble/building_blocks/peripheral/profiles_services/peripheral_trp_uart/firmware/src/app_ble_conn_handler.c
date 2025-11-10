@@ -16,7 +16,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -48,6 +48,11 @@
 #include <stdint.h>
 #include "app_ble_conn_handler.h"
 #include "ble_dm/ble_dm.h"
+#include "app_timer/app_timer.h"
+
+#include "peripheral/gpio/plib_gpio.h"
+#include "system/console/sys_console.h"
+#include "app_ota/app_ota_handler.h"
 
 // *****************************************************************************
 // *****************************************************************************

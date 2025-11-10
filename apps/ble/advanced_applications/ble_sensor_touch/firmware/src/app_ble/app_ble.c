@@ -93,13 +93,13 @@ void APP_BleStackCb(STACK_Event_T *p_stack)
     APP_Msg_T   appMsg;
     APP_Msg_T   *p_appMsg;
 
-    memcpy((uint8_t *)&stackEvent, (uint8_t *)p_stack, sizeof(STACK_Event_T));
+    (void)memcpy((uint8_t *)&stackEvent, (uint8_t *)p_stack, sizeof(STACK_Event_T));
     stackEvent.p_event=OSAL_Malloc(p_stack->evtLen);
     if(stackEvent.p_event==NULL)
     {
         return;
     }
-    memcpy(stackEvent.p_event, p_stack->p_event, p_stack->evtLen);
+    (void)memcpy(stackEvent.p_event, p_stack->p_event, p_stack->evtLen);
     stackEvent.p_event=stackEvent.p_event;
 
     if (p_stack->groupId==STACK_GRP_GATT)
@@ -113,7 +113,7 @@ void APP_BleStackCb(STACK_Event_T *p_stack)
             p_payload = (uint8_t *)OSAL_Malloc((p_evtGatt->eventField.onClientCccdListChange.numOfCccd*4));
             if (p_payload != NULL)
             {
-                memcpy(p_payload, (uint8_t *)p_evtGatt->eventField.onClientCccdListChange.p_cccdList, (p_evtGatt->eventField.onClientCccdListChange.numOfCccd*4));
+                (void)memcpy(p_payload, (uint8_t *)p_evtGatt->eventField.onClientCccdListChange.p_cccdList, (p_evtGatt->eventField.onClientCccdListChange.numOfCccd*4));
                 p_evtGatt->eventField.onClientCccdListChange.p_cccdList = (GATTS_CccdList_T *)p_payload;
             }
         }
@@ -177,6 +177,8 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
     
 
 
+    /* Over-The-Air Profile */
+    BLE_OTAPS_BleEventHandler(p_stackEvt);
 
 
 
@@ -187,13 +189,8 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-{
-}
 
-
-
-void APP_BleConfigBasic()
+static void APP_BleConfigBasic(void)
 {
     int8_t                          connTxPower;
     int8_t                          advTxPower;
@@ -202,7 +199,7 @@ void APP_BleConfigBasic()
     // Configure advertising parameters
     BLE_GAP_SetAdvTxPowerLevel(9,&advTxPower);      /* Advertising TX Power */
     
-    memset(&advParam, 0, sizeof(BLE_GAP_AdvParams_T));
+    (void)memset(&advParam, 0, sizeof(BLE_GAP_AdvParams_T));
     advParam.intervalMin = 512;     /* Advertising Interval Min */
     advParam.intervalMax = 512;     /* Advertising Interval Max */
     advParam.type = BLE_GAP_ADV_TYPE_ADV_IND;        /* Advertising Type */
@@ -214,7 +211,8 @@ void APP_BleConfigBasic()
 
     BLE_GAP_SetConnTxPowerLevel(10, &connTxPower);      /* Connection TX Power */
 }
-void APP_BleConfigAdvance()
+
+static void APP_BleConfigAdvance(void)
 {
     uint8_t devName[]={GAP_DEV_NAME_VALUE};
 
@@ -240,7 +238,7 @@ void APP_BleConfigAdvance()
 
 
     // Configure SMP parameters
-    memset(&smpParam, 0, sizeof(BLE_SMP_Config_T));
+    (void)memset(&smpParam, 0, sizeof(BLE_SMP_Config_T));
     smpParam.ioCapability = BLE_SMP_IO_NOINPUTNOOUTPUT;                  /* IO Capability */
     smpParam.authReqFlag |= BLE_SMP_OPTION_BONDING;             /* Authentication Setting: Bonding */
     smpParam.authReqFlag |= BLE_SMP_OPTION_SECURE_CONNECTION;   /* Authentication Setting: Secure Connections */
@@ -260,7 +258,7 @@ void APP_BleConfigAdvance()
 
 }
 
-void APP_BleStackInitBasic()
+void APP_BleStackInitBasic(void)
 {
     BLE_GAP_Init();
 
@@ -269,7 +267,7 @@ void APP_BleStackInitBasic()
     BLE_GAP_ConnPeripheralInit();   /* Peripheral */
 }
 
-void APP_BleStackInitAdvance()
+void APP_BleStackInitAdvance(void)
 {
     uint16_t gattsInitParam=GATTS_CONFIG_NONE;
     
@@ -318,7 +316,7 @@ void APP_BleStackInitAdvance()
     APP_BleConfigAdvance();
 }
 
-void APP_BleStackInit()
+void APP_BleStackInit(void)
 {
     APP_BleStackInitBasic();
     APP_BleConfigBasic();

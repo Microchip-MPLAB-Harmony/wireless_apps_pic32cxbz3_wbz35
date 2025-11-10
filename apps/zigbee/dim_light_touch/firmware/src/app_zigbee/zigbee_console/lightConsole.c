@@ -69,6 +69,9 @@
 #include <zcl/clusters/include/identifyCluster.h>
 #include <z3device/clusters/include/onOffCluster.h>
 #include <z3device/clusters/include/commissioningCluster.h>
+#include <bdb/include/bdbInternal.h>
+
+
 
 /******************************************************************************
                     Defines section
@@ -103,6 +106,14 @@ static void processIdentifyQueryCmd(const ScanValue_t *args);
 static void processTriggerEffectCmd(const ScanValue_t *args);
 static void processReadOnOffAttrVal(const ScanValue_t *args);
 static void processSendEndpointInfoCmd(const ScanValue_t *args);
+
+#if defined _ZIGBEE_REV_23_SUPPORT_
+static void processRequestAppKeyCmd(const ScanValue_t *args);
+static void processSetInstallCodePassphraseCmd(const ScanValue_t *args);
+#endif //_ZIGBEE_REV_23_SUPPORT_
+
+
+
 #endif // #if ZCL_COMMANDS_IN_CONSOLE == 1
 
 /******************************************************************************
@@ -166,6 +177,10 @@ PROGMEM_DECLARE(ConsoleCommand_t commissioningHelpCmds)[]=
   {"setGlobalKey", "d", processsetGlobalKeyCmd, "[Option]\r\n"},
   {"setPermitJoin", "d", processSetPermitJoinCmd, "[dur]\r\n"},
 #endif
+#if defined _ZIGBEE_REV_23_SUPPORT_
+  {"requestAppKey","d",processRequestAppKeyCmd,"[partnerExtAddr] \r\n"},
+  {"SetInstallCodePassphrase", "s", processSetInstallCodePassphraseCmd, "-> Sets IC [code]\r\n"},
+#endif
 #endif
    {0,0,0,0},
 };
@@ -203,7 +218,9 @@ PROGMEM_DECLARE(ConsoleCommand_t zclHelpCmds)[]=
   {"identifyQuery", "sdd", processIdentifyQueryCmd, "[addrMode][addr][ep]\r\n"},
   {"triggerEffect", "sdddd", processTriggerEffectCmd, "->Send TriggerEffect command: triggerEffect [addrMode][addr][ep][effectId][effectVariant]"},
   {"sendEndpointInfo", "dd", processSendEndpointInfoCmd, "[shortAddr][dstEp]\r\n"},
-#endif // #if ZCL_COMMANDS_IN_CONSOLE == 1
+
+    
+  #endif // #if ZCL_COMMANDS_IN_CONSOLE == 1
   {0,0,0,0},
 };
 
@@ -227,12 +244,12 @@ static void processGetDeviceTypeCmd(const ScanValue_t *args)
 {
 #if (APP_ZGP_DEVICE_TYPE == APP_ZGP_DEVICE_TYPE_COMBO_BASIC)
 #if (APP_ENABLE_ZGP_CERTIFICATION_EXTENSION == 1)
-  appSnprintf("DeviceType = %d\r\n", TEST_DEVICE_TYPE_ZGP_TH);
+  (void)appSnprintf("DeviceType = %d\r\n", TEST_DEVICE_TYPE_ZGP_TH);
 #else
-  appSnprintf("DeviceType = %d\r\n", TEST_DEVICE_TYPE_ZGP_COMBO_BASIC);
+  (void)appSnprintf("DeviceType = %d\r\n", TEST_DEVICE_TYPE_ZGP_COMBO_BASIC);
 #endif
 #else
-  appSnprintf("DeviceType = %d\r\n", TEST_DEVICE_TYPE_ZIGBEE_ROUTER);
+  (void)appSnprintf("DeviceType = %d\r\n", TEST_DEVICE_TYPE_ZIGBEE_ROUTER);
 #endif
   (void)args;
 }
@@ -244,7 +261,7 @@ static void processGetDeviceTypeCmd(const ScanValue_t *args)
 +******************************************************************************/
 static void processGetAppDeviceTypeCmd(const ScanValue_t *args)
 {
-  appSnprintf("Z3DeviceType = 0x%04x\r\n", APP_Z3DEVICE_ID);
+  (void)appSnprintf("Z3DeviceType = 0x%04x\r\n", APP_Z3DEVICE_ID);
   (void)args;
 }
 
@@ -278,10 +295,12 @@ static void processViewGroupCmd(const ScanValue_t *args)
 ******************************************************************************/
 static void processGetGroupMembershipCmd(const ScanValue_t *args)
 {
-  uint16_t groupList[5];
+  uint16_t groupList[5U];
 
-  for (uint8_t i = 0; i < 5; i++)
-    groupList[i] = args[i+4].uint16;
+  for (uint8_t i = 0U; i < 5U; i++)
+  {
+    groupList[i] = args[i + 4U].uint16;
+  }
 
   groupsSendGetGroupMembership(determineAddressMode(args), args[1].uint16, args[2].uint8,
    srcEp, args[3].uint8, groupList);
@@ -334,7 +353,7 @@ static void processAddGroupIfIdentifyingCmd(const ScanValue_t *args)
 ******************************************************************************/
 void myICCallback(InstallCode_Configuration_Status_t status)
 {
-  appSnprintf("Status = %d\r\n", status);
+  (void)appSnprintf("Status = %d\r\n", status);
 }
 
 /**************************************************************************//**
@@ -342,11 +361,11 @@ void myICCallback(InstallCode_Configuration_Status_t status)
 
 \param[in] args - array of command arguments
 ******************************************************************************/
-void processSetInstallCodeCmd(const ScanValue_t *args)
+static void processSetInstallCodeCmd(const ScanValue_t *args)
 {
-  ExtAddr_t devAddr = 0xFFFFFFFFFFFFFFFF;
+  ExtAddr_t devAddr = 0xFFFFFFFFFFFFFFFFULL;
   uint8_t icode[18];
-  hexStrTouint8array(args[0].str, icode, 18U);
+  (void)hexStrTouint8array(args[0].str, icode, 18U);
   BDB_ConfigureInstallCode(devAddr, icode, myICCallback);
   (void)args;
 }
@@ -358,9 +377,9 @@ void processSetInstallCodeCmd(const ScanValue_t *args)
 ******************************************************************************/
 static void processSetInstallCodeDeviceCmd(const ScanValue_t *args)
 {
-  ExtAddr_t devAddr = 0xFFFFFFFFFFFFFFFF;
+  ExtAddr_t devAddr = 0xFFFFFFFFFFFFFFFFULL;
   uint8_t icode[18];
-  hexStrTouint8array(args[0].str, icode, 18U);
+  (void)hexStrTouint8array(args[0].str, icode, 18U);
   BDB_ConfigureInstallCode(devAddr, icode, myICCallback);
   (void)args;
 }
@@ -422,7 +441,7 @@ static void processTriggerEffectCmd(const ScanValue_t *args)
 ******************************************************************************/
 static void processReadOnOffAttrVal(const ScanValue_t *args)
 {
-  appSnprintf("%d\r\n", lightOnOffClusterServerAttributes.onOff.value);
+  (void)appSnprintf("%d\r\n", lightOnOffClusterServerAttributes.onOff.value);
 }
 /**************************************************************************//**
 \brief Processes Read Current Level Attr Val command
@@ -431,7 +450,7 @@ static void processReadOnOffAttrVal(const ScanValue_t *args)
 ******************************************************************************/
 static void processReadCurrentLevelAttrVal(const ScanValue_t *args)
 {
-  appSnprintf("%d\r\n", lightLevelControlClusterServerAttributes.currentLevel.value);
+  (void)appSnprintf("%d\r\n", lightLevelControlClusterServerAttributes.currentLevel.value);
 }
 
 /**************************************************************************//**
@@ -443,6 +462,49 @@ static void processSendEndpointInfoCmd(const ScanValue_t *args)
 {
   commissioningSendEndpointInformation(args[0].uint16, args[1].uint8, srcEp);
 }
+
+#if defined _ZIGBEE_REV_23_SUPPORT_
+/**************************************************************************//**
+\brief Aps Request Key Done callback
+
+\param[in] conf - pointer to confirmation structure
+******************************************************************************/
+static void requestKeySent(APS_RequestKeyConf_t *conf)
+{
+  (void)appSnprintf("RequestKeySentStatus = %d\r\n", conf->status);
+}
+
+/**************************************************************************//**
+\brief Processes Send request App Key command
+
+\param[in] args - array of command arguments
+******************************************************************************/
+static void processRequestAppKeyCmd(const ScanValue_t *args)
+{
+  memcpy(&bdbMem.stackReq.apsReqKeyReq.destAddress, APS_GetTrustCenterAddress(), sizeof(ExtAddr_t));
+  bdbMem.stackReq.apsReqKeyReq.keyType = APS_APP_KEY_TYPE;
+
+  memcpy(&bdbMem.stackReq.apsReqKeyReq.partnerAddress, &args[0].uint64, sizeof(ExtAddr_t));
+  bdbMem.stackReq.apsReqKeyReq.APS_RequestKeyConf = requestKeySent;
+
+  APS_RequestKeyReq(&bdbMem.stackReq.apsReqKeyReq);
+}
+
+/**************************************************************************//**
+\brief Processes InstallCode Passphrase command
+
+\param[in] args - array of command arguments
+******************************************************************************/;
+static void processSetInstallCodePassphraseCmd(const ScanValue_t *args)
+{
+  uint8_t icode[18];
+  hexStrTouint8array(args[0].str, icode, 18U);
+  APS_SetInstallCodePassphrase(icode);
+  (void)args;
+}
+#endif //_ZIGBEE_REV_23_SUPPORT_
+
+
 #endif // #if ZCL_COMMANDS_IN_CONSOLE == 1
 
 #endif // APP_ENABLE_CONSOLE == 1

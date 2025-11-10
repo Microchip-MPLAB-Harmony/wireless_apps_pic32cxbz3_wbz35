@@ -51,8 +51,8 @@
 #include <sxsymcrypt/trng_api.h>
 #include <sxsymcrypt/statuscodes.h>
 
-#include <hal\include\halTaskManager.h>
-#include <systemenvironment\include\sysAssert.h>
+#include <hal/include/halTaskManager.h>
+#include <systemenvironment/include/sysAssert.h>
 
 
 
@@ -69,6 +69,7 @@ uint16_t TRNG_ReadData(void)
 	uint8_t randSize = 2;
 	bool readSuccess = false;
 
+    SX_CLK_ENABLE();
     if(SX_OK == SX_TRNG_INIT(&ctx, NULL))
     {
 	  while(!readSuccess)

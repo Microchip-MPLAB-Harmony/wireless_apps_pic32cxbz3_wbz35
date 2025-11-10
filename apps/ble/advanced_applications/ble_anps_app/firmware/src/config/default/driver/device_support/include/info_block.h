@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright (C) 2024 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -24,7 +24,6 @@
 #ifndef IB_BLOCK_H
 #define IB_BLOCK_H
 
-#include <xc.h>
 #include <stdbool.h>
 #include "rf_system.h"
 #ifdef __cplusplus

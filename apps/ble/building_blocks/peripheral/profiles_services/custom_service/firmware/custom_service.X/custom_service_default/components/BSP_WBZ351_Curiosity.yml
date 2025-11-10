@@ -1,0 +1,101 @@
+configVersion: 1.0.0
+componentName: BSP_WBZ351_Curiosity
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: BSP_WBZ351_Curiosity
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: bsp
+  type: package
+  version: v3.22.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: BSP_WBZ351_Curiosity
+          x: '190'
+          y: '75'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    BSP_CUSTOM_CN3:
+      attributes:
+        id: BSP_CUSTOM_CN3
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    BSP_CUSTOM_DIR3:
+      attributes:
+        id: BSP_CUSTOM_DIR3
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    BSP_CUSTOM_LAT3:
+      attributes:
+        id: BSP_CUSTOM_LAT3
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    BSP_CUSTOM_MODE3:
+      attributes:
+        id: BSP_CUSTOM_MODE3
+      children:
+      - children:
+        - attributes:
+            value: DIGITAL
+          type: User
+        type: Values
+      type: String
+    BSP_CUSTOM_OD3:
+      attributes:
+        id: BSP_CUSTOM_OD3
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    BSP_CUSTOM_PU3:
+      attributes:
+        id: BSP_CUSTOM_PU3
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    BSP_CUSTOM_TYPE3:
+      attributes:
+        id: BSP_CUSTOM_TYPE3
+      children:
+      - children:
+        - attributes:
+            value: SWITCH_AL
+          type: User
+        type: Values
+      type: String
+  userData: {}

@@ -294,6 +294,8 @@ static void RGB_LED_SetPwmChannelCompareValue(uint16_t r, uint16_t g, uint16_t b
   {
 
     TCC0_CompareStart();
+
+
     pwmStopped = false;
   }
 
@@ -301,6 +303,7 @@ static void RGB_LED_SetPwmChannelCompareValue(uint16_t r, uint16_t g, uint16_t b
   TCC0_Compare24bitMatchSet(TCC0_CHANNEL1,(uint32_t)r);
   TCC0_Compare24bitMatchSet(TCC0_CHANNEL3,(uint32_t)g);
   TCC0_Compare24bitMatchSet(TCC0_CHANNEL5,(uint32_t)b);
+
 
 }
 #endif

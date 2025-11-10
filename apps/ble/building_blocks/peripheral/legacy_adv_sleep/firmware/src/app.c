@@ -124,6 +124,8 @@ void APP_Initialize ( void )
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
+    /**JTAG Disable **/
+    CFG_REGS->CFG_CFGCON0CLR = CFG_CFGCON0_JTAGEN_Msk;
 }
 
 
@@ -150,7 +152,10 @@ void APP_Tasks ( void )
             bool appInitialized = true;
             //appData.appQueue = xQueueCreate( 10, sizeof(APP_Msg_T) );
             APP_BleStackInit();
+            if (!(RTC_REGS->MODE0.RTC_CTRLA & RTC_MODE0_CTRLA_ENABLE_Msk))
+            {
             RTC_Timer32Start();
+            }
 
             // Start Advertisement
             BLE_GAP_SetAdvEnable(0x01, 0x00);
@@ -171,11 +176,6 @@ void APP_Tasks ( void )
                 {
                     // Pass BLE Stack Event Message to User Application for handling
                     APP_BleStackEvtHandler((STACK_Event_T *)p_appMsg->msgData);
-                }
-                else if(p_appMsg->msgId==APP_MSG_BLE_STACK_LOG)
-                {
-                    // Pass BLE LOG Event Message to User Application for handling
-                    APP_BleStackLogHandler((BT_SYS_LogEvent_T *)p_appMsg->msgData);
                 }
             }
             break;

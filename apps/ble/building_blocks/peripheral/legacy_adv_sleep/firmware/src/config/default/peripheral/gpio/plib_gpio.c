@@ -62,7 +62,6 @@ void GPIO_Initialize ( void )
           /* PORTA Initialization */
     GPIOA_REGS->GPIO_CNPUSET = 0x7ff3U; /* Pull-Up Enable */
     /* PORTB Initialization */
-    GPIOB_REGS->GPIO_CNPUSET = 0x3fd6U; /* Pull-Up Enable */
 
 
     /* PPS Input Remapping */

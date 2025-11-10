@@ -170,9 +170,9 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-{
-}
+//void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
+//{
+//}
 
 void APP_DdEvtHandler(BLE_DD_Event_T *p_event)
 {
@@ -247,6 +247,7 @@ void APP_BleConfigAdvance()
     ddConfig.waitForSecurity = false;
     ddConfig.initDiscInCentral = true;
     ddConfig.initDiscInPeripheral = false;
+    ddConfig.disableConnectedDisc = false;
 }
 
 void APP_BleStackInitBasic()

@@ -178,11 +178,6 @@ void APP_BleStackEvtHandler(STACK_Event_T *p_stackEvt)
 }
 
 
-void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt)
-{
-}
-
-
 
 static void APP_BleConfigBasic(void)
 {
@@ -203,11 +198,10 @@ static void APP_BleConfigAdvance(void)
     uint8_t devName[]={GAP_DEV_NAME_VALUE};
     int8_t selectedTxPower;
     BLE_GAP_ExtAdvParams_T advParams;
-    uint8_t advData[]={0x02, 0x01, 0x05, 0x09, 0x09, 0x57, 0x42, 0x5A, 0x33, 0x35, 0x31, 0x5F, 0x31};
+	uint8_t advData[]={0x02, 0x01, 0x05, 0x09, 0x09, 0x57, 0x42, 0x5A, 0x33, 0x35, 0x31, 0x5F, 0x31};					
     BLE_GAP_ExtAdvDataParams_T appAdvData;
     int8_t selectedTxPower2;
     uint8_t advData2[]={0x02, 0x01, 0x05, 0x09, 0x09, 0x57, 0x42, 0x5A, 0x33, 0x35, 0x31, 0x5F, 0x32};
-
     BLE_SMP_Config_T                smpParam;
 
     BLE_DM_Config_T                 dmConfig;
@@ -231,6 +225,8 @@ static void APP_BleConfigAdvance(void)
     advParams.secPhy = BLE_GAP_PHY_TYPE_LE_1M;      /* Secondary Advertising PHY */
     advParams.sid = 1;     /* Advertising SID */
     advParams.scanReqNotifiEnable = false;   /* Scan Request Notification Enable */
+    advParams.priPhyOptions = 0;  /* Primary Advertising PHY Option */
+    advParams.secPhyOptions = 0;  /* Secondary Advertising PHY Option */
     BLE_GAP_SetExtAdvParams(&advParams, &selectedTxPower);
 
     appAdvData.advHandle = 1;
@@ -260,6 +256,8 @@ static void APP_BleConfigAdvance(void)
     advParams.secPhy = BLE_GAP_PHY_TYPE_LE_1M;        /* Secondary Advertising PHY */
     advParams.sid = 2;       /* Advertising SID */
     advParams.scanReqNotifiEnable = false;     /* Scan Request Notification Enable */
+    advParams.priPhyOptions = 0;  /* Primary Advertising PHY Option */
+    advParams.secPhyOptions = 0;  /* Secondary Advertising PHY Option */
     BLE_GAP_SetExtAdvParams(&advParams, &selectedTxPower2);
 
     appAdvData.advHandle = 2;
@@ -279,7 +277,8 @@ static void APP_BleConfigAdvance(void)
     gapServiceOptions.charDeviceName.enableWriteProperty = false;             /* Enable Device Name Write Property */
     gapServiceOptions.charAppearance.appearance = 0x0;                          /* Appearance */
     gapServiceOptions.charPeriPreferConnParam.enable = false;                    /* Enable Peripheral Preferred Connection Parameters */
-
+    gapServiceOptions.charEncDataKeyMatl.enable = false;                   /* Enable Encrypted Data Key Material */
+    gapServiceOptions.charLeGattSecLvls.enable = false;                     /* Enable LE GATT Security Levels */
     BLE_GAP_ConfigureBuildInService(&gapServiceOptions);
 
 
@@ -324,12 +323,14 @@ void APP_BleStackInitAdvance(void)
 
 
 
+    /* GAP (BLE_GAP_Init())shall be initialized before SMP */
+    BLE_SMP_Init();
+
+    /* GAP/SMP shall be initialized before L2CAP */
     BLE_L2CAP_Init();
 
     GATTS_Init(gattsInitParam);
 
-
-    BLE_SMP_Init();
 
 
     //Initialize BLE middleware

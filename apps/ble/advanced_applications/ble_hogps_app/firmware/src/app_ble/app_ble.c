@@ -44,11 +44,8 @@
 #include "app_ble.h"
 #include "app_ble_handler.h"
 
-#include "ble_dm/ble_dm.h"
-#include "ble_gap.h"
 
-#include "peripheral/gpio/plib_gpio.h"
-#include "app_led.h"
+
 
 
 
@@ -59,12 +56,9 @@
 
 
 #include "app_hogps_handler.h"
-#include "driver/pds/include/pds.h"
-#include "driver/pds/include/pds_config.h"
-
-#include "ble_hids/ble_hids.h"
 #include "ble_dis/ble_dis.h"
-#include "app_module.h"
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Macros
@@ -200,44 +194,21 @@ static void APP_BleConfigBasic(void)
     BLE_GAP_AdvParams_T             advParam;
     uint8_t advData[]={0x02, 0x01, 0x05, 0x13, 0x09, 0x4D, 0x69, 0x63, 0x72, 0x6F, 0x63, 0x68, 0x69, 0x70, 0x20, 0x4B, 0x65, 0x79, 0x62, 0x6F, 0x61, 0x72, 0x64, 0x03, 0x19, 0xC1, 0x03, 0x03, 0x03, 0x12, 0x18};
     BLE_GAP_AdvDataParams_T         appAdvData;
-    uint8_t scanRspData[]={0x02, 0x0A, 0x0B};
+    uint8_t scanRspData[]={0x02, 0x0A, 0x08};
     BLE_GAP_AdvDataParams_T         appScanRspData;
-
-    //Check if paired device exists, load the info of paired device from pds.
-    memset(&g_extPairedDevInfo, 0, sizeof(APP_ExtPairedDevInfo_T));
-    APP_GetExtPairedDevInfoFromFlash(&g_extPairedDevInfo);
-    memset(&g_pairedDevInfo.addr, 0, sizeof(BLE_GAP_Addr_T));
-    g_pairedDevInfo.bPeerDevIdExist=APP_GetPairedDeviceId(&g_pairedDevInfo.peerDevId);
-    if (g_pairedDevInfo.bPeerDevIdExist)
-    {
-        g_pairedDevInfo.bAddrLoaded =APP_GetPairedDeviceAddr(&g_pairedDevInfo.addr);
-    }
-    else
-    {
-        g_pairedDevInfo.bAddrLoaded =false;
-    }
-    g_pairedDevInfo.bPaired=g_pairedDevInfo.bAddrLoaded;
+    
 
     // Configure advertising parameters
-    BLE_GAP_SetAdvTxPowerLevel(11,&advTxPower);      /* Advertising TX Power */
+    BLE_GAP_SetAdvTxPowerLevel(8,&advTxPower);      /* Advertising TX Power */
     
     (void)memset(&advParam, 0, sizeof(BLE_GAP_AdvParams_T));
     advParam.intervalMin = 32;     /* Advertising Interval Min */
     advParam.intervalMax = 32;     /* Advertising Interval Max */
-    //Windows/ Android/ iOS support the reconnection using ADV_IND. So using ADV_IND for pairing and reconnection.
-    advParam.type = BLE_GAP_ADV_TYPE_ADV_IND;
-
+    advParam.type = BLE_GAP_ADV_TYPE_ADV_IND;        /* Advertising Type */
     advParam.advChannelMap = BLE_GAP_ADV_CHANNEL_ALL;        /* Advertising Channel Map */
-    if (g_pairedDevInfo.bPaired)//Paired already
-    {
-        advParam.filterPolicy = BLE_GAP_ADV_FILTER_SCAN_CONNECT;     /* Advertising Filter Policy */
-    }
-    else
-    {
-        advParam.filterPolicy = BLE_GAP_ADV_FILTER_DEFAULT;     /* Advertising Filter Policy */
-    }
+    advParam.filterPolicy = BLE_GAP_ADV_FILTER_DEFAULT;     /* Advertising Filter Policy */
     BLE_GAP_SetAdvParams(&advParam);
-    
+
     // Configure advertising data
     appAdvData.advLen=sizeof(advData);
     (void)memcpy(appAdvData.advData, advData, appAdvData.advLen);     /* Advertising Data */
@@ -248,7 +219,7 @@ static void APP_BleConfigBasic(void)
     (void)memcpy(appScanRspData.advData, scanRspData, appScanRspData.advLen);     /* Scan Response Data */
     BLE_GAP_SetScanRspData(&appScanRspData);
 
-    BLE_GAP_SetConnTxPowerLevel(13, &connTxPower);      /* Connection TX Power */
+    BLE_GAP_SetConnTxPowerLevel(14, &connTxPower);      /* Connection TX Power */
 }
 static void APP_BleConfigAdvance(void)
 {
@@ -262,16 +233,7 @@ static void APP_BleConfigAdvance(void)
 
     // Configure Device Name
     BLE_GAP_SetDeviceName(sizeof(devName), devName);    /* Device Name */
-
-    //Configure Device Address-Random Static Address and local IRK
-    if (!g_pairedDevInfo.bPaired)//Not paired yet
-    {
-        //Set a new IRK
-        APP_SetLocalIRK();
-
-        APP_GenerateRandomStaticAddress(&g_extPairedDevInfo.localAddr);
-    }
-    BLE_GAP_SetDeviceAddr(&g_extPairedDevInfo.localAddr);
+    
 
     // GAP Service option
     gapServiceOptions.charDeviceName.enableWriteProperty = false;             /* Enable Device Name Write Property */
@@ -302,17 +264,7 @@ static void APP_BleConfigAdvance(void)
     dmConfig.connConfig.maxAcceptPeripheralLatency = 499;    /* Maximum Connection Latency */
     BLE_DM_Config(&dmConfig);
 
-    //If paired device exists, set resolving list
-    if (g_pairedDevInfo.bPaired)//Paired already
-    {
-        APP_SetFilterAcceptList(true);
-        if (g_extPairedDevInfo.bConnectedByResolvedAddr)
-        {
-            APP_SetResolvingList(true);
-        }
-    }
-    APP_RegisterPdsCb();
-    
+
 }
 
 void APP_BleStackInitBasic(void)
@@ -366,6 +318,7 @@ void APP_BleStackInitAdvance(void)
 
     BLE_HOGPS_Init();
     BLE_HOGPS_EventRegister(APP_HogpsEvtHandler);
+
 
 
 

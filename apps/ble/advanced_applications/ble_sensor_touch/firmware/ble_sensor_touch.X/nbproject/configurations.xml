@@ -247,6 +247,7 @@
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/timers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h</itemPath>
           </logicalFolder>
           <logicalFolder name="portable" displayName="portable" projectFiles="true">
             <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
@@ -319,6 +320,7 @@
             <itemPath>../src/packs/WBZ351_DFP/component/fuses.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/pfw.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/efuse.h</itemPath>
           </logicalFolder>
           <logicalFolder name="instance" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/WBZ351_DFP/instance/rcon.h</itemPath>
@@ -372,6 +374,7 @@
             <itemPath>../src/packs/WBZ351_DFP/instance/freqm.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/tc3.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/pfw.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/efuse.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/WBZ351_DFP/pio/wbz351.h</itemPath>
@@ -395,8 +398,44 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="ble_sensor_touch_default"
+                     displayName="ble_sensor_touch_default"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>ble_sensor_touch_default/components/sercom0.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/cmsis.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/rtc.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/pdsSystem.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/SERVICE_TRS.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/lib_qtouch.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/PROFILE_OTAP.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/sys_console.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/eic.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/SERVICE_DIS.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/tcc0.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/BLE_STACK_LIB.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/pic32cx_bz3_devsupport.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/app_timer.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/rgb_led.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/FreeRTOS.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/HarmonyCore.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/rcon.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/nvm.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/sys_console_0.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/PROFILE_TRSP.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/SERVICE_OTAS.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/dfp.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/temp_sensor.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/core.yml</itemPath>
+          <itemPath>ble_sensor_touch_default/components/adchs.yml</itemPath>
+        </logicalFolder>
+        <itemPath>ble_sensor_touch_default/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>ble_sensor_touch.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -573,14 +612,14 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.40</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.183"/>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.3.216"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="configuration.header.flash_type" value="eflash"/>
@@ -613,7 +652,7 @@
         <ScriptingSetting key="configuration.header.zota_zigbee_stack_version"
                           value="0x0002"/>
         <ScriptingSetting key="configuration.header.outputfilename"
-                          value="BLE_Sensor_touch_v0.1.0.5.bin"/>
+                          value="BLE_Sensor_touch_v1.0.0.0.bin"/>
         <ScriptingSetting key="configuration.header.zota_upgrade_file_destination_check"
                           value="False"/>
         <ScriptingSetting key="configuration.header.ss_key_name" value="test1ecdsap256"/>
@@ -656,23 +695,41 @@
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
+        <property key="cast-align" value="false"/>
+        <property key="code-model" value="default"/>
+        <property key="const-model" value="default"/>
+        <property key="data-model" value="default"/>
+        <property key="disable-instruction-scheduling" value="false"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-procedural-abstraction" value="false"/>
+        <property key="enable-short-double" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
+        <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
                   value="../src;../src/app_ble;../src/config/default;../src/config/default/ble/lib/include;../src/config/default/ble/middleware_ble;../src/config/default/ble/profile_ble;../src/config/default/ble/service_ble;../src/config/default/driver/pds/include;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ351_DFP;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;..\src\app_ble;..\src\config\default\ble\lib\include;..\src\config\default\ble\middleware_ble;..\src\config\default\ble\profile_ble;..\src\config\default\ble\service_ble;..\src\config\default\driver\pds\include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>
+        <property key="keep-inline" value="false"/>
         <property key="make-warnings-into-errors" value="false"/>
+        <property key="oXC16gcc-errata" value=""/>
+        <property key="oXC16gcc-large-aggregate" value="false"/>
+        <property key="oXC16gcc-mpa-lvl" value=""/>
+        <property key="oXC16gcc-name-text-sec" value=""/>
+        <property key="oXC16gcc-near-chars" value="false"/>
+        <property key="oXC16gcc-no-isr-warn" value="false"/>
+        <property key="oXC16gcc-sfr-warn" value="false"/>
+        <property key="oXC16gcc-smar-io-lvl" value="1"/>
+        <property key="oXC16gcc-smart-io-fmt" value=""/>
         <property key="optimization-level" value=""/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros" value=""/>
+        <property key="scalar-model" value="default"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="tentative-definitions" value="-fcommon"/>
@@ -697,12 +754,15 @@
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="keep-locals" value="false"/>
         <property key="list-assembly" value="false"/>
+        <property key="list-section-info" value="false"/>
         <property key="list-source" value="false"/>
         <property key="list-symbols" value="false"/>
+        <property key="oXC16asm-extra-opts" value=""/>
         <property key="oXC32asm-list-to-file" value="false"/>
         <property key="omit-debug-dirs" value="false"/>
         <property key="omit-forms" value="false"/>
         <property key="preprocessor-macros" value=""/>
+        <property key="relax" value="false"/>
         <property key="warning-level" value=""/>
       </C32-AS>
       <C32-CO>
@@ -713,10 +773,11 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
+        <property key="enable-data-init" value="true"/>
+        <property key="enable-default-isr" value="true"/>
         <property key="exclude-floating-point-library" value="false"/>
         <property key="exclude-standard-libraries" value="false"/>
         <property key="extra-lib-directories" value=""/>
@@ -737,7 +798,11 @@
         <property key="linker-symbols" value=""/>
         <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
         <property key="no-device-startup-code" value="true"/>
+        <property key="no-ivt" value="false"/>
         <property key="no-startup-files" value="false"/>
+        <property key="oXC16ld-force-link" value="false"/>
+        <property key="oXC16ld-no-smart-io" value="false"/>
+        <property key="oXC16ld-stackguard" value="16"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros" value=""/>
@@ -753,7 +818,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -782,14 +846,20 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
+        <property key="combine-sourcefiles" value="false"/>
         <property key="common-include-directories" value=""/>
+        <property key="common-macros" value=""/>
+        <property key="dual-boot-partition" value="0"/>
+        <property key="generic-16-bit" value="false"/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
         <property key="mdtcm" value=""/>
         <property key="mitcm" value=""/>
+        <property key="mpreserve-all" value="false"/>
         <property key="mstacktcm" value="false"/>
         <property key="omit-pack-options" value="1"/>
+        <property key="preserve-all" value="false"/>
+        <property key="preserve-file" value=""/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
         <property key="stack-smashing" value=""/>

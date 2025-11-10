@@ -66,8 +66,8 @@
 // *****************************************************************************
 // *****************************************************************************
 #define APP_KEY_PB4                 0x10
-#define APP_KEY_LONG_PRESS_TIME     10      // 50 ms * 10 = 500 ms
-#define APP_KEY_DOUBLE_CLICK_TIME   8       // 50 ms * 8 = 400 ms
+#define APP_KEY_LONG_PRESS_TIME     (10U)   // 50 ms * 10 = 500 ms
+#define APP_KEY_DOUBLE_CLICK_TIME   (8U)    // 50 ms * 8 = 400 ms
 
 enum APP_KEY_DEFINE_T
 {
@@ -96,7 +96,7 @@ static APP_KeyCb_T   s_appKeyCb;
 // Section: Function Prototypes
 // *****************************************************************************
 // *****************************************************************************
-#define APP_KEY_TMR_ID_INST_MERGE(id, instance) ((((uint16_t)id) << 8) | instance)
+#define APP_KEY_TMR_ID_INST_MERGE(id, instance) ((((uint16_t)(id)) << 8) | (uint16_t)(instance))
 static uint16_t app_key_SetTimer(uint16_t idInstance, void *p_tmrParam, uint32_t timeout, bool isPeriodicTimer,
 APP_TIMER_TmrElem_T *p_tmrElem)
 {
@@ -118,68 +118,92 @@ void APP_KEY_MsgRegister(APP_KeyCb_T keyCb)
 
 void APP_KEY_Init(void)
 {
+    uint16_t ret;
+
     // GPIO register initialization for the user button.
     GPIOB_REGS->GPIO_ANSELCLR = (1 << (GPIO_PIN_RB9 >> 4U));//digital mode, follow the coding style of plib_gpio
     GPIO_PinInputEnable(GPIO_PIN_RB9);
 
-    memset((uint8_t *)&s_appKeyElement, 0, sizeof(APP_KEY_Elem_T));
-    app_key_SetTimer(APP_KEY_TMR_ID_INST_MERGE(APP_TIMER_KEY_SCAN_02, 0), NULL, APP_TIMER_50MS,
+    (void)memset((uint8_t *)&s_appKeyElement, 0, sizeof(APP_KEY_Elem_T));
+    ret=app_key_SetTimer(APP_KEY_TMR_ID_INST_MERGE(APP_TIMER_KEY_SCAN_02, 0), NULL, APP_TIMER_50MS,
         true, &s_scanTmr);
+    if (ret != APP_RES_SUCCESS)
+    {
+        //if error occurs
+    }
 
     s_appKeyCb=NULL;
 }
 
 void APP_KEY_Scan(void)
 {
-    uint8_t keyState, keyMesg = APP_KEY_MSG_NULL;
+    uint8_t keyState, keyMesg = (uint8_t)APP_KEY_MSG_NULL;
 
     if (GPIO_PinRead(GPIO_PIN_RB9) == false)
-        keyState = APP_KEY_DEFINED_PRESSED;
+    {
+        keyState = (uint8_t)APP_KEY_DEFINED_PRESSED;
+    }
     else
-        keyState = APP_KEY_DEFINED_RELEASED;
+    {
+        keyState = (uint8_t)APP_KEY_DEFINED_RELEASED;
+    }
 
-    if (keyState == APP_KEY_DEFINED_PRESSED)
+    if (keyState == (uint8_t)APP_KEY_DEFINED_PRESSED)
     {
         s_appKeyElement.counter++;
-        if (s_appKeyElement.state == APP_KEY_STATE_RELEASE)
+        if (s_appKeyElement.state == (uint8_t)APP_KEY_STATE_RELEASE)
         {
-            s_appKeyElement.state = APP_KEY_STATE_SHORT_PRESS;
+            s_appKeyElement.state = (uint8_t)APP_KEY_STATE_SHORT_PRESS;
         }
-        else if(s_appKeyElement.state == APP_KEY_STATE_SHORT_PRESS)
+        else if(s_appKeyElement.state == (uint8_t)APP_KEY_STATE_SHORT_PRESS)
         {
             if (s_appKeyElement.counter > APP_KEY_LONG_PRESS_TIME)
             {
-                s_appKeyElement.state = APP_KEY_STATE_LONG_PRESS;
-                keyMesg = APP_KEY_MSG_LONG_PRESS;
+                s_appKeyElement.state = (uint8_t)APP_KEY_STATE_LONG_PRESS;
+                keyMesg = (uint8_t)APP_KEY_MSG_LONG_PRESS;
             }
         }
-        else if (s_appKeyElement.state == APP_KEY_STATE_SHORT_PRESS_RELEASE)
+        else if (s_appKeyElement.state == (uint8_t)APP_KEY_STATE_SHORT_PRESS_RELEASE)
         {
-            s_appKeyElement.state = APP_KEY_STATE_DOUBLE_CLICK_PRESS;
-            keyMesg = APP_KEY_MSG_DOUBLE_CLICK;
+            s_appKeyElement.state = (uint8_t)APP_KEY_STATE_DOUBLE_CLICK_PRESS;
+            keyMesg = (uint8_t)APP_KEY_MSG_DOUBLE_CLICK;
+        }
+        else
+        {
+
         }
     }
     else
     {
-        if (s_appKeyElement.state != APP_KEY_STATE_RELEASE)
-            s_appKeyElement.counter++;
-        if ((s_appKeyElement.state == APP_KEY_STATE_SHORT_PRESS) &&
-            (s_appKeyElement.counter <= APP_KEY_DOUBLE_CLICK_TIME))
-            s_appKeyElement.state = APP_KEY_STATE_SHORT_PRESS_RELEASE;
-        else if ((s_appKeyElement.state == APP_KEY_STATE_SHORT_PRESS) || ((s_appKeyElement.counter
-            > APP_KEY_DOUBLE_CLICK_TIME) && (s_appKeyElement.state == APP_KEY_STATE_SHORT_PRESS_RELEASE)))
-            keyMesg = APP_KEY_MSG_SHORT_PRESS;
-        if ((keyMesg != APP_KEY_MSG_NULL) || (s_appKeyElement.state == APP_KEY_STATE_LONG_PRESS)
-            || (s_appKeyElement.state == APP_KEY_STATE_DOUBLE_CLICK_PRESS))
+        if (s_appKeyElement.state != (uint8_t)APP_KEY_STATE_RELEASE)
         {
-            s_appKeyElement.state = APP_KEY_STATE_RELEASE;
+            s_appKeyElement.counter++;
+        }
+        if ((s_appKeyElement.state == (uint8_t)APP_KEY_STATE_SHORT_PRESS) &&
+            (s_appKeyElement.counter <= APP_KEY_DOUBLE_CLICK_TIME))
+        {
+            s_appKeyElement.state = (uint8_t)APP_KEY_STATE_SHORT_PRESS_RELEASE;
+        }
+        else if ((s_appKeyElement.state == (uint8_t)APP_KEY_STATE_SHORT_PRESS) || ((s_appKeyElement.counter
+            > APP_KEY_DOUBLE_CLICK_TIME) && (s_appKeyElement.state == (uint8_t)APP_KEY_STATE_SHORT_PRESS_RELEASE)))
+        {
+            keyMesg = (uint8_t)APP_KEY_MSG_SHORT_PRESS;
+        }
+        else
+        {
+
+        }
+        if ((keyMesg != (uint8_t)APP_KEY_MSG_NULL) || (s_appKeyElement.state == (uint8_t)APP_KEY_STATE_LONG_PRESS)
+            || (s_appKeyElement.state == (uint8_t)APP_KEY_STATE_DOUBLE_CLICK_PRESS))
+        {
+            s_appKeyElement.state = (uint8_t)APP_KEY_STATE_RELEASE;
             s_appKeyElement.counter = 0;
         }
     }
     
-    if (keyMesg != APP_KEY_MSG_NULL)
+    if (keyMesg != (uint8_t)APP_KEY_MSG_NULL)
     {
-        if (s_appKeyCb)
+        if (s_appKeyCb != NULL)
         {
             s_appKeyCb(keyMesg);
         }

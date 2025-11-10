@@ -100,6 +100,8 @@ APP_DATA appData;
 /* TODO:  Add any necessary callback functions.
 */
 
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -109,6 +111,7 @@ APP_DATA appData;
 
 /* TODO:  Add any necessary local functions.
 */
+
 
 
 // *****************************************************************************
@@ -155,6 +158,9 @@ void APP_Tasks ( void )
     p_appMsg=appMsg;
 
     ZB_AppGenericCallbackParam_t cb;
+
+
+
     /* Check the application's current state. */
     switch ( appData.state )
     {
@@ -224,7 +230,7 @@ void APP_Tasks ( void )
             }
             break;
         }
-
+        
         /* TODO: implement your application state machine.*/
 
 

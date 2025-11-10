@@ -48,6 +48,10 @@
 #include "osal/osal_freertos_extend.h"
 #include "app_ble_handler.h"
 
+
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Variables
@@ -204,6 +208,13 @@ void APP_BleGapEvtHandler(BLE_GAP_Event_T *p_event)
         }
         break;
 
+        case BLE_GAP_EVT_FEATURE_EXCHANGE_COMPL:
+        {
+            /* TODO: implement your application code.*/
+        }
+        break;
+
+
         default:
         break;
     }
@@ -253,7 +264,7 @@ void APP_BleL2capEvtHandler(BLE_L2CAP_Event_T *p_event)
         {
             /* TODO: implement your application code.*/
         }
-        break;        
+        break;
 
         default:
         break;
@@ -261,7 +272,7 @@ void APP_BleL2capEvtHandler(BLE_L2CAP_Event_T *p_event)
 }
 
 void APP_GattEvtHandler(GATT_Event_T *p_event)
-{   
+{
     switch(p_event->eventId)
     {
         case GATTC_EVT_ERROR_RESP:
@@ -391,8 +402,9 @@ void APP_GattEvtHandler(GATT_Event_T *p_event)
         }
         break;
 
+
         default:
-        break;        
+        break;
     }
 }
 
@@ -467,7 +479,7 @@ void APP_BleSmpEvtHandler(BLE_SMP_Event_T *p_event)
         break;
 
         default:
-        break;        
+        break;
     }
 }
 
@@ -480,7 +492,7 @@ void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
             /* TODO: implement your application code.*/
         }
         break;
-        
+
         case BLE_DM_EVT_CONNECTED:
         {
             /* TODO: implement your application code.*/
@@ -533,3 +545,4 @@ void APP_DmEvtHandler(BLE_DM_Event_T *p_event)
         break;
     }
 }
+

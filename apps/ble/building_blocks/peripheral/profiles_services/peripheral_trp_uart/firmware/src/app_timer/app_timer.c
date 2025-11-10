@@ -17,7 +17,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -47,8 +47,13 @@
 // *****************************************************************************
 // *****************************************************************************
 #include <string.h>
+#include <stdio.h>
+#include "app.h"
+#include "ble_util/byte_stream.h"
+#include "app_ble.h"
 #include "app_timer.h"
 #include "app_error_defs.h"
+#include "app_otaps_handler.h"
 #include "FreeRTOS.h"
 #include "timers.h"
 
@@ -119,9 +124,11 @@ static void APP_TIMER_OneShotTimerExpiredHandle(TimerHandle_t xTimer)
            appMsg.msgId = APP_TIMER_OTA_REBOOT_MSG;
         }
         break;
-        case APP_TIMER_ID_2:
+        case APP_TIMER_BLE_DISCONNECT:
         {
-           //appMsg.msgId = APP_TIMER_ID_2_MSG;
+           // uint16_t *p_connHandle = (uint16_t *)p_timer->p_tmrParam;
+
+            appMsg.msgId = APP_TIMER_BLE_DISCONNECT_MSG;
         }
         break;
         case APP_TIMER_ID_3:
@@ -158,18 +165,18 @@ static void APP_TIMER_PeriodicTimerExpiredHandle(TimerHandle_t xTimer)
     {
         case APP_TIMER_OTA_TIMEOUT:
         {
-            //appMsg.msgId = APP_TIMER_OTA_TIMEOUT_MSG;
+            appMsg.msgId = APP_TIMER_OTA_TIMEOUT_MSG;
         }
         break;   
         
         case APP_TIMER_OTA_REBOOT:
         {
-           //appMsg.msgId = APP_TIMER_OTA_REBOOT_MSG;
+           appMsg.msgId = APP_TIMER_OTA_REBOOT_MSG;
         }
         break;
-        case APP_TIMER_ID_2:
+        case APP_TIMER_BLE_DISCONNECT:
         {
-           //appMsg.msgId = APP_TIMER_ID_2_MSG;
+            appMsg.msgId = APP_TIMER_BLE_DISCONNECT_MSG;
         }
         break;
         case APP_TIMER_ID_3:

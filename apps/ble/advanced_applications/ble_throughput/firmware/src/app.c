@@ -65,6 +65,7 @@
 #include "app_adv.h"
 #include "app_led.h"
 #include "app_sm.h"
+#include "bt_sys_log.h"
 
 
 

@@ -1,31 +1,30 @@
 /*
  * Component description for DGI_SPI
  *
- * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * SPDX-License-Identifier: Apache-2.0
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2023-04-11T16:47:17Z */
+/*  file generated from device description file (ATDF) version 2025-02-18T06:25:25Z  */
 #ifndef _WBZ35_DGI_SPI_COMPONENT_H_
 #define _WBZ35_DGI_SPI_COMPONENT_H_
 
 /* ************************************************************************** */
-/*   SOFTWARE API DEFINITION FOR DGI_SPI                                      */
+/*                    SOFTWARE API DEFINITION FOR DGI_SPI                     */
 /* ************************************************************************** */
 
 /* -------- DGI_SPI_SPICON : (DGI_SPI Offset: 0x00) (R/W 32) SPI control register -------- */
@@ -165,7 +164,7 @@
 
 #define DGI_SPI_SPIBUF_DATA_Pos               _UINT32_(0)                                          /* (DGI_SPI_SPIBUF) FIFO Data bits Position */
 #define DGI_SPI_SPIBUF_DATA_Msk               (_UINT32_(0xFFFFFFFF) << DGI_SPI_SPIBUF_DATA_Pos)    /* (DGI_SPI_SPIBUF) FIFO Data bits Mask */
-#define DGI_SPI_SPIBUF_DATA(value)            (DGI_SPI_SPIBUF_DATA_Msk & (_UINT32_(value) << DGI_SPI_SPIBUF_DATA_Pos)) /* Assigment of value for DATA in the DGI_SPI_SPIBUF register */
+#define DGI_SPI_SPIBUF_DATA(value)            (DGI_SPI_SPIBUF_DATA_Msk & (_UINT32_(value) << DGI_SPI_SPIBUF_DATA_Pos)) /* Assignment of value for DATA in the DGI_SPI_SPIBUF register */
 #define DGI_SPI_SPIBUF_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (DGI_SPI_SPIBUF) Register Mask  */
 
 
@@ -174,7 +173,7 @@
 
 #define DGI_SPI_SPIBRG_BRG_Pos                _UINT32_(0)                                          /* (DGI_SPI_SPIBRG) Baud Rate Divisor bitsseeSection 2.4.1. Position */
 #define DGI_SPI_SPIBRG_BRG_Msk                (_UINT32_(0x1FFF) << DGI_SPI_SPIBRG_BRG_Pos)         /* (DGI_SPI_SPIBRG) Baud Rate Divisor bitsseeSection 2.4.1. Mask */
-#define DGI_SPI_SPIBRG_BRG(value)             (DGI_SPI_SPIBRG_BRG_Msk & (_UINT32_(value) << DGI_SPI_SPIBRG_BRG_Pos)) /* Assigment of value for BRG in the DGI_SPI_SPIBRG register */
+#define DGI_SPI_SPIBRG_BRG(value)             (DGI_SPI_SPIBRG_BRG_Msk & (_UINT32_(value) << DGI_SPI_SPIBRG_BRG_Pos)) /* Assignment of value for BRG in the DGI_SPI_SPIBRG register */
 #define DGI_SPI_SPIBRG_Msk                    _UINT32_(0x00001FFF)                                 /* (DGI_SPI_SPIBRG) Register Mask  */
 
 
@@ -183,7 +182,7 @@
 
 #define DGI_SPI_SPITXADD_TXADD_Pos            _UINT32_(0)                                          /* (DGI_SPI_SPITXADD) Transmit Source Address bitsTXADD can constantly be updated to reflect the current transmit address as the transfer progresses Position */
 #define DGI_SPI_SPITXADD_TXADD_Msk            (_UINT32_(0xFFFF) << DGI_SPI_SPITXADD_TXADD_Pos)     /* (DGI_SPI_SPITXADD) Transmit Source Address bitsTXADD can constantly be updated to reflect the current transmit address as the transfer progresses Mask */
-#define DGI_SPI_SPITXADD_TXADD(value)         (DGI_SPI_SPITXADD_TXADD_Msk & (_UINT32_(value) << DGI_SPI_SPITXADD_TXADD_Pos)) /* Assigment of value for TXADD in the DGI_SPI_SPITXADD register */
+#define DGI_SPI_SPITXADD_TXADD(value)         (DGI_SPI_SPITXADD_TXADD_Msk & (_UINT32_(value) << DGI_SPI_SPITXADD_TXADD_Pos)) /* Assignment of value for TXADD in the DGI_SPI_SPITXADD register */
 #define DGI_SPI_SPITXADD_Msk                  _UINT32_(0x0000FFFF)                                 /* (DGI_SPI_SPITXADD) Register Mask  */
 
 
@@ -192,11 +191,11 @@
 
 #define DGI_SPI_SPITXCNT_TXCNT_Pos            _UINT32_(0)                                          /* (DGI_SPI_SPITXCNT) Transmit Count bitsThis register indicates the number of transferred data words. As the DMA progresses, TXCNT is constantly decremented to reflect the remaining count yet to be transferred. Position */
 #define DGI_SPI_SPITXCNT_TXCNT_Msk            (_UINT32_(0xFFFF) << DGI_SPI_SPITXCNT_TXCNT_Pos)     /* (DGI_SPI_SPITXCNT) Transmit Count bitsThis register indicates the number of transferred data words. As the DMA progresses, TXCNT is constantly decremented to reflect the remaining count yet to be transferred. Mask */
-#define DGI_SPI_SPITXCNT_TXCNT(value)         (DGI_SPI_SPITXCNT_TXCNT_Msk & (_UINT32_(value) << DGI_SPI_SPITXCNT_TXCNT_Pos)) /* Assigment of value for TXCNT in the DGI_SPI_SPITXCNT register */
+#define DGI_SPI_SPITXCNT_TXCNT(value)         (DGI_SPI_SPITXCNT_TXCNT_Msk & (_UINT32_(value) << DGI_SPI_SPITXCNT_TXCNT_Pos)) /* Assignment of value for TXCNT in the DGI_SPI_SPITXCNT register */
 #define DGI_SPI_SPITXCNT_Msk                  _UINT32_(0x0000FFFF)                                 /* (DGI_SPI_SPITXCNT) Register Mask  */
 
 
-/** \brief DGI_SPI register offsets definitions */
+/* DGI_SPI register offsets definitions */
 #define DGI_SPI_SPICON_REG_OFST        _UINT32_(0x00)      /* (DGI_SPI_SPICON) SPI control register Offset */
 #define DGI_SPI_SPISTAT_REG_OFST       _UINT32_(0x10)      /* (DGI_SPI_SPISTAT) SPI Status register Offset */
 #define DGI_SPI_SPIBUF_REG_OFST        _UINT32_(0x20)      /* (DGI_SPI_SPIBUF) SPI BUFFER register Offset */
@@ -205,20 +204,20 @@
 #define DGI_SPI_SPITXCNT_REG_OFST      _UINT32_(0x50)      /* (DGI_SPI_SPITXCNT) SPI DMA Transmit Count register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief DGI_SPI register API structure */
+/* DGI_SPI register API structure */
 typedef struct
 {  /* SPI DMA for DGI Macro */
-  __IO  uint32_t                       DGI_SPI_SPICON;     /**< Offset: 0x00 (R/W  32) SPI control register */
+  __IO  uint32_t                       DGI_SPI_SPICON;     /* Offset: 0x00 (R/W  32) SPI control register */
   __I   uint8_t                        Reserved1[0x0C];
-  __I   uint32_t                       DGI_SPI_SPISTAT;    /**< Offset: 0x10 (R/   32) SPI Status register */
+  __I   uint32_t                       DGI_SPI_SPISTAT;    /* Offset: 0x10 (R/   32) SPI Status register */
   __I   uint8_t                        Reserved2[0x0C];
-  __IO  uint32_t                       DGI_SPI_SPIBUF;     /**< Offset: 0x20 (R/W  32) SPI BUFFER register */
+  __IO  uint32_t                       DGI_SPI_SPIBUF;     /* Offset: 0x20 (R/W  32) SPI BUFFER register */
   __I   uint8_t                        Reserved3[0x0C];
-  __IO  uint32_t                       DGI_SPI_SPIBRG;     /**< Offset: 0x30 (R/W  32) SPI Baud rate register */
+  __IO  uint32_t                       DGI_SPI_SPIBRG;     /* Offset: 0x30 (R/W  32) SPI Baud rate register */
   __I   uint8_t                        Reserved4[0x0C];
-  __IO  uint32_t                       DGI_SPI_SPITXADD;   /**< Offset: 0x40 (R/W  32) SPI DMA Transmit Address register */
+  __IO  uint32_t                       DGI_SPI_SPITXADD;   /* Offset: 0x40 (R/W  32) SPI DMA Transmit Address register */
   __I   uint8_t                        Reserved5[0x0C];
-  __IO  uint32_t                       DGI_SPI_SPITXCNT;   /**< Offset: 0x50 (R/W  32) SPI DMA Transmit Count register */
+  __IO  uint32_t                       DGI_SPI_SPITXCNT;   /* Offset: 0x50 (R/W  32) SPI DMA Transmit Count register */
 } dgi_spi_registers_t;
 
 

@@ -1,0 +1,65 @@
+configVersion: 1.0.0
+componentName: app_timer
+coreVersion: 5.8.2
+device: WBZ351
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: app_timer
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: FreeRTOS-Kernel
+  type: package
+  version: v11.1.0
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.5
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.22.7
+- dependencyPackage: ''
+  name: wireless_pic32cxbz_wbz
+  type: package
+  version: v1.6.0
+- dependencyPackage: ''
+  name: wireless_system_pic32cxbz_wbz
+  type: package
+  version: v1.8.0
+- dependencyPackage: ''
+  name: wireless_zigbee
+  type: package
+  version: v6.2.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: app_timer
+          x: '235'
+          y: '309'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    APP_TIMER_ID0:
+      attributes:
+        id: APP_TIMER_ID0
+      children:
+      - children:
+        - attributes:
+            value: APP_TIMER_SENSOR_DET
+          type: User
+        type: Values
+      type: String
+  userData: {}

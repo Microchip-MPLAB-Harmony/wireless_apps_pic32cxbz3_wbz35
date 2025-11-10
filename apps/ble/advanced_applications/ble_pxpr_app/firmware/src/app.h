@@ -58,7 +58,7 @@
 #include <stdlib.h>
 #include "configuration.h"
 #include "osal/osal_freertos_extend.h"
-
+#include "bt_sys_log.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -218,7 +218,7 @@ void APP_Initialize ( void );
  */
 
 void APP_Tasks( void );
-
+void APP_BleStackLogHandler(BT_SYS_LogEvent_T *p_logEvt);
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
