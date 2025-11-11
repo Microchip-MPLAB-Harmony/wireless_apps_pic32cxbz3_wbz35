@@ -1566,14 +1566,14 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.3.216"/>
         <pack name="CMSIS" vendor="ARM" version="6.2.0"/>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.3.216"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

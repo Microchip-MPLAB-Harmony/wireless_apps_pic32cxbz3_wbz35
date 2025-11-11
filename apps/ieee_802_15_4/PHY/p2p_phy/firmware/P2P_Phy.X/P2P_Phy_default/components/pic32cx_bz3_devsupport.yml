@@ -22,8 +22,8 @@ data:
     - children:
       - attributes:
           id: pic32cx_bz3_devsupport
-          x: '450'
-          y: '280'
+          x: '391'
+          y: '336'
         type: ElementPosition
       type: ElementPositions
     type: ComponentGraph

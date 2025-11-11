@@ -47,7 +47,7 @@
 // *****************************************************************************
 
 #define DEVICE_AS_LEADER         0
-#define ENABLE_SLEEP             0
+#define ENABLE_SLEEP             1
 #define DEVICE_SLEEP_TIME        5000
 
 void threadAppinit();

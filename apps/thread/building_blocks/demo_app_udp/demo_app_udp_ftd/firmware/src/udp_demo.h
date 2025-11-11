@@ -47,7 +47,7 @@
 // *****************************************************************************
 #ifdef UDP_DEMO
 
-#define UDP_TX         1
+#define UDP_TX         0
 #define UDP_RX         1
 
 void threadUdpOpen();

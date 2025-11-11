@@ -56,7 +56,7 @@
 #include "definitions.h"
 #include "app_ble_hci.h"
 #include "app_hci.h"
-#include "peripheral/sercom/usart/drv_usart.h"
+#include "config/default/peripheral/sercom/usart/drv_usart.h"
 
 
 

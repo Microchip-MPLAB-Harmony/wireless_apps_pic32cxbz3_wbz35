@@ -254,7 +254,8 @@ void APP_OTA_EvtHandler(BLE_OTAPS_Event_T *p_event)
                 s_fwImageValidate = p_event->eventField.evtUpdateReq.fwImageChksum;
             }
 			//For PFM OTA
-            else if (p_event->eventField.evtUpdateReq.fwImageFileType == BLE_OTAPS_IMG_FILE_TYPE_INT)
+            else
+            if (p_event->eventField.evtUpdateReq.fwImageFileType == BLE_OTAPS_IMG_FILE_TYPE_INT)
             {
                 s_fwImageValidate = p_event->eventField.evtUpdateReq.fwImageCrc16;
             }			

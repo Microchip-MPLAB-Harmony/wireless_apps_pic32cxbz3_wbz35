@@ -25,7 +25,7 @@ Our comprehensive Wireless BLE, and Zigbee Application Examples portfolio has th
 
 | Folder     | Description                                               |
 | ---        | ---                                                       |
-| apps       | [Example applications for PIC32CXB3/WBZ35x devices](./apps/readme.md)         |
+| apps       | [Example applications for PIC32CXB3/PIC32CX-BZ36/WBZ35x devices](./apps/readme.md)         |
 | docs       | [Wireless Application Example help documentation](https://onlinedocs.microchip.com/oxy/GUID-99E91F8E-E9F7-4C2C-B98A-E9662A2ABA50-en-US-1/index.html)
 
 ## Code Examples
@@ -34,64 +34,63 @@ The following applications are provided to demonstrate the typical use case of o
 
 | BLE Examples | Families |
 | --- | :---: |
-| [BLE peripheral Legacy Adv](apps/ble/building_blocks/peripheral/legacy_adv/readme.md) | PIC32CX-BZ |
-| [BLE peripheral Legacy Adv_Sleep](apps/ble/building_blocks/peripheral/legacy_adv_sleep/readme.md) | PIC32CX-BZ |
-| [BLE peripheral Ext Adv](apps/ble/building_blocks/peripheral/ext_adv/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral Connection](apps/ble/building_blocks/peripheral/peripheral_conn/readme.md) | PIC32CX-BZ |
-| [BLE Deep Sleep Adv](apps/ble/building_blocks/peripheral/deep_sleep_adv/readme.md) | PIC32CX-BZ |
-| [BLE Custom Service](apps/ble/building_blocks/peripheral/profiles_services/custom_service/readme.md) | PIC32CX-BZ |
-| [BLE peripheral transparent UART](apps/ble/building_blocks/peripheral/profiles_services/peripheral_trp_uart/readme.md) | PIC32CX-BZ |
-| [BLE Central Legacy Scan](apps/ble/building_blocks/central/legacy_scan/readme.md) | PIC32CX-BZ |
-| [BLE Central Scan Ext Adv](apps/ble/building_blocks/central/scan_ext_adv/readme.md) | PIC32CX-BZ |
-| [BLE Central Connection](apps/ble/building_blocks/central/central_conn/readme.md) | PIC32CX-BZ |
-| [BLE Central transparent UART](apps/ble/building_blocks/central/profiles_services/central_trp_uart/readme.md) | PIC32CX-BZ |
-| [BLE Central Multilink](apps/ble/building_blocks/central/profiles_services/multilink/readme.md) | PIC32CX-BZ |
-| [UART Hello World](apps/ble/building_blocks/chip_peripherals/uart_hello_world/readme.md) | PIC32CX-BZ |
-| [BLE Multirole](apps/ble/building_blocks/multirole/readme.md) | PIC32CX-BZ |
-| [Bootloader](apps/bootloader/readme.md) | PIC32CX-BZ |
-| [BLE Central Code PHY transparent UART](apps/ble/building_blocks/central/profiles_services/central_trp_uart_codedPhy/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral PATH Loss Advertisement](apps/ble/building_blocks/peripheral/Legacy_ADV_Pathloss/readme.md) | PIC32CX-BZ |
-| [BLE peripheral Code PHY transparent UART](apps/ble/building_blocks/peripheral/profiles_services/peripheral_trp_uart_codedPhy/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral BLE Multiple Advertising Sets](apps/ble/building_blocks/peripheral/two_set_adv/readme.md) | PIC32CX-BZ |
-| [BLE Sensor touch](apps/ble/advanced_applications/ble_sensor_touch/readme.md) | PIC32CX-BZ |
-| [BLE Throughput](apps/ble/advanced_applications/ble_throughput/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral ANCS](apps/ble/advanced_applications/ble_ancs_app/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral HOGPS or HID Profile](apps/ble/advanced_applications/ble_hogps_app/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral ANPC](apps/ble/advanced_applications/ble_anpc_app/readme.md) | PIC32CX-BZ |
-| [BLE Peripheral ANPS](apps/ble/advanced_applications/ble_anps_app/readme.md) | PIC32CX-BZ |
-| [BLE Proximity Monitor PXPM](apps/ble/advanced_applications/ble_pxpm_app/readme.md) | PIC32CX-BZ |
-| [BLE Proximity Reporter PXPR](apps/ble/advanced_applications/ble_pxpr_app/readme.md) | PIC32CX-BZ |
+| [BLE peripheral Legacy Adv](apps/ble/building_blocks/peripheral/legacy_adv/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE peripheral Legacy Adv_Sleep](apps/ble/building_blocks/peripheral/legacy_adv_sleep/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE peripheral Ext Adv](apps/ble/building_blocks/peripheral/ext_adv/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral Connection](apps/ble/building_blocks/peripheral/peripheral_conn/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Deep Sleep Adv](apps/ble/building_blocks/peripheral/deep_sleep_adv/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Custom Service](apps/ble/building_blocks/peripheral/profiles_services/custom_service/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE peripheral transparent UART](apps/ble/building_blocks/peripheral/profiles_services/peripheral_trp_uart/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Central Legacy Scan](apps/ble/building_blocks/central/legacy_scan/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Central Scan Ext Adv](apps/ble/building_blocks/central/scan_ext_adv/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Central Connection](apps/ble/building_blocks/central/central_conn/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Central transparent UART](apps/ble/building_blocks/central/profiles_services/central_trp_uart/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Central Multilink](apps/ble/building_blocks/central/profiles_services/multilink/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Multirole](apps/ble/building_blocks/multirole/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Bootloader](apps/bootloader/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Central Code PHY transparent UART](apps/ble/building_blocks/central/profiles_services/central_trp_uart_codedPhy/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral PATH Loss Advertisement](apps/ble/building_blocks/peripheral/Legacy_ADV_Pathloss/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE peripheral Code PHY transparent UART](apps/ble/building_blocks/peripheral/profiles_services/peripheral_trp_uart_codedPhy/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral BLE Multiple Advertising Sets](apps/ble/building_blocks/peripheral/two_set_adv/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Sensor touch](apps/ble/advanced_applications/ble_sensor_touch/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Throughput](apps/ble/advanced_applications/ble_throughput/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral ANCS](apps/ble/advanced_applications/ble_ancs_app/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral HOGPS or HID Profile](apps/ble/advanced_applications/ble_hogps_app/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral ANPC](apps/ble/advanced_applications/ble_anpc_app/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Peripheral ANPS](apps/ble/advanced_applications/ble_anps_app/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Proximity Monitor PXPM](apps/ble/advanced_applications/ble_pxpm_app/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Proximity Reporter PXPR](apps/ble/advanced_applications/ble_pxpr_app/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
 
 | IEEE_802_15_4 Applications | Families |
 | --- | :---: |
-| [IEEE_802_15_4 demoapp_ffd](apps/ieee_802_15_4/MAC/push_pull_mac_app/demoapp_ffd/readme.md) | PIC32CX-BZ |
-| [IEEE_802_15_4 demoapp_rfd](apps/ieee_802_15_4/MAC/push_pull_mac_app/demoapp_rfd/readme.md) | PIC32CX-BZ |
-| [IEEE_802_15_4 p2p_phy](apps/ieee_802_15_4/PHY/p2p_phy/readme.md) | PIC32CX-BZ |
+| [IEEE_802_15_4 demoapp_ffd](apps/ieee_802_15_4/MAC/push_pull_mac_app/demoapp_ffd/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [IEEE_802_15_4 demoapp_rfd](apps/ieee_802_15_4/MAC/push_pull_mac_app/demoapp_rfd/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [IEEE_802_15_4 p2p_phy](apps/ieee_802_15_4/PHY/p2p_phy/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
 
 | Thread Applications | Families |
 | --- | :---: |
-| [Thread cli_ftd](apps/thread/building_blocks/cli/cli_ftd/readme.md) | PIC32CX-BZ |
-| [Thread cli_mtd](apps/thread/building_blocks/cli/cli_mtd/readme.md) | PIC32CX-BZ |
-| [Thread demo_app_udp_ftd](apps/thread/building_blocks/demo_app_udp/demo_app_udp_ftd/readme.md) | PIC32CX-BZ |
-| [Thread demo_app_udp_mtd](apps/thread/building_blocks/demo_app_udp/demo_app_udp_mtd/readme.md) | PIC32CX-BZ |
-| [Thread rcp_uart](apps/thread/building_blocks/rcp_uart/readme.md) | PIC32CX-BZ |
-| [Thread CoAP coap_ftd_client](apps/thread/advanced_applications/CoAP/coap_ftd_client/readme.md) | PIC32CX-BZ |
-| [Thread CoAP coap_ftd_server](apps/thread/advanced_applications/CoAP/coap_ftd_server/readme.md) | PIC32CX-BZ |
-| [Thread CoAP coap_sed_client](apps/thread/advanced_applications/CoAP/coap_sed_client/readme.md) | PIC32CX-BZ |
-| [Thread CoAP coap_sed_server](apps/thread/advanced_applications/CoAP/coap_sed_server/readme.md) | PIC32CX-BZ |
+| [Thread cli_ftd](apps/thread/building_blocks/cli/cli_ftd/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread cli_mtd](apps/thread/building_blocks/cli/cli_mtd/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread demo_app_udp_ftd](apps/thread/building_blocks/demo_app_udp/demo_app_udp_ftd/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread demo_app_udp_mtd](apps/thread/building_blocks/demo_app_udp/demo_app_udp_mtd/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread rcp_uart](apps/thread/building_blocks/rcp_uart/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread CoAP coap_ftd_client](apps/thread/advanced_applications/CoAP/coap_ftd_client/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread CoAP coap_ftd_server](apps/thread/advanced_applications/CoAP/coap_ftd_server/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread CoAP coap_sed_client](apps/thread/advanced_applications/CoAP/coap_sed_client/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Thread CoAP coap_sed_server](apps/thread/advanced_applications/CoAP/coap_sed_server/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
 
 
 | Zigbee Examples | Families |
 | --- | :---: |
-| [Zigbee Combined Interface (Coordinator)](apps/zigbee/combinedInterface/readme.md) | PIC32CX-BZ |
-| [Zigbee Extended Lights (Router)](apps/zigbee/ext_light/readme.md) | PIC32CX-BZ |
-| [Zigbee End Device (End Device)](apps/zigbee/multisensor/readme.md) | PIC32CX-BZ |
-| [Zigbee Custom Cluster Server](apps/zigbee/custom_cluster_server/readme.md) | PIC32CX-BZ |
-| [Zigbee Custom Occupancy Light](apps/zigbee/custom_occupancy_light/readme.md) | PIC32CX-BZ |
-| [Zigbee Custom Cluster Client](apps/zigbee/custom_cluster_client/readme.md) | PIC32CX-BZ |
-| [Zigbee Multisensor DeepSleep](apps/zigbee/multisensor_deepSleep/readme.md) | PIC32CX-BZ |
-| [Zigbee CSC Sleep Touch](apps/zigbee/csc_sleep_touch/readme.md) | PIC32CX-BZ |
-| [Zigbee Dimmable Light](apps/zigbee/dim_light_touch/readme.md) | PIC32CX-BZ |
+| [Zigbee Combined Interface (Coordinator)](apps/zigbee/combinedInterface/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee Extended Lights (Router)](apps/zigbee/ext_light/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee End Device (End Device)](apps/zigbee/multisensor/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee Custom Cluster Server](apps/zigbee/custom_cluster_server/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee Custom Occupancy Light](apps/zigbee/custom_occupancy_light/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee Custom Cluster Client](apps/zigbee/custom_cluster_client/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee Multisensor DeepSleep](apps/zigbee/multisensor_deepSleep/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee CSC Sleep Touch](apps/zigbee/csc_sleep_touch/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [Zigbee Dimmable Light](apps/zigbee/dim_light_touch/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
 ____
 
 

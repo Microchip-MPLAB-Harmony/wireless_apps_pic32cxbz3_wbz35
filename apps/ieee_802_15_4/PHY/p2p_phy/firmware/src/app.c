@@ -1,6 +1,6 @@
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -56,15 +56,11 @@
 #include "definitions.h"
 
 
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
-
-
-
 
 // *****************************************************************************
 /* Application Data
@@ -92,8 +88,6 @@ APP_DATA appData;
 /* TODO:  Add any necessary callback functions.
 */
 
-
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -103,7 +97,6 @@ APP_DATA appData;
 
 /* TODO:  Add any necessary local functions.
 */
-
 
 
 // *****************************************************************************
@@ -144,9 +137,8 @@ void APP_Initialize ( void )
 void APP_Tasks ( void )
 {
     APP_Msg_T    appMsg[1];
-
-
-
+    APP_Msg_T *p_appMsg;
+    p_appMsg = appMsg;
 
     /* Check the application's current state. */
     switch ( appData.state )
@@ -156,10 +148,48 @@ void APP_Tasks ( void )
         {
             bool appInitialized = true;
             //appData.appQueue = xQueueCreate( 10, sizeof(APP_Msg_T) );
-
-
-
-
+#if defined(ENABLE_DEVICE_DEEP_SLEEP)  
+    DEVICE_DeepSleepWakeSrc_T wakeupSrc;
+    DEVICE_GetDeepSleepWakeUpSrc(&wakeupSrc);
+   
+    if(wakeupSrc == DEVICE_DEEP_SLEEP_WAKE_NONE  ||  wakeupSrc == DEVICE_DEEP_SLEEP_WAKE_MCLR)
+#endif
+    {
+#if defined(RF215V3)
+            bool temp, temp1 = false;
+            PHY_ConfigTrxId(RF24);
+            temp = app_P2P_Phy_Init();
+            PHY_ConfigTrxId(RF09);
+            temp1 = app_P2P_Phy_Init();
+            if((temp != true) || (temp1 != true))
+#else
+            if(app_P2P_Phy_Init() != true)
+#endif
+            {
+                
+                appInitialized = false;
+            }
+    }
+#ifdef ENABLE_DEVICE_DEEP_SLEEP  
+    else
+    {
+        
+#if defined(RF215V3)
+            bool temp, temp1 = false;
+            PHY_ConfigTrxId(RF24);
+            temp = app_P2P_Phy_Init();
+            PHY_ConfigTrxId(RF09);
+            temp1 = app_P2P_Phy_Init();
+            if((temp != true) || (temp1 != true))
+#else
+            if(app_P2P_Phy_Init() != true)
+#endif
+            {
+                appInitialized = false;
+            }
+              retainParams();
+    }
+ #endif
             if (appInitialized)
             {
 
@@ -172,13 +202,11 @@ void APP_Tasks ( void )
         {
             if (OSAL_QUEUE_Receive(&appData.appQueue, &appMsg, OSAL_WAIT_FOREVER))
             {
-
-
-
+                app_P2P_Phy_TaskHandler(p_appMsg);
             }
             break;
         }
-        
+
         /* TODO: implement your application state machine.*/
 
 

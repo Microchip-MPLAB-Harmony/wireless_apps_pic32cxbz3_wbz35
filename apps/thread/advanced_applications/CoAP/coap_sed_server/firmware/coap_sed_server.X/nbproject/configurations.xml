@@ -1566,7 +1566,7 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
@@ -1815,6 +1815,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1000000-4ffffff"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/Buckland_FW_2/wireless_apps_pic32cxbz3_wbz35/apps/thread/advanced_applications/CoAP/coap_sed_server/firmware/coap_sed_server.X/debug/default/coap_sed_server_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -1871,8 +1873,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1000000-4ffffff"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/Buckland_FW_2/wireless_apps_pic32cxbz3_wbz35/apps/thread/advanced_applications/CoAP/coap_sed_server/firmware/coap_sed_server.X/debug/default/coap_sed_server_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

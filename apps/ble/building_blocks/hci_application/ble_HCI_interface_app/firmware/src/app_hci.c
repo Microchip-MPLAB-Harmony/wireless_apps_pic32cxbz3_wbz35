@@ -46,7 +46,7 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include "peripheral/sercom/usart/drv_usart.h"
+#include "config/default/peripheral/sercom/usart/drv_usart.h"
 #include "byte_stream.h"
 #include "app.h"
 #include "hci.h"

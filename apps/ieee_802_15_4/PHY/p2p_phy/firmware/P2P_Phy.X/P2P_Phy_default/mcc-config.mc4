@@ -25,7 +25,7 @@ modules:
 - tc0
 generatedFileHashHistoryMap:
 - file: ..\src\app.c
-  hash: b4ef9949abd9329f0ba860a36a79b482765f67def5613f30be3e83ffa8474ea2
+  hash: 0d313ca79ab3c50ca52b2c51db30c013853f81c9458236575de063b3794e6945
 - file: ..\src\app.h
   hash: fc3db8743a21130e88250bea7a98f4e9ac685f2deeba514515ad077c5dc0576d
 - file: ..\src\app_config.h
@@ -53,7 +53,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\configuration.h
   hash: 23bc5204fa6bdd2e98cb48c0c6f33c00f5d54bab0245192ca20ee2bd6a32f74c
 - file: ..\src\config\default\definitions.h
-  hash: 939102a4eea7cd753fa99a56979a784992fa18d12db404b2399b05ae14eae27c
+  hash: 9888bc4ca731e55ab2f7279f86e6f06e30748bff22f7fa3df3833bae07eb3bf2
 - file: ..\src\config\default\device.h
   hash: 03f506d01d5a227e764c2ac63b784a6be8d15703d975edce2709bd70b9900439
 - file: ..\src\config\default\device_cache.h
@@ -191,7 +191,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\freertos_hooks.c
   hash: c97b8f92ad60ff513a27ac7a27b3c6824b75005eb8f7b85fe5ae18deaf568c4e
 - file: ..\src\config\default\initialization.c
-  hash: 10df27f7fb845b1a1958760fe9c3e646583b12247890718502ab0adc986340f7
+  hash: 59982a3c765957632f606aeaa029656767327b7e317e65b12ab2d6a2bcb7f3d2
 - file: ..\src\config\default\interrupts.c
   hash: 2ebe6a232f0b97c3b455cc69dd34d580c26dea713a2dfce8d423b511b6f9d182
 - file: ..\src\config\default\interrupts.h

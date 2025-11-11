@@ -46,7 +46,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#define DEVICE_AS_LEADER         1
+#define DEVICE_AS_LEADER         0
 
 void threadAppinit();
 void threadConfigNwParameters();
