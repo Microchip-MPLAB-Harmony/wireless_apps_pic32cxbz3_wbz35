@@ -37,7 +37,7 @@ The following applications are provided to demonstrate the typical use case of o
 | [BLE peripheral Legacy Adv_Sleep](apps/ble/building_blocks/peripheral/legacy_adv_sleep/readme.md) | PIC32CX-BZ3 |
 | [BLE peripheral Ext Adv](apps/ble/building_blocks/peripheral/ext_adv/readme.md) | PIC32CX-BZ3 |
 | [BLE Peripheral Connection](apps/ble/building_blocks/peripheral/peripheral_conn/readme.md) | PIC32CX-BZ3 |
-| [BLE Deep Sleep Adv](apps/ble/building_blocks/peripheral/deep_sleep_adv/readme.md) | PIC32CX-BZ3/PIC32CX-BZ36 |
+| [BLE Deep Sleep Adv](apps/ble/building_blocks/peripheral/deep_sleep_adv/readme.md) | PIC32CX-BZ3 |
 | [BLE Custom Service](apps/ble/building_blocks/peripheral/profiles_services/custom_service/readme.md) | PIC32CX-BZ3 |
 | [BLE peripheral transparent UART](apps/ble/building_blocks/peripheral/profiles_services/peripheral_trp_uart/readme.md) | PIC32CX-BZ3 |
 | [BLE Central Legacy Scan](apps/ble/building_blocks/central/legacy_scan/readme.md) | PIC32CX-BZ3 |
@@ -59,6 +59,7 @@ The following applications are provided to demonstrate the typical use case of o
 | [BLE Peripheral ANPS](apps/ble/advanced_applications/ble_anps_app/readme.md) | PIC32CX-BZ3 |
 | [BLE Proximity Monitor PXPM](apps/ble/advanced_applications/ble_pxpm_app/readme.md) | PIC32CX-BZ3 |
 | [BLE Proximity Reporter PXPR](apps/ble/advanced_applications/ble_pxpr_app/readme.md) | PIC32CX-BZ3 |
+| [BLE HCI](apps/ble/building_blocks/hci_application/ble_HCI_interface_app/readme.md) | PIC32CX-BZ3 |
 
 | IEEE_802_15_4 Applications | Families |
 | --- | :---: |
