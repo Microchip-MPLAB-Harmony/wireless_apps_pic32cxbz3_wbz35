@@ -11,7 +11,7 @@ Following table provides number of Wireless examples available for different dev
 
 | Development Kits           | MPLABx applications |
 |:--------------------------:|:-------------------:|
-| WBZ351 Curiosity Board 	 |       48            |
+| WBZ351 Curiosity Board 	 |       47            |
 
 ## New Features
 - Added PIC32CX_BZ36 Device Support, All the application are migrated from .mc3 to .mc4 and Updated to the latest stack for BLE, Thread, MAC and Zigbee Applications.
@@ -20,7 +20,8 @@ Following table provides number of Wireless examples available for different dev
 - 
 
 ### Known Issues
-- None 
+- BLE reconnection on multi-link and range tested under limited conditions.
+- Zigbee / IEEE 802.15.4 MAC validated for limited-duration operation.
 
 ### Development Tools
 
